@@ -9,10 +9,12 @@
 #import "GuestViewController.h"
 #import <RTMPCHybirdEngine/RTMPCGuestKit.h>
 #import "ASHUD.h"
+#import "KeyBoardInputView.h"
+#import "MessageTableView.h"
 
-
-@interface GuestViewController ()<RTMPCGuestRtmpDelegate, RTMPCGuestRtcDelegate> {
+@interface GuestViewController ()<RTMPCGuestRtmpDelegate, RTMPCGuestRtcDelegate,KeyBoardInputViewDelegate> {
     bool use_cap_;
+    UITapGestureRecognizer *tapGesture;
 }
 @property (nonatomic, strong) UIView *mainView;  // 主屏幕
 @property (nonatomic, strong) UIButton *handupButton;
@@ -22,10 +24,17 @@
 
 @property (nonatomic, strong) NSMutableArray *remoteArray;
 
+
+@property (nonatomic, strong) UIButton *chatButton; // 聊天的按钮
+@property (nonatomic, strong) KeyBoardInputView *keyBoardView; // 聊天输入框
+@property (nonatomic, strong) MessageTableView *messageTableView; // 聊天面板
+
+
 @end
 
 @implementation GuestViewController
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (self.guestKit) {
         self.guestKit = nil;
     }
@@ -40,6 +49,11 @@
     [self.view addSubview:self.handupButton];
     [self.view addSubview:self.closeButton];
     
+    
+    [self.view addSubview:self.chatButton];
+    [self.view addSubview:self.keyBoardView];
+    [self.view addSubview:self.messageTableView];
+    
     self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self];
     self.guestKit.rtc_delegate = self;
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
@@ -49,12 +63,24 @@
     NSString *jsonString = [self JSONTOString:dict];
     
     [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:@"test_ios_plul" andCustomName:@"Eric_Guest" andUserData:jsonString ];
+    
+    [self registerForKeyboardNotifications];
 }
 - (void)viewDidUnload
 {
     [self.guestKit clear];
 }
 #pragma mark - private method
+- (void) registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(keyboardWasHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
+    tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapEvent:)];
+    [self.view addGestureRecognizer:tapGesture];
+}
+
 - (NSString*)JSONTOString:(id)obj {
     NSString *jsonString = nil;
     NSError *error;
@@ -72,7 +98,26 @@
     NSArray *array = @[@"测试Anyrtc",@"Anyrtc真心效果好",@"欢迎用Anyrtc",@"视频云提供商DYNC"];
     return [array objectAtIndex:(int)arc4random()%(array.count-1)];
 }
-
+#pragma mark - KeyBoardInputViewDelegate
+// 发送消息
+- (void)keyBoardSendMessage:(NSString*)message withDanmu:(BOOL)danmu {
+    if (message.length == 0) {
+        return;
+    }
+    if (danmu) {
+        // 发送弹幕消息
+    }else{
+        // 发送普通消息
+        MessageModel *model = [[MessageModel alloc] init];
+        [model setModel:@"guestID" withName:@"游客名字" withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:message];
+        [self.messageTableView sendMessage:model];
+        
+        if (self.guestKit) {
+            [self.guestKit SendUserMsg:@"游客名字字" andContent:message];
+        }
+        
+    }
+}
 #pragma mark -  RTMPCGuestRtmpDelegate
 // rtmp 连接成功
 - (void)OnRtmplayerOK
@@ -123,6 +168,8 @@
             [videoView addSubview:cButton];
             
             [self.view addSubview:videoView];
+            // 参照点~
+            [self.view insertSubview:videoView belowSubview:self.chatButton];
             [self.guestKit SetVideoCapturer:videoView andUseFront:YES];
         }
     }else{
@@ -188,6 +235,8 @@
     NSLog(@"OnRTCOpenVideoRender:%@",strLivePeerID);
     UIView *video = [self getVideoViewWithStrID:strLivePeerID];
     [self.view addSubview:video];
+    // 参照点~
+    [self.view insertSubview:video belowSubview:self.chatButton];
     [self.guestKit SetRTCVideoRender:strLivePeerID andRender:video];
 }
 // 视频离开
@@ -207,7 +256,10 @@
 
 // 普通消息
 - (void)OnRTCUserMessage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
-    
+    // 发送普通消息
+    MessageModel *model = [[MessageModel alloc] init];
+    [model setModel:@"guestID" withName:@"游客名字" withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
+    [self.messageTableView sendMessage:model];
 }
 // 弹幕
 - (void)OnRTCUserBarrage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
@@ -263,7 +315,45 @@
         }
     }
 }
-
+// 聊天button
+- (void)chatButtonEvent:(UIButton*)sender {
+    if (self.keyBoardView) {
+        [self.keyBoardView editBeginTextField];
+    }
+}
+// 键盘弹起
+- (void)keyboardWasShown:(NSNotification*)notification {
+    NSDictionary *info = [notification userInfo];
+    CGRect keyboardRect = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    if (self.keyBoardView) {
+        self.keyBoardView.frame = CGRectMake(self.keyBoardView.frame.origin.x, CGRectGetMaxY(self.view.frame)-CGRectGetHeight(self.keyBoardView.frame)-keyboardRect.size.height, CGRectGetWidth(self.keyBoardView.frame), CGRectGetHeight(self.keyBoardView.frame));
+    }
+    
+    if (self.messageTableView) {
+        self.messageTableView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame)-CGRectGetHeight(self.keyBoardView.frame)-keyboardRect.size.height - CGRectGetHeight(self.messageTableView.frame) -10, CGRectGetWidth(self.messageTableView.frame), 120);
+    }
+}
+// 键盘隐藏
+- (void)keyboardWasHidden:(NSNotification*)notification {
+    if (self.keyBoardView) {
+        self.keyBoardView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame), self.view.bounds.size.width, 44);
+    }
+    if (self.messageTableView) {
+        self.messageTableView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame)-180, CGRectGetWidth(self.view.frame)/3*2, 120);
+    }
+}
+- (void)tapEvent:(UITapGestureRecognizer*)recognizer {
+    CGPoint point = [recognizer locationInView:self.view];
+    CGRect rect = [self.view convertRect:self.keyBoardView.frame toView:self.view];
+    if (CGRectContainsPoint(rect, point)) {
+        
+    }else{
+        if (self.keyBoardView.isEdit) {
+            [self.keyBoardView editEndTextField];
+        }
+    }
+    
+}
 - (void)layout:(int)index {
     switch (index) {
         case 0:
@@ -354,6 +444,32 @@
         _handupButton.frame = CGRectMake(CGRectGetMinX(self.closeButton.frame)-60, 20, 40,40);
     }
     return _handupButton;
+}
+
+- (UIButton*)chatButton {
+    if (!_chatButton) {
+        _chatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_chatButton setImage:[UIImage imageNamed:@"btn_share_normal"] forState:UIControlStateNormal];
+        [_chatButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_chatButton addTarget:self action:@selector(chatButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        _chatButton.frame = CGRectMake(10, CGRectGetMaxY(self.view.frame)-50,40,40);
+    }
+    return _chatButton;
+}
+- (KeyBoardInputView*)keyBoardView {
+    if (!_keyBoardView) {
+        _keyBoardView = [[KeyBoardInputView alloc] initWityStyle:KeyBoardInputViewTypeNomal];
+        _keyBoardView.backgroundColor = [UIColor clearColor];
+        _keyBoardView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame), self.view.bounds.size.width, 44);
+        _keyBoardView.delegate = self;
+    }
+    return _keyBoardView;
+}
+- (MessageTableView*)messageTableView {
+    if (!_messageTableView) {
+        _messageTableView = [[MessageTableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-180, CGRectGetWidth(self.view.frame)/3*2, 120)];
+    }
+    return _messageTableView;
 }
 
 - (void)didReceiveMemoryWarning {

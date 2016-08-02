@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782540881D509C53005D241A /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540431D509C53005D241A /* MASCompositeConstraint.m */; };
+		782540891D509C53005D241A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540461D509C53005D241A /* MASConstraint.m */; };
+		7825408A1D509C53005D241A /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540481D509C53005D241A /* MASConstraintMaker.m */; };
+		7825408B1D509C53005D241A /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825404A1D509C53005D241A /* MASLayoutConstraint.m */; };
+		7825408C1D509C53005D241A /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825404E1D509C53005D241A /* MASViewAttribute.m */; };
+		7825408D1D509C53005D241A /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540501D509C53005D241A /* MASViewConstraint.m */; };
+		7825408E1D509C53005D241A /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540521D509C53005D241A /* NSArray+MASAdditions.m */; };
+		7825408F1D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540551D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		782540901D509C53005D241A /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540571D509C53005D241A /* View+MASAdditions.m */; };
+		782540911D509C53005D241A /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825405A1D509C53005D241A /* ViewController+MASAdditions.m */; };
+		782540921D509C53005D241A /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825405F1D509C53005D241A /* UIColor+Category.m */; };
+		782540931D509C53005D241A /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540611D509C53005D241A /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		782540941D509C53005D241A /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540641D509C53005D241A /* MessageModel.m */; };
+		782540951D509C53005D241A /* CustomSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540671D509C53005D241A /* CustomSwitch.m */; };
+		782540961D509C53005D241A /* KeyBoardInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540691D509C53005D241A /* KeyBoardInputView.m */; };
+		782540971D509C53005D241A /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825406B1D509C53005D241A /* MessageCell.m */; };
+		782540981D509C53005D241A /* MessageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825406D1D509C53005D241A /* MessageTableView.m */; };
+		782540991D509C53005D241A /* offBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7825406F1D509C53005D241A /* offBtn.png */; };
+		7825409A1D509C53005D241A /* offBtnBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 782540701D509C53005D241A /* offBtnBg.png */; };
+		7825409B1D509C53005D241A /* onBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 782540711D509C53005D241A /* onBtn.png */; };
+		7825409C1D509C53005D241A /* onBtnBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 782540721D509C53005D241A /* onBtnBg.png */; };
+		7825409D1D509C53005D241A /* NSMutableAttributedString+TY.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540751D509C53005D241A /* NSMutableAttributedString+TY.m */; };
+		7825409E1D509C53005D241A /* TYAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540771D509C53005D241A /* TYAttributedLabel.m */; };
+		7825409F1D509C53005D241A /* TYDrawStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540791D509C53005D241A /* TYDrawStorage.m */; };
+		782540A01D509C53005D241A /* TYImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825407B1D509C53005D241A /* TYImageCache.m */; };
+		782540A11D509C53005D241A /* TYImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825407D1D509C53005D241A /* TYImageStorage.m */; };
+		782540A21D509C53005D241A /* TYLinkTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7825407F1D509C53005D241A /* TYLinkTextStorage.m */; };
+		782540A31D509C53005D241A /* TYTextContainer+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540801D509C53005D241A /* TYTextContainer+Extended.m */; };
+		782540A41D509C53005D241A /* TYTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540821D509C53005D241A /* TYTextContainer.m */; };
+		782540A51D509C53005D241A /* TYTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540841D509C53005D241A /* TYTextStorage.m */; };
+		782540A61D509C53005D241A /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 782540871D509C53005D241A /* TYViewStorage.m */; };
 		7828F6AF1D4AF8B0000F6C99 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */; };
 		7828F6B01D4AF8B0000F6C99 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7828F6B41D4B09B2000F6C99 /* go@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7828F6B21D4B09B2000F6C99 /* go@2x.png */; };
@@ -85,6 +116,69 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		782540421D509C53005D241A /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		782540431D509C53005D241A /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		782540441D509C53005D241A /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		782540451D509C53005D241A /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		782540461D509C53005D241A /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		782540471D509C53005D241A /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		782540481D509C53005D241A /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		782540491D509C53005D241A /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		7825404A1D509C53005D241A /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		7825404B1D509C53005D241A /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		7825404C1D509C53005D241A /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		7825404D1D509C53005D241A /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		7825404E1D509C53005D241A /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		7825404F1D509C53005D241A /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		782540501D509C53005D241A /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		782540511D509C53005D241A /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		782540521D509C53005D241A /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		782540531D509C53005D241A /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		782540541D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		782540551D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		782540561D509C53005D241A /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		782540571D509C53005D241A /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		782540581D509C53005D241A /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		782540591D509C53005D241A /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		7825405A1D509C53005D241A /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		7825405E1D509C53005D241A /* UIColor+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
+		7825405F1D509C53005D241A /* UIColor+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
+		782540601D509C53005D241A /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		782540611D509C53005D241A /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		782540631D509C53005D241A /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		782540641D509C53005D241A /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		782540661D509C53005D241A /* CustomSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSwitch.h; sourceTree = "<group>"; };
+		782540671D509C53005D241A /* CustomSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSwitch.m; sourceTree = "<group>"; };
+		782540681D509C53005D241A /* KeyBoardInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardInputView.h; sourceTree = "<group>"; };
+		782540691D509C53005D241A /* KeyBoardInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardInputView.m; sourceTree = "<group>"; };
+		7825406A1D509C53005D241A /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		7825406B1D509C53005D241A /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		7825406C1D509C53005D241A /* MessageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableView.h; sourceTree = "<group>"; };
+		7825406D1D509C53005D241A /* MessageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableView.m; sourceTree = "<group>"; };
+		7825406F1D509C53005D241A /* offBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offBtn.png; sourceTree = "<group>"; };
+		782540701D509C53005D241A /* offBtnBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offBtnBg.png; sourceTree = "<group>"; };
+		782540711D509C53005D241A /* onBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onBtn.png; sourceTree = "<group>"; };
+		782540721D509C53005D241A /* onBtnBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onBtnBg.png; sourceTree = "<group>"; };
+		782540741D509C53005D241A /* NSMutableAttributedString+TY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+TY.h"; sourceTree = "<group>"; };
+		782540751D509C53005D241A /* NSMutableAttributedString+TY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+TY.m"; sourceTree = "<group>"; };
+		782540761D509C53005D241A /* TYAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYAttributedLabel.h; sourceTree = "<group>"; };
+		782540771D509C53005D241A /* TYAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAttributedLabel.m; sourceTree = "<group>"; };
+		782540781D509C53005D241A /* TYDrawStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDrawStorage.h; sourceTree = "<group>"; };
+		782540791D509C53005D241A /* TYDrawStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDrawStorage.m; sourceTree = "<group>"; };
+		7825407A1D509C53005D241A /* TYImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYImageCache.h; sourceTree = "<group>"; };
+		7825407B1D509C53005D241A /* TYImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYImageCache.m; sourceTree = "<group>"; };
+		7825407C1D509C53005D241A /* TYImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYImageStorage.h; sourceTree = "<group>"; };
+		7825407D1D509C53005D241A /* TYImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYImageStorage.m; sourceTree = "<group>"; };
+		7825407E1D509C53005D241A /* TYLinkTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLinkTextStorage.h; sourceTree = "<group>"; };
+		7825407F1D509C53005D241A /* TYLinkTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLinkTextStorage.m; sourceTree = "<group>"; };
+		782540801D509C53005D241A /* TYTextContainer+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TYTextContainer+Extended.m"; sourceTree = "<group>"; };
+		782540811D509C53005D241A /* TYTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextContainer.h; sourceTree = "<group>"; };
+		782540821D509C53005D241A /* TYTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTextContainer.m; sourceTree = "<group>"; };
+		782540831D509C53005D241A /* TYTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextStorage.h; sourceTree = "<group>"; };
+		782540841D509C53005D241A /* TYTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTextStorage.m; sourceTree = "<group>"; };
+		782540851D509C53005D241A /* TYTextStorageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextStorageProtocol.h; sourceTree = "<group>"; };
+		782540861D509C53005D241A /* TYViewStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYViewStorage.h; sourceTree = "<group>"; };
+		782540871D509C53005D241A /* TYViewStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYViewStorage.m; sourceTree = "<group>"; };
 		7828F6B21D4B09B2000F6C99 /* go@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go@2x.png"; sourceTree = "<group>"; };
 		7828F6B31D4B09B2000F6C99 /* go@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go@3x.png"; sourceTree = "<group>"; };
 		7828F6CB1D4B3BE5000F6C99 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -181,6 +275,130 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782540411D509C53005D241A /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				782540421D509C53005D241A /* MASCompositeConstraint.h */,
+				782540431D509C53005D241A /* MASCompositeConstraint.m */,
+				782540441D509C53005D241A /* MASConstraint+Private.h */,
+				782540451D509C53005D241A /* MASConstraint.h */,
+				782540461D509C53005D241A /* MASConstraint.m */,
+				782540471D509C53005D241A /* MASConstraintMaker.h */,
+				782540481D509C53005D241A /* MASConstraintMaker.m */,
+				782540491D509C53005D241A /* MASLayoutConstraint.h */,
+				7825404A1D509C53005D241A /* MASLayoutConstraint.m */,
+				7825404B1D509C53005D241A /* Masonry.h */,
+				7825404C1D509C53005D241A /* MASUtilities.h */,
+				7825404D1D509C53005D241A /* MASViewAttribute.h */,
+				7825404E1D509C53005D241A /* MASViewAttribute.m */,
+				7825404F1D509C53005D241A /* MASViewConstraint.h */,
+				782540501D509C53005D241A /* MASViewConstraint.m */,
+				782540511D509C53005D241A /* NSArray+MASAdditions.h */,
+				782540521D509C53005D241A /* NSArray+MASAdditions.m */,
+				782540531D509C53005D241A /* NSArray+MASShorthandAdditions.h */,
+				782540541D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.h */,
+				782540551D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.m */,
+				782540561D509C53005D241A /* View+MASAdditions.h */,
+				782540571D509C53005D241A /* View+MASAdditions.m */,
+				782540581D509C53005D241A /* View+MASShorthandAdditions.h */,
+				782540591D509C53005D241A /* ViewController+MASAdditions.h */,
+				7825405A1D509C53005D241A /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		7825405B1D509C53005D241A /* TalkPannel */ = {
+			isa = PBXGroup;
+			children = (
+				7825405C1D509C53005D241A /* Helpers */,
+				782540621D509C53005D241A /* Model */,
+				782540651D509C53005D241A /* Views */,
+			);
+			path = TalkPannel;
+			sourceTree = "<group>";
+		};
+		7825405C1D509C53005D241A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7825405D1D509C53005D241A /* Category */,
+				782540601D509C53005D241A /* RegexKitLite.h */,
+				782540611D509C53005D241A /* RegexKitLite.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7825405D1D509C53005D241A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7825405E1D509C53005D241A /* UIColor+Category.h */,
+				7825405F1D509C53005D241A /* UIColor+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		782540621D509C53005D241A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				782540631D509C53005D241A /* MessageModel.h */,
+				782540641D509C53005D241A /* MessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		782540651D509C53005D241A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				782540661D509C53005D241A /* CustomSwitch.h */,
+				782540671D509C53005D241A /* CustomSwitch.m */,
+				782540681D509C53005D241A /* KeyBoardInputView.h */,
+				782540691D509C53005D241A /* KeyBoardInputView.m */,
+				7825406A1D509C53005D241A /* MessageCell.h */,
+				7825406B1D509C53005D241A /* MessageCell.m */,
+				7825406C1D509C53005D241A /* MessageTableView.h */,
+				7825406D1D509C53005D241A /* MessageTableView.m */,
+				7825406E1D509C53005D241A /* OnOffBtn */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7825406E1D509C53005D241A /* OnOffBtn */ = {
+			isa = PBXGroup;
+			children = (
+				7825406F1D509C53005D241A /* offBtn.png */,
+				782540701D509C53005D241A /* offBtnBg.png */,
+				782540711D509C53005D241A /* onBtn.png */,
+				782540721D509C53005D241A /* onBtnBg.png */,
+			);
+			path = OnOffBtn;
+			sourceTree = "<group>";
+		};
+		782540731D509C53005D241A /* TYAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				782540741D509C53005D241A /* NSMutableAttributedString+TY.h */,
+				782540751D509C53005D241A /* NSMutableAttributedString+TY.m */,
+				782540761D509C53005D241A /* TYAttributedLabel.h */,
+				782540771D509C53005D241A /* TYAttributedLabel.m */,
+				782540781D509C53005D241A /* TYDrawStorage.h */,
+				782540791D509C53005D241A /* TYDrawStorage.m */,
+				7825407A1D509C53005D241A /* TYImageCache.h */,
+				7825407B1D509C53005D241A /* TYImageCache.m */,
+				7825407C1D509C53005D241A /* TYImageStorage.h */,
+				7825407D1D509C53005D241A /* TYImageStorage.m */,
+				7825407E1D509C53005D241A /* TYLinkTextStorage.h */,
+				7825407F1D509C53005D241A /* TYLinkTextStorage.m */,
+				782540801D509C53005D241A /* TYTextContainer+Extended.m */,
+				782540811D509C53005D241A /* TYTextContainer.h */,
+				782540821D509C53005D241A /* TYTextContainer.m */,
+				782540831D509C53005D241A /* TYTextStorage.h */,
+				782540841D509C53005D241A /* TYTextStorage.m */,
+				782540851D509C53005D241A /* TYTextStorageProtocol.h */,
+				782540861D509C53005D241A /* TYViewStorage.h */,
+				782540871D509C53005D241A /* TYViewStorage.m */,
+			);
+			path = TYAttributedLabel;
+			sourceTree = "<group>";
+		};
 		7828F6D51D4B3D30000F6C99 /* Wechat */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +491,9 @@
 		782E9DCE1D48EC2E009683E0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				782540411D509C53005D241A /* Masonry */,
+				7825405B1D509C53005D241A /* TalkPannel */,
+				782540731D509C53005D241A /* TYAttributedLabel */,
 				7828F6D51D4B3D30000F6C99 /* Wechat */,
 				7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */,
 				782E9DFF1D48F224009683E0 /* NetUtils */,
@@ -444,6 +665,7 @@
 				782E9DED1D48EC2E009683E0 /* btn_hands_normal@2x.png in Resources */,
 				782E9DEF1D48EC2E009683E0 /* btn_share_normal@2x.png in Resources */,
 				782E9DF81D48EC2E009683E0 /* camra_preview@3x.png in Resources */,
+				7825409B1D509C53005D241A /* onBtn.png in Resources */,
 				782E9DF11D48EC2E009683E0 /* btn_startbc_normal@2x.png in Resources */,
 				782E9DF71D48EC2E009683E0 /* camra_preview@2x.png in Resources */,
 				782E9DF41D48EC2E009683E0 /* camra_beauty@3x.png in Resources */,
@@ -456,6 +678,9 @@
 				782E9DFC1D48EC2E009683E0 /* icon_photo_2@3x.png in Resources */,
 				782E9DF21D48EC2E009683E0 /* btn_startbc_normal@3x.png in Resources */,
 				782E9D841D48E358009683E0 /* Assets.xcassets in Resources */,
+				7825409C1D509C53005D241A /* onBtnBg.png in Resources */,
+				7825409A1D509C53005D241A /* offBtnBg.png in Resources */,
+				782540991D509C53005D241A /* offBtn.png in Resources */,
 				782E9DEE1D48EC2E009683E0 /* btn_hands_normal@3x.png in Resources */,
 				782E9DEC1D48EC2E009683E0 /* btn_back@3x.png in Resources */,
 				782E9D821D48E358009683E0 /* Main.storyboard in Resources */,
@@ -485,15 +710,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782540931D509C53005D241A /* RegexKitLite.m in Sources */,
+				7825408D1D509C53005D241A /* MASViewConstraint.m in Sources */,
 				782E9DB71D48E407009683E0 /* HostViewController.m in Sources */,
+				782540A21D509C53005D241A /* TYLinkTextStorage.m in Sources */,
+				7825408C1D509C53005D241A /* MASViewAttribute.m in Sources */,
 				782E9E021D48F231009683E0 /* NetUtils.m in Sources */,
+				782540981D509C53005D241A /* MessageTableView.m in Sources */,
+				782540A31D509C53005D241A /* TYTextContainer+Extended.m in Sources */,
+				782540A51D509C53005D241A /* TYTextStorage.m in Sources */,
 				782E9D7F1D48E358009683E0 /* ViewController.m in Sources */,
 				782E9DB61D48E407009683E0 /* HostSettingViewController.m in Sources */,
+				782540A61D509C53005D241A /* TYViewStorage.m in Sources */,
+				782540881D509C53005D241A /* MASCompositeConstraint.m in Sources */,
+				7825409F1D509C53005D241A /* TYDrawStorage.m in Sources */,
+				7825408A1D509C53005D241A /* MASConstraintMaker.m in Sources */,
+				782540901D509C53005D241A /* View+MASAdditions.m in Sources */,
+				782540971D509C53005D241A /* MessageCell.m in Sources */,
+				7825408B1D509C53005D241A /* MASLayoutConstraint.m in Sources */,
+				782540A11D509C53005D241A /* TYImageStorage.m in Sources */,
+				7825409D1D509C53005D241A /* NSMutableAttributedString+TY.m in Sources */,
+				782540911D509C53005D241A /* ViewController+MASAdditions.m in Sources */,
+				782540891D509C53005D241A /* MASConstraint.m in Sources */,
 				782E9D7C1D48E358009683E0 /* AppDelegate.m in Sources */,
 				782E9D791D48E358009683E0 /* main.m in Sources */,
+				7825408E1D509C53005D241A /* NSArray+MASAdditions.m in Sources */,
+				7825408F1D509C53005D241A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				782E9DE91D48EC2E009683E0 /* ASHUD.m in Sources */,
+				782540961D509C53005D241A /* KeyBoardInputView.m in Sources */,
 				782E9DB51D48E407009683E0 /* GuestViewController.m in Sources */,
+				7825409E1D509C53005D241A /* TYAttributedLabel.m in Sources */,
+				782540A01D509C53005D241A /* TYImageCache.m in Sources */,
 				782E9DEA1D48EC2E009683E0 /* MBProgressHUD.m in Sources */,
+				782540921D509C53005D241A /* UIColor+Category.m in Sources */,
+				782540951D509C53005D241A /* CustomSwitch.m in Sources */,
+				782540941D509C53005D241A /* MessageModel.m in Sources */,
+				782540A41D509C53005D241A /* TYTextContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +903,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RtmpHybird/lib/Wechat",
 				);
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RtmpHybird;
 				PRODUCT_NAME = "RTMPC连麦";
 				PROVISIONING_PROFILE = "eea969a4-50f7-44a4-a7ee-1c5b8405f95c";
@@ -676,6 +929,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RtmpHybird/lib/Wechat",
 				);
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RtmpHybird;
 				PRODUCT_NAME = "RTMPC连麦";
 				PROVISIONING_PROFILE = "326a786e-bfa0-4b80-9f8b-1c5309d941c4";

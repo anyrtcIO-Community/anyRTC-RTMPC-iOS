@@ -8,11 +8,16 @@
 
 
 #import "HostViewController.h"
+#import <RTMPCHybirdEngine/RTMPCGuestKit.h>
 #import <RTMPCHybirdEngine/RTMPCHosterKit.h>
-#import <RTMPCHybirdEngine/RTMPCHybirdEngineKit.h>
 #import "ASHUD.h"
+#import "KeyBoardInputView.h"
+#import "MessageTableView.h"
 
-@interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate>
+@interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
+{
+    UITapGestureRecognizer *tapGesture;
+}
 @property (nonatomic, strong) UIView *cameraView;  // 推流
 @property (nonatomic, strong) UIButton *closeButton;
 
@@ -24,6 +29,8 @@
 @property (nonatomic, strong) UIButton *shearButton;
 
 @property (nonatomic, strong) UIButton *chatButton; // 聊天的按钮
+@property (nonatomic, strong) KeyBoardInputView *keyBoardView; // 聊天输入框
+@property (nonatomic, strong) MessageTableView *messageTableView; // 聊天面板
 
 
 @property (nonatomic, strong) RTMPCHosterKit *hosterKit;
@@ -37,6 +44,7 @@
 
 @implementation HostViewController
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (self.hosterKit) {
         self.hosterKit = nil;
     }
@@ -54,6 +62,11 @@
     [self.view addSubview:self.cameraButton];
     [self.view addSubview:self.beautyButton];
     [self.view addSubview:self.shearButton];
+    // for chat
+    [self.view addSubview:self.chatButton];
+    [self.view addSubview:self.keyBoardView];
+    [self.view addSubview:self.messageTableView];
+    
     // 开始推流
     self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self];
     self.hosterKit.rtc_delegate = self;
@@ -73,13 +86,24 @@
     if(![self.hosterKit OpenRTCLine:randomString andCustomID:@"test_ios" andUserData:jsonString]) {
         NSLog(@"!!! Cann't open rtc line function, maybe you aren't set RTMPCHosterRtcDelegate");
     }
- 
+    [self registerForKeyboardNotifications];
 }
 - (void)viewDidUnload
 {
     [self.hosterKit clear];
 }
 #pragma mark - private method
+- (void) registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(keyboardWasHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
+    tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapEvent:)];
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+
 - (NSString*)JSONTOString:(id)obj {
     NSString *jsonString = nil;
     NSError *error;
@@ -108,6 +132,28 @@
     NSMutableString* randomString = [[NSMutableString alloc] initWithUTF8String:temp];
     free(temp);
     return randomString;
+}
+#pragma mark - KeyBoardInputViewDelegate
+// 发送消息
+- (void)keyBoardSendMessage:(NSString*)message withDanmu:(BOOL)danmu {
+    if (message.length == 0) {
+        return;
+    }
+    if (danmu) {
+        // 发送弹幕消息
+    }else{
+        
+        // 发送普通消息
+        MessageModel *model = [[MessageModel alloc] init];
+        
+        [model setModel:@"hostID" withName:@"主播名字" withIcon:@"主播头像" withType:CellNewChatMessageType withMessage:message];
+        [self.messageTableView sendMessage:model];
+        
+        if (self.hosterKit) {
+            [self.hosterKit SendUserMsg:@"主播名字" andContent:message];
+        }
+        
+    }
 }
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -160,7 +206,7 @@
 - (void)OnRTCApplyToLine:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData {
     NSLog(@"OnRTCApplyToLine:%@ withCustomID:%@ withUserData:%@",strLivePeerID,strCustomID,strUserData);
     if (self.requestId!=nil) {
-            [self.hosterKit HangupRTCLine:self.requestId];
+        [self.hosterKit HangupRTCLine:self.requestId];
     }
     self.requestId = strLivePeerID;
     
@@ -196,6 +242,9 @@
     NSLog(@"OnRTCOpenVideoRender:%@",strLivePeerID);
     UIView *videoView = [self getVideoViewWithStrID:strLivePeerID];
     [self.view addSubview:videoView];
+    // 参照点~
+    [self.view insertSubview:videoView belowSubview:self.chatButton];
+    
     [self.hosterKit SetRTCVideoRender:strLivePeerID andRender:videoView];
 }
 // 视频离开
@@ -214,7 +263,10 @@
 }
 // 普通消息
 - (void)OnRTCUserMessage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
-    
+    // 发送普通消息
+    MessageModel *model = [[MessageModel alloc] init];
+    [model setModel:@"guestID" withName:@"游客名字" withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
+    [self.messageTableView sendMessage:model];
 }
 // 弹幕
 - (void)OnRTCUserBarrage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
@@ -238,8 +290,8 @@
         case 0:
             for (int i=0; i<self.remoteArray.count; i++) {
                 NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-                 UIView *videoView = [dict.allValues firstObject];
-                 videoView.frame = CGRectMake(videoView.frame.origin.x, CGRectGetHeight(self.view.frame)-(i+1)*videoView.frame.size.height, videoView.frame.size.width, videoView.frame.size.height);
+                UIView *videoView = [dict.allValues firstObject];
+                videoView.frame = CGRectMake(videoView.frame.origin.x, CGRectGetHeight(self.view.frame)-(i+1)*videoView.frame.size.height, videoView.frame.size.width, videoView.frame.size.height);
             }
             break;
         case 1:
@@ -295,6 +347,44 @@
         }
     }
 }
+- (void)chatButtonEvent:(UIButton*)sender {
+    if (self.keyBoardView) {
+        [self.keyBoardView editBeginTextField];
+    }
+}
+// 键盘弹起
+- (void)keyboardWasShown:(NSNotification*)notification {
+    NSDictionary *info = [notification userInfo];
+    CGRect keyboardRect = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    if (self.keyBoardView) {
+        self.keyBoardView.frame = CGRectMake(self.keyBoardView.frame.origin.x, CGRectGetMaxY(self.view.frame)-CGRectGetHeight(self.keyBoardView.frame)-keyboardRect.size.height, CGRectGetWidth(self.keyBoardView.frame), CGRectGetHeight(self.keyBoardView.frame));
+    }
+    
+    if (self.messageTableView) {
+        self.messageTableView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame)-CGRectGetHeight(self.keyBoardView.frame)-keyboardRect.size.height - CGRectGetHeight(self.messageTableView.frame) -10, CGRectGetWidth(self.messageTableView.frame), 120);
+    }
+}
+// 键盘隐藏
+- (void)keyboardWasHidden:(NSNotification*)notification {
+    if (self.keyBoardView) {
+        self.keyBoardView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame), self.view.bounds.size.width, 44);
+    }
+    if (self.messageTableView) {
+        self.messageTableView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame)-180, CGRectGetWidth(self.view.frame)/3*2, 120);
+    }
+}
+- (void)tapEvent:(UITapGestureRecognizer*)recognizer {
+    CGPoint point = [recognizer locationInView:self.view];
+    CGRect rect = [self.view convertRect:self.keyBoardView.frame toView:self.view];
+    if (CGRectContainsPoint(rect, point)) {
+        
+    }else{
+        if (self.keyBoardView.isEdit) {
+            [self.keyBoardView editEndTextField];
+        }
+    }
+    
+}
 
 #pragma mark - get
 - (UIView*)getVideoViewWithStrID:(NSString*)publishID {
@@ -312,13 +402,13 @@
             break;
         case 1:
             pullView = [[UIView alloc] init];
-           pullView.frame = CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, 2*videoHeight, videoWidth, videoHeight);
+            pullView.frame = CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, 2*videoHeight, videoWidth, videoHeight);
             pullView.layer.borderColor = [UIColor grayColor].CGColor;
             pullView.layer.borderWidth = .5;
             break;
         case 2:
             pullView = [[UIView alloc] init];
-              pullView.frame = CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, videoHeight, videoWidth, videoHeight);
+            pullView.frame = CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, videoHeight, videoWidth, videoHeight);
             pullView.layer.borderColor = [UIColor grayColor].CGColor;
             pullView.layer.borderWidth = .5;
             break;
@@ -332,7 +422,7 @@
     [cButton addTarget:self action:@selector(cButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [cButton setImage:[UIImage imageNamed:@"close_preview"] forState:UIControlStateNormal];
     [pullView addSubview:cButton];
-
+    
     
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,publishID, nil];
     [self.remoteArray addObject:dict];
@@ -412,6 +502,31 @@
     return _shearButton;
 }
 
+- (UIButton*)chatButton {
+    if (!_chatButton) {
+        _chatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_chatButton setImage:[UIImage imageNamed:@"btn_share_normal"] forState:UIControlStateNormal];
+        [_chatButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_chatButton addTarget:self action:@selector(chatButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        _chatButton.frame = CGRectMake(10, CGRectGetMaxY(self.view.frame)-50,40,40);
+    }
+    return _chatButton;
+}
+- (KeyBoardInputView*)keyBoardView {
+    if (!_keyBoardView) {
+        _keyBoardView = [[KeyBoardInputView alloc] initWityStyle:KeyBoardInputViewTypeNomal];
+        _keyBoardView.backgroundColor = [UIColor clearColor];
+        _keyBoardView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame), self.view.bounds.size.width, 44);
+        _keyBoardView.delegate = self;
+    }
+    return _keyBoardView;
+}
+- (MessageTableView*)messageTableView {
+    if (!_messageTableView) {
+        _messageTableView = [[MessageTableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-180, CGRectGetWidth(self.view.frame)/3*2, 120)];
+    }
+    return _messageTableView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
