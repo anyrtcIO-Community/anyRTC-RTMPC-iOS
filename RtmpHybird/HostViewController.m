@@ -74,6 +74,7 @@
     [self.view addSubview:self.messageTableView];
     [self.view addSubview:self.danmuView];
     
+    self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     // 开始推流
     self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self];
     self.hosterKit.rtc_delegate = self;
