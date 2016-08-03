@@ -13,7 +13,6 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "HostSettingViewController.h"
 #import "NetUtils.h"
-
 @implementation LivingItem
 
 @end
@@ -165,7 +164,16 @@
         _nickLabel.textColor = [UIColor blackColor];
         _nickLabel.font = [UIFont systemFontOfSize:14];
         _nickLabel.frame = CGRectMake(20, CGRectGetMaxY(_headButton.frame), CGRectGetWidth(self.view.frame)-40, 20);
-        _nickLabel.text = @"Dync";
+        NSString *nikeName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
+        if (nikeName) {
+            _nickLabel.text = nikeName;
+        }else{
+            NSString *name = [self getNickName];
+            [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"NickName"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            _nickLabel.text = name;
+        }
+        
     }
     return _nickLabel;
 }
@@ -199,7 +207,10 @@
     }
     return _livingButton;
 }
-
+- (NSString*)getNickName {
+    NSArray *array  = @[@"Derek",@"Jason",@"黑色星期天",@"Eric",@"Ming",@"龙的传人",@"Dawei",@"心中的怒火",@"贱人是这样炼成的",@"北风吹",@"零度的夏日"];
+    return array[arc4random()%(array.count-1)];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

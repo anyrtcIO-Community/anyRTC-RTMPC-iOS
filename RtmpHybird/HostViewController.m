@@ -14,6 +14,9 @@
 #import "KeyBoardInputView.h"
 #import "MessageTableView.h"
 
+#import "DanmuLaunchView.h"
+#import "DanmuItemView.h"
+
 @interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
 {
     UITapGestureRecognizer *tapGesture;
@@ -32,6 +35,7 @@
 @property (nonatomic, strong) KeyBoardInputView *keyBoardView; // 聊天输入框
 @property (nonatomic, strong) MessageTableView *messageTableView; // 聊天面板
 
+@property (nonatomic, strong) DanmuLaunchView *danmuView;
 
 @property (nonatomic, strong) RTMPCHosterKit *hosterKit;
 
@@ -40,6 +44,8 @@
 @property (nonatomic, strong) NSString *hlsUrl;
 
 @property (nonatomic, strong) NSString *requestId;
+
+@property (nonatomic, strong) NSString *nickName;
 @end
 
 @implementation HostViewController
@@ -66,6 +72,7 @@
     [self.view addSubview:self.chatButton];
     [self.view addSubview:self.keyBoardView];
     [self.view addSubview:self.messageTableView];
+    [self.view addSubview:self.danmuView];
     
     // 开始推流
     self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self];
@@ -73,6 +80,7 @@
     [self.hosterKit SetVideoMode:RTMPC_Video_SD];
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];
     NSString *randomString = [self randomString:12];
+    // 推流地址自己换掉自己的即可
     NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207:1935/live/%@",randomString];
     self.hlsUrl = [NSString stringWithFormat:@"http://192.168.7.207:1935/live/%@.m3u8",randomString];
     
@@ -141,16 +149,27 @@
     }
     if (danmu) {
         // 发送弹幕消息
+        if (self.danmuView) {
+            DanmuItem *item = [[DanmuItem alloc] init];
+            item.u_userID = @"three id";
+            item.u_nickName = self.nickName;
+            item.thumUrl = @"";
+            item.content = message;
+            [self.danmuView setModel:item];
+        }
+        if (self.hosterKit) {
+            [self.hosterKit SendBarrage:self.nickName andContent:message];
+        }
     }else{
         
         // 发送普通消息
         MessageModel *model = [[MessageModel alloc] init];
         
-        [model setModel:@"hostID" withName:@"主播名字" withIcon:@"主播头像" withType:CellNewChatMessageType withMessage:message];
+        [model setModel:@"hostID" withName:self.nickName withIcon:@"主播头像" withType:CellNewChatMessageType withMessage:message];
         [self.messageTableView sendMessage:model];
         
         if (self.hosterKit) {
-            [self.hosterKit SendUserMsg:@"主播名字" andContent:message];
+            [self.hosterKit SendUserMsg:self.nickName andContent:message];
         }
         
     }
@@ -265,12 +284,19 @@
 - (void)OnRTCUserMessage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
     // 发送普通消息
     MessageModel *model = [[MessageModel alloc] init];
-    [model setModel:@"guestID" withName:@"游客名字" withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
+    [model setModel:nsCustomId withName:nsCustomName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
     [self.messageTableView sendMessage:model];
 }
 // 弹幕
 - (void)OnRTCUserBarrage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
-    
+    if (self.danmuView) {
+        DanmuItem *item = [[DanmuItem alloc] init];
+        item.u_userID = nsCustomId;
+        item.u_nickName = nsCustomName;
+        item.thumUrl = @"";
+        item.content = nsContent;
+        [self.danmuView setModel:item];
+    }
 }
 // 在线人数
 - (void)OnRTCMemberListWillUpdate:(int)nTotalMember {
@@ -363,6 +389,9 @@
     if (self.messageTableView) {
         self.messageTableView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame)-CGRectGetHeight(self.keyBoardView.frame)-keyboardRect.size.height - CGRectGetHeight(self.messageTableView.frame) -10, CGRectGetWidth(self.messageTableView.frame), 120);
     }
+    if (self.danmuView) {
+        self.danmuView.frame = CGRectMake(self.danmuView.frame.origin.x, CGRectGetMinY(self.messageTableView.frame)-CGRectGetHeight(self.danmuView.frame), CGRectGetWidth(self.danmuView.frame), CGRectGetHeight(self.danmuView.frame));
+    }
 }
 // 键盘隐藏
 - (void)keyboardWasHidden:(NSNotification*)notification {
@@ -371,6 +400,9 @@
     }
     if (self.messageTableView) {
         self.messageTableView.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame)-180, CGRectGetWidth(self.view.frame)/3*2, 120);
+    }
+    if (self.danmuView) {
+        self.danmuView.frame = CGRectMake(self.danmuView.frame.origin.x, CGRectGetMinY(self.messageTableView.frame)-CGRectGetHeight(self.danmuView.frame), CGRectGetWidth(self.danmuView.frame), CGRectGetHeight(self.danmuView.frame));
     }
 }
 - (void)tapEvent:(UITapGestureRecognizer*)recognizer {
@@ -527,6 +559,14 @@
     }
     return _messageTableView;
 }
+
+- (DanmuLaunchView*)danmuView {
+    if (!_danmuView) {
+        _danmuView = [[DanmuLaunchView alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.messageTableView.frame)-(ItemHeight*3+ItemSpace*2), self.view.frame.size.width, ItemHeight*3+ItemSpace*2)];
+    }
+    return _danmuView;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
