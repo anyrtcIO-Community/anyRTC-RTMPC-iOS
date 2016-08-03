@@ -78,7 +78,7 @@
     // 开始推流
     self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self];
     self.hosterKit.rtc_delegate = self;
-    [self.hosterKit SetVideoMode:RTMPC_Video_SD];
+    [self.hosterKit SetVideoMode:_rtmpVideoMode];
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];
     NSString *randomString = [self randomString:12];
     // 推流地址自己换掉自己的即可

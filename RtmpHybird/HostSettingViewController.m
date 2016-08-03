@@ -9,6 +9,7 @@
 #import "HostSettingViewController.h"
 #import "HostViewController.h"
 #import "ASHUD.h"
+#import <RTMPCHybirdEngine/RTMPCCommon.h>
 
 @interface TextFieldEnterView()
 @property (nonatomic, strong) UITextField *roomTextField;
@@ -76,6 +77,7 @@
 @property (nonatomic, strong) UIPickerView *pickerView;
 @property (nonatomic, strong) NSArray *dataArray;
 
+@property (nonatomic, assign) RTMPCVideoMode rtmpVideoMode;
 
 @end
 
@@ -92,6 +94,8 @@
     [self.view addSubview:self.pickerView];
     
     [self.pickerView selectRow:2 inComponent:0 animated:YES];
+    _rtmpVideoMode = 2;
+    
     [self registerForKeyboardNotifications];
     [self.view addSubview:self.bgView];
     [_bgView.roomTextField becomeFirstResponder];
@@ -136,7 +140,7 @@
 // 返回选中的行
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-   
+    _rtmpVideoMode = row;
     
 }
 
@@ -188,6 +192,7 @@
     if (!_bgView) {
         _bgView = [TextFieldEnterView new];
         __weak typeof(self)weakSelf = self;
+        __block RTMPCVideoMode mode = _rtmpVideoMode;
         [_bgView setTapEventBlock:^(NSString * text) {
             if (text.length == 0) {
                 [ASHUD showHUDWithCompleteStyleInView:weakSelf.view content:@"请输入主题" icon:nil];
@@ -195,6 +200,7 @@
             }
             HostViewController *hostController = [HostViewController new];
             hostController.livingName = text;
+            hostController.rtmpVideoMode = mode;
             [weakSelf.navigationController pushViewController:hostController animated:YES];
         }];
         _bgView.backgroundColor = [UIColor grayColor];
