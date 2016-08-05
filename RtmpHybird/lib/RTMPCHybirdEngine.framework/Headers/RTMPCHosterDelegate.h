@@ -38,17 +38,19 @@
  *
  *  @param nsCustomId other's platform  user id
  *  @param nsCustomName other's platform  user nick name
+ *  @param nsCustomHeader other's platform user header url
  *  @param nsContent  message
  */
-- (void)OnRTCUserMessage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent;
+- (void)OnRTCUserMessage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withCustomHeader:(NSString*)nsCustomHeader withContent:(NSString*)nsContent;
 /**
  *  Barrage
  *
  *  @param nsCustomId other's platform  user id
  *  @param nsCustomName other's platform  user nick name
+ *  @param nsCustomHeader other's platform user header url
  *  @param nsContent  barrage
  */
-- (void)OnRTCUserBarrage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent;
+- (void)OnRTCUserBarrage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withCustomHeader:(NSString*)nsCustomHeader withContent:(NSString*)nsContent;
 /**
  *  All member count in this live.
  *

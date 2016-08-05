@@ -67,6 +67,8 @@
 		7828F6DE1D4B3D30000F6C99 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7828F6D71D4B3D30000F6C99 /* libWeChatSDK.a */; };
 		7828F6DF1D4B3D30000F6C99 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7828F6D81D4B3D30000F6C99 /* README.txt */; };
 		7828F6E11D4B3E0B000F6C99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7828F6E01D4B3E0B000F6C99 /* libc++.tbd */; };
+		782D2EE71D5368D600A34FCF /* btn_chat_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D2EE51D5368D600A34FCF /* btn_chat_normal@2x.png */; };
+		782D2EE81D5368D600A34FCF /* btn_chat_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D2EE61D5368D600A34FCF /* btn_chat_normal@3x.png */; };
 		782E9D791D48E358009683E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E9D781D48E358009683E0 /* main.m */; };
 		782E9D7C1D48E358009683E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E9D7B1D48E358009683E0 /* AppDelegate.m */; };
 		782E9D7F1D48E358009683E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E9D7E1D48E358009683E0 /* ViewController.m */; };
@@ -246,6 +248,8 @@
 		7828F6DC1D4B3D30000F6C99 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		7828F6E01D4B3E0B000F6C99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
+		782D2EE51D5368D600A34FCF /* btn_chat_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_chat_normal@2x.png"; sourceTree = "<group>"; };
+		782D2EE61D5368D600A34FCF /* btn_chat_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_chat_normal@3x.png"; sourceTree = "<group>"; };
 		782E9D741D48E358009683E0 /* RTMPC连麦.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RTMPC连麦.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		782E9D781D48E358009683E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		782E9D7A1D48E358009683E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -619,6 +623,8 @@
 		782E9DD41D48EC2E009683E0 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				782D2EE51D5368D600A34FCF /* btn_chat_normal@2x.png */,
+				782D2EE61D5368D600A34FCF /* btn_chat_normal@3x.png */,
 				7828F6B21D4B09B2000F6C99 /* go@2x.png */,
 				7828F6B31D4B09B2000F6C99 /* go@3x.png */,
 				782E9DD51D48EC2E009683E0 /* btn_back@2x.png */,
@@ -763,6 +769,7 @@
 			files = (
 				782E9DF61D48EC2E009683E0 /* camra_beauty_close@3x.png in Resources */,
 				782E9DF01D48EC2E009683E0 /* btn_share_normal@3x.png in Resources */,
+				782D2EE71D5368D600A34FCF /* btn_chat_normal@2x.png in Resources */,
 				782E9DEB1D48EC2E009683E0 /* btn_back@2x.png in Resources */,
 				782E9DFB1D48EC2E009683E0 /* icon_photo_2@2x.png in Resources */,
 				782E9DED1D48EC2E009683E0 /* btn_hands_normal@2x.png in Resources */,
@@ -785,6 +792,7 @@
 				7825409A1D509C53005D241A /* offBtnBg.png in Resources */,
 				782540991D509C53005D241A /* offBtn.png in Resources */,
 				782E9DEE1D48EC2E009683E0 /* btn_hands_normal@3x.png in Resources */,
+				782D2EE81D5368D600A34FCF /* btn_chat_normal@3x.png in Resources */,
 				782E9DEC1D48EC2E009683E0 /* btn_back@3x.png in Resources */,
 				782E9D821D48E358009683E0 /* Main.storyboard in Resources */,
 				7828F6DF1D4B3D30000F6C99 /* README.txt in Resources */,

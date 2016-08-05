@@ -159,7 +159,7 @@
             [self.danmuView setModel:item];
         }
         if (self.hosterKit) {
-            [self.hosterKit SendBarrage:self.nickName andContent:message];
+            [self.hosterKit SendBarrage:self.nickName andCustomHeader:@"www.baidu.com" andContent:message];
         }
     }else{
         
@@ -170,7 +170,7 @@
         [self.messageTableView sendMessage:model];
         
         if (self.hosterKit) {
-            [self.hosterKit SendUserMsg:self.nickName andContent:message];
+            [self.hosterKit SendUserMsg:self.nickName andCustomHeader:@"www.baidu.com" andContent:message];
         }
         
     }
@@ -282,19 +282,19 @@
     }
 }
 // 普通消息
-- (void)OnRTCUserMessage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
+- (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     // 发送普通消息
     MessageModel *model = [[MessageModel alloc] init];
     [model setModel:nsCustomId withName:nsCustomName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
     [self.messageTableView sendMessage:model];
 }
 // 弹幕
-- (void)OnRTCUserBarrage:(NSString*)nsCustomId withCustomName:(NSString*)nsCustomName withContent:(NSString*)nsContent {
+- (void)OnRTCUserBarrage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     if (self.danmuView) {
         DanmuItem *item = [[DanmuItem alloc] init];
         item.u_userID = nsCustomId;
         item.u_nickName = nsCustomName;
-        item.thumUrl = @"";
+        item.thumUrl = nsCustomHeader;
         item.content = nsContent;
         [self.danmuView setModel:item];
     }
@@ -538,7 +538,7 @@
 - (UIButton*)chatButton {
     if (!_chatButton) {
         _chatButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_chatButton setImage:[UIImage imageNamed:@"btn_share_normal"] forState:UIControlStateNormal];
+        [_chatButton setImage:[UIImage imageNamed:@"btn_chat_normal"] forState:UIControlStateNormal];
         [_chatButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [_chatButton addTarget:self action:@selector(chatButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         _chatButton.frame = CGRectMake(10, CGRectGetMaxY(self.view.frame)-50,40,40);

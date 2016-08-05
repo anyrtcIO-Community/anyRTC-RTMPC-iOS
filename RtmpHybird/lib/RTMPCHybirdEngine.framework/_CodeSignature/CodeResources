@@ -10,19 +10,19 @@
 		</data>
 		<key>Headers/RTMPCGuestDelegate.h</key>
 		<data>
-		Gc5sJ6VRpmvNt5sy+6gw0IRRLzU=
+		EmYRErKbgH/jXlryztZV7QOrbV8=
 		</data>
 		<key>Headers/RTMPCGuestKit.h</key>
 		<data>
-		BqmeNdRGhdq4BCzt/RG3DQlws60=
+		aeYW55xbYMaZPAV1gu8ChhWkBFY=
 		</data>
 		<key>Headers/RTMPCHosterDelegate.h</key>
 		<data>
-		wWVTFXscga4j/3vQGoFeg7T/cjs=
+		ezWNuJZmxJw5FSGzbbDK7/XGenU=
 		</data>
 		<key>Headers/RTMPCHosterKit.h</key>
 		<data>
-		R8LWNadct4qjilaxF6U6XomsOrA=
+		D87KnE/CFgukk5gY7g1Ehlfy4ug=
 		</data>
 		<key>Headers/RTMPCHybirdEngineKit.h</key>
 		<data>
@@ -50,44 +50,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Gc5sJ6VRpmvNt5sy+6gw0IRRLzU=
+			EmYRErKbgH/jXlryztZV7QOrbV8=
 			</data>
 			<key>hash2</key>
 			<data>
-			qVXl5v3eobg79XPXcKyd/mYqbk8zZHXLhpdOzo8hT0c=
+			ms3KwGKjNAGphtn9JojoWn9V9AeXCzpvNEyAEKtgnps=
 			</data>
 		</dict>
 		<key>Headers/RTMPCGuestKit.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BqmeNdRGhdq4BCzt/RG3DQlws60=
+			aeYW55xbYMaZPAV1gu8ChhWkBFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			OPe/CzXRZ//3bGyiUi5xDX34fO4rK0JV8hfMESvxVUo=
+			v6OAKa9a44SBMukpsyMXbECEOFY66C2jdzS5Tq+siRk=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHosterDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wWVTFXscga4j/3vQGoFeg7T/cjs=
+			ezWNuJZmxJw5FSGzbbDK7/XGenU=
 			</data>
 			<key>hash2</key>
 			<data>
-			l8o5dcWcFfXptIJYYQWAzPkrpus/KSoiIqSdnABuhSo=
+			MY7NNy6Qe41idTpg6TDEMYaXowYNXqvs7IAC3zSkFdc=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHosterKit.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			R8LWNadct4qjilaxF6U6XomsOrA=
+			D87KnE/CFgukk5gY7g1Ehlfy4ug=
 			</data>
 			<key>hash2</key>
 			<data>
-			76/yXHxYD8WwCeiGSR/64PIid/qzoqao/d1+MwCtICA=
+			vjrrdtlbQUIy7RkZoD02ypHQ6zKCh2mWV0R1aiW831I=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHybirdEngineKit.h</key>

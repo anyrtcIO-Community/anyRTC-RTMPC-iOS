@@ -41,8 +41,8 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
 - (void)ApplyRTCLine:(NSString*)strUserData;
 - (void)HangupRTCLine;
 - (void)SetRTCVideoRender:(NSString*)strLivePeerID andRender:(UIView*)render;
-- (BOOL)SendUserMsg:(NSString*)nsCustomName andContent:(NSString*)nsContent;
-- (BOOL)SendBarrage:(NSString*)nsCustomName andContent:(NSString*)nsContent;
+- (BOOL)SendUserMsg:(NSString*)nsCustomName andCustomHeader:(NSString*)nsCustomHeader andContent:(NSString*)nsContent;
+- (BOOL)SendBarrage:(NSString*)nsCustomName andCustomHeader:(NSString*)nsCustomHeader  andContent:(NSString*)nsContent;
 - (void)LeaveRTCLine;
 @end
 

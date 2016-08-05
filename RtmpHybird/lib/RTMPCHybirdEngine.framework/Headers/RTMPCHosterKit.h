@@ -36,12 +36,12 @@
 
 //* RTC function for line
 - (BOOL)OpenRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andUserData:(NSString*)strUserData;
-- (BOOL)AcceptRTCLine:(NSString*)strLivePeerID;
+- (BOOL)AcceptRTCLine:(NSString*)strLivePeerID;//NO:同意连线3人已满
 - (void)HangupRTCLine:(NSString*)strLivePeerID;
 - (void)RejectRTCLine:(NSString*)strLivePeerID andBanToApply:(bool) banToApply;
 - (void)SetRTCVideoRender:(NSString*)strLivePeerID andRender:(UIView*)render;
-- (BOOL)SendUserMsg:(NSString*)nsCustomName andContent:(NSString*)nsContent;
-- (BOOL)SendBarrage:(NSString*)nsCustomName andContent:(NSString*)nsContent;
+- (BOOL)SendUserMsg:(NSString*)nsCustomName andCustomHeader:(NSString*)nsCustomHeader andContent:(NSString*)nsContent;
+- (BOOL)SendBarrage:(NSString*)nsCustomName andCustomHeader:(NSString*)nsCustomHeader  andContent:(NSString*)nsContent;
 - (void)CloseRTCLine;
 @end
 
