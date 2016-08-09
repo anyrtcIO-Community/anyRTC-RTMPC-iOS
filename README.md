@@ -11,7 +11,9 @@ RTMPCHybirdEngine是为移动端应用量身打造的基于RTMP和RTC混合引�
 **文字互动、弹幕消息**</br>
 **人员上下线**</br>
 **多达4人同时在线连麦视频互动**</br>
+## 项目展示
 
+![living](living.gif)
 #SDK包含
 RTC 连麦互动</br>
 RTMP 推流器</br>
