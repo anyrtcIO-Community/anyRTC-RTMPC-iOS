@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
 - (void)StopRtmpPlay;
 
 //* RTC function for line
-- (BOOL)JoinRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andCustomName:(NSString*)strCustomName andUserData:(NSString*)strUserData;
+- (BOOL)JoinRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andUserData:(NSString*)strUserData;
 - (void)ApplyRTCLine:(NSString*)strUserData;
 - (void)HangupRTCLine;
 - (void)SetRTCVideoRender:(NSString*)strLivePeerID andRender:(UIView*)render;

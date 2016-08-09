@@ -13,6 +13,11 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "HostSettingViewController.h"
 #import "NetUtils.h"
+#import "WXApi.h"
+#import "UMSocial.h"
+
+#import "UIButton+WebCache.h"
+
 @implementation LivingItem
 
 @end
@@ -108,7 +113,33 @@
 
 #pragma mark - button
 - (void)headButtonEvent:(UIButton*)sender {
-    
+    //微信登录
+    if ([WXApi isWXAppInstalled]) {
+        __weak typeof(self) weakSelf = self;
+        
+        UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
+        
+        snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+            
+            if (response.responseCode == UMSResponseCodeSuccess) {
+                
+               // NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+                UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
+                
+                [[NSUserDefaults standardUserDefaults] setObject:snsAccount.userName forKey:@"NickName"];
+                [[NSUserDefaults standardUserDefaults] setObject:snsAccount.iconURL forKey:@"IconUrl"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                weakSelf.nickLabel.text = snsAccount.userName;
+                [weakSelf.headButton sd_setImageWithURL:[NSURL URLWithString:snsAccount.iconURL] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_photo_2"]];
+                
+                NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+                
+            }
+            
+        });
+        
+
+    }
 }
 - (void)livingButtonEvent:(UIButton*)sender {
     HostSettingViewController *hostSettingController = [HostSettingViewController new];
@@ -151,9 +182,14 @@
 - (UIButton*)headButton {
     if (!_headButton) {
         _headButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_headButton setImage:[UIImage imageNamed:@"icon_photo_2"] forState:UIControlStateNormal];
+        NSString *imageIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"];
+        imageIcon = imageIcon?imageIcon:@"";
+        [_headButton sd_setImageWithURL:[NSURL URLWithString:imageIcon] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_photo_2"]];
+//        [_headButton setImage:[UIImage imageNamed:@"icon_photo_2"] forState:UIControlStateNormal];
         [_headButton addTarget:self action:@selector(headButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         _headButton.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-30, CGRectGetMaxY(_subMainLabel.frame)+ 20, 60, 60);
+        _headButton.layer.cornerRadius = 30;
+        _headButton.layer.masksToBounds = YES;
     }
     return _headButton;
 }
@@ -208,7 +244,7 @@
     return _livingButton;
 }
 - (NSString*)getNickName {
-    NSArray *array  = @[@"Derek",@"Jason",@"黑色星期天",@"Eric",@"Ming",@"龙的传人",@"Dawei",@"心中的怒火",@"贱人是这样炼成的",@"北风吹",@"零度的夏日"];
+    NSArray *array  = @[@"Derek",@"Jason",@"黑色星期天",@"Eric",@"Ming",@"龙的传人",@"Dawei",@"心中的怒火",@"贱人是这样炼成的",@"北风吹",@"零度的夏日",@"Esacpe",@"Cantarella",@"Betray",@"LonElY",@"Haggard",@"Proditio",@"Birdy-sea",@"Abyss",@"Frank",@"Catnip",@"Slag male",@"Unfair",@"Pretty boy",@"Rangers",@"Awesome",@"Hatsukoi",@"Belief",@"Energy"];
     return array[arc4random()%(array.count-1)];
 }
 - (void)didReceiveMemoryWarning {

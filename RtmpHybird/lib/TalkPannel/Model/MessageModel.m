@@ -190,6 +190,10 @@
 }
 - (void)setModel:(NSString*)userID withName:(NSString*)name withIcon:(NSString*)icon withType:(CellType)type withMessage:(NSString*)message
 {
+    userID = userID?userID:@"";
+    name = name?name:@"";
+    icon = icon?icon:@"";
+    
     TYTextContainer *container = [[TYTextContainer alloc]init];
     container.font = [UIFont systemFontOfSize:15];
     container.linesSpacing = 0;

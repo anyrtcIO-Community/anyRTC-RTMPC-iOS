@@ -11,6 +11,9 @@
 #import <RTMPCHybirdEngine/RTMPCGuestKit.h>
 #import <RTMPCHybirdEngine/RTMPCHosterKit.h>
 #import "ASHUD.h"
+#import "UIImageView+WebCache.h"
+#import "UMSocial.h"
+
 #import "KeyBoardInputView.h"
 #import "MessageTableView.h"
 
@@ -26,6 +29,7 @@
 
 @property (nonatomic, strong) UILabel *stateRTMPLabel;
 @property (nonatomic, strong) UILabel *stateRTCLabel;
+@property (nonatomic, strong) UILabel *lineNumLabel;
 
 @property (nonatomic, strong) UIButton *cameraButton;
 @property (nonatomic, strong) UIButton *beautyButton;
@@ -46,6 +50,10 @@
 @property (nonatomic, strong) NSString *requestId;
 
 @property (nonatomic, strong) NSString *nickName;
+
+@property (nonatomic, strong) NSString *userIcon;
+
+@property (nonatomic, strong) NSString *randomStr;
 @end
 
 @implementation HostViewController
@@ -65,6 +73,7 @@
     [self.view addSubview:self.closeButton];
     [self.view addSubview:self.stateRTMPLabel];
     [self.view addSubview:self.stateRTCLabel];
+    [self.view addSubview:self.lineNumLabel];
     [self.view addSubview:self.cameraButton];
     [self.view addSubview:self.beautyButton];
     [self.view addSubview:self.shearButton];
@@ -75,24 +84,25 @@
     [self.view addSubview:self.danmuView];
     
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
+    self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
     // 开始推流
     self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self];
     self.hosterKit.rtc_delegate = self;
     [self.hosterKit SetVideoMode:_rtmpVideoMode];
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];
-    NSString *randomString = [self randomString:12];
+    self.randomStr = [self randomString:12];
     // 推流地址自己换掉自己的即可
-    NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207:1935/live/%@",randomString];
-    self.hlsUrl = [NSString stringWithFormat:@"http://192.168.7.207:1935/live/%@.m3u8",randomString];
+    NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@.m3u8",self.randomStr];
     
     [self.hosterKit StartPushRtmpStream:rtmpUrl];
     /**
      *  加载相关数据(大厅列表解析数据对应即可)
      */
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",randomString,@"anyrtcId", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId", nil];
     
     NSString *jsonString = [self JSONTOString:dict];
-    if(![self.hosterKit OpenRTCLine:randomString andCustomID:@"test_ios" andUserData:jsonString]) {
+    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"test_ios" andUserData:jsonString]) {
         NSLog(@"!!! Cann't open rtc line function, maybe you aren't set RTMPCHosterRtcDelegate");
     }
     [self registerForKeyboardNotifications];
@@ -126,6 +136,18 @@
     }
     return jsonString;
 }
+- (id)JSONValue:(NSString*)jsonStrong
+{
+    if ([jsonStrong isKindOfClass:[NSDictionary class]]) {
+        return jsonStrong;
+    }
+    NSData* data = [jsonStrong dataUsingEncoding:NSUTF8StringEncoding];
+    __autoreleasing NSError* error = nil;
+    id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (error != nil) return nil;
+    return result;
+}
+
 - (NSString*)getTopName {
     NSArray *array = @[@"测试Anyrtc",@"Anyrtc真心效果好",@"欢迎用Anyrtc",@"视频云提供商DYNC"];
     return [array objectAtIndex:(int)arc4random()%(array.count-1)];
@@ -154,23 +176,23 @@
             DanmuItem *item = [[DanmuItem alloc] init];
             item.u_userID = @"three id";
             item.u_nickName = self.nickName;
-            item.thumUrl = @"";
+            item.thumUrl = self.userIcon;
             item.content = message;
             [self.danmuView setModel:item];
         }
         if (self.hosterKit) {
-            [self.hosterKit SendBarrage:self.nickName andCustomHeader:@"www.baidu.com" andContent:message];
+            [self.hosterKit SendBarrage:self.nickName andCustomHeader:self.userIcon andContent:message];
         }
     }else{
         
         // 发送普通消息
         MessageModel *model = [[MessageModel alloc] init];
         
-        [model setModel:@"hostID" withName:self.nickName withIcon:@"主播头像" withType:CellNewChatMessageType withMessage:message];
+        [model setModel:@"hostID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
         [self.messageTableView sendMessage:model];
         
         if (self.hosterKit) {
-            [self.hosterKit SendUserMsg:self.nickName andCustomHeader:@"www.baidu.com" andContent:message];
+            [self.hosterKit SendUserMsg:self.nickName andCustomHeader:self.userIcon andContent:message];
         }
         
     }
@@ -301,11 +323,20 @@
 }
 // 在线人数
 - (void)OnRTCMemberListWillUpdate:(int)nTotalMember {
-    
+    @autoreleasepool {
+        self.lineNumLabel.text = [NSString stringWithFormat:@"在线观看人数:%d",nTotalMember];
+    }
 }
 // 人员信息
 - (void)OnRTCMember:(NSString*)nsCustomId withUserData:(NSString*)nsUserData {
-    
+    NSDictionary *customData = [self JSONValue:nsUserData];
+    if (customData) {
+        NSString *userName = [customData objectForKey:@"nickName"];
+        // 人员进会信息
+        MessageModel *model = [[MessageModel alloc] init];
+        [model setModel:nsCustomId withName:userName withIcon:@"头像" withType:CellNewChatMessageType withMessage:@"来了，欢迎~"];
+        [self.messageTableView sendMessage:model];
+    }
 }
 
 - (void)OnRTCMemberListUpdateDone {
@@ -360,9 +391,25 @@
     }
 }
 - (void)shearButtonEvent:(UIButton*)sender {
-    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
-    pboard.string = self.hlsUrl;
-    [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
+    ////    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+    ////    pboard.string = self.hlsUrl;
+    ////    [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
+
+#warning 根据你们平台需要给与响应的分享链接（HLS）
+    NSString *shareText = [NSString stringWithFormat:@"%@ 视频互动直播正在进行,快来围观...",self.livingName];
+    // 微信好友
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"RTMPC连麦";
+      [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+    NSString *urlStr =  [NSString stringWithFormat:@"http://123.59.68.21/rtmpc-demo/?%@",self.randomStr];
+    
+    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeWeb url:urlStr];
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:shareText image:nil location:nil urlResource:resource presentedController:nil completion:^(UMSocialResponseEntity *shareResponse){
+        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+            NSLog(@"分享成功！");
+        }
+    }];
+
+
 }
 - (void)cButtonEvent:(UIButton*)button {
     int tag = (int)button.tag-300;
@@ -481,28 +528,42 @@
     }
     return _closeButton;
 }
-- (UILabel*)stateRTMPLabel {
-    if (!_stateRTMPLabel) {
-        _stateRTMPLabel = [UILabel new];
-        _stateRTMPLabel.textColor = [UIColor redColor];
-        _stateRTMPLabel.font = [UIFont systemFontOfSize:12];
-        _stateRTMPLabel.textAlignment = NSTextAlignmentRight;
-        _stateRTMPLabel.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-10, CGRectGetMaxY(self.closeButton.frame)+30, CGRectGetMaxX(self.view.frame)/2, 20);
-        _stateRTMPLabel.text = @"未连接";
-    }
-    return _stateRTMPLabel;
-}
+
 - (UILabel*)stateRTCLabel {
     if (!_stateRTCLabel) {
         _stateRTCLabel = [UILabel new];
         _stateRTCLabel.textColor = [UIColor redColor];
         _stateRTCLabel.font = [UIFont systemFontOfSize:12];
         _stateRTCLabel.textAlignment = NSTextAlignmentRight;
-        _stateRTCLabel.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-10, CGRectGetMinY(self.stateRTMPLabel.frame)-30, CGRectGetMaxX(self.view.frame)/2, 20);
+        _stateRTCLabel.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-10, CGRectGetMaxY(self.closeButton.frame), CGRectGetMaxX(self.view.frame)/2, 25);
         _stateRTCLabel.text = @"未连接";
     }
     return _stateRTCLabel;
 }
+- (UILabel*)stateRTMPLabel {
+    if (!_stateRTMPLabel) {
+        _stateRTMPLabel = [UILabel new];
+        _stateRTMPLabel.textColor = [UIColor redColor];
+        _stateRTMPLabel.font = [UIFont systemFontOfSize:12];
+        _stateRTMPLabel.textAlignment = NSTextAlignmentRight;
+        _stateRTMPLabel.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-10, CGRectGetMaxY(self.stateRTCLabel.frame), CGRectGetMaxX(self.view.frame)/2, 25);
+        _stateRTMPLabel.text = @"未连接";
+    }
+    return _stateRTMPLabel;
+}
+- (UILabel*)lineNumLabel {
+    if (!_lineNumLabel) {
+        _lineNumLabel = [UILabel new];
+        _lineNumLabel.textColor = [UIColor blueColor];
+        _lineNumLabel.font = [UIFont systemFontOfSize:12];
+        _lineNumLabel.textAlignment = NSTextAlignmentRight;
+        _lineNumLabel.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-10, CGRectGetMaxY(self.stateRTMPLabel.frame), CGRectGetMaxX(self.view.frame)/2, 25);
+        _lineNumLabel.text = @"";
+    }
+    return _lineNumLabel;
+}
+
+
 - (UIButton*)cameraButton {
     if (!_cameraButton) {
         _cameraButton = [UIButton buttonWithType:UIButtonTypeCustom];

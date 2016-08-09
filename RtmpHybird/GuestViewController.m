@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIView *mainView;  // 主屏幕
 @property (nonatomic, strong) UIButton *handupButton;
 @property (nonatomic, strong) UIButton *closeButton;
+@property (nonatomic, strong) UILabel *lineNumLabel;
 
 @property (nonatomic, strong) RTMPCGuestKit *guestKit;
 
@@ -36,6 +37,7 @@
 
 
 @property (nonatomic, strong) NSString *nickName;
+@property (nonatomic, strong) NSString *userIcon;
 
 @end
 
@@ -55,7 +57,7 @@
     [self.view addSubview:self.mainView];
     [self.view addSubview:self.handupButton];
     [self.view addSubview:self.closeButton];
-    
+    [self.view addSubview:self.lineNumLabel];
     
     [self.view addSubview:self.chatButton];
     [self.view addSubview:self.keyBoardView];
@@ -68,7 +70,11 @@
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     //andUserData 参数根据平台相关，然后在进会人员中会有该人员信息的接受（用户人员上下线）
-    [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:@"test_ios_plul" andCustomName:self.nickName andUserData:@"{}" ];
+    self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
+    NSDictionary *customDict = [NSDictionary dictionaryWithObjectsAndKeys:self.nickName,@"nickName", self.userIcon,@"headUrl" ,nil];
+    NSString *customStr = [self JSONTOString:customDict];
+    
+    [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:@"test_ios_plul" andUserData:customStr ];
     
     [self registerForKeyboardNotifications];
 }
@@ -116,21 +122,21 @@
             DanmuItem *item = [[DanmuItem alloc] init];
             item.u_userID = @"three id";
             item.u_nickName = self.nickName;
-            item.thumUrl = @"";
+            item.thumUrl = self.userIcon;
             item.content = message;
             [self.danmuView setModel:item];
             if (self.guestKit) {
-                [self.guestKit SendBarrage:self.nickName andCustomHeader:@"www.baidu.com" andContent:message];
+                [self.guestKit SendBarrage:self.nickName andCustomHeader:self.userIcon andContent:message];
             }
         }
     }else{
         // 发送普通消息
         MessageModel *model = [[MessageModel alloc] init];
-        [model setModel:@"guestID" withName:self.nickName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:message];
+        [model setModel:@"guestID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
         [self.messageTableView sendMessage:model];
         
         if (self.guestKit) {
-            [self.guestKit SendUserMsg:self.nickName andCustomHeader:@"www.baidu.com" andContent:message];
+            [self.guestKit SendUserMsg:self.nickName andCustomHeader:self.userIcon andContent:message];
         }
         
     }
@@ -291,7 +297,9 @@
 }
 // 在线人数
 - (void)OnRTCMemberListWillUpdate:(int)nTotalMember {
-    
+    @autoreleasepool {
+        self.lineNumLabel.text = [NSString stringWithFormat:@"在线观看人数:%d",nTotalMember];
+    }
 }
 // 人员信息
 - (void)OnRTCMember:(NSString*)nsCustomId withUserData:(NSString*)nsUserData {
@@ -465,6 +473,18 @@
     }
     return _closeButton;
 }
+- (UILabel*)lineNumLabel {
+    if (!_lineNumLabel) {
+        _lineNumLabel = [UILabel new];
+        _lineNumLabel.textColor = [UIColor blueColor];
+        _lineNumLabel.font = [UIFont systemFontOfSize:12];
+        _lineNumLabel.textAlignment = NSTextAlignmentRight;
+        _lineNumLabel.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-10, CGRectGetMaxY(self.closeButton.frame)+20, CGRectGetMaxX(self.view.frame)/2, 25);
+        _lineNumLabel.text = @"";
+    }
+    return _lineNumLabel;
+}
+
 - (UIButton*)handupButton {
     if (!_handupButton) {
         _handupButton = [UIButton buttonWithType:UIButtonTypeCustom];

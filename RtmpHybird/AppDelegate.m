@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 #import "WXApi.h"
 
 #import <RTMPCHybirdEngine/RTMPCHybirdEngineKit.h>
@@ -27,16 +31,30 @@
      */
 //    [RTMPCHybirdEngineKit ConfigServerForPriCloud:@"192.168.7.207" andPort:9060];
     
-//    //向微信注册
-//    [WXApi registerApp:@"wxd930ea5d5a258f4f" withDescription:@"demo 2.0"];
-//    
-//    //向微信注册支持的文件类型
-//    UInt64 typeFlag = MMAPP_SUPPORT_TEXT | MMAPP_SUPPORT_PICTURE | MMAPP_SUPPORT_VIDEO |MMAPP_SUPPORT_AUDIO | MMAPP_SUPPORT_WEBPAGE;
-//    
-//    [WXApi registerAppSupportContentFlag:typeFlag];
+    //向微信注册
+    [WXApi registerApp:@"wxb25fbdbe18554735" withDescription:@"demo 2.0"];
+    // 尚未完成
+    [UMSocialData setAppKey:@"577b16fb67e58e19500018ff"];
+    //设置微信AppId、appSecret，分享url
+    [UMSocialWechatHandler setWXAppId:@"wxb25fbdbe18554735" appSecret:@"83a01dea70b6e81ab63927f9d68fd32f" url:@"http://www.umeng.com/social"];
     
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url  {
+   
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options {
+  
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    
+    return result;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

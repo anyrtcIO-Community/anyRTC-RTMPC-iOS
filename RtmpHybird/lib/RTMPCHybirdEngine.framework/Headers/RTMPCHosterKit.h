@@ -24,6 +24,7 @@
 //* Common function
 - (void)SetAudioEnable:(bool) enabled;
 - (void)SetVideoEnable:(bool) enabled;
+- (void)SetVideoAutoBitrate:(bool) enabled;
 - (void)SetVideoCapturer:(UIView*) render andUseFront:(bool)front;
 - (void)SwitchCamera;
 - (void)SetBeautyEnable:(bool) enabled;

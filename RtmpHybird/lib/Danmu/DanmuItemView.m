@@ -53,7 +53,7 @@
     nameLabel.frame = CGRectMake(ItemHeight+5, 0, [DanmuItemView calculateMsgWidth:nameLabel.text andWithLabelFont:[UIFont systemFontOfSize:12] andWithHeight:10], ItemHeight/2);
     
     // 头像
-    [headImage sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"icon_photo_2"]];
+    [headImage sd_setImageWithURL:[NSURL URLWithString:model.thumUrl] placeholderImage:[UIImage imageNamed:@"icon_photo_2"]];
     
     titleLabel.text = model.content;
     titleLabel.frame = CGRectMake(ItemHeight+5, ItemHeight/2, [DanmuItemView calculateMsgWidth:titleLabel.text andWithLabelFont:[UIFont boldSystemFontOfSize:12] andWithHeight:18], ItemHeight/2);
