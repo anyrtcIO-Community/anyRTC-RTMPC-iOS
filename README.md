@@ -59,6 +59,8 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
 ##Android版连麦互动Demo
 [RTMPCHybirdEngine-Android](https://github.com/AnyRTC/RTMPCHybirdEngine-Android)
+##Windows版连麦互动Demo
+[RTMPCHybirdEngine-WIN](https://github.com/AnyRTC/DyncRTMPLiveClient-WIN)
 
 ##商用授权
 程序发布需商用授权，业务咨询请联系
