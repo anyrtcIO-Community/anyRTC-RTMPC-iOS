@@ -394,12 +394,12 @@
     ////    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
     ////    pboard.string = self.hlsUrl;
     ////    [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
-
+    
 #warning 根据你们平台需要给与响应的分享链接（HLS）
     NSString *shareText = [NSString stringWithFormat:@"%@ 视频互动直播正在进行,快来围观...",self.livingName];
     // 微信好友
     [UMSocialData defaultData].extConfig.wechatSessionData.title = @"RTMPC连麦";
-      [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+    [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
     NSString *urlStr =  [NSString stringWithFormat:@"http://123.59.68.21/rtmpc-demo/?%@",self.randomStr];
     
     UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeWeb url:urlStr];
@@ -408,18 +408,21 @@
             NSLog(@"分享成功！");
         }
     }];
-
-
+    
+    
 }
 - (void)cButtonEvent:(UIButton*)button {
-    int tag = (int)button.tag-300;
-    if (tag<self.remoteArray.count) {
-        NSDictionary *dict = [self.remoteArray objectAtIndex:tag];
-        if (self.hosterKit) {
-            [self.hosterKit HangupRTCLine:[[dict allKeys] firstObject]];
-            
+    
+    for (NSDictionary *dict in self.remoteArray) {
+        if ([[dict objectForKey:@"buttonTag"] isEqualToString:[NSString stringWithFormat:@"%ld",(long)button.tag]]) {
+            if (self.hosterKit) {
+                [self.hosterKit HangupRTCLine:[[dict allKeys] firstObject]];
+                break;
+                
+            }
         }
     }
+    
 }
 - (void)chatButtonEvent:(UIButton*)sender {
     if (self.keyBoardView) {
@@ -504,7 +507,7 @@
     [pullView addSubview:cButton];
     
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,publishID, nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,publishID, [NSString stringWithFormat:@"%lu",(300+self.remoteArray.count)],@"buttonTag",nil];
     [self.remoteArray addObject:dict];
     return pullView;
 }
