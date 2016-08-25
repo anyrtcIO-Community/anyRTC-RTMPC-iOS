@@ -191,6 +191,9 @@
             [videoView addSubview:cButton];
             
             [self.view addSubview:videoView];
+            // 加一个tap
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeCamera)];
+            [videoView addGestureRecognizer:tap];
             // 参照点~
             [self.view insertSubview:videoView belowSubview:self.chatButton];
             [self.guestKit SetVideoCapturer:videoView andUseFront:YES];
@@ -312,7 +315,11 @@
 
 
 #pragma mark - button events
-
+- (void)changeCamera {
+    if (self.guestKit) {
+        [self.guestKit SwitchCamera];
+    }
+}
 - (void)pullButtonEvent:(UIButton*)sender {
     sender.selected = !sender.selected;
     // 开始拉流

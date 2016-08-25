@@ -90,7 +90,7 @@
     self.hosterKit.rtc_delegate = self;
     [self.hosterKit SetVideoMode:_rtmpVideoMode];
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];
-    self.randomStr = [self randomString:12];
+    self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
     NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
     self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@.m3u8",self.randomStr];
@@ -201,7 +201,11 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         if (self.hosterKit && self.requestId) {
-            [self.hosterKit AcceptRTCLine:self.requestId];
+          BOOL isScuess = [self.hosterKit AcceptRTCLine:self.requestId];
+            if (!isScuess) {
+                [ASHUD showHUDWithCompleteStyleInView:self.view content:@"连麦人数已慢" icon:nil];
+                [self.hosterKit RejectRTCLine:self.requestId andBanToApply:YES];
+            }
         }
     }else{
         if (self.hosterKit && self.requestId) {
@@ -259,15 +263,33 @@
 - (void)OnRTCCancelLine:(NSString*)strLivePeerID {
     NSLog(@"OnRTCCancelLine:%@",strLivePeerID);
     // 游客自己挂断
+    BOOL find = NO;
+    for (int i=0; i<self.remoteArray.count; i++) {
+        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+        NSArray *keyArray = dict.allKeys;
+        for (NSString *peerID in keyArray) {
+            if ([peerID isEqualToString:strLivePeerID]) {
+                UIView *videoView = [dict objectForKey:strLivePeerID];
+                [videoView removeFromSuperview];
+                [self.remoteArray removeObjectAtIndex:i];
+                [self layout:i];
+                find = YES;
+                break;
+            }
+        }
+        if (find) {
+            break;
+        }
+    }
 }
 // 主播主动挂断游客的回调
 - (void)OnRTCHangupLine:(NSString*)strLivePeerID {
     NSLog(@"OnRTCHangupLine:%@",strLivePeerID);
-    // 成功之后需要删除
+    // 游客自己挂断
     for (int i=0; i<self.remoteArray.count; i++) {
         NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-        if ([[dict.allKeys firstObject] isEqualToString:strLivePeerID]) {
-            UIView *videoView = [dict objectForKey:strLivePeerID];
+        if ([[dict objectForKey:@"PeerID"] isEqualToString:strLivePeerID]) {
+            UIView *videoView = [dict objectForKey:@"View"];
             [videoView removeFromSuperview];
             [self.remoteArray removeObjectAtIndex:i];
             [self layout:i];
@@ -294,14 +316,15 @@
     NSLog(@"OnRTCCloseVideoRender:%@",strLivePeerID);
     for (int i=0; i<self.remoteArray.count; i++) {
         NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-        if ([[dict.allKeys firstObject] isEqualToString:strLivePeerID]) {
-            UIView *videoView = [dict objectForKey:strLivePeerID];
+        if ([[dict objectForKey:@"PeerID"] isEqualToString:strLivePeerID]) {
+            UIView *videoView = [dict objectForKey:@"View"];
             [videoView removeFromSuperview];
             [self.remoteArray removeObjectAtIndex:i];
             [self layout:i];
             break;
         }
     }
+    
 }
 // 普通消息
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
@@ -348,14 +371,14 @@
         case 0:
             for (int i=0; i<self.remoteArray.count; i++) {
                 NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-                UIView *videoView = [dict.allValues firstObject];
+                UIView *videoView = [dict valueForKey:@"View"];
                 videoView.frame = CGRectMake(videoView.frame.origin.x, CGRectGetHeight(self.view.frame)-(i+1)*videoView.frame.size.height, videoView.frame.size.width, videoView.frame.size.height);
             }
             break;
         case 1:
             if (self.remoteArray.count==2) {
                 NSDictionary *dict = [self.remoteArray objectAtIndex:1];
-                UIView *videoView = [dict.allValues firstObject];
+                UIView *videoView = [dict valueForKey:@"View"];
                 videoView.frame = CGRectMake(videoView.frame.origin.x, CGRectGetHeight(self.view.frame)-(2)*videoView.frame.size.height, videoView.frame.size.width, videoView.frame.size.height);
             }
             break;
@@ -416,9 +439,9 @@
     for (NSDictionary *dict in self.remoteArray) {
         if ([[dict objectForKey:@"buttonTag"] isEqualToString:[NSString stringWithFormat:@"%ld",(long)button.tag]]) {
             if (self.hosterKit) {
-                [self.hosterKit HangupRTCLine:[[dict allKeys] firstObject]];
+                NSLog(@"%@",[dict objectForKey:@"PeerID"]);
+                [self.hosterKit HangupRTCLine:[dict objectForKey:@"PeerID"]];
                 break;
-                
             }
         }
     }
@@ -507,7 +530,7 @@
     [pullView addSubview:cButton];
     
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,publishID, [NSString stringWithFormat:@"%lu",(300+self.remoteArray.count)],@"buttonTag",nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,@"View",publishID,@"PeerID", [NSString stringWithFormat:@"%lu",(300+self.remoteArray.count)],@"buttonTag",nil];
     [self.remoteArray addObject:dict];
     return pullView;
 }

@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
 - (void)SetAudioEnable:(bool) enabled;
 - (void)SetVideoEnable:(bool) enabled;
 - (void)SetVideoCapturer:(UIView*) render andUseFront:(bool)front;
+- (void)SwitchCamera;
 
 //* Rtmp function for pull rtmp stream
 - (BOOL)StartRtmpPlay:(NSString*)strUrl andRender:(UIView*)render;

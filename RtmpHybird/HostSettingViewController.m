@@ -153,11 +153,11 @@
 - (void)backButtonEvent:(UIButton*)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)okButtonEvent:(UIButton*)sender {
- 
-    HostViewController *hostController = [HostViewController new];
-    [self.navigationController pushViewController:hostController animated:YES];
-}
+//- (void)okButtonEvent:(UIButton*)sender {
+// 
+//    HostViewController *hostController = [HostViewController new];
+//    [self.navigationController pushViewController:hostController animated:YES];
+//}
 
 #pragma mark - 
 - (UIButton*)backButton {
@@ -192,7 +192,6 @@
     if (!_bgView) {
         _bgView = [TextFieldEnterView new];
         __weak typeof(self)weakSelf = self;
-        __block RTMPCVideoMode mode = _rtmpVideoMode;
         [_bgView setTapEventBlock:^(NSString * text) {
             if (text.length == 0) {
                 [ASHUD showHUDWithCompleteStyleInView:weakSelf.view content:@"请输入主题" icon:nil];
@@ -200,7 +199,7 @@
             }
             HostViewController *hostController = [HostViewController new];
             hostController.livingName = text;
-            hostController.rtmpVideoMode = mode;
+            hostController.rtmpVideoMode = weakSelf.rtmpVideoMode;
             [weakSelf.navigationController pushViewController:hostController animated:YES];
         }];
         _bgView.backgroundColor = [UIColor grayColor];
