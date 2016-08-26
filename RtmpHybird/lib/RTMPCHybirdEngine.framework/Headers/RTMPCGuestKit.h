@@ -12,8 +12,8 @@
 #import "RTMPCGuestDelegate.h"
 
 typedef NS_ENUM(NSInteger,VideoShowMode){
-    VideoShowModeScaleAspectFit,
-    VideoShowModeScaleAspectFill,  // default by width scale
+    VideoShowModeScaleAspectFit,   
+    VideoShowModeScaleAspectFill,  // default by height scale (高度填充整个屏幕)
     VideoShowModeCenter
 };
 
@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
 - (void)SetVideoEnable:(bool) enabled;
 - (void)SetVideoCapturer:(UIView*) render andUseFront:(bool)front;
 - (void)SwitchCamera;
+- (void)videoFreamUpdate; // 俯视图改变，更新显示窗口
 
 //* Rtmp function for pull rtmp stream
 - (BOOL)StartRtmpPlay:(NSString*)strUrl andRender:(UIView*)render;
