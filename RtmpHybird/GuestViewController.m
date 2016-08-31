@@ -284,7 +284,7 @@
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     // 发送普通消息
     MessageModel *model = [[MessageModel alloc] init];
-    [model setModel:@"guestID" withName:self.nickName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
+    [model setModel:@"guestID" withName:nsCustomName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
     [self.messageTableView sendMessage:model];
 }
 // 弹幕

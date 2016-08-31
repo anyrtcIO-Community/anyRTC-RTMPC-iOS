@@ -1215,8 +1215,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xiaochuan zhou (63ZHPEL54J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaochuan zhou (63ZHPEL54J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jianqiang (YCZ22PJPZE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhang jianqiang (YCZ22PJPZE)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1242,9 +1242,10 @@
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-licucore";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RtmpHybird;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
 				PRODUCT_NAME = "RTMPC连麦";
-				PROVISIONING_PROFILE = "eea969a4-50f7-44a4-a7ee-1c5b8405f95c";
+				PROVISIONING_PROFILE = "d9371124-ec23-4acb-92e6-e23872280f69";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1252,8 +1253,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: AVCON Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AVCON Information Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Boyuan Electronic Technology Co. Ltd (5543CP4MRT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Boyuan Electronic Technology Co. Ltd (5543CP4MRT)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1279,9 +1280,10 @@
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-licucore";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RtmpHybird;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
 				PRODUCT_NAME = "RTMPC连麦";
-				PROVISIONING_PROFILE = "326a786e-bfa0-4b80-9f8b-1c5309d941c4";
+				PROVISIONING_PROFILE = "41fb0bb7-fef2-4e5d-8aa3-f6d830388dac";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
