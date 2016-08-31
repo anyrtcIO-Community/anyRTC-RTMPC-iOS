@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RTMPCCommon.h</key>
 		<data>
-		rRLjrOO62tMLFTGyc7WgwIrI1LA=
+		7onP3+ZxPDb4lq4NE4jbiZDRZp4=
 		</data>
 		<key>Headers/RTMPCGuestDelegate.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/RTMPCHosterKit.h</key>
 		<data>
-		bNlCNP1qO1CDoQuMFeGa8fmEQ7c=
+		vjHbYJxvOYFbpWyXUuDhat/ulCI=
 		</data>
 		<key>Headers/RTMPCHybirdEngineKit.h</key>
 		<data>
@@ -39,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rRLjrOO62tMLFTGyc7WgwIrI1LA=
+			7onP3+ZxPDb4lq4NE4jbiZDRZp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			5bKiZUt0oLjA917BGE9GAqMd9I317YgtGIugmeHw80s=
+			W/Co2Q9RiJAGBl+sfcT8mKHmvJ04pi9v+hxUq5VkK4A=
 			</data>
 		</dict>
 		<key>Headers/RTMPCGuestDelegate.h</key>
@@ -83,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bNlCNP1qO1CDoQuMFeGa8fmEQ7c=
+			vjHbYJxvOYFbpWyXUuDhat/ulCI=
 			</data>
 			<key>hash2</key>
 			<data>
-			hxJ5mzExk2tWW2YUZtSWXa40ElNEdaXkd8gVCF77378=
+			POvCxQ8Xr4eC4cAcksTcgnWNGd0rY1VKL765UOqLDFc=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHybirdEngineKit.h</key>
