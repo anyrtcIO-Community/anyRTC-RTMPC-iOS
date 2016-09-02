@@ -96,7 +96,6 @@
     NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
     self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@.m3u8",self.randomStr];
     
-    
     [self.hosterKit StartPushRtmpStream:rtmpUrl];
     /**
      *  加载相关数据(大厅列表解析数据对应即可)

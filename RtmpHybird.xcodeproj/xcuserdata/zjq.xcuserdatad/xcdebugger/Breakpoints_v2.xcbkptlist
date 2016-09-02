@@ -2,4 +2,70 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RtmpHybird/HostViewController.m"
+            timestampString = "494334314.074151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
+            landmarkName = "-closeButtonEvent:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HostViewController closeButtonEvent:]"
+                  moduleName = "RTMPC&#x8fde;&#x9ea6;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zjq/Documents/GitFinder/RTC/RTMPCHybirdEngine-IOS/RTMPCHybirdEngine-IOS/RtmpHybird/HostViewController.m"
+                  timestampString = "494334501.555307"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "402"
+                  endingLineNumber = "402"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[HostViewController closeButtonEvent:]_block_invoke"
+                  moduleName = "RTMPC&#x8fde;&#x9ea6;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zjq/Documents/GitFinder/RTC/RTMPCHybirdEngine-IOS/RTMPCHybirdEngine-IOS/RtmpHybird/HostViewController.m"
+                  timestampString = "494334501.555419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "402"
+                  endingLineNumber = "402"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RtmpHybird/HostViewController.m"
+            timestampString = "494334314.074151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "-OnRTCUserBarrage:withCustomName:withCustomHeader:withContent:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

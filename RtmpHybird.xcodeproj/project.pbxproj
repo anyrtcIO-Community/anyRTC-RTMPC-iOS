@@ -80,8 +80,6 @@
 		782638321D58BECE0063F0B0 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7826381D1D58BECE0063F0B0 /* UMSnsAccountViewController.xib */; };
 		782638331D58BECE0063F0B0 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7826381E1D58BECE0063F0B0 /* UMSShareListController.xib */; };
 		782638341D58BECE0063F0B0 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7826381F1D58BECE0063F0B0 /* UMSocialSDKResourcesNew.bundle */; };
-		7828F6AF1D4AF8B0000F6C99 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */; };
-		7828F6B01D4AF8B0000F6C99 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7828F6B41D4B09B2000F6C99 /* go@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7828F6B21D4B09B2000F6C99 /* go@2x.png */; };
 		7828F6B51D4B09B2000F6C99 /* go@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7828F6B31D4B09B2000F6C99 /* go@3x.png */; };
 		7828F6CC1D4B3BE5000F6C99 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7828F6CB1D4B3BE5000F6C99 /* Security.framework */; };
@@ -124,6 +122,8 @@
 		782E9DFB1D48EC2E009683E0 /* icon_photo_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782E9DE51D48EC2E009683E0 /* icon_photo_2@2x.png */; };
 		782E9DFC1D48EC2E009683E0 /* icon_photo_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782E9DE61D48EC2E009683E0 /* icon_photo_2@3x.png */; };
 		782E9E021D48F231009683E0 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E9E011D48F231009683E0 /* NetUtils.m */; };
+		78458CB91D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */; };
+		78458CBA1D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,7 +150,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7828F6B01D4AF8B0000F6C99 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
+				78458CBA1D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +318,6 @@
 		7828F6D11D4B3C0A000F6C99 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7828F6D31D4B3C14000F6C99 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		7828F6E01D4B3E0B000F6C99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 		782D2EE51D5368D600A34FCF /* btn_chat_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_chat_normal@2x.png"; sourceTree = "<group>"; };
 		782D2EE61D5368D600A34FCF /* btn_chat_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_chat_normal@3x.png"; sourceTree = "<group>"; };
 		782E9D741D48E358009683E0 /* RTMPC连麦.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RTMPC连麦.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +366,7 @@
 		782E9DE61D48EC2E009683E0 /* icon_photo_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_photo_2@3x.png"; sourceTree = "<group>"; };
 		782E9E001D48F231009683E0 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		782E9E011D48F231009683E0 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
+		78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +377,7 @@
 				782638251D58BECE0063F0B0 /* libSocialQQ.a in Frameworks */,
 				7826382B1D58BECE0063F0B0 /* libUMSocial_Sdk_5.2.1.a in Frameworks */,
 				782638261D58BECE0063F0B0 /* TencentOpenAPI.framework in Frameworks */,
+				78458CB91D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Frameworks */,
 				782638291D58BECE0063F0B0 /* libWeChatSDK.a in Frameworks */,
 				7826373A1D58975E0063F0B0 /* libsqlite3.tbd in Frameworks */,
 				782637381D5897510063F0B0 /* CoreGraphics.framework in Frameworks */,
@@ -391,7 +392,6 @@
 				7828F6D01D4B3C04000F6C99 /* SystemConfiguration.framework in Frameworks */,
 				7828F6CE1D4B3BFE000F6C99 /* CoreTelephony.framework in Frameworks */,
 				7828F6CC1D4B3BE5000F6C99 /* Security.framework in Frameworks */,
-				7828F6AF1D4AF8B0000F6C99 /* RTMPCHybirdEngine.framework in Frameworks */,
 				782638221D58BECE0063F0B0 /* libSocialSinaSSO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,6 +723,7 @@
 		782E9D761D48E358009683E0 /* RtmpHybird */ = {
 			isa = PBXGroup;
 			children = (
+				78458CB61D79B6CF007EDA94 /* RTMPCHybirdEngine */,
 				782E9DCE1D48EC2E009683E0 /* lib */,
 				782E9DD41D48EC2E009683E0 /* Resourse */,
 				782E9DAF1D48E407009683E0 /* GuestViewController.h */,
@@ -779,7 +780,6 @@
 				782540411D509C53005D241A /* Masonry */,
 				7825405B1D509C53005D241A /* TalkPannel */,
 				782540731D509C53005D241A /* TYAttributedLabel */,
-				7829C7211D4A345900FA8A80 /* RTMPCHybirdEngine.framework */,
 				782E9DFF1D48F224009683E0 /* NetUtils */,
 				782E9DCF1D48EC2E009683E0 /* MBProgressHUD */,
 			);
@@ -834,6 +834,14 @@
 			);
 			path = NetUtils;
 			sourceTree = "<group>";
+		};
+		78458CB61D79B6CF007EDA94 /* RTMPCHybirdEngine */ = {
+			isa = PBXGroup;
+			children = (
+				78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */,
+			);
+			path = RTMPCHybirdEngine;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -1227,6 +1235,7 @@
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/RTMPCHybirdEngine",
 				);
 				INFOPLIST_FILE = RtmpHybird/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1265,6 +1274,7 @@
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/RTMPCHybirdEngine",
 				);
 				INFOPLIST_FILE = RtmpHybird/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
