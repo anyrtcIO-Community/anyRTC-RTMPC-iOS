@@ -12,24 +12,83 @@
 //* could operate UI method in callback directly.
 @protocol RTMPCGuestRtmpDelegate <NSObject>
 @required
+/**
+ *   RTMP service connection is successful callback
+ */
 - (void)OnRtmplayerOK;
+/**
+ *  RTMP's cache time and the current Bit rate
+ *
+ *  @param cacheTime delay time (ms)
+ *  @param curBitrate Bit rate
+ */
 - (void)OnRtmplayerStatus:(int) cacheTime withBitrate:(int) curBitrate;
+/**
+ *  cache time
+ *
+ *  @param time (ms)
+ */
 - (void)OnRtmplayerCache:(int) time;
+/**
+ *  rtmp player close
+ *
+ *  @param errcode eror code
+ */
 - (void)OnRtmplayerClosed:(int) errcode;
 @end
 
 @protocol RTMPCGuestRtcDelegate <NSObject>
 @required
-- (void)OnRTCJoinLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason;
-//@RtcLite
-- (void)OnRTCApplyLineResult:(int) code/*0:OK */;
+/**
+ *  Join RTC service  callback
+ *
+ *  @param code      if 0,scuess
+ *  @param strReason reason
+ */
+- (void)OnRTCJoinLineResult:(int) code withReason:(NSString*)strReason;
+/**
+ *  Apply line to host callback
+ *
+ *  @param code if 0,scuess
+ */
+- (void)OnRTCApplyLineResult:(int) code;
+/**
+ *  Get other join RTC callback
+ *
+ *  @param strLivePeerID peer id
+ *  @param strCustomID   other's user id
+ *  @param strUserData   other's custom data(eg:picture or nickname;)
+ */
 - (void)OnRTCOtherLineOpen:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData;
+/**
+ *  Get other leave RTC callback
+ *
+ *  @param strLivePeerID peerID
+ */
 - (void)OnRTCOtherLineClose:(NSString*)strLivePeerID;
+/**
+ *  Host hang up you line
+ */
 - (void)OnRTCHangupLine;
-//@RtcLite end
-- (void)OnRTCLineLeave:(int) code/*0:OK */ withReason:(NSString*)strReason;
 
+/**
+ *  RTC server close
+ *
+ *  @param code      if 0 scuess;other's failure
+ *  @param strReason reason
+ */
+- (void)OnRTCLineLeave:(int) code withReason:(NSString*)strReason;
+/**
+ *  The attachment successfully，after you get this callback,You should do show this video
+ *
+ *  @param strLivePeerID other's peer id
+ */
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID;
+/**
+ *  Attachment to disconnect，after you get this callback,You should clean up the display
+ *
+ *  @param strLivePeerID other's peer id
+ */
 - (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID;
 @optional
 /**

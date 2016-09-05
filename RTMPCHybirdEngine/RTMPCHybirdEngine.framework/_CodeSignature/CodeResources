@@ -10,23 +10,23 @@
 		</data>
 		<key>Headers/RTMPCGuestDelegate.h</key>
 		<data>
-		EmYRErKbgH/jXlryztZV7QOrbV8=
+		s+jFYPxW3lb98vdIaV/sL6rB86Q=
 		</data>
 		<key>Headers/RTMPCGuestKit.h</key>
 		<data>
-		TcjXvFRX98FQbKMfuWP2I5vdrvk=
+		DSSIV/QwiJpzHoWPfqmci1BdElw=
 		</data>
 		<key>Headers/RTMPCHosterDelegate.h</key>
 		<data>
-		ezWNuJZmxJw5FSGzbbDK7/XGenU=
+		a7Odcm/cevaPHtCpiRlOuZYIi9I=
 		</data>
 		<key>Headers/RTMPCHosterKit.h</key>
 		<data>
-		vjHbYJxvOYFbpWyXUuDhat/ulCI=
+		f8yjPQapkzQlSBjCOhV5Kc1B2Xg=
 		</data>
 		<key>Headers/RTMPCHybirdEngineKit.h</key>
 		<data>
-		SYIY/hY42eNbogNtH7893OptJXk=
+		3niw21Yp9GJwmupT0cwhdkCwmnk=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -50,55 +50,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EmYRErKbgH/jXlryztZV7QOrbV8=
+			s+jFYPxW3lb98vdIaV/sL6rB86Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			ms3KwGKjNAGphtn9JojoWn9V9AeXCzpvNEyAEKtgnps=
+			ZEbTnNOQo44UBSkz1reXvaQlYbqwwY+k6RKSscnvoMk=
 			</data>
 		</dict>
 		<key>Headers/RTMPCGuestKit.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TcjXvFRX98FQbKMfuWP2I5vdrvk=
+			DSSIV/QwiJpzHoWPfqmci1BdElw=
 			</data>
 			<key>hash2</key>
 			<data>
-			oRhRVgsnTXNazz79O/0M5OFi3SXOOo2Vpxi1PfiD/HA=
+			mMeX13obz+6soyExtaeE6axWDrT5TFkppxP08PE7Gv0=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHosterDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ezWNuJZmxJw5FSGzbbDK7/XGenU=
+			a7Odcm/cevaPHtCpiRlOuZYIi9I=
 			</data>
 			<key>hash2</key>
 			<data>
-			MY7NNy6Qe41idTpg6TDEMYaXowYNXqvs7IAC3zSkFdc=
+			54e4sSIShAVMrik58xni4aAr8siMYq4igDVUBRpiNbI=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHosterKit.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vjHbYJxvOYFbpWyXUuDhat/ulCI=
+			f8yjPQapkzQlSBjCOhV5Kc1B2Xg=
 			</data>
 			<key>hash2</key>
 			<data>
-			POvCxQ8Xr4eC4cAcksTcgnWNGd0rY1VKL765UOqLDFc=
+			hMQuzHR2XMKzDSe1Hulwj5SvZguun70+6xcKPs/R0z8=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHybirdEngineKit.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SYIY/hY42eNbogNtH7893OptJXk=
+			3niw21Yp9GJwmupT0cwhdkCwmnk=
 			</data>
 			<key>hash2</key>
 			<data>
-			4wEp2k3UHEvuddyoQtljxZQ9SaNmld/dhWciP4YtwnY=
+			6vuHVGwlhAiOfRl/3pIYasVwyu/pgMsjB1+hd31KjWg=
 			</data>
 		</dict>
 	</dict>

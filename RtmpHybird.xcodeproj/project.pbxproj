@@ -1292,7 +1292,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
 				PRODUCT_NAME = "RTMPC连麦";
-				PROVISIONING_PROFILE = "41fb0bb7-fef2-4e5d-8aa3-f6d830388dac";
+				PROVISIONING_PROFILE = "e87a12e6-1339-417d-909b-f14692cfe922";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
