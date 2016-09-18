@@ -20,6 +20,8 @@
 #import "DanmuLaunchView.h"
 #import "DanmuItemView.h"
 
+#import "NetUtils.h"
+
 @interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
 {
     UITapGestureRecognizer *tapGesture;
@@ -44,6 +46,8 @@
 @property (nonatomic, strong) RTMPCHosterKit *hosterKit;
 
 @property (nonatomic, strong) NSMutableArray *remoteArray;
+
+@property (nonatomic, strong) NSString *rtmpUrl;
 
 @property (nonatomic, strong) NSString *hlsUrl;
 
@@ -93,14 +97,14 @@
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
-    NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
+    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
     self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@.m3u8",self.randomStr];
     
-    [self.hosterKit StartPushRtmpStream:rtmpUrl];
+    [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
     /**
      *  加载相关数据(大厅列表解析数据对应即可)
      */
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",self.rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId", nil];
     
     NSString *jsonString = [self JSONTOString:dict];
     if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"test_ios" andUserData:jsonString]) {
@@ -221,6 +225,10 @@
 - (void)OnRtmpStreamOK {
     NSLog(@"OnRtmpStreamOK");
     self.stateRTMPLabel.text = @"连接RTMP服务成功";
+    // 请求录像
+    [[NetUtils shead] recordRtmpSteam:self.rtmpUrl withAnyrtcID:self.randomStr withResID:self.randomStr withResult:^(NSDictionary *dict, NSError *error, int code) {
+        NSLog(@"");
+    }];
 }
 // rtmp 重连次数
 - (void)OnRtmpStreamReconnecting:(int) times {
