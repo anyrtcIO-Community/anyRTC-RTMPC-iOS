@@ -26,7 +26,7 @@
  *
  *  @return hoster object
  */
-- (instancetype)initWithDelegate:(id<RTMPCHosterRtmpDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<RTMPCHosterRtmpDelegate>)delegate withCaptureDevicePosition:(RTMPCScreenOrientation)capturePosition;
 /**
  *  clear host clent (if you leave,you must call this function)
  */
@@ -85,7 +85,7 @@
 /**
  *  start push stream server
  *
- *  @param strUrl server address
+ *  @param strUrl server address（add the domain name: if you add ip address ,when you upload appstore,you will being rejected）
  *
  *  @return scuess or failed
  */

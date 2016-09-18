@@ -90,7 +90,7 @@
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
     // 开始推流
-    self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self];
+    self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait];
     self.hosterKit.rtc_delegate = self;
     [self.hosterKit SetVideoMode:_rtmpVideoMode];
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];

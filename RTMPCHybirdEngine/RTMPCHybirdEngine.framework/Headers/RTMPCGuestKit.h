@@ -137,6 +137,14 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  *  Leave RTC
  */
 - (void)LeaveRTCLine;
+
+/**
+ *  Updata Experience
+ *
+ *  @param exp experience value
+ */
+- (void)UpdataExp:(int)exp;
+
 @end
 
 #endif /* RTMPCGuestKit_h */

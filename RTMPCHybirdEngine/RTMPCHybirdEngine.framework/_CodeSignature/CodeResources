@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RTMPCCommon.h</key>
 		<data>
-		7onP3+ZxPDb4lq4NE4jbiZDRZp4=
+		XKhd/v09DspPUMB+58u8gmcPBCY=
 		</data>
 		<key>Headers/RTMPCGuestDelegate.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/RTMPCGuestKit.h</key>
 		<data>
-		DSSIV/QwiJpzHoWPfqmci1BdElw=
+		ZZWtJPLQ6V7M27VBydvD9s4IEDc=
 		</data>
 		<key>Headers/RTMPCHosterDelegate.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1YyZzhd+kFV7fpU0k1jjuYuyH+U=
+		/l9gfvebzGjdfnxjjWcc0K+u6Y8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -39,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7onP3+ZxPDb4lq4NE4jbiZDRZp4=
+			XKhd/v09DspPUMB+58u8gmcPBCY=
 			</data>
 			<key>hash2</key>
 			<data>
-			W/Co2Q9RiJAGBl+sfcT8mKHmvJ04pi9v+hxUq5VkK4A=
+			9LsT/PehJTsqnJIGHzykiJQLi0ku3c34fqr5pi9SHp8=
 			</data>
 		</dict>
 		<key>Headers/RTMPCGuestDelegate.h</key>
@@ -61,11 +61,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DSSIV/QwiJpzHoWPfqmci1BdElw=
+			ZZWtJPLQ6V7M27VBydvD9s4IEDc=
 			</data>
 			<key>hash2</key>
 			<data>
-			mMeX13obz+6soyExtaeE6axWDrT5TFkppxP08PE7Gv0=
+			1UCP2Anyo+DgLRsi8qQyEQxbeEQrLVeFEhTztSDPJPU=
 			</data>
 		</dict>
 		<key>Headers/RTMPCHosterDelegate.h</key>

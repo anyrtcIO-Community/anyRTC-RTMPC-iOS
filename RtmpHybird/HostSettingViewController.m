@@ -184,7 +184,7 @@
         _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(40, 84, CGRectGetWidth(self.view.frame)-80, 200)];
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
-        _dataArray = @[@"超高清",@"高清",@"标清",@"顺畅"];
+        _dataArray = @[@"超高清",@"顺畅",@"标清",@"高清"];
     }
     return _pickerView;
 }
