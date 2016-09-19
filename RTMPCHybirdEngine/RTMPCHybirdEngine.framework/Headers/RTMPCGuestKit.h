@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  */
 - (void)SwitchCamera;
 /**
- *  if you change the video show fream you should call this function to adapter you video view
+ *  if you change the video show fream, you should call this function to adapter you video view
  */
 - (void)videoFreamUpdate;
 

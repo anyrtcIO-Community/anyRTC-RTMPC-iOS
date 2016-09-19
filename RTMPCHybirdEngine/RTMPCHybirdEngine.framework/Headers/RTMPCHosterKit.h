@@ -23,6 +23,7 @@
  *  Initialize the hoster clent
  *
  *  @param delegate RTMPCHosterRtmpDelegate
+ *  @param capturePosition Device's position
  *
  *  @return hoster object
  */
