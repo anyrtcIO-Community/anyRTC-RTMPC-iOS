@@ -35,26 +35,18 @@ RTMP 播放器</br>
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准RTMP协议服务端
 
 ##支持的流媒体云服务器
-[奥点云](http://www.aodianyun.com/)、[七牛](http://www.qiniu.com/)、[网宿](http://www.wangsucloud.com/)、[UCloud](https://www.ucloud.cn/)及其他标准RTMP协议云服务器
+[网宿](http://www.wangsucloud.com/)、[UCloud](https://www.ucloud.cn/)及其他标准RTMP协议云服务器
 
-##直播发布特性
-* H.264/AAC 组合的RTMP协议音视频流发布
-* 全屏视频采集，原画质缩放
-* 集优化H.264软件编码器，性能强劲，兼容性极强
-* 视频分辨率以及码率自选
-* 回声消除，利用webrtc音频机制，不再有沙沙声
-* 支持发布中途切换前后摄像头
-* 支持发布中网络自适应，根据带宽大小来自动适应分辨率以及码率，让视频更顺畅
-* 支持基于GPU加速的实时美颜滤镜
-* iOS8以上支持视频硬编码
-
-
-##直播播放特性
-* 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
-* 支持的视频解码器:H.264, FLV, VP6
-* 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
-* OpenGL ES视频渲染
-* 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
+# 项目特点
+**1，商业级开源代码，高效稳定**</br>
+**2，超小内存占有率，移动直播针对性极致优化，代码冗余率极低**</br>
+**3，iOS全平台适配，硬件编解码可保证99%的可用性**</br>
+**4，接口极简，推流：2个   拉流：2个**</br>
+**5，底层库C++核心库代码风格采用：Google code style**</br>
+**6，极简内核，无需再去深扒复杂的FFMpeg代码**</br>
+**7，实用主义，那些什么坑什么优化等概念请搜索相关文章**</br>
+**8，OpenH264软件编码，FFMpeg软件解码，FAAC/FAAD软件编解码，适配不同系统的硬件编解码统统包含**</br>
+**9，支持SRS、Nginx-RTMP等标准RTMP服务；同时支持各大CDN厂商的接入**</br>
 
 ##ipv6
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
