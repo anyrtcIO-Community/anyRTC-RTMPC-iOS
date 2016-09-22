@@ -23,7 +23,6 @@
  *  Initialize the hoster clent
  *
  *  @param delegate RTMPCHosterRtmpDelegate
- *  @param capturePosition Device's position
  *
  *  @return hoster object
  */
@@ -130,7 +129,7 @@
  */
 - (void)HangupRTCLine:(NSString*)strLivePeerID;
 /**
- *  Show other's video (if you again other's request line,you will get callback,then set it)
+ *  Show other's video (if you again other's request line,you will get callback,then set it)；if device landscape mode,render's size 4:3;if device portrait mode,render's size 3:4
  *
  *  @param strLivePeerID peer id
  *  @param render        video view

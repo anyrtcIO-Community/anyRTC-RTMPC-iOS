@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  */
 - (void)SwitchCamera;
 /**
- *  if you change the video show fream, you should call this function to adapter you video view
+ *  if you change the video show fream you should call this function to adapter you video view
  */
 - (void)videoFreamUpdate;
 
@@ -107,7 +107,7 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  */
 - (void)HangupRTCLine;
 /**
- *  Show other's video (if you again other's request line,you will get callback,then set it)
+ *  Show other's video (if you again other's request line,you will get callback,then set it)；if device landscape mode,render's size 4:3;if device portrait mode,render's size 3:4
  *
  *  @param strLivePeerID peer id
  *  @param render        video view

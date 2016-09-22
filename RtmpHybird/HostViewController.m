@@ -13,6 +13,7 @@
 #import "ASHUD.h"
 #import "UIImageView+WebCache.h"
 #import "UMSocial.h"
+#import "WXApi.h"
 
 #import "KeyBoardInputView.h"
 #import "MessageTableView.h"
@@ -97,8 +98,8 @@
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
-    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
-    self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@.m3u8",self.randomStr];
+    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130:1935/live1/%@",self.randomStr];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.130:1935/live1/%@.m3u8",self.randomStr];
     
     [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
     /**
@@ -428,19 +429,26 @@
     ////    [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
     
 #warning 根据你们平台需要给与响应的分享链接（HLS）
-    NSString *shareText = [NSString stringWithFormat:@"%@ 视频互动直播正在进行,快来围观...",self.livingName];
-    // 微信好友
-    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"RTMPC连麦";
-    [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
-    NSString *urlStr =  [NSString stringWithFormat:@"http://123.59.68.21/rtmpc-demo/?%@",self.randomStr];
-    
-    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeWeb url:urlStr];
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:shareText image:nil location:nil urlResource:resource presentedController:nil completion:^(UMSocialResponseEntity *shareResponse){
-        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
-            NSLog(@"分享成功！");
-        }
-    }];
-    
+    // 判断是否安装微信
+    if ([WXApi isWXAppInstalled]) {
+        NSString *shareText = [NSString stringWithFormat:@"%@ 视频互动直播正在进行,快来围观...",self.livingName];
+        // 微信好友
+        [UMSocialData defaultData].extConfig.wechatSessionData.title = @"RTMPC连麦";
+        [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+        NSString *urlStr =  [NSString stringWithFormat:@"http://www.huilive.cc/rtmpc-demo/?%@",self.randomStr];
+        
+        UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeWeb url:urlStr];
+        [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:shareText image:nil location:nil urlResource:resource presentedController:nil completion:^(UMSocialResponseEntity *shareResponse){
+            if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+                NSLog(@"分享成功！");
+            }
+        }];
+
+    }else{
+        UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+        pboard.string =  [NSString stringWithFormat:@"http://www.huilive.cc/rtmpc-demo/?%@",self.randomStr];//self.hlsUrl;
+        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
+    }
     
 }
 - (void)cButtonEvent:(UIButton*)button {

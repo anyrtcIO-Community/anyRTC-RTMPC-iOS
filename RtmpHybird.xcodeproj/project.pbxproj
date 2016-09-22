@@ -911,6 +911,7 @@
 				TargetAttributes = {
 					782E9D731D48E358009683E0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5543CP4MRT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1225,6 +1226,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jianqiang (YCZ22PJPZE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhang jianqiang (YCZ22PJPZE)";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1264,6 +1266,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Boyuan Electronic Technology Co. Ltd (5543CP4MRT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Boyuan Electronic Technology Co. Ltd (5543CP4MRT)";
+				DEVELOPMENT_TEAM = 5543CP4MRT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1292,7 +1295,8 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
 				PRODUCT_NAME = "RTMPC连麦";
-				PROVISIONING_PROFILE = "e87a12e6-1339-417d-909b-f14692cfe922";
+				PROVISIONING_PROFILE = "41fb0bb7-fef2-4e5d-8aa3-f6d830388dac";
+				PROVISIONING_PROFILE_SPECIFIER = dis_rtmpDemo;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
