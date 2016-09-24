@@ -122,6 +122,8 @@
 		782E9DFB1D48EC2E009683E0 /* icon_photo_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782E9DE51D48EC2E009683E0 /* icon_photo_2@2x.png */; };
 		782E9DFC1D48EC2E009683E0 /* icon_photo_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782E9DE61D48EC2E009683E0 /* icon_photo_2@3x.png */; };
 		782E9E021D48F231009683E0 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E9E011D48F231009683E0 /* NetUtils.m */; };
+		783AA8EB1D96875C006EFDDE /* btn_hands_cancle_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783AA8E91D96875C006EFDDE /* btn_hands_cancle_normal@2x.png */; };
+		783AA8EC1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783AA8EA1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png */; };
 		78458CB91D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */; };
 		78458CBA1D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -366,6 +368,8 @@
 		782E9DE61D48EC2E009683E0 /* icon_photo_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_photo_2@3x.png"; sourceTree = "<group>"; };
 		782E9E001D48F231009683E0 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		782E9E011D48F231009683E0 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
+		783AA8E91D96875C006EFDDE /* btn_hands_cancle_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hands_cancle_normal@2x.png"; sourceTree = "<group>"; };
+		783AA8EA1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hands_cancle_normal@3x.png"; sourceTree = "<group>"; };
 		78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -800,6 +804,8 @@
 		782E9DD41D48EC2E009683E0 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				783AA8E91D96875C006EFDDE /* btn_hands_cancle_normal@2x.png */,
+				783AA8EA1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png */,
 				782D2EE51D5368D600A34FCF /* btn_chat_normal@2x.png */,
 				782D2EE61D5368D600A34FCF /* btn_chat_normal@3x.png */,
 				7828F6B21D4B09B2000F6C99 /* go@2x.png */,
@@ -984,6 +990,8 @@
 				782638321D58BECE0063F0B0 /* UMSnsAccountViewController.xib in Resources */,
 				782E9DF91D48EC2E009683E0 /* close_preview@2x.png in Resources */,
 				782E9DFC1D48EC2E009683E0 /* icon_photo_2@3x.png in Resources */,
+				783AA8EC1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png in Resources */,
+				783AA8EB1D96875C006EFDDE /* btn_hands_cancle_normal@2x.png in Resources */,
 				7826382E1D58BECE0063F0B0 /* UMSCommentInputControlleriPad.xib in Resources */,
 				782E9DF21D48EC2E009683E0 /* btn_startbc_normal@3x.png in Resources */,
 				782E9D841D48E358009683E0 /* Assets.xcassets in Resources */,

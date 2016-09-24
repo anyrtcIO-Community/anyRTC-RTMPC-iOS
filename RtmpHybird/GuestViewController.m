@@ -197,10 +197,14 @@
             // 参照点~
             [self.view insertSubview:videoView belowSubview:self.chatButton];
             [self.guestKit SetVideoCapturer:videoView andUseFront:YES];
+            
+            self.handupButton.hidden = YES;
+            self.handupButton.selected = NO;
         }
     }else{
         [ASHUD showHUDWithCompleteStyleInView:self.view content:@"主播拒绝了你的连麦请求" icon:nil];
         self.handupButton.hidden = NO;
+        self.handupButton.selected = NO;
     }
 }
 // 其他用户连线了主播
@@ -322,10 +326,17 @@
 }
 - (void)pullButtonEvent:(UIButton*)sender {
     sender.selected = !sender.selected;
-    // 开始拉流
-    use_cap_ = false;
-    [self.guestKit ApplyRTCLine:@"Hello"];
-    self.handupButton.hidden = YES;
+    if (sender.selected) {
+        // 开始拉流
+        use_cap_ = false;
+        [self.guestKit ApplyRTCLine:@"Hello"];
+    }else{
+        // 开始拉流
+        use_cap_ = YES;
+        [self.guestKit HangupRTCLine];
+    }
+   
+//    self.handupButton.hidden = YES;
 }
 - (void)closeButtonEvent:(UIButton*)sender {
     if (self.guestKit != nil) {
@@ -496,6 +507,7 @@
     if (!_handupButton) {
         _handupButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_handupButton setImage:[UIImage imageNamed:@"btn_hands_normal"] forState:UIControlStateNormal];
+        [_handupButton setImage:[UIImage imageNamed:@"btn_hands_cancle_normal"] forState:UIControlStateSelected];
         [_handupButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [_handupButton addTarget:self action:@selector(pullButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         _handupButton.frame = CGRectMake(CGRectGetMinX(self.closeButton.frame)-60, 20, 40,40);

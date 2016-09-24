@@ -26,6 +26,8 @@
 @interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
 {
     UITapGestureRecognizer *tapGesture;
+    UIAlertView *alertView;
+    
 }
 @property (nonatomic, strong) UIView *cameraView;  // 推流
 @property (nonatomic, strong) UIButton *closeButton;
@@ -98,8 +100,8 @@
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
-    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130:1935/live1/%@",self.randomStr];
-    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.130:1935/live1/%@.m3u8",self.randomStr];
+    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.7.207/live/%@.m3u8",self.randomStr];
     
     [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
     /**
@@ -266,12 +268,21 @@
     }
     self.requestId = strLivePeerID;
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@请求连线",strCustomID] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+    alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@请求连线",strCustomID] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+    
     [alertView show];
 }
 // 游客挂断连线
 - (void)OnRTCCancelLine:(NSString*)strLivePeerID {
     NSLog(@"OnRTCCancelLine:%@",strLivePeerID);
+    if ([self.requestId isEqualToString:strLivePeerID]) {
+        if (alertView) {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            self.requestId = nil;
+        }
+        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"对方取消了连线" icon:nil ];
+        return;
+    }
     // 游客自己挂断
     BOOL find = NO;
     for (int i=0; i<self.remoteArray.count; i++) {
@@ -424,9 +435,6 @@
     }
 }
 - (void)shearButtonEvent:(UIButton*)sender {
-    ////    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
-    ////    pboard.string = self.hlsUrl;
-    ////    [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
     
 #warning 根据你们平台需要给与响应的分享链接（HLS）
     // 判断是否安装微信
