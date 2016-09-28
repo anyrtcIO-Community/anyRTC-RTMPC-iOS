@@ -1,5 +1,6 @@
 #ifndef __RTMP_C_COMMON_H__
 #define __RTMP_C_COMMON_H__
+#include "LIV_Export.h"
 
 typedef enum RTMPCVideoMode
 {
@@ -37,5 +38,20 @@ typedef enum RTMPNetAdjustMode
 	RTMP_NA_AutoBitrate		// When network is bad, we will adjust video bitrate to match.
     
 }RTMPNetAdjustMode;
+
+
+#ifdef WIN32
+#include <string>
+typedef void(*HttpAsyncCallback)(void*pUserData, int code, const char*pContent);
+LIV_API void* HttpAsyncGetRequest(char * strHostName, short sPort, char * strUrl, int timeout/*seconds*/, void*userdata, HttpAsyncCallback callback);
+LIV_API void HttpAsyncClose(void* handle);
+LIV_API int  GenRandomString(char*buf, int len);
+LIV_API void MKDir(const char* filePath);
+LIV_API bool DirExist(const char* filePath);
+LIV_API bool FileExist(const char* filePath);
+LIV_API void DeleteDir(const char* filePath);
+LIV_API void DeleteFile(const char* filePath);
+LIV_API void GetHttpUrl(const char* url, std::string&strHost, int&port, std::string&path);
+#endif
 
 #endif	// __RTMP_C_COMMON_H__
