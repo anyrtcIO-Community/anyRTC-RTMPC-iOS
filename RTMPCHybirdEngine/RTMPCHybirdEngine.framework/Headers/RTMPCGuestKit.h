@@ -10,6 +10,7 @@
 #define RTMPCGuestKit_h
 #import <UIKit/UIKit.h>
 #import "RTMPCGuestDelegate.h"
+#include "RTMPCCommon.h"
 
 typedef NS_ENUM(NSInteger,VideoShowMode){
     VideoShowModeScaleAspectFit,   
@@ -32,10 +33,12 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  *  Initialize the guest clent
  *
  *  @param delegate RTMPCGuestRtmpDelegate
+ *  @param capturePosition  camera position
  *
  *  @return guest object
  */
-- (instancetype)initWithDelegate:(id<RTMPCGuestRtmpDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<RTMPCGuestRtmpDelegate>)delegate withCaptureDevicePosition:(RTMPCScreenOrientation)capturePosition;
+;
 /**
  *  clear guest clent (if you leave,you must call this function)
  */

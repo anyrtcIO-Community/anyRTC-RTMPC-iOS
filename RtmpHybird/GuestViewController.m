@@ -65,7 +65,7 @@
     
     [self.view addSubview:self.danmuView];
     
-    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self];
+    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait];
     self.guestKit.rtc_delegate = self;
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
