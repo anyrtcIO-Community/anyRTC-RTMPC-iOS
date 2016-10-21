@@ -100,8 +100,8 @@
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
-    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.7.207/live/%@",self.randomStr];
-    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.7.207/live/%@.m3u8",self.randomStr];
+    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.130/live1/%@.m3u8",self.randomStr];
     
     [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
     /**
@@ -321,6 +321,20 @@
 //RTC 通道关闭
 - (void)OnRTCLineClosed:(int) code/*0:OK */ withReason:(NSString*)strReason {
     NSLog(@"OnRTCLineClosed:%d withReason:%@",code,strReason);
+    // 主播离开了
+    if (code == 207) {
+        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"测试账号限制三分钟" icon:nil];
+    }
+    
+    if (self.hosterKit) {
+        [self.hosterKit clear];
+        self.hosterKit = nil;
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+
 }
 // 视频显示
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {

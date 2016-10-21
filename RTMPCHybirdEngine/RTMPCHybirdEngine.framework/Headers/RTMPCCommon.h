@@ -46,6 +46,7 @@ typedef void(*HttpAsyncCallback)(void*pUserData, int code, const char*pContent);
 LIV_API void* HttpAsyncGetRequest(const char * strHostName, short sPort, const char * strUrl, int timeout/*seconds*/, void*userdata, HttpAsyncCallback callback);
 LIV_API void HttpAsyncClose(void* handle);
 LIV_API int  GenRandomString(char*buf, int len);
+LIV_API void GetDrive(char*drive);
 LIV_API void MKDir(const char* filePath);
 LIV_API bool DirExist(const char* filePath);
 LIV_API bool FileExist(const char* filePath);
