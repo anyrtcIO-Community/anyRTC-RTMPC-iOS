@@ -8,7 +8,6 @@
 
 
 #import "HostViewController.h"
-#import <RTMPCHybirdEngine/RTMPCGuestKit.h>
 #import <RTMPCHybirdEngine/RTMPCHosterKit.h>
 #import "ASHUD.h"
 #import "UIImageView+WebCache.h"
