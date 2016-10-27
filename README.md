@@ -16,6 +16,10 @@ RTMPCHybridEngine是为移动端应用量身打造的基于RTMP和RTC混合引�
 ![living](living.gif)
 ## 扫描二维码下载demo
 ![scan](scan.png)
+###演示注意事项
+1：演示需要两部以及两部以上的手机，装上该demo.</br>
+2：一部手机创建直播间，另外两部手机在主页，下拉刷新当前直播列表，点击列表进入直播间。</br>
+3：游客端点击链接按钮，进行连麦。</br>
 #SDK包含
 RTC 连麦互动</br>
 RTMP 推流器</br>
