@@ -4,7 +4,7 @@ iOS 直播（网络自适应码率RTMP publisher）、点播播放器（播放�
 ##简介
 RTMPCHybridEngine是为移动端应用量身打造的基于RTMP和RTC混合引擎的连麦互动流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的连线麦互动直播流媒体应用。包含了流媒体应用中：『采集->编码->传输->解码->播放->连麦视频互动』的所有步骤。</br>
 ##模拟器库
-由于Github 上限制文件大小，顾demo 中的库是基于armv7,armv7s,arm64的，如果想在模拟器中调试(armv7,armv7s,arm64,x86_64)，请前往[百度云](https://pan.baidu.com/s/1i5M6Ut3)下载，我们会同时同步库的,给您带来的不便，敬请原谅~</br>
+由于Github 上限制文件大小，顾demo 中的库是基于armv7,armv7s,arm64的，如果想在模拟器中调试(armv7,armv7s,arm64,x86_64)，请前往[百度云](https://pan.baidu.com/s/1jI38lKU)下载，我们会同时同步库的,给您带来的不便，敬请原谅~</br>
 #优势</br>
 **超低延时**</br>
 **超低内存**</br>
@@ -16,6 +16,10 @@ RTMPCHybridEngine是为移动端应用量身打造的基于RTMP和RTC混合引�
 ![living](living.gif)
 ## 扫描二维码下载demo
 ![scan](scan.png)
+###演示注意事项
+1：演示需要两部以及两部以上的手机，装上该demo.</br>
+2：一部手机创建直播间，另外两部手机在主页，下拉刷新当前直播列表，点击列表进入直播间。</br>
+3：游客端点击链接按钮，进行连麦。</br>
 #SDK包含
 RTC 连麦互动</br>
 RTMP 推流器</br>
