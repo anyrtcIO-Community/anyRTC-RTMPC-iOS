@@ -193,7 +193,9 @@
     userID = userID?userID:@"";
     name = name?name:@"";
     icon = icon?icon:@"";
-    
+    if (message.length==0) {
+        return;
+    }
     TYTextContainer *container = [[TYTextContainer alloc]init];
     container.font = [UIFont systemFontOfSize:15];
     container.linesSpacing = 0;

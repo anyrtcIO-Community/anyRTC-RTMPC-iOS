@@ -76,6 +76,14 @@
  */
 - (void)SetVideoLogo:(NSString*)logoFilePath;
 /**
+ set camera torchMode
+
+ @param isOn open or close torch
+
+ @return scuess or failed
+ */
+- (BOOL)SetCameraTorchMode:(bool)isOn;
+/**
  *  The video quality setting
  *
  *  @param videoMode quality type
