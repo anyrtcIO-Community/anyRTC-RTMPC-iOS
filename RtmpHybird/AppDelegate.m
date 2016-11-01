@@ -22,6 +22,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+#warning Error 这里填写自己在平台下自己的账户，如果欠费，请联系客服，进行优惠充值
     /**
      *  配置SDK,相关参数请看集成文档
      */

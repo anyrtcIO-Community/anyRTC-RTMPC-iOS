@@ -9,6 +9,8 @@
 
 #import "HostViewController.h"
 #import <RTMPCHybirdEngine/RTMPCHosterKit.h>
+#import <RTMPCHybirdEngine/RTCCommon.h>
+
 #import "ASHUD.h"
 #import "UIImageView+WebCache.h"
 #import "UMSocial.h"
@@ -99,6 +101,7 @@
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
+#warning 替换自己的推流地址
     self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];
     self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.130/live1/%@.m3u8",self.randomStr];
     [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
@@ -169,6 +172,50 @@
     NSMutableString* randomString = [[NSMutableString alloc] initWithUTF8String:temp];
     free(temp);
     return randomString;
+}
+// 获取错误信息
+- (NSString*)getErrorInfoForRtc:(int)code {
+    switch (code) {
+        case AnyRTC_OK:
+            return @"RTC:链接成功";
+            break;
+        case AnyRTC_UNKNOW:
+            return @"RTC:未知错误";
+            break;
+        case AnyRTC_EXCEPTION:
+            return @"RTC:SDK调用异常";
+            break;
+        case AnyRTC_NET_ERR:
+            return @"RTC:网络错误";
+            break;
+        case AnyRTC_LIVE_ERR:
+            return @"RTC:直播出错";
+            break;
+        case AnyRTC_BAD_REQ:
+            return @"RTC:服务不支持的错误请求";
+            break;
+        case AnyRTC_AUTH_FAIL:
+            return @"RTC:认证失败";
+            break;
+        case AnyRTC_NO_USER:
+            return @"RTC:此开发者信息不存在";
+            break;
+        case AnyRTC_SQL_ERR:
+            return @"RTC: 服务器内部数据库错误";
+            break;
+        case AnyRTC_ARREARS:
+            return @"RTC:账号欠费";
+            break;
+        case AnyRTC_LOCKED:
+            return @"RTC:账号被锁定";
+            break;
+        case AnyRTC_FORCE_EXIT:
+            return @"RTC:强制离开";
+            break;
+        default:
+            break;
+    }
+    return @"未知错误";
 }
 #pragma mark - KeyBoardInputViewDelegate
 // 发送消息
@@ -254,9 +301,7 @@
 // 加入RTC成功
 - (void)OnRTCOpenLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason {
     NSLog(@"OnRTCOpenLineResult:%d withReason:%@",code,strReason);
-    if (code == 0) {
-        self.stateRTCLabel.text = @"RTC连接成功";
-    }
+    self.stateRTCLabel.text = [self getErrorInfoForRtc:code];
 }
 // 接收别人连线的请求
 - (void)OnRTCApplyToLine:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData {
