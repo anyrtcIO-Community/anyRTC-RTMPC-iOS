@@ -111,10 +111,10 @@
  *  @param strAnyrtcID the anyrtc of id
  *  @param strCustomID host's user id (this id is you platform's id)
  *  @param strUserData if you want other know you platform's information，you can add it
- *
+ *  @param strRtcArea default CN or nil,if you want use it in the overseas，you can set it HK
  *  @return scuess or failed
  */
-- (BOOL)OpenRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andUserData:(NSString*)strUserData;
+- (BOOL)OpenRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andUserData:(NSString*)strUserData andRtcArea:(NSString*)strRtcArea;
 /**
  *  Host again other's request line
  *

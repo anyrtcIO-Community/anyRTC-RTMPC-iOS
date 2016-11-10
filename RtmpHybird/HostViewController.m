@@ -102,8 +102,8 @@
     self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
     // 推流地址自己换掉自己的即可
 #warning 替换自己的推流地址
-    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.131/live1/%@",self.randomStr];
-    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.131/live1/%@.m3u8",self.randomStr];
+    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.130/live1/%@.m3u8",self.randomStr];
     [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
     /**
      *  加载相关数据(大厅列表解析数据对应即可)
@@ -111,7 +111,7 @@
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",self.rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId", nil];
     
     NSString *jsonString = [self JSONTOString:dict];
-    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"test_ios" andUserData:jsonString]) {
+    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"test_ios" andUserData:jsonString andRtcArea:@"CN"]) {
         NSLog(@"!!! Cann't open rtc line function, maybe you aren't set RTMPCHosterRtcDelegate");
     }
     [self registerForKeyboardNotifications];

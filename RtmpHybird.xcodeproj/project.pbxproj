@@ -917,7 +917,7 @@
 				TargetAttributes = {
 					782E9D731D48E358009683E0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 5543CP4MRT;
+						DevelopmentTeam = 3YB54BC6QT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1234,7 +1234,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jianqiang (YCZ22PJPZE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhang jianqiang (YCZ22PJPZE)";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3YB54BC6QT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1264,6 +1264,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
 				PRODUCT_NAME = "RTMPC连麦";
 				PROVISIONING_PROFILE = "d9371124-ec23-4acb-92e6-e23872280f69";
+				PROVISIONING_PROFILE_SPECIFIER = ZJQ_DEV;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
