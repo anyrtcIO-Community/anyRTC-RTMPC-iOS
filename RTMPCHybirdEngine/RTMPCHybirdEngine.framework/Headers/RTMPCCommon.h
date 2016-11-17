@@ -47,6 +47,7 @@ LIV_API void* HttpAsyncGetRequest(const char * strHostName, short sPort, const c
 LIV_API void HttpAsyncClose(void* handle);
 LIV_API int  GenRandomString(char*buf, int len);
 LIV_API void GetDrive(char*drive);
+LIV_API char* GetPath(const char*pp);
 LIV_API void MKDir(const char* filePath);
 LIV_API bool DirExist(const char* filePath);
 LIV_API bool FileExist(const char* filePath);

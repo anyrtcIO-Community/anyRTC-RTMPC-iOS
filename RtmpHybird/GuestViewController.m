@@ -147,6 +147,11 @@
 {
     NSLog(@"OnRtmplayerOK");
 }
+// 播放器开始播放（第一针或者缓存后继续播放）
+- (void)OnRtmplayerStart
+{
+    NSLog(@"OnRtmplayerStart");
+}
 // rtmp 播放状态  cacheTime:当前延迟时间 curBitrate:当期码率大小
 - (void)OnRtmplayerStatus:(int) cacheTime withBitrate:(int) curBitrate
 {

@@ -24,6 +24,10 @@
  */
 - (void)OnRtmplayerStatus:(int) cacheTime withBitrate:(int) curBitrate;
 /**
+ *   RTMP Player start play
+ */
+- (void)OnRtmplayerStart;
+/**
  *  cache time
  *
  *  @param time (ms)
