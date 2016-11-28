@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *topic;       // 标题
 @property (nonatomic, strong) NSString *andyrtcId;   // anyrtcID
 @property (nonatomic, strong) NSString *LiveMembers; // 观看人数
+@property (nonatomic, strong) NSNumber *isAudioOnly; // 是否是音频直播
 @end
 
 @interface ViewController : UIViewController

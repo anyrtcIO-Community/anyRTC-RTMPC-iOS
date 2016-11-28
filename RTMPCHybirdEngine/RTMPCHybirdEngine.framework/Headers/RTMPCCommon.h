@@ -48,11 +48,13 @@ LIV_API void HttpAsyncClose(void* handle);
 LIV_API int  GenRandomString(char*buf, int len);
 LIV_API void GetDrive(char*drive);
 LIV_API char* GetPath(const char*pp);
+LIV_API char* GetRelativePath(const char*pp);
 LIV_API void MKDir(const char* filePath);
 LIV_API bool DirExist(const char* filePath);
 LIV_API bool FileExist(const char* filePath);
 LIV_API void DeleteDir(const char* filePath);
 LIV_API void DeleteFile(const char* filePath);
+LIV_API void DirCopy(const char* filePath, const char* filePathNew);
 LIV_API void GetHttpUrl(const char* url, std::string&strHost, int&port, std::string&path);
 #endif
 

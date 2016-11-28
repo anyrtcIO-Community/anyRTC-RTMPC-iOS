@@ -65,9 +65,17 @@
     
     [self.view addSubview:self.danmuView];
     
-    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait];
+    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO];
     self.guestKit.rtc_delegate = self;
+   // [self.guestKit StartRtmpPlay:@"rtmp://strtmpplay.cdn.suicam.com/sclive/58232" andRender:self.mainView];
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
+    [self.guestKit setVideoContentMode:VideoShowModeScaleAspectFill];
+    self.mainView.translatesAutoresizingMaskIntoConstraints = NO;
+    NSDictionary* views = NSDictionaryOfVariableBindings(_mainView);
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_mainView]-0-|" options:0 metrics:nil views:views]];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_mainView]-0-|" options:0 metrics:nil views:views]];
+    
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     //andUserData 参数根据平台相关，然后在进会人员中会有该人员信息的接受（用户人员上下线）
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
@@ -147,20 +155,19 @@
 {
     NSLog(@"OnRtmplayerOK");
 }
-// 播放器开始播放（第一针或者缓存后继续播放）
-- (void)OnRtmplayerStart
-{
-    NSLog(@"OnRtmplayerStart");
-}
 // rtmp 播放状态  cacheTime:当前延迟时间 curBitrate:当期码率大小
 - (void)OnRtmplayerStatus:(int) cacheTime withBitrate:(int) curBitrate
 {
     
 }
+- (void)OnRtmplayerStart
+{
+    NSLog(@"OnRtmplayerStart");
+}
 // rtmp 播放器缓存时间
 - (void)OnRtmplayerCache:(int) time
 {
-    
+    NSLog(@"OnRtmplayerCache:%d",time);
 }
 // rtmp 播放器关闭
 - (void)OnRtmplayerClosed:(int) errcode
@@ -202,14 +209,10 @@
             // 参照点~
             [self.view insertSubview:videoView belowSubview:self.chatButton];
             [self.guestKit SetVideoCapturer:videoView andUseFront:YES];
-            
-            self.handupButton.hidden = YES;
-            self.handupButton.selected = NO;
         }
     }else{
         [ASHUD showHUDWithCompleteStyleInView:self.view content:@"主播拒绝了你的连麦请求" icon:nil];
         self.handupButton.hidden = NO;
-        self.handupButton.selected = NO;
     }
 }
 // 其他用户连线了主播
@@ -293,7 +296,7 @@
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     // 发送普通消息
     MessageModel *model = [[MessageModel alloc] init];
-    [model setModel:@"guestID" withName:nsCustomName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
+    [model setModel:@"guestID" withName:self.nickName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
     [self.messageTableView sendMessage:model];
 }
 // 弹幕
@@ -331,17 +334,10 @@
 }
 - (void)pullButtonEvent:(UIButton*)sender {
     sender.selected = !sender.selected;
-    if (sender.selected) {
-        // 开始拉流
-        use_cap_ = false;
-        [self.guestKit ApplyRTCLine:@"Hello"];
-    }else{
-        // 开始拉流
-        use_cap_ = YES;
-        [self.guestKit HangupRTCLine];
-    }
-   
-//    self.handupButton.hidden = YES;
+    // 开始拉流
+    use_cap_ = false;
+    [self.guestKit ApplyRTCLine:@"Hello"];
+    self.handupButton.hidden = YES;
 }
 - (void)closeButtonEvent:(UIButton*)sender {
     if (self.guestKit != nil) {
@@ -512,7 +508,6 @@
     if (!_handupButton) {
         _handupButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_handupButton setImage:[UIImage imageNamed:@"btn_hands_normal"] forState:UIControlStateNormal];
-        [_handupButton setImage:[UIImage imageNamed:@"btn_hands_cancle_normal"] forState:UIControlStateSelected];
         [_handupButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [_handupButton addTarget:self action:@selector(pullButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         _handupButton.frame = CGRectMake(CGRectGetMinX(self.closeButton.frame)-60, 20, 40,40);
@@ -550,6 +545,14 @@
         _danmuView = [[DanmuLaunchView alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.messageTableView.frame)-(ItemHeight*3+ItemSpace*2), self.view.frame.size.width, ItemHeight*3+ItemSpace*2)];
     }
     return _danmuView;
+}
+#pragma mark -
+//支持横向
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
+{
+    if (self.guestKit) {
+        [self.guestKit videoFreamUpdate];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

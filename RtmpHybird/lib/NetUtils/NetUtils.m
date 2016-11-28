@@ -372,6 +372,7 @@ static NetUtils *_netUtils = nil;
                     item.rtmp_url = [tempDict objectForKey:@"rtmp_url"];
                     item.hls_url = [tempDict objectForKey:@"hls_url"];
                     item.topic = [tempDict objectForKey:@"topic"];
+                    item.isAudioOnly = [tempDict objectForKey:@"isAudioOnly"];
                     if (i<mumberArray.count) {
                         item.LiveMembers = [NSString stringWithFormat:@"%@",[mumberArray objectAtIndex:i]];
                     }

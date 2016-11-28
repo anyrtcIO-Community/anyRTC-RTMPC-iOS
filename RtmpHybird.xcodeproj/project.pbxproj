@@ -126,6 +126,13 @@
 		783AA8EC1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783AA8EA1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png */; };
 		78458CB91D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */; };
 		78458CBA1D79B6E1007EDA94 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78468AF61DEBDDEB0077EA69 /* AudioShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78468AF11DEBDDEB0077EA69 /* AudioShowView.m */; };
+		78468AF71DEBDDEB0077EA69 /* GuestAudioOnlyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78468AF31DEBDDEB0077EA69 /* GuestAudioOnlyController.m */; };
+		78468AF81DEBDDEB0077EA69 /* HostAudioOnlyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78468AF51DEBDDEB0077EA69 /* HostAudioOnlyController.m */; };
+		78468AFD1DEBDF120077EA69 /* audiong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AF91DEBDF120077EA69 /* audiong@2x.png */; };
+		78468AFE1DEBDF120077EA69 /* audiong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AFA1DEBDF120077EA69 /* audiong@3x.png */; };
+		78468AFF1DEBDF120077EA69 /* videoing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AFB1DEBDF120077EA69 /* videoing@2x.png */; };
+		78468B001DEBDF120077EA69 /* videoing@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AFC1DEBDF120077EA69 /* videoing@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,6 +378,16 @@
 		783AA8E91D96875C006EFDDE /* btn_hands_cancle_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hands_cancle_normal@2x.png"; sourceTree = "<group>"; };
 		783AA8EA1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hands_cancle_normal@3x.png"; sourceTree = "<group>"; };
 		78458CB71D79B6CF007EDA94 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
+		78468AF01DEBDDEB0077EA69 /* AudioShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioShowView.h; sourceTree = "<group>"; };
+		78468AF11DEBDDEB0077EA69 /* AudioShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioShowView.m; sourceTree = "<group>"; };
+		78468AF21DEBDDEB0077EA69 /* GuestAudioOnlyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestAudioOnlyController.h; sourceTree = "<group>"; };
+		78468AF31DEBDDEB0077EA69 /* GuestAudioOnlyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestAudioOnlyController.m; sourceTree = "<group>"; };
+		78468AF41DEBDDEB0077EA69 /* HostAudioOnlyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostAudioOnlyController.h; sourceTree = "<group>"; };
+		78468AF51DEBDDEB0077EA69 /* HostAudioOnlyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostAudioOnlyController.m; sourceTree = "<group>"; };
+		78468AF91DEBDF120077EA69 /* audiong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audiong@2x.png"; sourceTree = "<group>"; };
+		78468AFA1DEBDF120077EA69 /* audiong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audiong@3x.png"; sourceTree = "<group>"; };
+		78468AFB1DEBDF120077EA69 /* videoing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videoing@2x.png"; sourceTree = "<group>"; };
+		78468AFC1DEBDF120077EA69 /* videoing@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videoing@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -732,14 +749,20 @@
 				782E9DD41D48EC2E009683E0 /* Resourse */,
 				782E9DAF1D48E407009683E0 /* GuestViewController.h */,
 				782E9DB01D48E407009683E0 /* GuestViewController.m */,
-				782E9DB11D48E407009683E0 /* HostSettingViewController.h */,
-				782E9DB21D48E407009683E0 /* HostSettingViewController.m */,
 				782E9DB31D48E407009683E0 /* HostViewController.h */,
 				782E9DB41D48E407009683E0 /* HostViewController.m */,
+				78468AF21DEBDDEB0077EA69 /* GuestAudioOnlyController.h */,
+				78468AF31DEBDDEB0077EA69 /* GuestAudioOnlyController.m */,
+				78468AF41DEBDDEB0077EA69 /* HostAudioOnlyController.h */,
+				78468AF51DEBDDEB0077EA69 /* HostAudioOnlyController.m */,
+				782E9DB11D48E407009683E0 /* HostSettingViewController.h */,
+				782E9DB21D48E407009683E0 /* HostSettingViewController.m */,
 				782E9D7A1D48E358009683E0 /* AppDelegate.h */,
 				782E9D7B1D48E358009683E0 /* AppDelegate.m */,
 				782E9D7D1D48E358009683E0 /* ViewController.h */,
 				782E9D7E1D48E358009683E0 /* ViewController.m */,
+				78468AF01DEBDDEB0077EA69 /* AudioShowView.h */,
+				78468AF11DEBDDEB0077EA69 /* AudioShowView.m */,
 				782E9D801D48E358009683E0 /* Main.storyboard */,
 				782E9D831D48E358009683E0 /* Assets.xcassets */,
 				782E9D851D48E358009683E0 /* LaunchScreen.storyboard */,
@@ -804,6 +827,10 @@
 		782E9DD41D48EC2E009683E0 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				78468AF91DEBDF120077EA69 /* audiong@2x.png */,
+				78468AFA1DEBDF120077EA69 /* audiong@3x.png */,
+				78468AFB1DEBDF120077EA69 /* videoing@2x.png */,
+				78468AFC1DEBDF120077EA69 /* videoing@3x.png */,
 				783AA8E91D96875C006EFDDE /* btn_hands_cancle_normal@2x.png */,
 				783AA8EA1D96875C006EFDDE /* btn_hands_cancle_normal@3x.png */,
 				782D2EE51D5368D600A34FCF /* btn_chat_normal@2x.png */,
@@ -962,6 +989,7 @@
 			files = (
 				782638241D58BECE0063F0B0 /* WeiboSDK.bundle in Resources */,
 				782E9DF61D48EC2E009683E0 /* camra_beauty_close@3x.png in Resources */,
+				78468B001DEBDF120077EA69 /* videoing@3x.png in Resources */,
 				782E9DF01D48EC2E009683E0 /* btn_share_normal@3x.png in Resources */,
 				782638211D58BECE0063F0B0 /* UMSocialLocalizable.strings in Resources */,
 				782D2EE71D5368D600A34FCF /* btn_chat_normal@2x.png in Resources */,
@@ -977,10 +1005,12 @@
 				782E9DF11D48EC2E009683E0 /* btn_startbc_normal@2x.png in Resources */,
 				782E9DF71D48EC2E009683E0 /* camra_preview@2x.png in Resources */,
 				782638301D58BECE0063F0B0 /* UMShareEditViewControlleriPad.xib in Resources */,
+				78468AFE1DEBDF120077EA69 /* audiong@3x.png in Resources */,
 				7826382A1D58BECE0063F0B0 /* README.txt in Resources */,
 				782E9DF41D48EC2E009683E0 /* camra_beauty@3x.png in Resources */,
 				7828F6B41D4B09B2000F6C99 /* go@2x.png in Resources */,
 				7828F6B51D4B09B2000F6C99 /* go@3x.png in Resources */,
+				78468AFF1DEBDF120077EA69 /* videoing@2x.png in Resources */,
 				782638271D58BECE0063F0B0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				782638331D58BECE0063F0B0 /* UMSShareListController.xib in Resources */,
 				7826382C1D58BECE0063F0B0 /* UMSCommentDetailController.xib in Resources */,
@@ -996,6 +1026,7 @@
 				782E9DF21D48EC2E009683E0 /* btn_startbc_normal@3x.png in Resources */,
 				782E9D841D48E358009683E0 /* Assets.xcassets in Resources */,
 				7825409C1D509C53005D241A /* onBtnBg.png in Resources */,
+				78468AFD1DEBDF120077EA69 /* audiong@2x.png in Resources */,
 				7825409A1D509C53005D241A /* offBtnBg.png in Resources */,
 				7826382D1D58BECE0063F0B0 /* UMSCommentInputController.xib in Resources */,
 				782540991D509C53005D241A /* offBtn.png in Resources */,
@@ -1032,12 +1063,15 @@
 				782540931D509C53005D241A /* RegexKitLite.m in Sources */,
 				7825408D1D509C53005D241A /* MASViewConstraint.m in Sources */,
 				782E9DB71D48E407009683E0 /* HostViewController.m in Sources */,
+				78468AF71DEBDDEB0077EA69 /* GuestAudioOnlyController.m in Sources */,
 				782540A21D509C53005D241A /* TYLinkTextStorage.m in Sources */,
 				7825408C1D509C53005D241A /* MASViewAttribute.m in Sources */,
 				781EBA991D51E276002343C6 /* UIImage+GIF.m in Sources */,
 				782E9E021D48F231009683E0 /* NetUtils.m in Sources */,
 				781EBA951D51E276002343C6 /* SDWebImageDownloaderOperation.m in Sources */,
+				78468AF81DEBDDEB0077EA69 /* HostAudioOnlyController.m in Sources */,
 				782540981D509C53005D241A /* MessageTableView.m in Sources */,
+				78468AF61DEBDDEB0077EA69 /* AudioShowView.m in Sources */,
 				782540A31D509C53005D241A /* TYTextContainer+Extended.m in Sources */,
 				782540A51D509C53005D241A /* TYTextStorage.m in Sources */,
 				782E9D7F1D48E358009683E0 /* ViewController.m in Sources */,

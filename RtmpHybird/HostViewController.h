@@ -12,4 +12,5 @@
 @interface HostViewController : UIViewController
 @property (nonatomic, strong) NSString *livingName;
 @property (nonatomic, assign) RTMPCVideoMode rtmpVideoMode;
+@property (nonatomic, assign) BOOL isAudioLiving;
 @end

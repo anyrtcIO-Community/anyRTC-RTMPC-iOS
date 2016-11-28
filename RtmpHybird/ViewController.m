@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HostViewController.h"
 #import "GuestViewController.h"
+#import "GuestAudioOnlyController.h"
 #import "AppDelegate.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "HostSettingViewController.h"
@@ -95,10 +96,16 @@
     }
     LivingItem *item = [self.livingDataArray objectAtIndex:indexPath.row];
     cell.textLabel.text = item.topic;
+    if ([item.isAudioOnly boolValue]) {
+        cell.imageView.image = [UIImage imageNamed:@"audiong"];
+    }else{
+        cell.imageView.image = [UIImage imageNamed:@"videoing"];
+    }
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@人在线",item.LiveMembers];
     cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50;
@@ -106,10 +113,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     LivingItem *item = [self.livingDataArray objectAtIndex:indexPath.row];
-    GuestViewController*guest = [GuestViewController new];
-    guest.livingItem = item;
-    [self.navigationController pushViewController:guest animated:YES];
-}
+    if ([item.isAudioOnly boolValue]) {
+        GuestAudioOnlyController *guest = [GuestAudioOnlyController new];
+        guest.livingItem = item;
+        [self.navigationController pushViewController:guest animated:YES];
+    }else{
+        GuestViewController*guest = [GuestViewController new];
+        guest.livingItem = item;
+        [self.navigationController pushViewController:guest animated:YES];
+ 
+    }
+ }
 
 #pragma mark - button
 - (void)headButtonEvent:(UIButton*)sender {
@@ -123,7 +137,7 @@
             
             if (response.responseCode == UMSResponseCodeSuccess) {
                 
-               // NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+                // NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
                 UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
                 
                 [[NSUserDefaults standardUserDefaults] setObject:snsAccount.userName forKey:@"NickName"];
@@ -138,15 +152,14 @@
             
         });
         
-
+        
     }
 }
 - (void)livingButtonEvent:(UIButton*)sender {
     HostSettingViewController *hostSettingController = [HostSettingViewController new];
     [self.navigationController pushViewController:hostSettingController animated:YES];
-    
-    //    HostViewController *hostController = [HostViewController new];
-    //    [self.navigationController pushViewController:hostController animated:YES];
+//    GuestViewController*guest = [GuestViewController new];
+//    [self.navigationController pushViewController:guest animated:YES];
 }
 #pragma mark - get
 - (UIImageView *)bgImageView {
@@ -185,7 +198,7 @@
         NSString *imageIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"];
         imageIcon = imageIcon?imageIcon:@"";
         [_headButton sd_setImageWithURL:[NSURL URLWithString:imageIcon] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_photo_2"]];
-//        [_headButton setImage:[UIImage imageNamed:@"icon_photo_2"] forState:UIControlStateNormal];
+        //        [_headButton setImage:[UIImage imageNamed:@"icon_photo_2"] forState:UIControlStateNormal];
         [_headButton addTarget:self action:@selector(headButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         _headButton.frame = CGRectMake(CGRectGetMaxX(self.view.frame)/2-30, CGRectGetMaxY(_subMainLabel.frame)+ 20, 60, 60);
         _headButton.layer.cornerRadius = 30;
@@ -220,7 +233,7 @@
         _versionLabel.textColor = [UIColor blackColor];
         _versionLabel.font = [UIFont systemFontOfSize:14];
         _versionLabel.frame = CGRectMake(20, CGRectGetMaxY(self.view.frame)-30, CGRectGetWidth(self.view.frame)-40, 20);
-        _versionLabel.text = @"Anyrtc.io V1.3.3,build2016.10.26";
+        _versionLabel.text = @"Anyrtc.io v1.0.1,build2016.11.28";
     }
     return _versionLabel;
 }

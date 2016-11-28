@@ -10,6 +10,7 @@
 #import "HostViewController.h"
 #import "ASHUD.h"
 #import <RTMPCHybirdEngine/RTMPCCommon.h>
+#import "HostAudioOnlyController.h"
 
 @interface TextFieldEnterView()
 @property (nonatomic, strong) UITextField *roomTextField;
@@ -29,7 +30,7 @@
         //roomTextField
         [self addConstraint:[NSLayoutConstraint constraintWithItem:self.roomTextField attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:.6 constant:0]];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:self.roomTextField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]];
-         [self addConstraint:[NSLayoutConstraint constraintWithItem:self.roomTextField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.roomTextField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:self.roomTextField attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
         
         //okButton
@@ -69,15 +70,18 @@
 
 @interface HostSettingViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
-
+    
 }
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) TextFieldEnterView *bgView;
 @property (nonatomic, strong) UIPickerView *pickerView;
+
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *modelDataArray;
 
 @property (nonatomic, assign) RTMPCVideoMode rtmpVideoMode;
+@property (nonatomic, assign) BOOL isVideoLiving;
 
 @end
 
@@ -95,7 +99,7 @@
     
     [self.pickerView selectRow:2 inComponent:0 animated:YES];
     _rtmpVideoMode = 2;
-    
+    _isVideoLiving = YES;
     [self registerForKeyboardNotifications];
     [self.view addSubview:self.bgView];
     [_bgView.roomTextField becomeFirstResponder];
@@ -117,49 +121,78 @@
 }
 // 键盘隐藏
 - (void)keyboardWasHidden:(NSNotification*)notification {
-   
+    
     _bgView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame)-_bgView.bounds.size.height, _bgView.bounds.size.width, _bgView.bounds.size.height);
 }
 #pragma mark - UIPickerViewDelegate UIPickerViewDataSource
 
 // pickerView 列数
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return 2;
 }
 
 // pickerView 每列个数
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    if (component == 0) {
+        return [_dataArray count];
+    }
     
-    return [_dataArray count];
+    return [_modelDataArray count];
 }
-
+//指定每行如何展示数据（此处和tableview类似）
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if (component == 0) {
+        return [_dataArray objectAtIndex:row];
+    } else {
+        return [_modelDataArray objectAtIndex:row];
+    }
+}
 // 每列宽度
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    return CGRectGetWidth(self.view.frame)-80;
+    
+    if (component == 1) {
+        return (self.view.bounds.size.width-60)/2;
+    }
+    return (self.view.bounds.size.width-60)/2;
 }
+
 // 返回选中的行
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    _rtmpVideoMode = row;
+    if (component == 0) {
+       _rtmpVideoMode = row - 1;
+        if (row == 0) {
+             [pickerView selectRow:1 inComponent:1 animated:YES];
+             _isVideoLiving = NO;
+        }else{
+             _isVideoLiving = YES;
+             [pickerView selectRow:0 inComponent:1 animated:YES];
+        }
+       
+    } else {
+        if (row == 0) {
+            _isVideoLiving = YES;
+            if (_rtmpVideoMode == -1) {
+                 [pickerView selectRow:3 inComponent:0 animated:YES];
+            }
+        }else{
+            _isVideoLiving = NO;
+             [pickerView selectRow:0 inComponent:0 animated:YES];
+            _rtmpVideoMode = -1;
+        }
+        
+    }
+    
+   
     
 }
 
-//返回当前行的内容,此处是将数组中数值添加到滚动的那个显示栏上
--(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return [_dataArray objectAtIndex:row];
-}
 #pragma mark - button events
 - (void)backButtonEvent:(UIButton*)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-//- (void)okButtonEvent:(UIButton*)sender {
-// 
-//    HostViewController *hostController = [HostViewController new];
-//    [self.navigationController pushViewController:hostController animated:YES];
-//}
 
-#pragma mark - 
+#pragma mark -
 - (UIButton*)backButton {
     if (!_backButton) {
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -181,13 +214,16 @@
 }
 - (UIPickerView*)pickerView {
     if (!_pickerView) {
-        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(40, 84, CGRectGetWidth(self.view.frame)-80, 200)];
+        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(30, 84, CGRectGetWidth(self.view.frame)-60, 200)];
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
-        _dataArray = @[@"超高清",@"顺畅",@"标清",@"高清"];
+        _pickerView.showsSelectionIndicator=YES;
+        _dataArray = @[@"48K",@"超高清",@"顺畅",@"标清",@"高清"];
+        _modelDataArray = @[@"视频直播",@"音频直播"];
     }
     return _pickerView;
 }
+
 - (TextFieldEnterView *)bgView {
     if (!_bgView) {
         _bgView = [TextFieldEnterView new];
@@ -197,10 +233,19 @@
                 [ASHUD showHUDWithCompleteStyleInView:weakSelf.view content:@"请输入主题" icon:nil];
                 return;
             }
-            HostViewController *hostController = [HostViewController new];
-            hostController.livingName = text;
-            hostController.rtmpVideoMode = weakSelf.rtmpVideoMode;
-            [weakSelf.navigationController pushViewController:hostController animated:YES];
+            if (weakSelf.isVideoLiving) {
+                HostViewController *hostController = [HostViewController new];
+                hostController.livingName = text;
+                hostController.rtmpVideoMode = weakSelf.rtmpVideoMode;
+                [weakSelf.navigationController pushViewController:hostController animated:YES];
+            }else {
+                HostAudioOnlyController *hostController = [HostAudioOnlyController new];
+                hostController.livingName = text;
+                hostController.isAudioLiving = !weakSelf.isVideoLiving;
+                [weakSelf.navigationController pushViewController:hostController animated:YES];
+                
+            }
+           
         }];
         _bgView.backgroundColor = [UIColor grayColor];
         _bgView.frame = CGRectMake(0, CGRectGetMidY(self.view.frame), CGRectGetWidth(self.view.frame), 50);
@@ -214,13 +259,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
