@@ -2,20 +2,19 @@
 #define __RTC_COMMON_H__
 
 typedef enum AnyRTCErrorCode {
-    AnyRTC_OK = 0,				// æ­£å¸¸
-    AnyRTC_UNKNOW = 1,			// æœªçŸ¥é”™è¯¯
-    AnyRTC_EXCEPTION = 2,		// SDKè°ƒç”¨å¼‚å¸¸
-    AnyRTC_NET_ERR = 100,		// ç½‘ç»œé”™è¯¯
-    AnyRTC_LIVE_ERR = 101,		// ç›´æ’­å‡ºé”™
-    AnyRTC_BAD_REQ = 201,		// æœåŠ¡ä¸æ”¯æŒçš„é”™è¯¯è¯·æ±‚
-    AnyRTC_AUTH_FAIL = 202,		// è®¤è¯å¤±è´¥
-    AnyRTC_NO_USER = 203,		// æ­¤å¼€å‘è€…ä¿¡æ¯ä¸å­˜åœ¨
-    AnyRTC_SQL_ERR = 204,		// æœåŠ¡å™¨å†…éƒ¨æ•°æ®åº“é”™è¯¯
-    AnyRTC_ARREARS = 205,		// è´¦å·æ¬ è´¹
-    AnyRTC_LOCKED = 206,		// è´¦å·è¢«é”å®š
-    AnyRTC_FORCE_EXIT = 207		// å¼ºåˆ¶ç¦»å¼€
+    AnyRTC_OK = 0,				// Õý³£
+    AnyRTC_UNKNOW = 1,			// Î´Öª´íÎó
+    AnyRTC_EXCEPTION = 2,		// SDKµ÷ÓÃÒì³£
+    AnyRTC_NET_ERR = 100,		// ÍøÂç´íÎó
+    AnyRTC_LIVE_ERR = 101,		// Ö±²¥³ö´í
+    AnyRTC_BAD_REQ = 201,		// ·þÎñ²»Ö§³ÖµÄ´íÎóÇëÇó
+    AnyRTC_AUTH_FAIL = 202,		// ÈÏÖ¤Ê§°Ü
+    AnyRTC_NO_USER = 203,		// ´Ë¿ª·¢ÕßÐÅÏ¢²»´æÔÚ
+    AnyRTC_SQL_ERR = 204,		// ·þÎñÆ÷ÄÚ²¿Êý¾Ý¿â´íÎó
+    AnyRTC_ARREARS = 205,		// ÕËºÅÇ··Ñ
+    AnyRTC_LOCKED = 206,		// ÕËºÅ±»Ëø¶¨
+    AnyRTC_FORCE_EXIT = 207		// Ç¿ÖÆÀë¿ª
 }AnyRTCErrorCode;
 
 
 #endif	// __RTC_COMMON_H__
-

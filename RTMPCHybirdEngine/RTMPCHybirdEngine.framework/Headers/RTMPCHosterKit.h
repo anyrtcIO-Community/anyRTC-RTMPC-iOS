@@ -91,7 +91,7 @@
  *
  *  @param videoMode 
  *    （RTMPC_Video_HH，RTMPC_Video_4K，RTMPC_Video_2K，RTMPC_Video_1080P）:1920*1080,码率:2048
- *    （RTMPC_Video_Low，RTMPC_Video_SD，RTMPC_Video_SD）:640*360,码率:384,512,768
+ *    （RTMPC_Video_Low，RTMPC_Video_SD，RTMPC_Video_QHD）:640*360,码率:384,512,768
  *    （RTMPC_Video_HD）:960*540,码率:1024
  *    （RTMPC_Video_720P）:1280*720,码率:1280
  */
