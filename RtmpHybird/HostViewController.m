@@ -9,12 +9,9 @@
 
 #import "HostViewController.h"
 #import <RTMPCHybirdEngine/RTMPCHosterKit.h>
-#import <RTMPCHybirdEngine/RTCCommon.h>
-
 #import "ASHUD.h"
 #import "UIImageView+WebCache.h"
 #import "UMSocial.h"
-#import "WXApi.h"
 
 #import "KeyBoardInputView.h"
 #import "MessageTableView.h"
@@ -22,13 +19,9 @@
 #import "DanmuLaunchView.h"
 #import "DanmuItemView.h"
 
-#import "NetUtils.h"
-
 @interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
 {
     UITapGestureRecognizer *tapGesture;
-    UIAlertView *alertView;
-    
 }
 @property (nonatomic, strong) UIView *cameraView;  // 推流
 @property (nonatomic, strong) UIButton *closeButton;
@@ -51,11 +44,11 @@
 
 @property (nonatomic, strong) NSMutableArray *remoteArray;
 
-@property (nonatomic, strong) NSString *rtmpUrl;
-
 @property (nonatomic, strong) NSString *hlsUrl;
 
 @property (nonatomic, strong) NSString *requestId;
+
+@property (nonatomic, strong) NSString *userID;
 
 @property (nonatomic, strong) NSString *nickName;
 
@@ -91,29 +84,33 @@
     [self.view addSubview:self.messageTableView];
     [self.view addSubview:self.danmuView];
     
+    self.userID = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserID"];
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
-    // 开始推流
-    self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO];
+    self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO withAudioDetect:NO];
     self.hosterKit.rtc_delegate = self;
     [self.hosterKit SetVideoMode:_rtmpVideoMode];
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
-    self.randomStr = [self randomString:12];//@"yG4pZZNi1wx0";//
+    self.randomStr = [self randomString:12];
     // 推流地址自己换掉自己的即可
-#warning 替换自己的推流地址
-    self.rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.131/live1/%@",self.randomStr];
-    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.131/live1/%@.m3u8",self.randomStr];
-    [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
+    //NSString *rtmpUrl =  [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];;
+    NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.199.1301/%@.m3u8",self.randomStr];
+    
+    [self.hosterKit StartPushRtmpStream:rtmpUrl];
     /**
      *  加载相关数据(大厅列表解析数据对应即可)
      */
-  NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",self.rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly", nil];
+   // NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly", nil];
+     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.userID?self.userID:@"",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly",self.nickName?self.nickName:@"",@"NickName",self.userIcon?self.userIcon:@"",@"IconUrl", nil];
+    
     
     NSString *jsonString = [self JSONTOString:dict];
-    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"test_ios" andUserData:jsonString andRtcArea:@"CN"]) {
+    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:self.userID andUserData:jsonString andRtcArea:@"CN"]) {
         NSLog(@"!!! Cann't open rtc line function, maybe you aren't set RTMPCHosterRtcDelegate");
     }
+
     [self registerForKeyboardNotifications];
 }
 - (void)viewDidUnload
@@ -173,50 +170,6 @@
     free(temp);
     return randomString;
 }
-// 获取错误信息
-- (NSString*)getErrorInfoForRtc:(int)code {
-    switch (code) {
-        case AnyRTC_OK:
-            return @"RTC:链接成功";
-            break;
-        case AnyRTC_UNKNOW:
-            return @"RTC:未知错误";
-            break;
-        case AnyRTC_EXCEPTION:
-            return @"RTC:SDK调用异常";
-            break;
-        case AnyRTC_NET_ERR:
-            return @"RTC:网络错误";
-            break;
-        case AnyRTC_LIVE_ERR:
-            return @"RTC:直播出错";
-            break;
-        case AnyRTC_BAD_REQ:
-            return @"RTC:服务不支持的错误请求";
-            break;
-        case AnyRTC_AUTH_FAIL:
-            return @"RTC:认证失败";
-            break;
-        case AnyRTC_NO_USER:
-            return @"RTC:此开发者信息不存在";
-            break;
-        case AnyRTC_SQL_ERR:
-            return @"RTC: 服务器内部数据库错误";
-            break;
-        case AnyRTC_ARREARS:
-            return @"RTC:账号欠费";
-            break;
-        case AnyRTC_LOCKED:
-            return @"RTC:账号被锁定";
-            break;
-        case AnyRTC_FORCE_EXIT:
-            return @"RTC:强制离开";
-            break;
-        default:
-            break;
-    }
-    return @"未知错误";
-}
 #pragma mark - KeyBoardInputViewDelegate
 // 发送消息
 - (void)keyBoardSendMessage:(NSString*)message withDanmu:(BOOL)danmu {
@@ -227,7 +180,7 @@
         // 发送弹幕消息
         if (self.danmuView) {
             DanmuItem *item = [[DanmuItem alloc] init];
-            item.u_userID = @"three id";
+            item.u_userID = self.userID;
             item.u_nickName = self.nickName;
             item.thumUrl = self.userIcon;
             item.content = message;
@@ -241,7 +194,7 @@
         // 发送普通消息
         MessageModel *model = [[MessageModel alloc] init];
         
-        [model setModel:@"hostID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
+        [model setModel:self.userID withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
         [self.messageTableView sendMessage:model];
         
         if (self.hosterKit) {
@@ -254,11 +207,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         if (self.hosterKit && self.requestId) {
-          BOOL isScuess = [self.hosterKit AcceptRTCLine:self.requestId];
-            if (!isScuess) {
-                [ASHUD showHUDWithCompleteStyleInView:self.view content:@"连麦人数已慢" icon:nil];
-                [self.hosterKit RejectRTCLine:self.requestId andBanToApply:YES];
-            }
+            [self.hosterKit AcceptRTCLine:self.requestId];
         }
     }else{
         if (self.hosterKit && self.requestId) {
@@ -273,10 +222,6 @@
 - (void)OnRtmpStreamOK {
     NSLog(@"OnRtmpStreamOK");
     self.stateRTMPLabel.text = @"连接RTMP服务成功";
-    // 请求录像
-    [[NetUtils shead] recordRtmpSteam:self.rtmpUrl withAnyrtcID:self.randomStr withResID:self.randomStr withResult:^(NSDictionary *dict, NSError *error, int code) {
-        NSLog(@"");
-    }];
 }
 // rtmp 重连次数
 - (void)OnRtmpStreamReconnecting:(int) times {
@@ -297,11 +242,17 @@
 - (void)OnRtmpStreamClosed {
     NSLog(@"OnRtmpStreamClosed");
 }
+- (void)OnRtmpAudioLevel:(NSString *)nsCustomID withLevel:(int)Level {
+    NSLog(@"OnRtmpAudioLevel:%@ withLevel:%d",nsCustomID,Level);
+}
+
 #pragma mark -  RTMPCHosterRtcDelegate
 // 加入RTC成功
 - (void)OnRTCOpenLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason {
     NSLog(@"OnRTCOpenLineResult:%d withReason:%@",code,strReason);
-    self.stateRTCLabel.text = [self getErrorInfoForRtc:code];
+    if (code == 0) {
+        self.stateRTCLabel.text = @"RTC连接成功";
+    }
 }
 // 接收别人连线的请求
 - (void)OnRTCApplyToLine:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData {
@@ -311,21 +262,12 @@
     }
     self.requestId = strLivePeerID;
     
-    alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@请求连线",strCustomID] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
-    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@请求连线",strCustomID] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
     [alertView show];
 }
 // 游客挂断连线
 - (void)OnRTCCancelLine:(NSString*)strLivePeerID {
     NSLog(@"OnRTCCancelLine:%@",strLivePeerID);
-    if ([self.requestId isEqualToString:strLivePeerID]) {
-        if (alertView) {
-            [alertView dismissWithClickedButtonIndex:0 animated:YES];
-            self.requestId = nil;
-        }
-        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"对方取消了连线" icon:nil ];
-        return;
-    }
     // 游客自己挂断
     BOOL find = NO;
     for (int i=0; i<self.remoteArray.count; i++) {
@@ -346,38 +288,9 @@
         }
     }
 }
-// 主播主动挂断游客的回调
-- (void)OnRTCHangupLine:(NSString*)strLivePeerID {
-    NSLog(@"OnRTCHangupLine:%@",strLivePeerID);
-    // 游客自己挂断
-    for (int i=0; i<self.remoteArray.count; i++) {
-        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-        if ([[dict objectForKey:@"PeerID"] isEqualToString:strLivePeerID]) {
-            UIView *videoView = [dict objectForKey:@"View"];
-            [videoView removeFromSuperview];
-            [self.remoteArray removeObjectAtIndex:i];
-            [self layout:i];
-            break;
-        }
-    }
-}
 //RTC 通道关闭
 - (void)OnRTCLineClosed:(int) code/*0:OK */ withReason:(NSString*)strReason {
     NSLog(@"OnRTCLineClosed:%d withReason:%@",code,strReason);
-    // 主播离开了
-    if (code == 207) {
-        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"测试账号限制三分钟" icon:nil];
-    }
-    
-    if (self.hosterKit) {
-        [self.hosterKit clear];
-        self.hosterKit = nil;
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [self.navigationController popViewControllerAnimated:YES];
-    });
-
 }
 // 视频显示
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {
@@ -402,6 +315,14 @@
             break;
         }
     }
+    
+}
+// 音频直播连麦回调
+- (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+    
+}
+// 音频直播取消连麦回调
+- (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
     
 }
 // 普通消息
@@ -470,7 +391,6 @@
 
 - (void)closeButtonEvent:(UIButton*)sender {
     if (self.hosterKit) {
-        [self.hosterKit StopRtmpStream];
         [self.hosterKit clear];
         self.hosterKit = nil;
     }
@@ -492,28 +412,24 @@
     }
 }
 - (void)shearButtonEvent:(UIButton*)sender {
+    ////    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+    ////    pboard.string = self.hlsUrl;
+    ////    [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
     
 #warning 根据你们平台需要给与响应的分享链接（HLS）
-    // 判断是否安装微信
-    if ([WXApi isWXAppInstalled]) {
-        NSString *shareText = [NSString stringWithFormat:@"%@ 视频互动直播正在进行,快来围观...",self.livingName];
-        // 微信好友
-        [UMSocialData defaultData].extConfig.wechatSessionData.title = @"RTMPC连麦";
-        [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
-        NSString *urlStr =  [NSString stringWithFormat:@"http://www.huilive.cc/rtmpc-demo/?%@",self.randomStr];
-        
-        UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeWeb url:urlStr];
-        [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:shareText image:nil location:nil urlResource:resource presentedController:nil completion:^(UMSocialResponseEntity *shareResponse){
-            if (shareResponse.responseCode == UMSResponseCodeSuccess) {
-                NSLog(@"分享成功！");
-            }
-        }];
-
-    }else{
-        UIPasteboard *pboard = [UIPasteboard generalPasteboard];
-        pboard.string =  [NSString stringWithFormat:@"http://www.huilive.cc/rtmpc-demo/?%@",self.randomStr];//self.hlsUrl;
-        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"直播连接复制成功！" icon:nil];
-    }
+    NSString *shareText = [NSString stringWithFormat:@"%@ 视频互动直播正在进行,快来围观...",self.livingName];
+    // 微信好友
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"RTMPC连麦";
+    [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+    NSString *urlStr =  [NSString stringWithFormat:@"http://123.59.68.21/rtmpc-demo/?%@",self.randomStr];
+    
+    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeWeb url:urlStr];
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:shareText image:nil location:nil urlResource:resource presentedController:nil completion:^(UMSocialResponseEntity *shareResponse){
+        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+            NSLog(@"分享成功！");
+        }
+    }];
+    
     
 }
 - (void)cButtonEvent:(UIButton*)button {

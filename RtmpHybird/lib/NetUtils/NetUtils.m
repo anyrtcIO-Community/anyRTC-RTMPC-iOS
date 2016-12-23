@@ -124,12 +124,12 @@ static NetUtils *_netUtils = nil;
 //1.接收到服务器响应的时候调用该方法
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
-    NSLog(@"didReceiveResponse--%@",[NSThread currentThread]);
+   // NSLog(@"didReceiveResponse--%@",[NSThread currentThread]);
     // 列表请求
     if (_listSession == session) {
         //在该方法中可以得到响应头信息，即response
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-        NSLog(@"%ld",(long)httpResponse.statusCode);
+       // NSLog(@"%ld",(long)httpResponse.statusCode);
         if (httpResponse.statusCode == 401 && _requestLivingListNum == 0) {
             _requestLivingListNum++;
             completionHandler(NSURLSessionResponseAllow);
@@ -198,7 +198,7 @@ static NetUtils *_netUtils = nil;
     }else if(session == _recordSession){
         //在该方法中可以得到响应头信息，即response
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-        NSLog(@"%ld",(long)httpResponse.statusCode);
+      //  NSLog(@"%ld",(long)httpResponse.statusCode);
         if (httpResponse.statusCode == 401 && _requesRecordNum == 0) {
             _requesRecordNum++;
             completionHandler(NSURLSessionResponseAllow);
@@ -268,7 +268,7 @@ static NetUtils *_netUtils = nil;
     }else if (session == _closeRecordSession){
         //在该方法中可以得到响应头信息，即response
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-        NSLog(@"%ld",(long)httpResponse.statusCode);
+      //  NSLog(@"%ld",(long)httpResponse.statusCode);
         if (httpResponse.statusCode == 401 && _closeRequesRecordNum == 0) {
             _closeRequesRecordNum++;
             completionHandler(NSURLSessionResponseAllow);
@@ -341,7 +341,7 @@ static NetUtils *_netUtils = nil;
 //2.接收到服务器返回数据的时候会调用该方法，如果数据较大那么该方法可能会调用多次
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
-    NSLog(@"didReceiveData--%@",[NSThread currentThread]);
+   // NSLog(@"didReceiveData--%@",[NSThread currentThread]);
     // 列表请求
     if (session == _listSession) {
         //拼接服务器返回的数据
@@ -380,7 +380,7 @@ static NetUtils *_netUtils = nil;
                     [tempArray addObject:item];
                 }
                 listBlock(tempArray,nil,200);
-                NSLog(@"%@",listArray);
+               // NSLog(@"%@",listArray);
             }
         }else{
             if (listBlock) {
@@ -449,7 +449,7 @@ static NetUtils *_netUtils = nil;
     NSRange range={range1.location+range1.length+1,32};
     if (str.length>range.location+range.length) {
         nounceStr =[str substringWithRange:range];
-        NSLog(@"%@",nounceStr);
+       // NSLog(@"%@",nounceStr);
         return nounceStr;
     }
     return nil;
@@ -479,10 +479,10 @@ static NetUtils *_netUtils = nil;
     {
         
         NSString* ha1=[self md5OfString:[NSString stringWithFormat:@"%@:%@:%@",appID,realm,token]];
-        NSLog(@"ha1:%@",ha1);
+       // NSLog(@"ha1:%@",ha1);
         //得到ha2
         NSString* ha2=[self md5OfString:[NSString stringWithFormat:@"GET:%@",url]];
-        NSLog(@"ha2:%@",ha2);
+      //  NSLog(@"ha2:%@",ha2);
         
         //得到qop
         NSString* qop=@"auth";
@@ -498,16 +498,16 @@ static NetUtils *_netUtils = nil;
         NSString * nc = @"00000001";
         
         NSString *middle = [NSString stringWithFormat:@"%@:%@:%@:%@",nonce,nc,cnonce,qop];
-        NSLog(@"middle:%@",middle);
-        //得到ha3(response)
-        NSLog(@"ha1=%@",ha1);
-        NSLog(@"nonce=%@",nonce);
-        NSLog(@"nc=%@",nc);
-        NSLog(@"cnonce=%@",cnonce);
-        NSLog(@"qop=%@",qop);
-        NSLog(@"ha2=%@",ha2);
+//        NSLog(@"middle:%@",middle);
+//        //得到ha3(response)
+//        NSLog(@"ha1=%@",ha1);
+//        NSLog(@"nonce=%@",nonce);
+//        NSLog(@"nc=%@",nc);
+//        NSLog(@"cnonce=%@",cnonce);
+//        NSLog(@"qop=%@",qop);
+//        NSLog(@"ha2=%@",ha2);
         NSString  *ha3=[self md5OfString:[NSString stringWithFormat:@"%@:%@:%@",[ha1 lowercaseString],[middle lowercaseString],[ha2 lowercaseString]]];
-        NSLog(@"ha3:%@",ha3);
+       // NSLog(@"ha3:%@",ha3);
         //进行拼接得到字符串authorization
         NSString  *_authorization = [NSString stringWithFormat:@"%@\",qop=\"%@\",nc=\"00000001\",cnonce=\"%@",ha3,qop,cnonce];
         return [_authorization lowercaseString];

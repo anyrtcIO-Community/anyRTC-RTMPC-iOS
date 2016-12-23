@@ -16,6 +16,9 @@
 #import "DanmuItemView.h"
 #import "DanmuLaunchView.h"
 #import "AudioShowView.h"
+#import "HorizontalView.h"
+#import "PersonItem.h"
+#import "HosterView.h"
 
 
 @interface GuestAudioOnlyController ()<RTMPCGuestRtmpDelegate, RTMPCGuestRtcDelegate,KeyBoardInputViewDelegate> {
@@ -40,11 +43,14 @@
 
 @property (nonatomic, strong) DanmuLaunchView *danmuView;
 
-
+@property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *nickName;
 @property (nonatomic, strong) NSString *userIcon;
 
-@property (nonatomic, strong) NSString *otherUserStr; // 请求连麦的相关信息
+@property (nonatomic, strong) HosterView *hosterView;
+@property (nonatomic, strong) HorizontalView *horizontalView;
+@property (nonatomic ,strong) NSMutableArray *mWatchNumber;
+
 
 @end
 
@@ -60,9 +66,12 @@
     [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor blackColor];
     self.remoteArray = [[NSMutableArray alloc] initWithCapacity:3];
-    
+    self.mWatchNumber = [[NSMutableArray alloc] initWithCapacity:3];
+   
     [self.view addSubview:self.mainView];
     [self.view addSubview:self.audioLabelTip];
+    [self.view addSubview:self.hosterView];
+    [self.view addSubview:self.horizontalView];
     [self.view addSubview:self.handupButton];
     [self.view addSubview:self.closeButton];
     [self.view addSubview:self.lineNumLabel];
@@ -73,19 +82,19 @@
     
     [self.view addSubview:self.danmuView];
     
-    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:YES];
+    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:YES withAudioDetect:YES];
     self.guestKit.rtc_delegate = self;
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
     [self.guestKit setVideoContentMode:VideoShowModeScaleAspectFill];
    
-    
+    self.userID = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserID"];
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     //andUserData 参数根据平台相关，然后在进会人员中会有该人员信息的接受（用户人员上下线）
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
     NSDictionary *customDict = [NSDictionary dictionaryWithObjectsAndKeys:self.nickName,@"nickName", self.userIcon,@"headUrl" ,nil];
     NSString *customStr = [self JSONTOString:customDict];
     
-    [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:@"test_ios_plul" andUserData:customStr ];
+    [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:self.userID andUserData:customStr];
     
     [self registerForKeyboardNotifications];
 }
@@ -130,10 +139,6 @@
     return result;
 }
 
-- (NSString*)getTopName {
-    NSArray *array = @[@"测试Anyrtc",@"Anyrtc真心效果好",@"欢迎用Anyrtc",@"视频云提供商DYNC"];
-    return [array objectAtIndex:(int)arc4random()%(array.count-1)];
-}
 #pragma mark - KeyBoardInputViewDelegate
 // 发送消息
 - (void)keyBoardSendMessage:(NSString*)message withDanmu:(BOOL)danmu {
@@ -144,7 +149,7 @@
         // 发送弹幕消息
         if (self.danmuView) {
             DanmuItem *item = [[DanmuItem alloc] init];
-            item.u_userID = @"three id";
+            item.u_userID = self.userID;
             item.u_nickName = self.nickName;
             item.thumUrl = self.userIcon;
             item.content = message;
@@ -156,7 +161,7 @@
     }else{
         // 发送普通消息
         MessageModel *model = [[MessageModel alloc] init];
-        [model setModel:@"guestID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
+        [model setModel:self.userID withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
         [self.messageTableView sendMessage:model];
         
         if (self.guestKit) {
@@ -190,6 +195,37 @@
 {
     
 }
+- (void)OnRtmpAudioLevel:(NSString *)nsCustomID withLevel:(int)Level {
+    NSLog(@"OnRtmpAudioLevel:%@withLevel:%d",nsCustomID,Level);
+    if ([nsCustomID  isEqualToString:self.livingItem.hosterId]) {
+        if (Level != 0) {
+            [self.hosterView show];
+        }
+        return;
+    }
+    if (use_cap_) {
+        // 如果连麦后
+        for (NSDictionary *item in self.remoteArray) {
+            AudioShowView *itemShow = [[item allValues] firstObject];
+            if ([itemShow.userID isEqualToString:nsCustomID]) {
+                if (Level != 0) {
+                    [itemShow show];
+                }
+                break;
+            }
+        }
+    }else{
+        for (PersonItem *personItem  in self.mWatchNumber) {
+            if ([personItem.userID isEqualToString:nsCustomID]) {
+                if (Level!=0) {
+                    personItem.isSpeak = YES;
+                }
+                break;
+            }
+        }
+        [self.horizontalView setMumberArray:self.mWatchNumber];
+    }
+}
 #pragma mark - RTMPCGuestRtcDelegate
 // 加入RTC
 - (void)OnRTCJoinLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason
@@ -211,40 +247,27 @@
         if(!use_cap_) {
             use_cap_ = true;
             // 找一个view
-            UIView *videoView = [self getVideoViewWithStrID:@"MEVIDEOVIEW"];
+            UIView *videoView = [self getVideoViewWithStrID:@"MEVIDEOVIEW" withUserID:self.userID];
             UIButton *cButton = [UIButton buttonWithType:UIButtonTypeCustom];
             cButton.frame = CGRectMake(CGRectGetWidth(videoView.frame)-30,10, 20, 20);
             [cButton addTarget:self action:@selector(cButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
             [cButton setImage:[UIImage imageNamed:@"close_preview"] forState:UIControlStateNormal];
             [videoView addSubview:cButton];
+            
             [self.view addSubview:videoView];
+            // 加一个tap
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeCamera)];
+            [videoView addGestureRecognizer:tap];
             // 参照点~
             [self.view insertSubview:videoView belowSubview:self.chatButton];
+//            [self.guestKit SetVideoCapturer:videoView andUseFront:YES];
         }
     }else{
         [ASHUD showHUDWithCompleteStyleInView:self.view content:@"主播拒绝了你的连麦请求" icon:nil];
         self.handupButton.hidden = NO;
     }
 }
-// 其他用户连线了主播
-- (void)OnRTCOtherLineOpen:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData
-{
-    
-}
-// 其他用户离开了连麦互动
-- (void)OnRTCOtherLineClose:(NSString*)strLivePeerID
-{
-    for (int i=0; i<self.remoteArray.count; i++) {
-        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-        if ([[dict.allKeys firstObject] isEqualToString:strLivePeerID]) {
-            UIView *videoView = [dict objectForKey:strLivePeerID];
-            [videoView removeFromSuperview];
-            [self.remoteArray removeObjectAtIndex:i];
-            [self layout:i];
-            break;
-        }
-    }
-}
+
 // 主播关闭了你的连线（通->关）
 - (void)OnRTCHangupLine
 {
@@ -279,20 +302,49 @@
         [self.navigationController popViewControllerAnimated:YES];
     });
 }
-// 视频显示（音频直播中收到回复主播回复的回调就算成功）
+// 视频显示
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {
-    NSLog(@"OnRTCOpenVideoRender:%@",strLivePeerID);
+    
 }
-// 视频离开（音频直播中 其他连麦者离开走 OnRTCOtherLineClose）
+// 视频离开
 - (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID {
-    NSLog(@"OnRTCCloseVideoRender:%@",strLivePeerID);
+    
+}
+// 音频直播连麦回调
+- (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+    NSLog(@"OnRTCOpenAudioLine:%@ withCustomID：%@",strLivePeerID,nsCustomID);
+    // 自己的和主播的不在这处理了（自己的在收到同意后处理，主播的ID已经知道）；
+    if ([nsCustomID isEqualToString:self.userID] || [nsCustomID isEqualToString:self.livingItem.hosterId]) {
+        return;
+    }
+    UIView *video = [self getVideoViewWithStrID:strLivePeerID withUserID:nsCustomID];
+    [self.view addSubview:video];
+    // 参照点~
+    [self.view insertSubview:video belowSubview:self.chatButton];
+    //[self.guestKit SetRTCVideoRender:strLivePeerID andRender:video];
+    
+}
+// 音频直播取消连麦回调
+- (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+     NSLog(@"OnRTCCloseAudioLine:%@ withCustomID：%@",strLivePeerID,nsCustomID);
+    for (int i=0; i<self.remoteArray.count; i++) {
+        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+        if ([[dict.allKeys firstObject] isEqualToString:strLivePeerID]) {
+            UIView *videoView = [dict objectForKey:strLivePeerID];
+            [videoView removeFromSuperview];
+            [self.remoteArray removeObjectAtIndex:i];
+            [self layout:i];
+            break;
+        }
+    }
+
 }
 
 // 普通消息
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     // 发送普通消息
     MessageModel *model = [[MessageModel alloc] init];
-    [model setModel:@"guestID" withName:self.nickName withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
+    [model setModel:nsCustomId?nsCustomName:@"" withName:nsCustomName?nsCustomName:@"" withIcon:@"游客头像" withType:CellNewChatMessageType withMessage:nsContent];
     [self.messageTableView sendMessage:model];
 }
 // 弹幕
@@ -311,18 +363,30 @@
     @autoreleasepool {
         self.lineNumLabel.text = [NSString stringWithFormat:@"在线观看人数:%d",nTotalMember];
     }
+    [self.mWatchNumber removeAllObjects];
 }
 // 人员信息
 - (void)OnRTCMember:(NSString*)nsCustomId withUserData:(NSString*)nsUserData {
-    
+    NSDictionary *customData = [self JSONValue:nsUserData];
+    if (customData) {
+        PersonItem  *item = [[PersonItem alloc] init];
+        item.userID = nsCustomId;
+        item.nickName = [customData objectForKey:@"nickName"];
+        item.headURl = [customData objectForKey:@"headUrl"];
+        [self.mWatchNumber addObject:item];
+    }
 }
 
 - (void)OnRTCMemberListUpdateDone {
-    
+     [self.horizontalView setMumberArray:self.mWatchNumber];
 }
 
-
 #pragma mark - button events
+- (void)changeCamera {
+    if (self.guestKit) {
+        [self.guestKit SwitchCamera];
+    }
+}
 - (void)pullButtonEvent:(UIButton*)sender {
     sender.selected = !sender.selected;
     // 开始拉流
@@ -439,7 +503,8 @@
     return _mainView;
 }
 
-- (AudioShowView*)getVideoViewWithStrID:(NSString*)publishID {
+- (AudioShowView*)getVideoViewWithStrID:(NSString*)publishID withUserID:(NSString*)userID {
+    
     NSInteger num = self.remoteArray.count;
     CGFloat videoHeight = CGRectGetHeight(self.view.frame)/8;
     CGFloat videoWidth = videoHeight;
@@ -461,10 +526,23 @@
     }
     if ([publishID isEqualToString:@"MEVIDEOVIEW"]) {
         [pullView headUrl:self.userIcon withName:self.nickName withID:@"MEVIDEOVIEW"];
+        pullView.userID = userID;
     }else{
-        NSDictionary *dictData = [self JSONValue:self.otherUserStr];
-        if (dictData) {
-            [pullView headUrl:[dictData objectForKey:@"headUrl"] withName:[dictData objectForKey:@"nickName"] withID:publishID];
+        PersonItem *findItem;
+        BOOL isFind = NO;
+        for (PersonItem *item in self.mWatchNumber) {
+            if ([item.userID isEqualToString:userID]) {
+                isFind = YES;
+                findItem = item;
+                break;
+            }
+        }
+        if (isFind) {
+            [pullView headUrl:findItem.headURl withName:findItem.nickName withID:publishID];
+            pullView.userID = userID;
+        }else{
+            [pullView headUrl:@"" withName:@"" withID:publishID];
+            pullView.userID = userID;
         }
         
     }
@@ -553,6 +631,26 @@
     }
     return _danmuView;
 }
+- (HorizontalView*)horizontalView {
+    if (!_horizontalView) {
+        _horizontalView = [[HorizontalView alloc] initWithFrame:CGRectMake(10, 90, 200, 50)];
+        _horizontalView.backgroundColor = [UIColor clearColor];
+    }
+    return _horizontalView;
+}
+- (HosterView*)hosterView {
+    if (!_hosterView) {
+
+        _hosterView = [[HosterView alloc] initWithFrame:CGRectMake(15, 20, 120, 45)];
+        PersonItem *item = [[PersonItem alloc] init];
+        item.userID = self.livingItem.hosterId;
+        item.nickName = self.livingItem.hosterName;
+        item.headURl = self.livingItem.hosterHeadUrl;
+        [_hosterView setItem:item];
+    }
+    return _hosterView;
+}
+
 #pragma mark -
 //支持横向
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator

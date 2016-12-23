@@ -8,92 +8,102 @@
 
 #ifndef RTMPCGuestDelegate_h
 #define RTMPCGuestDelegate_h
-//* All callback event is on main thread, so it's mean developer
-//* could operate UI method in callback directly.
+//* 所有的回调都在主线程上
 @protocol RTMPCGuestRtmpDelegate <NSObject>
 @required
 /**
- *   RTMP service connection is successful callback
+ *    RTMP 服务连接成功
  */
 - (void)OnRtmplayerOK;
 /**
- *  RTMP's cache time and the current Bit rate
+ *  RTMP 缓存状态以及当前码率
  *
- *  @param cacheTime delay time (ms)
- *  @param curBitrate Bit rate
+ *  @param cacheTime 缓存时间 (ms)
+ *  @param curBitrate 码率
  */
 - (void)OnRtmplayerStatus:(int) cacheTime withBitrate:(int) curBitrate;
 /**
- *   RTMP Player start play
+ *   RTMP 播放器开始播放（用于第一针播放，或者播放过程中缓存后继续播放）
  */
 - (void)OnRtmplayerStart;
 /**
- *  cache time
+ *  缓存时间（ms）
  *
  *  @param time (ms)
  */
 - (void)OnRtmplayerCache:(int) time;
 /**
- *  rtmp player close
+ *  rtmp 播放器关闭
  *
- *  @param errcode eror code
+ *  @param errcode 错误code
  */
 - (void)OnRtmplayerClosed:(int) errcode;
+
+/**
+ 音频监测回到
+
+ @param nsCustomID 用户所在平台的ID
+ @param leave 0~100 （1~5可能是杂音所致，根据自己的需求而定）
+ */
+- (void)OnRtmpAudioLevel:(NSString *)nsCustomID withLevel:(int)Level;
+
 @end
 
 @protocol RTMPCGuestRtcDelegate <NSObject>
 @required
 /**
- *  Join RTC service  callback
+ *  加入RTC的状态回调
  *
- *  @param code      if 0,scuess
- *  @param strReason reason
+ *  @param code      如果是0成功，其他的失败
+ *  @param strReason 原因
  */
 - (void)OnRTCJoinLineResult:(int) code withReason:(NSString*)strReason;
 /**
- *  Apply line to host callback
+ *  游客申请向主播连麦，主播同意和不同意的回调
  *
- *  @param code if 0,scuess
+ *  @param code 0 同意，其他不同意
  */
 - (void)OnRTCApplyLineResult:(int) code;
+
 /**
- *  Get other join RTC callback
- *
- *  @param strLivePeerID peer id
- *  @param strCustomID   other's user id
- *  @param strUserData   other's custom data(eg:picture or nickname;)
- */
-- (void)OnRTCOtherLineOpen:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData;
-/**
- *  Get other leave RTC callback
- *
- *  @param strLivePeerID peerID
- */
-- (void)OnRTCOtherLineClose:(NSString*)strLivePeerID;
-/**
- *  Host hang up you line
+ *  游客收到主播挂断自己连麦的回调
  */
 - (void)OnRTCHangupLine;
 
 /**
- *  RTC server close
+ *  RTC 服务关闭
  *
- *  @param code      if 0 scuess;other's failure
- *  @param strReason reason
+ *  @param code      0关闭成功，其他关闭失败
+ *  @param strReason 原因
  */
 - (void)OnRTCLineLeave:(int) code withReason:(NSString*)strReason;
 /**
- *  The attachment successfully，after you get this callback,You should do show this video
+ *  游客连麦后收到视频即将显示的回调，和连麦后收到其他用户的连麦窗口
  *
- *  @param strLivePeerID other's peer id
+ *  @param strLivePeerID 游客请求的ID(可以判断是自己还是别人)
  */
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID;
 /**
- *  Attachment to disconnect，after you get this callback,You should clean up the display
+ *  取消连麦后收到视频即将消失的回调
  *
- *  @param strLivePeerID other's peer id
+ *  @param strLivePeerID 游客请求的ID(可以判断是自己还是别人)
  */
 - (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID;
+/**
+ 音频连麦成功回调接口(自己和其他人连麦都会回调)
+ 
+ @param strLivePeerID 请求ID
+ @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一)
+ */
+- (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;
+/**
+ 音频连麦结束回调接口(自己和其他人连麦都会回调)
+ 
+ @param strLivePeerID 请求ID
+ @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一)
+ */
+- (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;
+
 @optional
 /**
  *  Messages

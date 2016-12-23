@@ -35,11 +35,13 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  *  @param delegate RTMP相关回调代理
  *  @param capturePosition  设备方向（横屏/竖屏）
  *  @param isAudioOnly 如果是YES,存音频模式；设置NO,为音视频模式
+ *  @param audioDetect  如果isAudioOnly 为YES的时候 audioDetect才有用，设置YES，打开音频监测
+ *
  *  @return 游客端工具类
  */
 - (instancetype)initWithDelegate:(id<RTMPCGuestRtmpDelegate>)delegate
        withCaptureDevicePosition:(RTMPCScreenOrientation)capturePosition
-             withLivingAudioOnly:(BOOL)isAudioOnly;
+             withLivingAudioOnly:(BOOL)isAudioOnly withAudioDetect:(BOOL)audioDetect;
 ;
 /**
  *  清空游客端工具类，相当于析构函数

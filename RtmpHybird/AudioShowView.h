@@ -10,6 +10,10 @@
 
 @interface AudioShowView : UIView
 
+@property (nonatomic, strong) NSString *userID;
+
+- (void)show;
+
 - (void)headUrl:(NSString*)url withName:(NSString*)name withID:(NSString*)peerID;
 
 @end

@@ -1,4 +1,4 @@
-//
+ //
 //  HostAudioOnlyController.m
 //  RTMPCDemo
 //
@@ -19,11 +19,15 @@
 #import "DanmuItemView.h"
 
 #import "AudioShowView.h"   
-
+#import "HorizontalView.h"
+#import "PersonItem.h"
+#import "HosterView.h"
+#import "Masonry.h"
 
 @interface HostAudioOnlyController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
 {
     UITapGestureRecognizer *tapGesture;
+    UIAlertView *alertView;
 }
 
 @property (nonatomic, strong) UIButton *closeButton;
@@ -49,6 +53,8 @@
 
 @property (nonatomic, strong) NSString *requestId;
 
+@property (nonatomic, strong) NSString *userID;
+
 @property (nonatomic, strong) NSString *nickName;
 
 @property (nonatomic, strong) NSString *userIcon;
@@ -56,6 +62,11 @@
 @property (nonatomic, strong) NSString *randomStr;
 
 @property (nonatomic, strong) NSString *otherUserStr; // 请求连麦的相关信息
+@property (nonatomic, strong) NSString *otherUserID;
+
+@property (nonatomic, strong) HosterView *hosterView;
+@property (nonatomic, strong) HorizontalView *horizontalView;
+@property (nonatomic, strong) NSMutableArray *mWatchNumber;
 
 @end
 
@@ -71,12 +82,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor clearColor];
     [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.remoteArray = [[NSMutableArray alloc] initWithCapacity:3];
+    self.mWatchNumber = [[NSMutableArray alloc] initWithCapacity:3];
     [self.view addSubview:self.audioLabelTip];
-    
+    [self.view addSubview:self.hosterView];
+    [self.view addSubview:self.horizontalView];
     [self.view addSubview:self.closeButton];
     [self.view addSubview:self.stateRTMPLabel];
     [self.view addSubview:self.stateRTCLabel];
@@ -87,28 +101,35 @@
     [self.view addSubview:self.keyBoardView];
     [self.view addSubview:self.messageTableView];
     [self.view addSubview:self.danmuView];
-    
+    self.userID = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserID"];
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
-    self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:YES];
+    self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:YES withAudioDetect:YES];
     self.hosterKit.rtc_delegate = self;
     [self.hosterKit SetVideoCapturer:self.view andUseFront:YES];
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];
     // 推流地址自己换掉自己的即可
-     NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.131/live1/%@",self.randomStr];
-    self.hlsUrl = [NSString stringWithFormat:@"rtmp:/192.168.199.131/live1/%@.m3u8",self.randomStr];
+    //NSString *rtmpUrl =  [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];;
+    NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@",self.randomStr];
+    //NSString *rtmpUrl = [NSString stringWithFormat:@"rtmp://pili-live-rtmp.xxwolo.com/cece/MjIzS1RVeDBtd"];
+    self.hlsUrl = [NSString stringWithFormat:@"rtmp://192.168.199.130/live1/%@.m3u8",self.randomStr];
     
     [self.hosterKit StartPushRtmpStream:rtmpUrl];
     /**
      *  加载相关数据(大厅列表解析数据对应即可)
      */
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.userID?self.userID:@"",@"hosterId",rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly",self.nickName?self.nickName:@"",@"NickName",self.userIcon?self.userIcon:@"",@"IconUrl", nil];
     
     NSString *jsonString = [self JSONTOString:dict];
-    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"test_ios" andUserData:jsonString andRtcArea:@"CN"]) {
+    if(![self.hosterKit OpenRTCLine:self.randomStr andCustomID:self.userID andUserData:jsonString andRtcArea:@"CN"]) {
         NSLog(@"!!! Cann't open rtc line function, maybe you aren't set RTMPCHosterRtcDelegate");
     }
+    PersonItem *item = [[PersonItem alloc] init];
+    item.userID = self.userID;
+    item.nickName = self.nickName;
+    item.headURl = self.userIcon;
+    [_hosterView setItem:item];
     
     [self registerForKeyboardNotifications];
 }
@@ -179,7 +200,7 @@
         // 发送弹幕消息
         if (self.danmuView) {
             DanmuItem *item = [[DanmuItem alloc] init];
-            item.u_userID = @"three id";
+            item.u_userID = self.userID;
             item.u_nickName = self.nickName;
             item.thumUrl = self.userIcon;
             item.content = message;
@@ -193,7 +214,7 @@
         // 发送普通消息
         MessageModel *model = [[MessageModel alloc] init];
         
-        [model setModel:@"hostID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
+        [model setModel:self.userID withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
         [self.messageTableView sendMessage:model];
         
         if (self.hosterKit) {
@@ -248,6 +269,38 @@
 - (void)OnRtmpStreamClosed {
     NSLog(@"OnRtmpStreamClosed");
 }
+- (void)OnRtmpAudioLevel:(NSString *)nsCustomID withLevel:(int)Level {
+    NSLog(@"OnRtmpAudioLevel:%@ withLevel:%d",nsCustomID,Level);
+    if ([nsCustomID  isEqualToString:self.userID]) {
+        if (Level != 0) {
+             [self.hosterView show];
+        }
+        return;
+    }
+     BOOL isFind = NO;
+    for (NSDictionary *item in self.remoteArray) {
+        AudioShowView *itemShow = [item objectForKey:@"View"];
+        if ([itemShow.userID isEqualToString:nsCustomID]) {
+            isFind = YES;
+            if (Level != 0) {
+                [itemShow show];
+            }
+            break;
+        }
+    }
+    if (isFind) {
+        return;
+    }
+    for (PersonItem *personItem  in self.mWatchNumber) {
+        if ([personItem.userID isEqualToString:nsCustomID]) {
+            if (Level!=0) {
+                personItem.isSpeak = YES;
+            }
+            break;
+        }
+    }
+    [self.horizontalView setMumberArray:self.mWatchNumber];
+}
 #pragma mark -  RTMPCHosterRtcDelegate
 // 加入RTC成功
 - (void)OnRTCOpenLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason {
@@ -260,13 +313,16 @@
 - (void)OnRTCApplyToLine:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData {
     NSLog(@"OnRTCApplyToLine:%@ withCustomID:%@ withUserData:%@",strLivePeerID,strCustomID,strUserData);
     if (self.requestId!=nil) {
-        [self.hosterKit HangupRTCLine:strLivePeerID];
-        return;
+        [self.hosterKit HangupRTCLine:self.requestId];
+        self.requestId = nil;
+        [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        alertView = nil;
     }
+    self.otherUserID = strCustomID;
     self.requestId = strLivePeerID;
     self.otherUserStr = strUserData;
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@请求连线",strCustomID] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+    alertView = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@请求连线",strCustomID] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
     [alertView show];
 }
 // 游客挂断连线
@@ -293,12 +349,21 @@
 }
 // 视频显示
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {
-    NSLog(@"OnRTCOpenVideoRender:%@",strLivePeerID);
+
 }
 // 视频离开
 - (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID {
-    NSLog(@"OnRTCCloseVideoRender:%@",strLivePeerID);
+
 }
+// 音频直播连麦回调
+- (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+    NSLog(@"OnRTCOpenAudioLine:%@ withCustomID：%@",strLivePeerID,nsCustomID);
+}
+// 音频直播取消连麦回调
+- (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+    NSLog(@"OnRTCCloseAudioLine:%@ withCustomID：%@",strLivePeerID,nsCustomID);
+}
+
 // 普通消息
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     // 发送普通消息
@@ -321,6 +386,7 @@
 - (void)OnRTCMemberListWillUpdate:(int)nTotalMember {
     @autoreleasepool {
         self.lineNumLabel.text = [NSString stringWithFormat:@"在线观看人数:%d",nTotalMember];
+        [self.mWatchNumber removeAllObjects];
     }
 }
 // 人员信息
@@ -332,11 +398,17 @@
         MessageModel *model = [[MessageModel alloc] init];
         [model setModel:nsCustomId withName:userName withIcon:@"头像" withType:CellNewChatMessageType withMessage:@"来了，欢迎~"];
         [self.messageTableView sendMessage:model];
+        
+        PersonItem  *item = [[PersonItem alloc] init];
+        item.userID = nsCustomId;
+        item.headURl = [customData objectForKey:@"u_icon"];
+        [self.mWatchNumber addObject:item];
+        
     }
 }
 
 - (void)OnRTCMemberListUpdateDone {
-    
+     [self.horizontalView setMumberArray:self.mWatchNumber];
 }
 
 - (void)layout:(int)index {
@@ -500,6 +572,7 @@
         default:
             break;
     }
+    pullView.userID = self.otherUserID;
     NSDictionary *dictData = [self JSONValue:self.otherUserStr];
     if (dictData) {
          [pullView headUrl:[dictData objectForKey:@"headUrl"] withName:[dictData objectForKey:@"nickName"] withID:publishID];
@@ -619,6 +692,21 @@
         _danmuView = [[DanmuLaunchView alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.messageTableView.frame)-(ItemHeight*3+ItemSpace*2), self.view.frame.size.width, ItemHeight*3+ItemSpace*2)];
     }
     return _danmuView;
+}
+- (HorizontalView*)horizontalView {
+    if (!_horizontalView) {
+        _horizontalView = [[HorizontalView alloc] initWithFrame:CGRectMake(0, 90, 200, 50)];
+        
+    }
+    return _horizontalView;
+}
+- (HosterView*)hosterView {
+    if (!_hosterView) {
+        
+        _hosterView = [[HosterView alloc] initWithFrame:CGRectMake(15, 20, 120, 45)];
+     
+    }
+    return _hosterView;
 }
 
 - (void)didReceiveMemoryWarning {

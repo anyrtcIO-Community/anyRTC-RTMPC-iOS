@@ -9,62 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RtmpHybird/HostViewController.m"
-            timestampString = "494334314.074151"
+            filePath = "RtmpHybird/HostAudioOnlyController.m"
+            timestampString = "504153868.060301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
-            landmarkName = "-closeButtonEvent:"
-            landmarkType = "5">
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "-OnRtmpAudioLevel:withLevel:"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[HostViewController closeButtonEvent:]"
+                  symbolName = "-[HostAudioOnlyController OnRtmpAudioLevel:withLevel:]"
                   moduleName = "RTMPC&#x8fde;&#x9ea6;"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zjq/Documents/GitFinder/RTC/RTMPCHybirdEngine-IOS/RTMPCHybirdEngine-IOS/RtmpHybird/HostViewController.m"
-                  timestampString = "494334501.555307"
+                  urlString = "file:///Users/zjq/Documents/GitFinder/RTC/RTMPCHybridEngine-IOS/RtmpHybird/HostAudioOnlyController.m"
+                  timestampString = "504153868.719647"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "402"
-                  endingLineNumber = "402"
-                  offsetFromSymbolStart = "280">
+                  startingLineNumber = "281"
+                  endingLineNumber = "281"
+                  offsetFromSymbolStart = "328">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__39-[HostViewController closeButtonEvent:]_block_invoke"
+                  symbolName = "-[HostAudioOnlyController OnRtmpAudioLevel:withLevel:]"
                   moduleName = "RTMPC&#x8fde;&#x9ea6;"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zjq/Documents/GitFinder/RTC/RTMPCHybirdEngine-IOS/RTMPCHybirdEngine-IOS/RtmpHybird/HostViewController.m"
-                  timestampString = "494334501.555419"
+                  urlString = "file:///Users/zjq/Documents/GitFinder/RTC/RTMPCHybridEngine-IOS/RtmpHybird/HostAudioOnlyController.m"
+                  timestampString = "504153868.721167"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "402"
-                  endingLineNumber = "402"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "281"
+                  endingLineNumber = "281"
+                  offsetFromSymbolStart = "344">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RtmpHybird/HostViewController.m"
-            timestampString = "494334314.074151"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "-OnRTCUserBarrage:withCustomName:withCustomHeader:withContent:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

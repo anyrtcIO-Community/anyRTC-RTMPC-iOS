@@ -35,7 +35,7 @@
 
 @property (nonatomic, strong) DanmuLaunchView *danmuView;
 
-
+@property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *nickName;
 @property (nonatomic, strong) NSString *userIcon;
 
@@ -65,7 +65,7 @@
     
     [self.view addSubview:self.danmuView];
     
-    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO];
+    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO withAudioDetect:NO];
     self.guestKit.rtc_delegate = self;
    // [self.guestKit StartRtmpPlay:@"rtmp://strtmpplay.cdn.suicam.com/sclive/58232" andRender:self.mainView];
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
@@ -77,12 +77,13 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_mainView]-0-|" options:0 metrics:nil views:views]];
     
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];
+    self.userID = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserID"];
     //andUserData 参数根据平台相关，然后在进会人员中会有该人员信息的接受（用户人员上下线）
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
     NSDictionary *customDict = [NSDictionary dictionaryWithObjectsAndKeys:self.nickName,@"nickName", self.userIcon,@"headUrl" ,nil];
     NSString *customStr = [self JSONTOString:customDict];
     
-    [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:@"test_ios_plul" andUserData:customStr ];
+    [self.guestKit JoinRTCLine:self.livingItem.andyrtcId andCustomID:self.userID andUserData:customStr ];
     
     [self registerForKeyboardNotifications];
 }
@@ -174,6 +175,7 @@
 {
     
 }
+
 #pragma mark - RTMPCGuestRtcDelegate
 // 加入RTC
 - (void)OnRTCJoinLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason
@@ -215,25 +217,7 @@
         self.handupButton.hidden = NO;
     }
 }
-// 其他用户连线了主播
-- (void)OnRTCOtherLineOpen:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData
-{
-    
-}
-// 其他用户离开了连麦互动
-- (void)OnRTCOtherLineClose:(NSString*)strLivePeerID
-{
-    for (int i=0; i<self.remoteArray.count; i++) {
-        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-        if ([[dict.allKeys firstObject] isEqualToString:strLivePeerID]) {
-            UIView *videoView = [dict objectForKey:strLivePeerID];
-            [videoView removeFromSuperview];
-            [self.remoteArray removeObjectAtIndex:i];
-            [self layout:i];
-            break;
-        }
-    }
-}
+
 // 主播关闭了你的连线（通->关）
 - (void)OnRTCHangupLine
 {
@@ -291,7 +275,14 @@
         }
     }
 }
-
+// 音频直播连麦回调
+- (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+    
+}
+// 音频直播取消连麦回调
+- (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
+    
+}
 // 普通消息
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
     // 发送普通消息

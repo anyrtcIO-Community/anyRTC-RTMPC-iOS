@@ -12,7 +12,7 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "WXApi.h"
-
+#import <Bugly/Bugly.h>
 #import <RTMPCHybirdEngine/RTMPCHybirdEngineKit.h>
 @interface AppDelegate ()
 
@@ -31,8 +31,9 @@
     /**
      *  私有云配置（默认走公网）
      */
-//    [RTMPCHybirdEngineKit ConfigServerForPriCloud:@"192.168.7.207" andPort:9060];
-    
+ //   [RTMPCHybirdEngineKit ConfigServerForPriCloud:@"192.168.7.207" andPort:9060];
+    // 异常上报
+    [Bugly startWithAppId:@"1a89110a7b"];
     //向微信注册
     [WXApi registerApp:@"wxb25fbdbe18554735" withDescription:@"demo 2.0"];
     // 尚未完成

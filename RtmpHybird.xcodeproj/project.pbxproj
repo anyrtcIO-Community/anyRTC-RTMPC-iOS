@@ -133,6 +133,11 @@
 		78468AFE1DEBDF120077EA69 /* audiong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AFA1DEBDF120077EA69 /* audiong@3x.png */; };
 		78468AFF1DEBDF120077EA69 /* videoing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AFB1DEBDF120077EA69 /* videoing@2x.png */; };
 		78468B001DEBDF120077EA69 /* videoing@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78468AFC1DEBDF120077EA69 /* videoing@3x.png */; };
+		7866728D1E0BA193006D3DD5 /* HeadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786672861E0BA193006D3DD5 /* HeadCollectionViewCell.m */; };
+		7866728E1E0BA193006D3DD5 /* HorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786672881E0BA193006D3DD5 /* HorizontalView.m */; };
+		7866728F1E0BA193006D3DD5 /* HosterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7866728A1E0BA193006D3DD5 /* HosterView.m */; };
+		786672901E0BA193006D3DD5 /* PersonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7866728C1E0BA193006D3DD5 /* PersonItem.m */; };
+		78B46BB11E02DABB00D97410 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B46BB01E02DABB00D97410 /* Bugly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,6 +393,15 @@
 		78468AFA1DEBDF120077EA69 /* audiong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audiong@3x.png"; sourceTree = "<group>"; };
 		78468AFB1DEBDF120077EA69 /* videoing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videoing@2x.png"; sourceTree = "<group>"; };
 		78468AFC1DEBDF120077EA69 /* videoing@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videoing@3x.png"; sourceTree = "<group>"; };
+		786672851E0BA193006D3DD5 /* HeadCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadCollectionViewCell.h; sourceTree = "<group>"; };
+		786672861E0BA193006D3DD5 /* HeadCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadCollectionViewCell.m; sourceTree = "<group>"; };
+		786672871E0BA193006D3DD5 /* HorizontalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalView.h; sourceTree = "<group>"; };
+		786672881E0BA193006D3DD5 /* HorizontalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalView.m; sourceTree = "<group>"; };
+		786672891E0BA193006D3DD5 /* HosterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HosterView.h; sourceTree = "<group>"; };
+		7866728A1E0BA193006D3DD5 /* HosterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HosterView.m; sourceTree = "<group>"; };
+		7866728B1E0BA193006D3DD5 /* PersonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonItem.h; sourceTree = "<group>"; };
+		7866728C1E0BA193006D3DD5 /* PersonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonItem.m; sourceTree = "<group>"; };
+		78B46BB01E02DABB00D97410 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +419,7 @@
 				782637361D5897440063F0B0 /* libiconv.tbd in Frameworks */,
 				782638231D58BECE0063F0B0 /* libWeiboSDK.a in Frameworks */,
 				782638281D58BECE0063F0B0 /* libSocialWechat.a in Frameworks */,
+				78B46BB11E02DABB00D97410 /* Bugly.framework in Frameworks */,
 				782636E71D582D360063F0B0 /* Foundation.framework in Frameworks */,
 				782636E51D582D290063F0B0 /* UIKit.framework in Frameworks */,
 				7828F6E11D4B3E0B000F6C99 /* libc++.tbd in Frameworks */,
@@ -801,6 +816,8 @@
 		782E9DCE1D48EC2E009683E0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				786672841E0BA193006D3DD5 /* HorizontalView */,
+				78B46BAF1E02DABB00D97410 /* Bugly */,
 				782637E81D58BECE0063F0B0 /* UMSocial_Sdk_5.2.1 */,
 				781EBA681D51E276002343C6 /* Danmu */,
 				781EBA6F1D51E276002343C6 /* SDWebImage */,
@@ -875,6 +892,29 @@
 			);
 			path = RTMPCHybirdEngine;
 			sourceTree = SOURCE_ROOT;
+		};
+		786672841E0BA193006D3DD5 /* HorizontalView */ = {
+			isa = PBXGroup;
+			children = (
+				786672851E0BA193006D3DD5 /* HeadCollectionViewCell.h */,
+				786672861E0BA193006D3DD5 /* HeadCollectionViewCell.m */,
+				786672871E0BA193006D3DD5 /* HorizontalView.h */,
+				786672881E0BA193006D3DD5 /* HorizontalView.m */,
+				786672891E0BA193006D3DD5 /* HosterView.h */,
+				7866728A1E0BA193006D3DD5 /* HosterView.m */,
+				7866728B1E0BA193006D3DD5 /* PersonItem.h */,
+				7866728C1E0BA193006D3DD5 /* PersonItem.m */,
+			);
+			path = HorizontalView;
+			sourceTree = "<group>";
+		};
+		78B46BAF1E02DABB00D97410 /* Bugly */ = {
+			isa = PBXGroup;
+			children = (
+				78B46BB01E02DABB00D97410 /* Bugly.framework */,
+			);
+			path = Bugly;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -1060,6 +1100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781EBA9B1D51E276002343C6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				786672901E0BA193006D3DD5 /* PersonItem.m in Sources */,
 				782540931D509C53005D241A /* RegexKitLite.m in Sources */,
 				7825408D1D509C53005D241A /* MASViewConstraint.m in Sources */,
 				782E9DB71D48E407009683E0 /* HostViewController.m in Sources */,
@@ -1067,10 +1108,12 @@
 				782540A21D509C53005D241A /* TYLinkTextStorage.m in Sources */,
 				7825408C1D509C53005D241A /* MASViewAttribute.m in Sources */,
 				781EBA991D51E276002343C6 /* UIImage+GIF.m in Sources */,
+				7866728F1E0BA193006D3DD5 /* HosterView.m in Sources */,
 				782E9E021D48F231009683E0 /* NetUtils.m in Sources */,
 				781EBA951D51E276002343C6 /* SDWebImageDownloaderOperation.m in Sources */,
 				78468AF81DEBDDEB0077EA69 /* HostAudioOnlyController.m in Sources */,
 				782540981D509C53005D241A /* MessageTableView.m in Sources */,
+				7866728E1E0BA193006D3DD5 /* HorizontalView.m in Sources */,
 				78468AF61DEBDDEB0077EA69 /* AudioShowView.m in Sources */,
 				782540A31D509C53005D241A /* TYTextContainer+Extended.m in Sources */,
 				782540A51D509C53005D241A /* TYTextStorage.m in Sources */,
@@ -1094,6 +1137,7 @@
 				7825409D1D509C53005D241A /* NSMutableAttributedString+TY.m in Sources */,
 				781EBA971D51E276002343C6 /* SDWebImagePrefetcher.m in Sources */,
 				782540911D509C53005D241A /* ViewController+MASAdditions.m in Sources */,
+				7866728D1E0BA193006D3DD5 /* HeadCollectionViewCell.m in Sources */,
 				782540891D509C53005D241A /* MASConstraint.m in Sources */,
 				782E9D7C1D48E358009683E0 /* AppDelegate.m in Sources */,
 				782E9D791D48E358009683E0 /* main.m in Sources */,
@@ -1280,6 +1324,7 @@
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/Required",
 					"$(PROJECT_DIR)/RTMPCHybirdEngine",
+					"$(PROJECT_DIR)/RtmpHybird/lib/Bugly",
 				);
 				INFOPLIST_FILE = RtmpHybird/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1297,7 +1342,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
 				PRODUCT_NAME = "RTMPC连麦";
-				PROVISIONING_PROFILE = "d9371124-ec23-4acb-92e6-e23872280f69";
+				PROVISIONING_PROFILE = "5523b911-1e08-4a37-b17b-0da274068e65";
 				PROVISIONING_PROFILE_SPECIFIER = ZJQ_DEV;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1321,6 +1366,7 @@
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/RtmpHybird/lib/ShareSDK/Support/Required",
 					"$(PROJECT_DIR)/RTMPCHybirdEngine",
+					"$(PROJECT_DIR)/RtmpHybird/lib/Bugly",
 				);
 				INFOPLIST_FILE = RtmpHybird/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

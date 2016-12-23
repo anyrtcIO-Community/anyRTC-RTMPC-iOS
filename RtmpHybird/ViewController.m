@@ -127,6 +127,12 @@
 
 #pragma mark - button
 - (void)headButtonEvent:(UIButton*)sender {
+    
+//    [[NetUtils shead] getRTMPAddress:@"test001" withAppName:@"huilive" withType:1 withStreamId:nil withSecretKey:nil withReturn:^(NSDictionary *dict, int code) {
+//        
+//    }];
+//    
+//    return;
     //微信登录
     if ([WXApi isWXAppInstalled]) {
         __weak typeof(self) weakSelf = self;
@@ -141,6 +147,7 @@
                 UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
                 
                 [[NSUserDefaults standardUserDefaults] setObject:snsAccount.userName forKey:@"NickName"];
+                [[NSUserDefaults standardUserDefaults] setObject:snsAccount.usid forKey:@"UserID"];
                 [[NSUserDefaults standardUserDefaults] setObject:snsAccount.iconURL forKey:@"IconUrl"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 weakSelf.nickLabel.text = snsAccount.userName;
@@ -219,6 +226,7 @@
         }else{
             NSString *name = [self getNickName];
             [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"NickName"];
+            [[NSUserDefaults standardUserDefaults] setObject:[self randomString:12] forKey:@"UserID"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             _nickLabel.text = name;
         }
@@ -233,7 +241,7 @@
         _versionLabel.textColor = [UIColor blackColor];
         _versionLabel.font = [UIFont systemFontOfSize:14];
         _versionLabel.frame = CGRectMake(20, CGRectGetMaxY(self.view.frame)-30, CGRectGetWidth(self.view.frame)-40, 20);
-        _versionLabel.text = @"Anyrtc.io v1.0.1,build2016.11.28";
+        _versionLabel.text = @"Anyrtc.io v1.0.1,build2016.7.29";
     }
     return _versionLabel;
 }
@@ -257,8 +265,33 @@
     return _livingButton;
 }
 - (NSString*)getNickName {
-    NSArray *array  = @[@"Derek",@"Jason",@"黑色星期天",@"Eric",@"Ming",@"龙的传人",@"Dawei",@"心中的怒火",@"贱人是这样炼成的",@"北风吹",@"零度的夏日",@"Esacpe",@"Cantarella",@"Betray",@"LonElY",@"Haggard",@"Proditio",@"Birdy-sea",@"Abyss",@"Frank",@"Catnip",@"Slag male",@"Unfair",@"Pretty boy",@"Rangers",@"Awesome",@"Hatsukoi",@"Belief",@"Energy"];
+    NSArray *array  = @[@"Derek",@"Jason",@"Eric",@"Ming",@"Dawei",@"Esacpe",@"Cantarella",@"Betray",@"LonElY",@"Haggard",@"Proditio",@"Birdy-sea",@"Abyss",@"Frank",@"Catnip",@"Slag male",@"Unfair",@"Pretty boy",@"Rangers",@"Awesome",@"Hatsukoi",@"Belief",@"Energy",@"Amanda",@"Allen",@"Ann",@"Ava",@"Alger",@"Betty",@"Barbara",@"Brooke",@"Benjamin",@"Baird",@"Christina",@"Carol",@"Caroline",@"Cedric",@"Claude",@"Colin",@"Caesar",@"Chester",@"Corey",@"Hilary",@"Hunter",@"Harvey",@"Hardy",@"Isaac",@"Isidore",@"Ivan",@"Ives",@"Ulysses",@"Upton",@"Uriah",@"Tracy",@"Taylor",@"Teresa",@"Tyrone",@"Tobias",@"Sophia",@"Shirley",@"Sally",@"Shelly",@"Samantha"
+];
+    
     return array[arc4random()%(array.count-1)];
+}
+- (NSString*) randomString:(int)len {
+    
+    char* charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    
+    char* temp = malloc(len + 1);
+    
+    for (int i = 0; i < len; i++) {
+        
+        int randomPoz = arc4random()%strlen(charSet);
+        
+        temp[i] = charSet[randomPoz];
+        
+    }
+    
+    temp[len] = '\0';
+    
+    NSMutableString* randomString = [[NSMutableString alloc] initWithUTF8String:temp];
+    
+    free(temp);
+    
+    return randomString;
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
