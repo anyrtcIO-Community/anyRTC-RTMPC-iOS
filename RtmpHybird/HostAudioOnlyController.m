@@ -67,7 +67,7 @@
 @property (nonatomic, strong) HosterView *hosterView;
 @property (nonatomic, strong) HorizontalView *horizontalView;
 @property (nonatomic, strong) NSMutableArray *mWatchNumber;
-
+@property (nonatomic, assign) int remoteViewTag;
 @end
 
 @implementation HostAudioOnlyController
@@ -88,6 +88,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.remoteArray = [[NSMutableArray alloc] initWithCapacity:3];
     self.mWatchNumber = [[NSMutableArray alloc] initWithCapacity:3];
+    self.remoteViewTag = 300;
     [self.view addSubview:self.audioLabelTip];
     [self.view addSubview:self.hosterView];
     [self.view addSubview:self.horizontalView];
@@ -582,14 +583,15 @@
    
     
     UIButton *cButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cButton.tag = 300+self.remoteArray.count;
+    cButton.tag = self.remoteViewTag;
     cButton.frame = CGRectMake(CGRectGetWidth(pullView.frame)-30,10, 20, 20);
     [cButton addTarget:self action:@selector(cButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [cButton setImage:[UIImage imageNamed:@"close_preview"] forState:UIControlStateNormal];
     [pullView addSubview:cButton];
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,@"View",publishID,@"PeerID", [NSString stringWithFormat:@"%lu",(300+self.remoteArray.count)],@"buttonTag",nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,@"View",publishID,@"PeerID", [NSString stringWithFormat:@"%d",self.remoteViewTag],@"buttonTag",nil];
     [self.remoteArray addObject:dict];
+    self.remoteViewTag++;
     return pullView;
 }
 

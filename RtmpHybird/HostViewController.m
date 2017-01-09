@@ -55,6 +55,9 @@
 @property (nonatomic, strong) NSString *userIcon;
 
 @property (nonatomic, strong) NSString *randomStr;
+
+@property (nonatomic, assign) int remoteViewTag;
+
 @end
 
 @implementation HostViewController
@@ -69,7 +72,7 @@
     [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     self.remoteArray = [[NSMutableArray alloc] initWithCapacity:3];
-    
+    self.remoteViewTag = 300;
     [self.view addSubview:self.cameraView];
     [self.view addSubview:self.closeButton];
     [self.view addSubview:self.stateRTMPLabel];
@@ -521,15 +524,16 @@
             break;
     }
     UIButton *cButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cButton.tag = 300+self.remoteArray.count;
+    cButton.tag = self.remoteViewTag;
     cButton.frame = CGRectMake(CGRectGetWidth(pullView.frame)-30,10, 20, 20);
     [cButton addTarget:self action:@selector(cButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [cButton setImage:[UIImage imageNamed:@"close_preview"] forState:UIControlStateNormal];
     [pullView addSubview:cButton];
     
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,@"View",publishID,@"PeerID", [NSString stringWithFormat:@"%lu",(300+self.remoteArray.count)],@"buttonTag",nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,@"View",publishID,@"PeerID", [NSString stringWithFormat:@"%d",self.remoteViewTag],@"buttonTag",nil];
     [self.remoteArray addObject:dict];
+    self.remoteViewTag++;
     return pullView;
 }
 
