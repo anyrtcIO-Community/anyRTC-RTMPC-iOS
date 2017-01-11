@@ -85,18 +85,20 @@
  *
  *  @param strLivePeerID 游客端的请求ID
  */
-- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID;
+- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;
 /**
  *  主播收到其他游客端连麦结束的回调（一般是先收到OnRTCCancelLine 后执行 OnRTCCloseVideoRender）
  *
  *  @param strLivePeerID other's peer id
+ *  @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一)
  */
-- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID;
+- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;
 
 /**
  音频连麦成功回调接口(自己和其他人连麦都会回调)
 
  @param strLivePeerID 请求ID
+ @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一) 
  @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一)
  */
 - (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;

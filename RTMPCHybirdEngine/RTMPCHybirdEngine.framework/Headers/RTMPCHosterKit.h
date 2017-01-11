@@ -119,10 +119,9 @@
  *  @param strAnyrtcID (anyrtc ID 或者用户所在平台唯一键值)
  *  @param strCustomID (用户所在的自己平台的ID)
  *  @param strUserData (用户所在的自己平台的相关数据，建议用jason{键:值}，头像，昵称等等)
- *  @param strRtcArea  默认为CN,为国内；设置HK,为海外（根据自己的需求设置）
  *  @return 打开RTC成功与否
  */
-- (BOOL)OpenRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andUserData:(NSString*)strUserData andRtcArea:(NSString*)strRtcArea;
+- (BOOL)OpenRTCLine:(NSString*)strAnyrtcID andCustomID:(NSString*)strCustomID andUserData:(NSString*)strUserData;
 /**
  *  主播同意游客端申请的连麦请求
  *

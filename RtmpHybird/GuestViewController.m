@@ -252,8 +252,9 @@
         [self.navigationController popViewControllerAnimated:YES];
     });
 }
+
 // 视频显示
-- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {
+- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID{
     NSLog(@"OnRTCOpenVideoRender:%@",strLivePeerID);
     UIView *video = [self getVideoViewWithStrID:strLivePeerID];
     [self.view addSubview:video];
@@ -262,7 +263,7 @@
     [self.guestKit SetRTCVideoRender:strLivePeerID andRender:video];
 }
 // 视频离开
-- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID {
+- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID{
     NSLog(@"OnRTCCloseVideoRender:%@",strLivePeerID);
     for (int i=0; i<self.remoteArray.count; i++) {
         NSDictionary *dict = [self.remoteArray objectAtIndex:i];
@@ -316,6 +317,14 @@
     
 }
 
+// 开始直播
+- (void)OnRTCLiveStart:(NSString*)nsLiveInfo {
+    
+}
+// 直播停止
+- (void)OnRTCLiveStop {
+    
+}
 
 #pragma mark - button events
 - (void)changeCamera {

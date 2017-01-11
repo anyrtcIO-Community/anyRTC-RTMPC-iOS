@@ -81,14 +81,16 @@
  *  游客连麦后收到视频即将显示的回调，和连麦后收到其他用户的连麦窗口
  *
  *  @param strLivePeerID 游客请求的ID(可以判断是自己还是别人)
+ *  @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一)
  */
-- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID;
+- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;
 /**
  *  取消连麦后收到视频即将消失的回调
  *
  *  @param strLivePeerID 游客请求的ID(可以判断是自己还是别人)
+ *  @param nsCustomID 连麦用户的第三方ID(第三方ID，是自己平台的用户ID,请保持平台唯一)
  */
-- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID;
+- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID;
 /**
  音频连麦成功回调接口(自己和其他人连麦都会回调)
  
@@ -140,6 +142,18 @@
  *   Got member list is done
  */
 - (void)OnRTCMemberListUpdateDone;
+/**
+ 该直播间开始直播（前提：RTC服务打开）
+ 
+ @param nsLiveInfo 直播间信息
+ */
+- (void)OnRTCLiveStart:(NSString*)nsLiveInfo;
+
+/**
+ 直播间停止直播
+ */
+- (void)OnRTCLiveStop;
+
 @end
 
 #endif /* RTMPCGuestDelegate_h */

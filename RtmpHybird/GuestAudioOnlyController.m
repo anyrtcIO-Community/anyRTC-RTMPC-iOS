@@ -215,6 +215,9 @@
             }
         }
     }else{
+        if ([nsCustomID isEqualToString:self.userID]) {
+            return;
+        }
         for (PersonItem *personItem  in self.mWatchNumber) {
             if ([personItem.userID isEqualToString:nsCustomID]) {
                 if (Level!=0) {
@@ -274,6 +277,14 @@
     // 主播挂断你的连线
     use_cap_ = NO;
     self.handupButton.hidden = NO;
+    // 把自己的检测项关掉
+    for (PersonItem *personItem  in self.mWatchNumber) {
+        if ([personItem.userID isEqualToString:self.userID]) {
+            personItem.isSpeak = NO;
+            break;
+        }
+    }
+    
     for (int i=0;i<self.remoteArray.count;i++) {
         NSDictionary *dict = [self.remoteArray objectAtIndex:i];
         if ([[dict.allKeys firstObject] isEqualToString:@"MEVIDEOVIEW"]) {
@@ -284,9 +295,6 @@
             break;
         }
     }
-    // 清空自己摄像头~
-    [self.guestKit HangupRTCLine];
-    
 }
 // RTC 关闭
 - (void)OnRTCLineLeave:(int) code/*0:OK */ withReason:(NSString*)strReason
@@ -303,11 +311,11 @@
     });
 }
 // 视频显示
-- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {
+- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID{
     
 }
 // 视频离开
-- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID {
+- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID{
     
 }
 // 音频直播连麦回调
@@ -412,6 +420,15 @@
         [self.guestKit HangupRTCLine];
         use_cap_ = NO;
         self.handupButton.hidden = NO;
+        
+        // 把自己的监测项关掉
+        for (PersonItem *personItem  in self.mWatchNumber) {
+            if ([personItem.userID isEqualToString:self.userID]) {
+                personItem.isSpeak = NO;
+                break;
+            }
+        }
+        
         for (int i=0;i<self.remoteArray.count;i++) {
             NSDictionary *dict = [self.remoteArray objectAtIndex:i];
             if ([[dict.allKeys firstObject] isEqualToString:@"MEVIDEOVIEW"]) {
@@ -422,7 +439,9 @@
                 break;
             }
         }
+     
     }
+    
 }
 // 聊天button
 - (void)chatButtonEvent:(UIButton*)sender {

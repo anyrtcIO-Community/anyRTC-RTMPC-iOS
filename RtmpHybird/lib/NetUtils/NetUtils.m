@@ -403,12 +403,11 @@ static NetUtils *_netUtils = nil;
         if(error == nil)
         {
             if (self.closeRecordResponseData.length>0) {
-                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:self.closeRecordResponseData options:kNilOptions error:nil];
-                recordBlock(dict,nil,200);
+                closeRecordBlock(nil,200);
             }
         }else{
-            if (recordBlock) {
-                recordBlock(nil,error,201);
+            if (closeRecordBlock) {
+                closeRecordBlock(error,201);
             }
         }
     }

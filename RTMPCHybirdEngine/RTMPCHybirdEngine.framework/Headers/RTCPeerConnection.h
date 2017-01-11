@@ -21,6 +21,13 @@
 
 - (void)OnRTCOpenVideoRender:(NSString *)peerID;
 - (void)OnRTCCloseVideoRender:(NSString *)peerID;
+/**
+ 视频窗口大小的回调
+ 
+ @param videoView 视频窗口
+ @param size 视频的大小
+ */
+-(void) OnRtcViewChanged:(UIView*)videoView didChangeVideoSize:(CGSize)size;
 @end
 
 #pragma - mark RTCPeerConnections
