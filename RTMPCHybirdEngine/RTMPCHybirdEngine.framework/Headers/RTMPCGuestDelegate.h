@@ -147,7 +147,7 @@
  
  @param nsLiveInfo 直播间信息
  */
-- (void)OnRTCLiveStart:(NSString*)nsLiveInfo;
+- (void)OnRTCLiveStart;
 
 /**
  直播间停止直播

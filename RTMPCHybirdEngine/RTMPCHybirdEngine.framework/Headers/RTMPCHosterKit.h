@@ -87,6 +87,13 @@
  @return 返回成功与否
  */
 - (BOOL)SetCameraTorchMode:(bool)isOn;
+
+/**
+ 打开对焦功能，并传入对焦所用的图片（默认对焦功能是关闭的）
+
+ @param image 对焦的图片
+ */
+- (void)SetCamerafocusImage:(UIImage*)image;
 /**
  *  设置推流质量(手机直播，建议 RTMPC_Video_SD)
  *

@@ -87,8 +87,9 @@
     
     [self registerForKeyboardNotifications];
 }
-- (void)viewDidUnload
+- (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [self.guestKit clear];
 }
 #pragma mark - private method

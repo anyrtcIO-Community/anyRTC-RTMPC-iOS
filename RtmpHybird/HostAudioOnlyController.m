@@ -91,9 +91,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    self.view.backgroundColor = [UIColor clearColor];
-    [self.navigationController setNavigationBarHidden:YES];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.remoteArray = [[NSMutableArray alloc] initWithCapacity:3];
     self.mWatchNumber = [[NSMutableArray alloc] initWithCapacity:3];
@@ -116,7 +114,9 @@
     self.userIcon = [[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]?[[NSUserDefaults standardUserDefaults] valueForKey:@"IconUrl"]:@"";
     self.hosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:YES withAudioDetect:YES];
     self.hosterKit.rtc_delegate = self;
-    [self.hosterKit SetVideoCapturer:self.view andUseFront:YES];
+    
+    // 音频直播该方法不可用(调用后也无作用)
+   // [self.hosterKit SetVideoCapturer:self.view andUseFront:YES];
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];
     
@@ -142,8 +142,9 @@
     
     [self registerForKeyboardNotifications];
 }
-- (void)viewDidUnload
+- (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [self.hosterKit clear];
 }
 #pragma mark - private method

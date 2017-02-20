@@ -109,6 +109,10 @@
     [self.hosterKit SetVideoCapturer:self.cameraView andUseFront:YES];
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     self.randomStr = [self randomString:12];
+    
+    // 允许对焦(不调用此方法，自动对焦关闭)
+    [self.hosterKit SetCamerafocusImage:[UIImage imageNamed:@"touch_focus_x"]];
+
     // 推流地址自己换掉自己的即可
     self.rtmpUrl = [NSString stringWithFormat:@"%@/%@",rtmpServer,self.randomStr];
     self.hlsUrl = [NSString stringWithFormat:@"%@/%@.m3u8",rtmpServer,self.randomStr];
@@ -127,8 +131,9 @@
 
     [self registerForKeyboardNotifications];
 }
-- (void)viewDidUnload
+- (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [self.hosterKit clear];
 }
 #pragma mark - private method

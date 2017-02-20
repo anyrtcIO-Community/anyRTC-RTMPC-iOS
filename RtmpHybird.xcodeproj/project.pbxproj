@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7802FF401E5AD6E3000C116E /* touch_focus_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7802FF3F1E5AD6E3000C116E /* touch_focus_x@2x.png */; };
 		781EBA8D1D51E276002343C6 /* DanmuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 781EBA6A1D51E276002343C6 /* DanmuItem.m */; };
 		781EBA8E1D51E276002343C6 /* DanmuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781EBA6C1D51E276002343C6 /* DanmuItemView.m */; };
 		781EBA8F1D51E276002343C6 /* DanmuLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781EBA6E1D51E276002343C6 /* DanmuLaunchView.m */; };
@@ -172,6 +173,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7802FF3F1E5AD6E3000C116E /* touch_focus_x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touch_focus_x@2x.png"; sourceTree = "<group>"; };
 		781EBA691D51E276002343C6 /* DanmuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuItem.h; sourceTree = "<group>"; };
 		781EBA6A1D51E276002343C6 /* DanmuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmuItem.m; sourceTree = "<group>"; };
 		781EBA6B1D51E276002343C6 /* DanmuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuItemView.h; sourceTree = "<group>"; };
@@ -844,6 +846,7 @@
 		782E9DD41D48EC2E009683E0 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				7802FF3F1E5AD6E3000C116E /* touch_focus_x@2x.png */,
 				78468AF91DEBDF120077EA69 /* audiong@2x.png */,
 				78468AFA1DEBDF120077EA69 /* audiong@3x.png */,
 				78468AFB1DEBDF120077EA69 /* videoing@2x.png */,
@@ -979,12 +982,13 @@
 		782E9D6C1D48E358009683E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = jianqiangzhang;
 				TargetAttributes = {
 					782E9D731D48E358009683E0 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 3YB54BC6QT;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1075,6 +1079,7 @@
 				782E9DEC1D48EC2E009683E0 /* btn_back@3x.png in Resources */,
 				782E9D821D48E358009683E0 /* Main.storyboard in Resources */,
 				782E9DFA1D48EC2E009683E0 /* close_preview@3x.png in Resources */,
+				7802FF401E5AD6E3000C116E /* touch_focus_x@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1231,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1236,8 +1242,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1259,7 +1267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1271,6 +1279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1281,8 +1290,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1298,7 +1309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
