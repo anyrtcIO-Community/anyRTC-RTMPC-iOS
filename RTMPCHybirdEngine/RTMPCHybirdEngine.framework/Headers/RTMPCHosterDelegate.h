@@ -40,7 +40,7 @@
  */
 - (void)OnRtmpStreamClosed;
 /**
- 音频监测回到
+ 音频监测回调
  
  @param nsCustomID 用户所在平台的ID(每秒回调2次)
  @param leave 0~100 （1~5可能是杂音所致，根据自己的需求而定）
