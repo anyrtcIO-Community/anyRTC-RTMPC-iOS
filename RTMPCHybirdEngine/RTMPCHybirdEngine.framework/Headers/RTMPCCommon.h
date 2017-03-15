@@ -39,6 +39,11 @@ typedef enum RTMPNetAdjustMode
     
 }RTMPNetAdjustMode;
 
+typedef enum RTMPCVideoLayout
+{
+    RTMPC_V_1X3 = 0 ,       // Default - One big screen and 3 subscreens
+    RTMPC_V_3X3_auto,       // All screens as same size & auto layout
+}RTMPCVideoLayout;
 
 #ifdef WIN32
 #include <string>

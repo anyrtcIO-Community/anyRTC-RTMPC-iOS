@@ -16,5 +16,10 @@ typedef enum AnyRTCErrorCode {
     AnyRTC_FORCE_EXIT = 207		// Ç¿ÖÆÀë¿ª
 }AnyRTCErrorCode;
 
+typedef enum RTCVideoLayout
+{
+    RTC_V_1X3 = 0 ,       // Default - One big screen and 3 subscreens
+    RTC_V_3X3_auto,       // All screens as same size & auto layout
+}RTCVideoLayout;
 
 #endif	// __RTC_COMMON_H__
