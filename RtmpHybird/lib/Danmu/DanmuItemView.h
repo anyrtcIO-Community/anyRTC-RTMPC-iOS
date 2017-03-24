@@ -21,7 +21,7 @@
 
 - (void)setContent:(DanmuItem*)model;
 //过场动画，根据长度计算时间
-- (void)grounderAnimation:()model;
+- (void)grounderAnimation:(id)model;
 
 //固定高度求文字长度
 + (CGFloat)calculateMsgWidth:(NSString *)msg andWithLabelFont:(UIFont*)font andWithHeight:(NSInteger)height;

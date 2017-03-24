@@ -22,4 +22,12 @@ typedef enum RTCVideoLayout
     RTC_V_3X3_auto,       // All screens as same size & auto layout
 }RTCVideoLayout;
 
+typedef enum RTCScreenOrientation{
+    RTC_SCRN_Portrait = 0,
+    RTC_SCRN_LandscapeRight,
+    RTC_SCRN_PortraitUpsideDown,
+    RTC_SCRN_LandscapeLeft,
+    RTC_SCRN_Auto
+}RTCScreenOrientation;
+
 #endif	// __RTC_COMMON_H__

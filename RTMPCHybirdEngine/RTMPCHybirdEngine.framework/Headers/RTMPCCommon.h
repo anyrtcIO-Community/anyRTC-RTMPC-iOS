@@ -19,7 +19,8 @@ typedef enum RTMPCScreenOrientation{
 	RTMPC_SCRN_Portrait = 0,
 	RTMPC_SCRN_LandscapeRight,
     RTMPC_SCRN_PortraitUpsideDown,
-    RTMPC_SCRN_LandscapeLeft
+    RTMPC_SCRN_LandscapeLeft,
+    RTMPC_SCRN_Auto
 }RTMPCScreenOrientation;
 
 typedef enum RTMPMixVideoType

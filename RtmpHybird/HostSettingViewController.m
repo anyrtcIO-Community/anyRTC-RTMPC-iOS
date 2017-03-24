@@ -183,8 +183,6 @@
         
     }
     
-   
-    
 }
 
 #pragma mark - button events
@@ -219,7 +217,7 @@
         _pickerView.dataSource = self;
         _pickerView.showsSelectionIndicator=YES;
         _dataArray = @[@"48K",@"超高清",@"顺畅",@"标清",@"高清"];
-        _modelDataArray = @[@"视频直播",@"音频直播"];
+        _modelDataArray = @[@"视频直播",@"音频直播",@"视频直播音频连麦"];
     }
     return _pickerView;
 }
