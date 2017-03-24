@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSString *livingName;
 @property (nonatomic, assign) RTMPCVideoMode rtmpVideoMode;
 @property (nonatomic, assign) BOOL isAudioLiving;
+@property (nonatomic, assign) BOOL isVideoAudioLiving;   // 视频直播音频连麦
 @end

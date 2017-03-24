@@ -23,6 +23,7 @@
 #import "DanmuLaunchView.h"
 #import "DanmuItemView.h"
 #import "NetUtils.h"
+#import "AudioShowView.h"   
 
 
 @interface HostViewController ()<RTMPCHosterRtmpDelegate, RTMPCHosterRtcDelegate,UIAlertViewDelegate,KeyBoardInputViewDelegate>
@@ -121,7 +122,7 @@
     /**
      *  加载相关数据(大厅列表解析数据对应即可)
      */
-     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.userID?self.userID:@"",@"hosterId",self.rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly",self.nickName?self.nickName:@"",@"NickName",self.userIcon?self.userIcon:@"",@"IconUrl", nil];
+     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.userID?self.userID:@"",@"hosterId",self.rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly",self.nickName?self.nickName:@"",@"NickName",self.userIcon?self.userIcon:@"",@"IconUrl",[NSNumber numberWithBool:_isVideoAudioLiving],@"isVideoAudioLiving", nil];
     
     
     NSString *jsonString = [self JSONTOString:dict];
@@ -353,24 +354,43 @@
 // 游客挂断连线
 - (void)OnRTCCancelLine:(NSString*)strLivePeerID {
     NSLog(@"OnRTCCancelLine:%@",strLivePeerID);
-    // 游客自己挂断
-    BOOL find = NO;
-    for (int i=0; i<self.remoteArray.count; i++) {
-        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
-        NSArray *keyArray = dict.allKeys;
-        for (NSString *peerID in keyArray) {
-            if ([peerID isEqualToString:strLivePeerID]) {
-                UIView *videoView = [dict objectForKey:strLivePeerID];
+    if (self.isVideoAudioLiving) {
+        // 游客自己挂断
+        for (int i=0; i<self.remoteArray.count; i++) {
+            NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+            if ([[dict objectForKey:@"PeerID"] isEqualToString:strLivePeerID]) {
+                UIView *videoView = [dict objectForKey:@"View"];
                 [videoView removeFromSuperview];
                 [self.remoteArray removeObjectAtIndex:i];
-                [self layout:i];
-                find = YES;
+                [self layoutAudio:i];
                 break;
             }
         }
-        if (find) {
-            break;
+        if ([self.requestId isEqualToString:strLivePeerID]) {
+            self.requestId = nil;
         }
+
+    }else{
+        // 游客自己挂断
+        BOOL find = NO;
+        for (int i=0; i<self.remoteArray.count; i++) {
+            NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+            NSArray *keyArray = dict.allKeys;
+            for (NSString *peerID in keyArray) {
+                if ([peerID isEqualToString:strLivePeerID]) {
+                    UIView *videoView = [dict objectForKey:strLivePeerID];
+                    [videoView removeFromSuperview];
+                    [self.remoteArray removeObjectAtIndex:i];
+                    [self layoutVideo:i];
+                    find = YES;
+                    break;
+                }
+            }
+            if (find) {
+                break;
+            }
+        }
+
     }
 }
 
@@ -411,7 +431,7 @@
             UIView *videoView = [dict objectForKey:@"View"];
             [videoView removeFromSuperview];
             [self.remoteArray removeObjectAtIndex:i];
-            [self layout:i];
+            [self layoutVideo:i];
             break;
         }
     }
@@ -419,11 +439,27 @@
 }
 // 音频直播连麦回调
 - (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
-    
+    UIView *videoView = [self getAudioViewWithStrID:strLivePeerID];
+    if (videoView) {
+        [self.view addSubview:videoView];
+        // 参照点~
+        [self.view insertSubview:videoView belowSubview:self.chatButton];
+    }
+   
 }
 // 音频直播取消连麦回调
 - (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
-    
+    for (int i=0; i<self.remoteArray.count; i++) {
+        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+        if ([[dict objectForKey:@"PeerID"] isEqualToString:strLivePeerID]) {
+            UIView *videoView = [dict objectForKey:@"View"];
+            [videoView removeFromSuperview];
+            [self.remoteArray removeObjectAtIndex:i];
+            [self layoutAudio:i];
+            break;
+        }
+    }
+
 }
 // 普通消息
 - (void)OnRTCUserMessage:(NSString *)nsCustomId withCustomName:(NSString *)nsCustomName withCustomHeader:(NSString *)nsCustomHeader withContent:(NSString *)nsContent {
@@ -465,7 +501,28 @@
     
 }
 
-- (void)layout:(int)index {
+- (void)layoutVideo:(int)index {
+    switch (index) {
+        case 0:
+            for (int i=0; i<self.remoteArray.count; i++) {
+                NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+                UIView *videoView = [dict valueForKey:@"View"];
+                videoView.frame = CGRectMake(videoView.frame.origin.x, CGRectGetHeight(self.view.frame)-(i+1)*videoView.frame.size.height, videoView.frame.size.width, videoView.frame.size.height);
+            }
+            break;
+        case 1:
+            if (self.remoteArray.count==2) {
+                NSDictionary *dict = [self.remoteArray objectAtIndex:1];
+                UIView *videoView = [dict valueForKey:@"View"];
+                videoView.frame = CGRectMake(videoView.frame.origin.x, CGRectGetHeight(self.view.frame)-(2)*videoView.frame.size.height, videoView.frame.size.width, videoView.frame.size.height);
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
+- (void)layoutAudio:(int)index {
     switch (index) {
         case 0:
             for (int i=0; i<self.remoteArray.count; i++) {
@@ -540,15 +597,35 @@
     
 }
 - (void)cButtonEvent:(UIButton*)button {
-    
-    for (NSDictionary *dict in self.remoteArray) {
-        if ([[dict objectForKey:@"buttonTag"] isEqualToString:[NSString stringWithFormat:@"%ld",(long)button.tag]]) {
-            if (self.hosterKit) {
-                NSLog(@"%@",[dict objectForKey:@"PeerID"]);
-                [self.hosterKit HangupRTCLine:[dict objectForKey:@"PeerID"]];
+    if (self.isVideoAudioLiving) {
+        for (int i=0; i<self.remoteArray.count; i++) {
+            NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+            if ([[dict objectForKey:@"buttonTag"] isEqualToString:[NSString stringWithFormat:@"%ld",(long)button.tag]]) {
+                if (self.hosterKit) {
+                    [self.hosterKit HangupRTCLine:[dict objectForKey:@"PeerID"]];
+                }
+                if ( [[dict objectForKey:@"PeerID"] isEqualToString:self.requestId]) {
+                    self.requestId = nil;
+                }
+                UIView *videoView = [dict objectForKey:@"View"];
+                [videoView removeFromSuperview];
+                [self.remoteArray removeObjectAtIndex:i];
+                [self layoutAudio:i];
                 break;
             }
         }
+
+    }else{
+        for (NSDictionary *dict in self.remoteArray) {
+            if ([[dict objectForKey:@"buttonTag"] isEqualToString:[NSString stringWithFormat:@"%ld",(long)button.tag]]) {
+                if (self.hosterKit) {
+                    NSLog(@"%@",[dict objectForKey:@"PeerID"]);
+                    [self.hosterKit HangupRTCLine:[dict objectForKey:@"PeerID"]];
+                    break;
+                }
+            }
+        }
+
     }
     
 }
@@ -640,6 +717,54 @@
     self.remoteViewTag++;
     return pullView;
 }
+
+- (AudioShowView*)getAudioViewWithStrID:(NSString*)publishID {
+   
+    BOOL isFind = NO;
+    for (NSDictionary *dict in self.remoteArray) {
+        if ([[dict objectForKey:@"PeerID"] isEqualToString:publishID]) {
+            isFind = YES;
+            break;
+        }
+    }
+    if (isFind) {
+        return nil;
+    }
+    NSInteger num = self.remoteArray.count;
+    CGFloat videoHeight = CGRectGetHeight(self.view.frame)/8;
+    CGFloat videoWidth = videoHeight;
+    
+    AudioShowView *pullView;
+    switch (num) {
+        case 0:
+            pullView = [[AudioShowView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, 7*videoHeight, videoWidth, videoHeight)];
+            break;
+        case 1:
+            pullView = [[AudioShowView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, 6*videoHeight, videoWidth, videoHeight)];
+            break;
+        case 2:
+            pullView = [[AudioShowView alloc] initWithFrame: CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, 5*videoHeight, videoWidth, videoHeight)];
+            break;
+            
+        default:
+            break;
+    }
+   
+    [pullView headUrl:@"" withName:@"" withID:publishID];
+    
+    UIButton *cButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cButton.tag = self.remoteViewTag;
+    cButton.frame = CGRectMake(CGRectGetWidth(pullView.frame)-30,10, 20, 20);
+    [cButton addTarget:self action:@selector(cButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [cButton setImage:[UIImage imageNamed:@"close_preview"] forState:UIControlStateNormal];
+    [pullView addSubview:cButton];
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:pullView,@"View",publishID,@"PeerID", [NSString stringWithFormat:@"%d",self.remoteViewTag],@"buttonTag",nil];
+    [self.remoteArray addObject:dict];
+    self.remoteViewTag++;
+    return pullView;
+}
+
 
 - (UIView*)cameraView {
     if (!_cameraView) {

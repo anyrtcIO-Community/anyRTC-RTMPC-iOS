@@ -373,6 +373,7 @@ static NetUtils *_netUtils = nil;
                     item.hls_url = [tempDict objectForKey:@"hls_url"];
                     item.topic = [tempDict objectForKey:@"topic"];
                     item.isAudioOnly = [tempDict objectForKey:@"isAudioOnly"];
+                    item.isVideoAudioLiving = [tempDict objectForKey:@"isVideoAudioLiving"];
                     if (i<mumberArray.count) {
                         item.LiveMembers = [NSString stringWithFormat:@"%@",[mumberArray objectAtIndex:i]];
                     }

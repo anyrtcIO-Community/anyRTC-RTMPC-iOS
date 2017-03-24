@@ -16,8 +16,6 @@ static NSString *appID = @"meetingtest";
 #define rtmpServer @"rtmp://192.168.9.232:1935/live"
 
 
-
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

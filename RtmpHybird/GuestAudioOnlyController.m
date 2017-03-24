@@ -85,7 +85,6 @@
     self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:YES withAudioDetect:YES];
     self.guestKit.rtc_delegate = self;
     [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.mainView];
-    [self.guestKit setVideoContentMode:VideoShowModeScaleAspectFill];
    
     self.userID = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserID"];
     self.nickName = [[NSUserDefaults standardUserDefaults] valueForKey:@"NickName"];

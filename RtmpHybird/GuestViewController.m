@@ -176,7 +176,11 @@
 {
     
 }
-
+// 音频监测
+- (void)OnRtmpAudioLevel:(NSString *)nsCustomID withLevel:(int)Level
+{
+    
+}
 #pragma mark - RTMPCGuestRtcDelegate
 // 加入RTC
 - (void)OnRTCJoinLineResult:(int) code/*0:OK */ withReason:(NSString*)strReason

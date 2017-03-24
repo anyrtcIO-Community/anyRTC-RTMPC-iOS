@@ -10,6 +10,7 @@
 #import "HostViewController.h"
 #import "GuestViewController.h"
 #import "GuestAudioOnlyController.h"
+#import "GuestVideoAudioController.h"
 #import "AppDelegate.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "HostSettingViewController.h"
@@ -118,9 +119,16 @@
         guest.livingItem = item;
         [self.navigationController pushViewController:guest animated:YES];
     }else{
-        GuestViewController*guest = [GuestViewController new];
-        guest.livingItem = item;
-        [self.navigationController pushViewController:guest animated:YES];
+        if ([item.isVideoAudioLiving boolValue]) {
+            GuestVideoAudioController *guest = [GuestVideoAudioController new];
+            guest.livingItem = item;
+            [self.navigationController pushViewController:guest animated:YES];
+        }else{
+            GuestViewController*guest = [GuestViewController new];
+            guest.livingItem = item;
+            [self.navigationController pushViewController:guest animated:YES];
+        }
+       
  
     }
  }

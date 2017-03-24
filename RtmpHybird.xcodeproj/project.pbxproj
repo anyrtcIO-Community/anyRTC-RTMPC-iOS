@@ -81,6 +81,7 @@
 		782638321D58BECE0063F0B0 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7826381D1D58BECE0063F0B0 /* UMSnsAccountViewController.xib */; };
 		782638331D58BECE0063F0B0 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7826381E1D58BECE0063F0B0 /* UMSShareListController.xib */; };
 		782638341D58BECE0063F0B0 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7826381F1D58BECE0063F0B0 /* UMSocialSDKResourcesNew.bundle */; };
+		7827ADCD1E84D6980033E177 /* GuestVideoAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7827ADCC1E84D6980033E177 /* GuestVideoAudioController.m */; };
 		7828F6B41D4B09B2000F6C99 /* go@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7828F6B21D4B09B2000F6C99 /* go@2x.png */; };
 		7828F6B51D4B09B2000F6C99 /* go@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7828F6B31D4B09B2000F6C99 /* go@3x.png */; };
 		7828F6CC1D4B3BE5000F6C99 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7828F6CB1D4B3BE5000F6C99 /* Security.framework */; };
@@ -326,6 +327,8 @@
 		7826381E1D58BECE0063F0B0 /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		7826381F1D58BECE0063F0B0 /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		782638201D58BECE0063F0B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
+		7827ADCB1E84D6980033E177 /* GuestVideoAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestVideoAudioController.h; sourceTree = "<group>"; };
+		7827ADCC1E84D6980033E177 /* GuestVideoAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestVideoAudioController.m; sourceTree = "<group>"; };
 		7828F6B21D4B09B2000F6C99 /* go@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go@2x.png"; sourceTree = "<group>"; };
 		7828F6B31D4B09B2000F6C99 /* go@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go@3x.png"; sourceTree = "<group>"; };
 		7828F6CB1D4B3BE5000F6C99 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -772,6 +775,8 @@
 				78468AF31DEBDDEB0077EA69 /* GuestAudioOnlyController.m */,
 				78468AF41DEBDDEB0077EA69 /* HostAudioOnlyController.h */,
 				78468AF51DEBDDEB0077EA69 /* HostAudioOnlyController.m */,
+				7827ADCB1E84D6980033E177 /* GuestVideoAudioController.h */,
+				7827ADCC1E84D6980033E177 /* GuestVideoAudioController.m */,
 				782E9DB11D48E407009683E0 /* HostSettingViewController.h */,
 				782E9DB21D48E407009683E0 /* HostSettingViewController.m */,
 				782E9D7A1D48E358009683E0 /* AppDelegate.h */,
@@ -1125,6 +1130,7 @@
 				782E9D7F1D48E358009683E0 /* ViewController.m in Sources */,
 				781EBA901D51E276002343C6 /* NSData+ImageContentType.m in Sources */,
 				781EBA9C1D51E276002343C6 /* UIImageView+WebCache.m in Sources */,
+				7827ADCD1E84D6980033E177 /* GuestVideoAudioController.m in Sources */,
 				782E9DB61D48E407009683E0 /* HostSettingViewController.m in Sources */,
 				782540A61D509C53005D241A /* TYViewStorage.m in Sources */,
 				782540881D509C53005D241A /* MASCompositeConstraint.m in Sources */,

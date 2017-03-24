@@ -238,14 +238,7 @@
     if (buttonIndex == 1) {
         if (self.hosterKit && self.requestId) {
             [self.hosterKit AcceptRTCLine:self.requestId];
-            
-            UIView *videoView = [self getVideoViewWithStrID:self.requestId];
-            if (videoView) {
-                [self.view addSubview:videoView];
-                // 参照点~
-                [self.view insertSubview:videoView belowSubview:self.chatButton];
-                self.requestId = nil;
-            }
+             self.requestId = nil;
         }
     }else{
         if (self.hosterKit && self.requestId) {
@@ -377,10 +370,28 @@
 // 音频直播连麦回调
 - (void)OnRTCOpenAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
     NSLog(@"OnRTCOpenAudioLine:%@ withCustomID：%@",strLivePeerID,nsCustomID);
+    UIView *videoView = [self getVideoViewWithStrID:strLivePeerID];
+    if (videoView) {
+        [self.view addSubview:videoView];
+        // 参照点~
+        [self.view insertSubview:videoView belowSubview:self.chatButton];
+        
+    }
 }
 // 音频直播取消连麦回调
 - (void)OnRTCCloseAudioLine:(NSString*)strLivePeerID withCustomID:(NSString *)nsCustomID {
     NSLog(@"OnRTCCloseAudioLine:%@ withCustomID：%@",strLivePeerID,nsCustomID);
+    for (int i=0; i<self.remoteArray.count; i++) {
+        NSDictionary *dict = [self.remoteArray objectAtIndex:i];
+        if ([[dict objectForKey:@"PeerID"] isEqualToString:strLivePeerID]) {
+            UIView *videoView = [dict objectForKey:@"View"];
+            [videoView removeFromSuperview];
+            [self.remoteArray removeObjectAtIndex:i];
+            [self layout:i];
+            break;
+        }
+    }
+    
 }
 
 // 普通消息

@@ -82,6 +82,7 @@
 
 @property (nonatomic, assign) RTMPCVideoMode rtmpVideoMode;
 @property (nonatomic, assign) BOOL isVideoLiving;
+@property (nonatomic, assign) BOOL isVideoLivingAudioModel;
 
 @end
 
@@ -100,6 +101,7 @@
     [self.pickerView selectRow:2 inComponent:0 animated:YES];
     _rtmpVideoMode = 2;
     _isVideoLiving = YES;
+    _isVideoLivingAudioModel = NO;
     [self registerForKeyboardNotifications];
     [self.view addSubview:self.bgView];
     [_bgView.roomTextField becomeFirstResponder];
@@ -151,9 +153,9 @@
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     
     if (component == 1) {
-        return (self.view.bounds.size.width-60)/2;
+        return (self.view.bounds.size.width)/2;
     }
-    return (self.view.bounds.size.width-60)/2;
+    return (self.view.bounds.size.width-100)/2;
 }
 
 // 返回选中的行
@@ -164,14 +166,26 @@
         if (row == 0) {
              [pickerView selectRow:1 inComponent:1 animated:YES];
              _isVideoLiving = NO;
+            _isVideoLivingAudioModel = NO;
         }else{
-             _isVideoLiving = YES;
-             [pickerView selectRow:0 inComponent:1 animated:YES];
+          
+            if (!_isVideoLiving) {
+                _isVideoLiving = YES;
+                [pickerView selectRow:0 inComponent:1 animated:YES];
+            }else{
+                
+            }
+            
         }
        
     } else {
-        if (row == 0) {
+        if (row == 0 || row == 2) {
             _isVideoLiving = YES;
+            if (row == 2) {
+                 _isVideoLivingAudioModel = YES;
+            }else{
+                 _isVideoLivingAudioModel = NO;
+            }
             if (_rtmpVideoMode == -1) {
                  [pickerView selectRow:3 inComponent:0 animated:YES];
             }
@@ -182,6 +196,7 @@
         }
         
     }
+    NSLog(@"ISVideo:%d isVideoAudio:%d",_isVideoLiving,_isVideoLivingAudioModel);
     
 }
 
@@ -212,7 +227,7 @@
 }
 - (UIPickerView*)pickerView {
     if (!_pickerView) {
-        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(30, 84, CGRectGetWidth(self.view.frame)-60, 200)];
+        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 84, CGRectGetWidth(self.view.frame), 200)];
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
         _pickerView.showsSelectionIndicator=YES;
@@ -232,10 +247,20 @@
                 return;
             }
             if (weakSelf.isVideoLiving) {
-                HostViewController *hostController = [HostViewController new];
-                hostController.livingName = text;
-                hostController.rtmpVideoMode = weakSelf.rtmpVideoMode;
-                [weakSelf.navigationController pushViewController:hostController animated:YES];
+                if (weakSelf.isVideoLivingAudioModel) {
+                    HostViewController *hostController = [HostViewController new];
+                    hostController.livingName = text;
+                    hostController.isVideoAudioLiving = YES;
+                    hostController.rtmpVideoMode = weakSelf.rtmpVideoMode;
+                    [weakSelf.navigationController pushViewController:hostController animated:YES];
+                }else{
+                    HostViewController *hostController = [HostViewController new];
+                    hostController.livingName = text;
+                    hostController.isVideoAudioLiving = NO;
+                    hostController.rtmpVideoMode = weakSelf.rtmpVideoMode;
+                    [weakSelf.navigationController pushViewController:hostController animated:YES];
+                }
+              
             }else {
                 HostAudioOnlyController *hostController = [HostAudioOnlyController new];
                 hostController.livingName = text;
