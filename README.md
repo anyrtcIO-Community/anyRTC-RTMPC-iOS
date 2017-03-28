@@ -34,7 +34,8 @@ RTMP 播放器</br>
 **iOS** 8.0及以上
 
 ##支持的CPU架构
-**iOS** armv7 arm64  支持bitcode
+**iOS** armv7 、arm64。  支持bitcode
+
 ##支持的流媒体服务端
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准RTMP协议服务端
 
