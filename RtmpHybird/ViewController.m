@@ -249,7 +249,7 @@
         _versionLabel.textColor = [UIColor blackColor];
         _versionLabel.font = [UIFont systemFontOfSize:14];
         _versionLabel.frame = CGRectMake(20, CGRectGetMaxY(self.view.frame)-30, CGRectGetWidth(self.view.frame)-40, 20);
-        _versionLabel.text = @"Anyrtc.io V 1.1.24, 2017.01.11";
+        _versionLabel.text = @"Anyrtc.io V 1.1.28, 2017.04.12";
     }
     return _versionLabel;
 }

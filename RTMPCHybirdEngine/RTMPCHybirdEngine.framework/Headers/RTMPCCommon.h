@@ -46,6 +46,26 @@ typedef enum RTMPCVideoLayout
     RTMPC_V_3X3_auto,       // All screens as same size & auto layout
 }RTMPCVideoLayout;
 
+typedef enum RTMPCVideoTempHor
+{
+	RTMPC_V_T_HOR_LEFT	= 0,
+	RTMPC_V_T_HOR_CENTER,
+	RTMPC_V_T_HOR_RIGHT
+}RTMPCVideoTempHor;
+
+typedef enum RTMPCVideoTempVer
+{
+	RTMPC_V_T_VER_TOP = 0,
+	RTMPC_V_T_VER_CENTER,
+	RTMPC_V_T_VER_BOTTOM
+}RTMPCVideoTempVer;
+
+typedef enum RTMPCVideoTempDir
+{
+	RTMPC_V_T_DIR_HOR = 0,
+	RTMPC_V_T_DIR_VER
+}RTMPCVideoTempDir;
+
 #ifdef WIN32
 #include <string>
 LIV_API int  GenRandomString(char*buf, int len);

@@ -104,6 +104,16 @@
  *    （RTMPC_Video_720P）:1280*720,码率:1280
  */
 - (void)SetVideoMode:(RTMPCVideoMode) videoMode;
+/**
+ *  设置合成流显示位置
+ *
+ *  @param hor:（水平排布）RTMPC_V_T_HOR_LEFT :水平左边  RTMPC_V_T_HOR_CENTER：水平中间 RTMPC_V_T_HOR_RIGHT：水平右边
+ *  @param ver:（竖直排布）RTMPC_V_T_VER_TOP ：垂直顶部  RTMPC_V_T_VER_CENTER：垂直居中 RTMPC_V_T_VER_BOTTOM：垂直底部
+ *  @param ver:（排布方向）RTMPC_V_T_DIR_HOR：水平排布 RTMPC_V_T_DIR_VER：垂直排布
+ *  @param padhor:水平的间距（左右间距：最左边或者最后边的视频离边框的距离）
+ *  @param padver:垂直的间距（上下间距：最上面或者最下面离边框的距离）
+ */
+- (void)SetVideoTemplate:(RTMPCVideoTempHor)hor temVer:(RTMPCVideoTempVer)ver temDir:(RTMPCVideoTempDir)dir padhor:(int)padhor padver:(int)padver;
 
 #pragma mark Rtmp function for push rtmp stream
 /**
