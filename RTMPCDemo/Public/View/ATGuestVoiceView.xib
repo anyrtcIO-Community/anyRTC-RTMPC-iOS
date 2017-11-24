@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ATGuestVoiceView">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="210"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjX-qd-8sf" customClass="FBWaterHeadView">
+                    <rect key="frame" x="22.5" y="3.5" width="133.5" height="133.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rjX-qd-8sf" secondAttribute="height" multiplier="1:1" id="jMA-u2-25K"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRv-0V-CLD">
+                    <rect key="frame" x="68" y="137" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1x-cr-pYX">
+                    <rect key="frame" x="73" y="168" width="33" height="33"/>
+                    <state key="normal" image="Hangup"/>
+                    <connections>
+                        <action selector="hangUp:" destination="iN0-l3-epB" eventType="touchUpInside" id="XDV-6q-C73"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qRv-0V-CLD" firstAttribute="top" secondItem="rjX-qd-8sf" secondAttribute="bottom" id="0bS-s7-Qbr"/>
+                <constraint firstItem="qRv-0V-CLD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8TC-dT-MsK"/>
+                <constraint firstItem="rjX-qd-8sf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lyx-fH-KyZ"/>
+                <constraint firstItem="C1x-cr-pYX" firstAttribute="top" secondItem="qRv-0V-CLD" secondAttribute="bottom" constant="10" id="X6p-B7-joD"/>
+                <constraint firstItem="rjX-qd-8sf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="2:3" id="l7B-Eh-ciH"/>
+                <constraint firstItem="C1x-cr-pYX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mg0-IS-voG"/>
+                <constraint firstItem="rjX-qd-8sf" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="3:4" id="vqm-Vb-ZHf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="atHangUpButton" destination="C1x-cr-pYX" id="dUF-bW-Igv"/>
+                <outlet property="atHeadImageView" destination="rjX-qd-8sf" id="KvE-uV-bZ2"/>
+                <outlet property="atNameLabel" destination="qRv-0V-CLD" id="hqQ-Q5-hPL"/>
+            </connections>
+            <point key="canvasLocation" x="-73" y="-177"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Hangup" width="33" height="33"/>
+    </resources>
+</document>

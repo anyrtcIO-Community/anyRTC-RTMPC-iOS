@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ATLineListViewController">
+            <connections>
+                <outlet property="emptyView" destination="F3a-ys-rlO" id="C2D-XY-PkP"/>
+                <outlet property="tableView" destination="WMu-2b-Kwo" id="9gi-BY-cmJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="UIControl">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIT-Jx-pbQ">
+                    <rect key="frame" x="0.0" y="381" width="375" height="286"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连麦申请" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrM-wB-VrL">
+                            <rect key="frame" x="15" y="15" width="70" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8QN-Fx-VFQ">
+                            <rect key="frame" x="15" y="50.5" width="345" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="5NQ-wb-guQ"/>
+                            </constraints>
+                        </imageView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-2b-Kwo">
+                            <rect key="frame" x="0.0" y="51.5" width="375" height="234.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="FmW-sk-VmJ"/>
+                                <outlet property="delegate" destination="-1" id="MLZ-V7-7gi"/>
+                            </connections>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3a-ys-rlO">
+                            <rect key="frame" x="0.0" y="51.5" width="375" height="234.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Textrequest" translatesAutoresizingMaskIntoConstraints="NO" id="PD4-ek-VoP">
+                                    <rect key="frame" x="142" y="45.5" width="90" height="117.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="PD4-ek-VoP" secondAttribute="height" multiplier="132:172" id="JOY-cM-UTj"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您尚未收到连麦申请" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ln-6Y-9bE">
+                                    <rect key="frame" x="132" y="169" width="110.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="6ln-6Y-9bE" firstAttribute="top" secondItem="PD4-ek-VoP" secondAttribute="bottom" constant="6" id="0XA-BH-gOU"/>
+                                <constraint firstItem="PD4-ek-VoP" firstAttribute="centerY" secondItem="F3a-ys-rlO" secondAttribute="centerY" multiplier="8:9" id="EWh-5j-59O"/>
+                                <constraint firstItem="6ln-6Y-9bE" firstAttribute="centerX" secondItem="PD4-ek-VoP" secondAttribute="centerX" id="Lev-Ks-DmL"/>
+                                <constraint firstItem="PD4-ek-VoP" firstAttribute="centerX" secondItem="F3a-ys-rlO" secondAttribute="centerX" id="aS6-nw-kim"/>
+                                <constraint firstItem="PD4-ek-VoP" firstAttribute="height" secondItem="F3a-ys-rlO" secondAttribute="height" multiplier="1:2" id="g72-Yi-pe7"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="F3a-ys-rlO" firstAttribute="top" secondItem="8QN-Fx-VFQ" secondAttribute="bottom" id="1sn-pg-eDC"/>
+                        <constraint firstAttribute="bottom" secondItem="F3a-ys-rlO" secondAttribute="bottom" id="8oR-hQ-kHW"/>
+                        <constraint firstAttribute="trailing" secondItem="WMu-2b-Kwo" secondAttribute="trailing" id="FrU-VE-2VY"/>
+                        <constraint firstAttribute="trailing" secondItem="F3a-ys-rlO" secondAttribute="trailing" id="Ib0-Mi-BCh"/>
+                        <constraint firstAttribute="trailing" secondItem="8QN-Fx-VFQ" secondAttribute="trailing" constant="15" id="Ljv-ho-BxB"/>
+                        <constraint firstItem="WMu-2b-Kwo" firstAttribute="leading" secondItem="iIT-Jx-pbQ" secondAttribute="leading" id="Ofd-mb-SRw"/>
+                        <constraint firstItem="UrM-wB-VrL" firstAttribute="top" secondItem="iIT-Jx-pbQ" secondAttribute="top" constant="15" id="SX1-Xo-5Il"/>
+                        <constraint firstItem="8QN-Fx-VFQ" firstAttribute="top" secondItem="UrM-wB-VrL" secondAttribute="bottom" constant="15" id="ZvK-XU-4wC"/>
+                        <constraint firstItem="UrM-wB-VrL" firstAttribute="leading" secondItem="iIT-Jx-pbQ" secondAttribute="leading" constant="15" id="g6y-Eg-Y2u"/>
+                        <constraint firstItem="F3a-ys-rlO" firstAttribute="leading" secondItem="iIT-Jx-pbQ" secondAttribute="leading" id="isM-jM-leU"/>
+                        <constraint firstItem="8QN-Fx-VFQ" firstAttribute="leading" secondItem="iIT-Jx-pbQ" secondAttribute="leading" constant="15" id="jYd-gk-roE"/>
+                        <constraint firstItem="WMu-2b-Kwo" firstAttribute="top" secondItem="8QN-Fx-VFQ" secondAttribute="bottom" id="srg-uA-WFV"/>
+                        <constraint firstAttribute="bottom" secondItem="WMu-2b-Kwo" secondAttribute="bottom" id="ta3-ch-1v2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iIT-Jx-pbQ" secondAttribute="bottom" id="AY5-BG-Khj"/>
+                <constraint firstAttribute="trailing" secondItem="iIT-Jx-pbQ" secondAttribute="trailing" id="goF-gP-Y3f"/>
+                <constraint firstItem="iIT-Jx-pbQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="izd-SN-ViY"/>
+                <constraint firstItem="iIT-Jx-pbQ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="3:7" id="pLj-ue-zmK"/>
+            </constraints>
+            <connections>
+                <action selector="tapEvent:" destination="-1" eventType="touchUpInside" id="nea-UA-xSr"/>
+            </connections>
+            <point key="canvasLocation" x="32.5" y="62.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Textrequest" width="66" height="86"/>
+    </resources>
+</document>

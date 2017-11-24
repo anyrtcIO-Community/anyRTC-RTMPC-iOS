@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ATHosterViewController">
+            <connections>
+                <outlet property="beautyButton" destination="mV5-6r-57q" id="dAD-gF-x6K"/>
+                <outlet property="cameraButton" destination="sCv-Ez-O5E" id="MCF-Xv-jpn"/>
+                <outlet property="chatButton" destination="VOT-fY-nBd" id="9lq-kX-rjy"/>
+                <outlet property="closeButton" destination="sad-bY-PBo" id="rhb-zU-myG"/>
+                <outlet property="functionButton" destination="yho-pO-SIX" id="8Oq-J7-Cre"/>
+                <outlet property="lineButton" destination="A2Q-AR-G1A" id="i1B-WQ-Psn"/>
+                <outlet property="mirrorButton" destination="kgF-fR-kuk" id="22G-4X-xan"/>
+                <outlet property="videoButton" destination="vLg-Yu-fUY" id="7iq-GI-lGG"/>
+                <outlet property="videoModelOneButton" destination="DTA-ga-Trs" id="PDJ-S4-OHe"/>
+                <outlet property="videoModelTwoButton" destination="aDE-Vb-aEB" id="UBW-Gq-hkP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voiceButton" destination="bNw-Xe-pJK" id="Hcb-z4-weM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-fY-nBd">
+                    <rect key="frame" x="10" y="371" width="33" height="33"/>
+                    <state key="normal" image="Textmessage"/>
+                    <state key="highlighted" image="Textmessage_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="s0K-KR-wkd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2Q-AR-G1A">
+                    <rect key="frame" x="58" y="371" width="33" height="33"/>
+                    <state key="normal" image="ApplicationList"/>
+                    <state key="highlighted" image="ApplicationList_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="j1N-Rf-OyZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-ga-Trs">
+                    <rect key="frame" x="106" y="371" width="33" height="33"/>
+                    <state key="normal" image="Defaulttemplate_other"/>
+                    <state key="selected" image="Defaulttemplate_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="Grc-wl-z4Z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDE-Vb-aEB">
+                    <rect key="frame" x="154" y="371" width="33" height="33"/>
+                    <state key="normal" image="Fourscreen"/>
+                    <state key="selected" image="Fourscreen_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="ukf-hi-ySW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yho-pO-SIX">
+                    <rect key="frame" x="645" y="371" width="33" height="33"/>
+                    <state key="normal" title="功能" backgroundImage="Defaulttemplate"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="Qew-cv-oad"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sad-bY-PBo">
+                    <rect key="frame" x="693" y="371" width="33" height="33"/>
+                    <state key="normal" image="Signout"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="p9O-Eb-zE8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNw-Xe-pJK">
+                    <rect key="frame" x="645" y="371" width="33" height="33"/>
+                    <state key="normal" image="Voice"/>
+                    <state key="selected" image="Voice_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="Beo-y6-0TH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Yu-fUY">
+                    <rect key="frame" x="597" y="371" width="33" height="33"/>
+                    <state key="normal" image="a-video"/>
+                    <state key="selected" image="a-video_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="bS6-6B-zU4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-Ez-O5E">
+                    <rect key="frame" x="549" y="371" width="33" height="33"/>
+                    <state key="normal" image="a-Camera"/>
+                    <state key="selected" image="a-Camera_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="SzE-FI-ncb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV5-6r-57q">
+                    <rect key="frame" x="496" y="371" width="33" height="33"/>
+                    <state key="normal" image="a-Beauty"/>
+                    <state key="selected" image="a-Beauty_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="3L8-Xj-eqC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgF-fR-kuk">
+                    <rect key="frame" x="448" y="371" width="33" height="33"/>
+                    <state key="normal" image="a-mirrorimage"/>
+                    <state key="selected" image="a-mirrorimage_click"/>
+                    <connections>
+                        <action selector="doSomethingEvents:" destination="-1" eventType="touchUpInside" id="J1q-1q-ph2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sCv-Ez-O5E" secondAttribute="bottom" constant="10" id="28F-81-MyG"/>
+                <constraint firstAttribute="bottom" secondItem="aDE-Vb-aEB" secondAttribute="bottom" constant="10" id="7sY-hE-PDL"/>
+                <constraint firstItem="vLg-Yu-fUY" firstAttribute="leading" secondItem="sCv-Ez-O5E" secondAttribute="trailing" constant="15" id="8gv-hs-Nhm"/>
+                <constraint firstItem="sad-bY-PBo" firstAttribute="leading" secondItem="yho-pO-SIX" secondAttribute="trailing" constant="15" id="Lag-vH-hk2"/>
+                <constraint firstItem="bNw-Xe-pJK" firstAttribute="leading" secondItem="vLg-Yu-fUY" secondAttribute="trailing" constant="15" id="MRK-AT-n5H"/>
+                <constraint firstItem="A2Q-AR-G1A" firstAttribute="leading" secondItem="VOT-fY-nBd" secondAttribute="trailing" constant="15" id="OLD-Mn-6qw"/>
+                <constraint firstItem="VOT-fY-nBd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="WxJ-hz-ewh"/>
+                <constraint firstAttribute="trailing" secondItem="sad-bY-PBo" secondAttribute="trailing" constant="10" id="WxU-3a-wdd"/>
+                <constraint firstAttribute="bottom" secondItem="A2Q-AR-G1A" secondAttribute="bottom" constant="10" id="Y1c-r3-RLu"/>
+                <constraint firstItem="aDE-Vb-aEB" firstAttribute="leading" secondItem="DTA-ga-Trs" secondAttribute="trailing" constant="15" id="YlD-o4-0sW"/>
+                <constraint firstAttribute="bottom" secondItem="vLg-Yu-fUY" secondAttribute="bottom" constant="10" id="ZrK-Ng-SnP"/>
+                <constraint firstAttribute="bottom" secondItem="sad-bY-PBo" secondAttribute="bottom" constant="10" id="aKq-nQ-Nst"/>
+                <constraint firstItem="mV5-6r-57q" firstAttribute="leading" secondItem="kgF-fR-kuk" secondAttribute="trailing" constant="15" id="cae-yh-aiX"/>
+                <constraint firstAttribute="bottom" secondItem="VOT-fY-nBd" secondAttribute="bottom" constant="10" id="d0I-bJ-Vjo"/>
+                <constraint firstItem="sad-bY-PBo" firstAttribute="leading" secondItem="bNw-Xe-pJK" secondAttribute="trailing" constant="15" id="evm-Zo-vEe"/>
+                <constraint firstAttribute="bottom" secondItem="yho-pO-SIX" secondAttribute="bottom" constant="10" id="idr-qv-vm8"/>
+                <constraint firstAttribute="bottom" secondItem="kgF-fR-kuk" secondAttribute="bottom" constant="10" id="nA5-8C-Ock"/>
+                <constraint firstAttribute="bottom" secondItem="mV5-6r-57q" secondAttribute="bottom" constant="10" id="njp-rR-uKt"/>
+                <constraint firstItem="sCv-Ez-O5E" firstAttribute="leading" secondItem="mV5-6r-57q" secondAttribute="trailing" constant="20" id="nwp-bP-RbW"/>
+                <constraint firstAttribute="bottom" secondItem="DTA-ga-Trs" secondAttribute="bottom" constant="10" id="sdD-uk-ahv"/>
+                <constraint firstItem="DTA-ga-Trs" firstAttribute="leading" secondItem="A2Q-AR-G1A" secondAttribute="trailing" constant="15" id="ut4-e6-CSq"/>
+                <constraint firstAttribute="bottom" secondItem="bNw-Xe-pJK" secondAttribute="bottom" constant="10" id="vhU-oa-HWi"/>
+            </constraints>
+            <point key="canvasLocation" x="-442" y="-363"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ApplicationList" width="33" height="33"/>
+        <image name="ApplicationList_click" width="33" height="33"/>
+        <image name="Defaulttemplate" width="33" height="33"/>
+        <image name="Defaulttemplate_click" width="33" height="33"/>
+        <image name="Defaulttemplate_other" width="33" height="33"/>
+        <image name="Fourscreen" width="33" height="33"/>
+        <image name="Fourscreen_click" width="33" height="33"/>
+        <image name="Signout" width="33" height="33"/>
+        <image name="Textmessage" width="33" height="33"/>
+        <image name="Textmessage_click" width="33" height="33"/>
+        <image name="Voice" width="33" height="33"/>
+        <image name="Voice_click" width="33" height="33"/>
+        <image name="a-Beauty" width="33" height="33"/>
+        <image name="a-Beauty_click" width="33" height="33"/>
+        <image name="a-Camera" width="33" height="33"/>
+        <image name="a-Camera_click" width="33" height="33"/>
+        <image name="a-mirrorimage" width="33" height="33"/>
+        <image name="a-mirrorimage_click" width="33" height="33"/>
+        <image name="a-video" width="33" height="33"/>
+        <image name="a-video_click" width="33" height="33"/>
+    </resources>
+</document>
