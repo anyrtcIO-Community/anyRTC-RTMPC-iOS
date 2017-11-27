@@ -20,6 +20,10 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 1：演示需要两部以及两部以上的手机，装上该demo.</br>
 2：一部手机创建直播间，另外两部手机在主页，下拉刷新当前直播列表，点击列表进入直播间。</br>
 3：游客端点击链接按钮，进行连麦。</br>
+
+### 资源中心
+[更多详细方法使用，请查看API文档](https://www.anyrtc.io/resoure)
+
 #SDK包含
 RTC 连麦互动</br>
 RTMP 推流器</br>
@@ -57,8 +61,8 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
 ## Android版连麦互动Demo
 [anyRTMPC-HybridEngine-Android](https://github.com/AnyRTC/anyRTMPC-HybridEngine-Android)
-## Windows版连麦互动Demo
-[anyRTMPC-HybridEngine-windwos](https://github.com/AnyRTC/RTMPCHybirdEngine-WIN)
+## 网页版连麦互动Demo
+[anyRTMPC-HybridEngine-web](https://www.anyrtc.io/demo/lianmai)
 
 ## 商用授权
 程序发布需商用授权，业务咨询请联系
