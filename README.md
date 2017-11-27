@@ -13,7 +13,7 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 **人员上下线**</br>
 **多达4人同时在线连麦视频互动**</br>
 ## 项目展示
-![living](living.gif)
+![RTMPC](RTMPC.gif)
 ## 扫描二维码下载demo
 ![scan](scan.png)
 ### 演示注意事项
