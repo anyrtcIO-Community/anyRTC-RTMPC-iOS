@@ -49,15 +49,15 @@
 		633160DD1F7CA26300892C3F /* ATExtendMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DA1F7CA26300892C3F /* ATExtendMenuButton.m */; };
 		633160DE1F7CA26300892C3F /* FBWaterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DC1F7CA26300892C3F /* FBWaterHeadView.m */; };
 		6347266D1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */; };
-		639105C31FC562AC002F9B02 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639105C21FC562AC002F9B02 /* RTMPCHybirdEngine.framework */; };
-		639105C41FC562B3002F9B02 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639105C21FC562AC002F9B02 /* RTMPCHybirdEngine.framework */; };
-		639105C51FC562B3002F9B02 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 639105C21FC562AC002F9B02 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		639E91961F6FB22D0037D9B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91951F6FB22D0037D9B9 /* main.m */; };
 		639E91991F6FB22D0037D9B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91981F6FB22D0037D9B9 /* AppDelegate.m */; };
 		639E919F1F6FB22D0037D9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E919D1F6FB22D0037D9B9 /* Main.storyboard */; };
 		639E91A11F6FB22D0037D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E91A01F6FB22D0037D9B9 /* Assets.xcassets */; };
 		639E91AF1F6FB22E0037D9B9 /* RTMPCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91AE1F6FB22E0037D9B9 /* RTMPCDemoTests.m */; };
 		639E91BA1F6FB22E0037D9B9 /* RTMPCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91B91F6FB22E0037D9B9 /* RTMPCDemoUITests.m */; };
+		63BA1FB41FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA1FB31FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework */; };
+		63BA1FB51FE7CFC000E8BA36 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA1FB31FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework */; };
+		63BA1FB61FE7CFC000E8BA36 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA1FB31FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63BF3D9E1F7E1F1600E6ADD0 /* ATListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BF3D9C1F7E1F1600E6ADD0 /* ATListViewController.m */; };
 		63BF3D9F1F7E1F1600E6ADD0 /* ATListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF3D9D1F7E1F1600E6ADD0 /* ATListViewController.xib */; };
 		63BF3DA21F7E250D00E6ADD0 /* ATListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BF3DA11F7E250D00E6ADD0 /* ATListModel.m */; };
@@ -92,7 +92,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				639105C51FC562B3002F9B02 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
+				63BA1FB61FE7CFC000E8BA36 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,6 @@
 		633160DC1F7CA26300892C3F /* FBWaterHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBWaterHeadView.m; sourceTree = "<group>"; };
 		6347266B1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
-		639105C21FC562AC002F9B02 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 		639E91911F6FB22D0037D9B9 /* RTMPCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E91951F6FB22D0037D9B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		639E91971F6FB22D0037D9B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 		639E91B51F6FB22E0037D9B9 /* RTMPCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTMPCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E91B91F6FB22E0037D9B9 /* RTMPCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPCDemoUITests.m; sourceTree = "<group>"; };
 		639E91BB1F6FB22E0037D9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63BA1FB31FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 		63BF3D9B1F7E1F1600E6ADD0 /* ATListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATListViewController.h; sourceTree = "<group>"; };
 		63BF3D9C1F7E1F1600E6ADD0 /* ATListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATListViewController.m; sourceTree = "<group>"; };
 		63BF3D9D1F7E1F1600E6ADD0 /* ATListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATListViewController.xib; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28042CDCE751D4F73E085FB /* libPods-RTMPCDemo.a in Frameworks */,
-				639105C31FC562AC002F9B02 /* RTMPCHybirdEngine.framework in Frameworks */,
-				639105C41FC562B3002F9B02 /* RTMPCHybirdEngine.framework in Frameworks */,
+				63BA1FB41FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework in Frameworks */,
+				63BA1FB51FE7CFC000E8BA36 /* RTMPCHybirdEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +419,7 @@
 		639E91931F6FB22D0037D9B9 /* RTMPCDemo */ = {
 			isa = PBXGroup;
 			children = (
-				639105C21FC562AC002F9B02 /* RTMPCHybirdEngine.framework */,
+				63BA1FB31FE7CFBA00E8BA36 /* RTMPCHybirdEngine.framework */,
 				63E5F0EE1F729AC900F6701B /* Helpers */,
 				6331605C1F7C9A5C00892C3F /* Main */,
 				6331605D1F7C9A9700892C3F /* Video */,
@@ -542,7 +542,7 @@
 		639E91891F6FB22D0037D9B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = jh;
 				TargetAttributes = {
 					639E91901F6FB22D0037D9B9 = {

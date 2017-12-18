@@ -569,11 +569,11 @@
     self.rtcLabel.text = @"RTC服务关闭";
 }
 
-- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
+- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
   
 }
 
-- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)stUserId{
+- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId{
   
 }
 

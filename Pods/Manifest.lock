@@ -1,21 +1,24 @@
 PODS:
+  - Bugly (2.5.0)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - PPBadgeView (1.1.1)
 
 DEPENDENCIES:
+  - Bugly
   - Masonry
   - MJExtension
   - MJRefresh
   - PPBadgeView
 
 SPEC CHECKSUMS:
+  Bugly: 00c8701f2bebab4887771ba43afbf51334009742
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PPBadgeView: a24287e9b4c85708fc1a9b3b4dfa69ec03b05c32
 
-PODFILE CHECKSUM: 2a0840828d35d85528e479a4d4eecb733ac84071
+PODFILE CHECKSUM: 8696fa48f9ef26824a5e3dc5bdb9dcd2b46b6137
 
 COCOAPODS: 1.1.1

@@ -18,7 +18,7 @@ public:
 	* @param:	strBundleId - Android是packagename   iOS是bundleid   web是domain
 	*/
 	virtual void InitEngineWithAnyrtcInfo(const char*strDevelopID, const char*strAppId,
-		const char*strKey, const char*trToken, const std::string&strBundleId) = 0;
+		const char*strKey, const char*trToken, const char*strBundleId) = 0;
 	/**
 	* 配置私有云服务地址
 	* @param:	strSvrAddr - 私有云的IP

@@ -91,23 +91,25 @@
  其他游客视频连麦接通
 
  @param strLivePeerId 连麦者标识id（用于标识连麦用户，每次连麦随机生成）
- @param strUserId 游客业务平台的用户id
+ @param strRTCPubId 连麦者视频流id(用于标识连麦者发布的流)；
+ @param strUserId 游客业务平台的用户id；
  @param strUserData 游客业务平台的相关信息（昵称，头像等)；
  说明：游客同样也在连麦中才会调用，此时应调用设置其它连麦者视频窗口（setRTCVideoRender）方法用于显示连麦者图像。
  */
-- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData;
+- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData;
 
 /**
  其他游客视频连麦挂断
 
- @param strLivePeerId 连麦者标识id（用于标识连麦用户，每次连麦随机生成）
+ @param strLivePeerId 连麦者标识id（用于标识连麦用户，每次连麦随机生成)
+ @param strRTCPubId 连麦者视频流id(用于标识连麦者发布的流)；
  @param strUserId 游客业务平台的用户id
  说明：
  1.游客同样也在连麦中才会走该回调；
  2.不论是其他游客主动挂断连麦还是主播挂断游客连麦均会走该回调。
  只有在连麦中才会调用，此时应移除本地连麦者图像。
  */
-- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)strUserId;
+- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId;
 /**
  其他游客音频连麦接通
  

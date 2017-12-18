@@ -1,6 +1,11 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## Bugly
+
+Copyright 2017 Bugly Tencent. All rights reserved.
+
+
 ## MJExtension
 
 Copyright (c) 2013-2015 MJExtension (https://github.com/CoderMJLee/MJExtension)

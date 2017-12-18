@@ -152,10 +152,10 @@
     [self.mHosterKit setLocalVideoCapturer:self.hostView];
     
     //推流地址
-    self.rtmpUrl = [NSString stringWithFormat:@"%@/%@",PushRtmpServer, self.liveInfo.anyrtcId];
+    self.rtmpUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@",PushRtmpServer, self.liveInfo.anyrtcId];
     //拉流地址（录像地址）
-    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/%@",PullRtmpServer, self.liveInfo.anyrtcId];
-    self.hlsUrl = [NSString stringWithFormat:@"%@/%@.m3u8",HlsServer,self.liveInfo.anyrtcId];
+    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@",PullRtmpServer, self.liveInfo.anyrtcId];
+    self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@/playlist.m3u8",HlsServer,self.liveInfo.anyrtcId];
     //设置推流地址
     [self.mHosterKit startPushRtmpStream:self.rtmpUrl];
     self.mHosterKit.rtc_delegate = self;
@@ -194,7 +194,9 @@
     //记录直播开始时间
     self.livTime = interval;
 }
+
 - (void)initUI {
+    self.beautyButton.selected = YES;
     [self.view addSubview:self.inputView];
     [self.inputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
@@ -323,7 +325,7 @@
         case 101:
             //美颜
             senderButton.selected = !senderButton.selected;
-            [self.mHosterKit setBeautyEnable:!senderButton.selected];
+            [self.mHosterKit setBeautyEnable:senderButton.selected];
             break;
         case 102:
             //音频
