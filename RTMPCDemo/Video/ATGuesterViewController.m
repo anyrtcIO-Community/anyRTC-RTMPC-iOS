@@ -187,16 +187,16 @@
     }
 }
 
-- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
+- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
     //其他游客视频连麦接通
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
     UIView *videoView = [self getVideoViewWithPeerId:strLivePeerId withNickName:[dict objectForKey:@"nickName"]];
     [self.guestBottomView insertSubview:videoView atIndex:0];
     [self.videoArr addObject:videoView];
-    [self.guestKit setRTCVideoRender:strLivePeerId andRender:videoView];
+    [self.guestKit setRTCVideoRender:strRTCPubId andRender:videoView];
 }
 
-- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)strUserId {
+- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId {
     //其他游客视频连麦挂断
     @synchronized(self.videoArr) {
         for (NSInteger i = 0; i < self.videoArr.count; i++) {

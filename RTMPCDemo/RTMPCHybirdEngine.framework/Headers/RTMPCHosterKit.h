@@ -179,11 +179,11 @@
 /**
  设置连麦者视频窗口
  
- @param strLivePeerId RTC服务生成的连麦者标识Id (用于标识连麦用户，每次连麦随机生成)；
+ @param strRTCPubId 连麦者视频流id(用于标识连麦者发布的流)；
  @param render 对方视频的窗口，本地设置；
  说明：该方法用于游客申请连麦接通后，游客视频连麦接通回调中（onRTCOpenVideoRender）使用。
  */
-- (void)setRTCVideoRender:(NSString*)strLivePeerId andRender:(UIView*)render;
+- (void)setRTCVideoRender:(NSString*)strRTCPubId andRender:(UIView*)render;
 
 /**
  挂断游客连麦

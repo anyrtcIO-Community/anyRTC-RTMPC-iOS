@@ -663,19 +663,17 @@
     self.rtcLabel.text = @"RTC服务关闭";
 }
 
-- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
+- (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
     
     //游客连麦视频接通
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
     UIView *videoView = [self getVideoViewWithPeerId:strLivePeerId withNickName:[dict objectForKey:@"nickName"]];
     [self.view addSubview:videoView];
-    [self.mHosterKit setRTCVideoRender:strLivePeerId andRender:videoView];
+    [self.mHosterKit setRTCVideoRender:strRTCPubId andRender:videoView];
     [self layoutVideoView];
-    
-   
 }
 
-- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withUserId:(NSString *)stUserId{
+- (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId{
     //游客连麦视频挂断
     @synchronized(self.videoArr){
         for (int i=0;i<self.videoArr.count;i++) {
