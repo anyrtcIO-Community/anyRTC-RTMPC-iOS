@@ -28,7 +28,10 @@ typedef void(^RemoveBlock)(ATVideoView *view);
 @property (nonatomic, assign) CGSize videoSize;
 
 // 标识Id
-@property (nonatomic, strong) NSString *strPeerId;
+@property (nonatomic, copy) NSString *strPeerId;
+
+//标识流id
+@property (nonatomic, copy) NSString *strPubId;
 
 - (void)addHideTap;
 

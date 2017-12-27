@@ -79,7 +79,7 @@
  @param bEnable 打开或关闭本地音频
  说明：yes为传输音频,no为不传输音频，默认传输
  */
-- (void)setLocalAudioEnable:(bool)bEnable;
+- (void)setLocalAudioEnable:(BOOL)bEnable;
 
 /**
  设置本地视频是否传输
@@ -87,7 +87,7 @@
  @param bEnable 打开或关闭本地视频
  说明：yes为传输视频，no为不传输视频，默认视频传输
  */
-- (void)setLocalVideoEnable:(bool)bEnable;
+- (void)setLocalVideoEnable:(BOOL)bEnable;
 
 /**
  切换前后摄像头
@@ -100,7 +100,7 @@
 
  @param bEnable YES/NO:美颜/不美颜
  */
-- (void)setBeautyEnable:(bool) bEnable;
+- (void)setBeautyEnable:(BOOL) bEnable;
 /**
  打开手机闪光灯
 
@@ -109,7 +109,7 @@
  @return 返回成功与否
  说明：打开手机闪光灯。
  */
-- (BOOL)openCameraTorchMode:(bool)bOn;
+- (BOOL)openCameraTorchMode:(BOOL)bOn;
 
 /**
  打开对焦功能(iOS特有)
@@ -233,6 +233,8 @@
  @param nPadver 垂直的间距（上下间距：最上面或者最下面离边框的距离）
  */
 - (void)setVideoTemplate:(RTMPCVideoTempHor)eHor temVer:(RTMPCVideoTempVer)eVer temDir:(RTMPCVideoTempDir)eDir padhor:(int)nPadhor padver:(int)nPadver;
+
+
 @end
 
 #endif /* RTMPCHosterKit_h */

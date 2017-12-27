@@ -135,7 +135,8 @@
 - (void)onRTCApplyLineResult:(int)nCode{
     //游客申请连麦结果回调
     if (nCode == 0) {
-        UIView *videoView = [self getVideoViewWithPeerId:Video_MySelf withNickName:self.gestInfo.userName];
+        UIView *videoView = [self getVideoViewWithPubId:Video_MySelf withPeerId:Video_MySelf withNickName:self.gestInfo.userName];
+        
         [self.guestBottomView insertSubview:videoView atIndex:0];
         [self.videoArr addObject:videoView];
         [self.guestKit setLocalVideoCapturer:videoView];
@@ -190,7 +191,8 @@
 - (void)onRTCOpenVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId withUserData:(NSString*)strUserData{
     //其他游客视频连麦接通
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
-    UIView *videoView = [self getVideoViewWithPeerId:strLivePeerId withNickName:[dict objectForKey:@"nickName"]];
+    UIView *videoView = [self getVideoViewWithPubId:strRTCPubId withPeerId:strLivePeerId withNickName:[dict objectForKey:@"nickName"]];
+    
     [self.guestBottomView insertSubview:videoView atIndex:0];
     [self.videoArr addObject:videoView];
     [self.guestKit setRTCVideoRender:strRTCPubId andRender:videoView];
@@ -407,11 +409,11 @@
 }
 
 #pragma mark - 刷新显示连麦视图
-- (UIView *)getVideoViewWithPeerId:(NSString*)peerId withNickName:(NSString *)nameStr{
+- (UIView *)getVideoViewWithPubId:(NSString *)pubId withPeerId:(NSString*)peerId withNickName:(NSString *)nameStr{
     ATVideoView *videoView = [[[NSBundle mainBundle]loadNibNamed:@"ATVideoView" owner:self options:nil]lastObject];
     videoView.userNameLabel.text = nameStr;
     videoView.frame = CGRectZero;
-    if (![peerId isEqualToString:Video_MySelf]) {
+    if (![pubId isEqualToString:Video_MySelf]) {
         //自己没有挂断其它游客连麦的权限
         videoView.closeButton.hidden = YES;
     } else {
@@ -422,7 +424,7 @@
     videoView.removeBlock = ^(ATVideoView *view) {
         [weakSelf.videoArr removeObject:view];
         [view removeFromSuperview];
-        if ([view.strPeerId isEqualToString:Video_MySelf]) {
+        if ([view.strPubId isEqualToString:Video_MySelf]) {
             //自己的窗口
             [weakSelf.guestKit hangupRTCLine];
             [weakSelf.applyButton setTitle:@"申请连麦" forState:UIControlStateNormal];
@@ -434,6 +436,7 @@
         [weakSelf layoutVideoView];
     };
     videoView.strPeerId = peerId;
+    videoView.strPubId = pubId;
     return videoView;
 }
 

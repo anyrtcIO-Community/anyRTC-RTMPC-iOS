@@ -667,7 +667,8 @@
     
     //游客连麦视频接通
     NSDictionary *dict = [ATCommon fromJsonStr:strUserData];
-    UIView *videoView = [self getVideoViewWithPeerId:strLivePeerId withNickName:[dict objectForKey:@"nickName"]];
+
+    UIView *videoView = [self getVideoViewWithPubId:strRTCPubId WithPeerId:strLivePeerId withNickName:[dict objectForKey:@"nickName"]];
     [self.view addSubview:videoView];
     [self.mHosterKit setRTCVideoRender:strRTCPubId andRender:videoView];
     [self layoutVideoView];
@@ -678,7 +679,7 @@
     @synchronized(self.videoArr){
         for (int i=0;i<self.videoArr.count;i++) {
              ATVideoView *atVideoView = [self.videoArr objectAtIndex:i];
-            if ([atVideoView.strPeerId isEqualToString:strLivePeerId]) {
+            if ([atVideoView.strPubId isEqualToString:strRTCPubId]) {
                 [self.videoArr removeObject:atVideoView];
                 [atVideoView removeFromSuperview];
                 [self layoutVideoView];
@@ -742,7 +743,7 @@
 }
 
 //创建连麦窗口
-- (UIView *)getVideoViewWithPeerId:(NSString*)peerId withNickName:(NSString *)nameStr{
+- (UIView *)getVideoViewWithPubId:(NSString *)pubId WithPeerId:(NSString*)peerId withNickName:(NSString *)nameStr{
     ATVideoView *videoView = [[[NSBundle mainBundle]loadNibNamed:@"ATVideoView" owner:self options:nil]lastObject];
     videoView.userNameLabel.text = nameStr;
     [videoView addHideTap];
@@ -753,6 +754,7 @@
         [weakSelf removeVideoViewFromSuperView:view];
     };
     videoView.strPeerId = peerId;
+    videoView.strPubId = pubId;
     [self.videoArr addObject:videoView];
     return videoView;
 }

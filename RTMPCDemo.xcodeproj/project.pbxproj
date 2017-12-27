@@ -49,9 +49,9 @@
 		633160DD1F7CA26300892C3F /* ATExtendMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DA1F7CA26300892C3F /* ATExtendMenuButton.m */; };
 		633160DE1F7CA26300892C3F /* FBWaterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DC1F7CA26300892C3F /* FBWaterHeadView.m */; };
 		6347266D1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */; };
-		6357A5EE1FE8A91300F4081D /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357A5ED1FE8A91300F4081D /* RTMPCHybirdEngine.framework */; };
-		6357A5EF1FE8A91D00F4081D /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357A5ED1FE8A91300F4081D /* RTMPCHybirdEngine.framework */; };
-		6357A5F01FE8A91D00F4081D /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6357A5ED1FE8A91300F4081D /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		636E9C5E1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */; };
+		636E9C5F1FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */; };
+		636E9C601FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		639E91961F6FB22D0037D9B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91951F6FB22D0037D9B9 /* main.m */; };
 		639E91991F6FB22D0037D9B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91981F6FB22D0037D9B9 /* AppDelegate.m */; };
 		639E919F1F6FB22D0037D9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E919D1F6FB22D0037D9B9 /* Main.storyboard */; };
@@ -92,7 +92,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6357A5F01FE8A91D00F4081D /* RTMPCHybirdEngine.framework in Embed Frameworks */,
+				636E9C601FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,7 @@
 		633160DC1F7CA26300892C3F /* FBWaterHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBWaterHeadView.m; sourceTree = "<group>"; };
 		6347266B1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
-		6357A5ED1FE8A91300F4081D /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
+		636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 		639E91911F6FB22D0037D9B9 /* RTMPCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E91951F6FB22D0037D9B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		639E91971F6FB22D0037D9B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28042CDCE751D4F73E085FB /* libPods-RTMPCDemo.a in Frameworks */,
-				6357A5EE1FE8A91300F4081D /* RTMPCHybirdEngine.framework in Frameworks */,
-				6357A5EF1FE8A91D00F4081D /* RTMPCHybirdEngine.framework in Frameworks */,
+				636E9C5E1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */,
+				636E9C5F1FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +419,7 @@
 		639E91931F6FB22D0037D9B9 /* RTMPCDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6357A5ED1FE8A91300F4081D /* RTMPCHybirdEngine.framework */,
+				636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */,
 				63E5F0EE1F729AC900F6701B /* Helpers */,
 				6331605C1F7C9A5C00892C3F /* Main */,
 				6331605D1F7C9A9700892C3F /* Video */,
