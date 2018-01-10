@@ -152,4 +152,8 @@ typedef enum {
     RTMPC_V_T_DIR_VER
 }RTMPCVideoTempDir;
 
+typedef enum {
+    RTMPC_Nomal_Message_Type = 0,//普通文本消息
+    RTMPC_Barrage_Message_Type = 1   //弹幕消息
+}RTMPCMessageType;
 #endif	// __RTC_COMMON_H__

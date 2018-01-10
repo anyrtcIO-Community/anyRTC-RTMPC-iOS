@@ -179,6 +179,8 @@
  说明:strServerId和strRoomId参数用于请求人员列表。
  */
 -(void)onRTCMemberListNotify:(NSString*)strServerId withRoomId:(NSString*)strRoomId withAllMember:(int) nTotalMember;
+
+
 @end
 
 #endif /* RTMPCHosterDelegate_h */

@@ -165,7 +165,7 @@
 /**
  发送消息
  
- @param nType 消息类型:0:普通消息;1:弹幕消息；
+ @param eType 消息类型:RTMPC_Nomal_Message_Type:普通消息;RTMPC_Barrage_Message_Type:弹幕消息
  @param strUserName 用户昵称(最大256字节)，不能为空，否则发送失败；
  @param strUserHeaderUrl 用户头像，可选；
  @param strContent 消息内容(最大1024字节)，不能为空，否则发送失败；
@@ -173,7 +173,7 @@
  说明：默认普通消息，以上参数均会出现在游客/主播消息回调方法中, 如果加入RTC连麦（joinRTCLine）没有设置strUserId，发送失败。
  */
 
-- (BOOL)sendUserMessage:(int)nType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
+- (BOOL)sendUserMessage:(RTMPCMessageType)eType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
 
 /**
  关闭RTC连接

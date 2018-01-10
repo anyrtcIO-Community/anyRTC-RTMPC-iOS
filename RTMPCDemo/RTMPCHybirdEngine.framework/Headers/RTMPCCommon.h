@@ -8,6 +8,8 @@
 */
 LIV_API const char* RTMPC_Version(void);
 
+#define RTMPC_RELEASE 20171228
+
 //** PublishID: X000
 // X - Tag,  
 // µÚÒ»¸ö0 - codectype=> 0:h264 1:vp8 2:vp9;

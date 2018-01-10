@@ -196,7 +196,7 @@
 /**
  发送消息
 
- @param nType 消息类型:0:普通消息;1:弹幕消息
+ @param eType 消息类型:RTMPC_Nomal_Message_Type:普通消息;RTMPC_Barrage_Message_Type:弹幕消息
  @param strUserName 用户昵称(最大256字节)，不能为空，否则发送失败；
  @param strUserHeaderUrl 用户头像(最大512字节)，可选
  @param strContent 消息内容(最大1024字节)不能为空，否则发送失败；
@@ -204,7 +204,7 @@
  说明：默认普通消息。以上参数均会出现在游客/主播消息回调方法中，如果创建RTC连接（createRTCLine）没有设置strUserid，发送失败。
  */
 
-- (int)sendUserMessage:(int)nType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
+- (int)sendUserMessage:(RTMPCMessageType)eType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
 
 /**
  关闭RTC链接
@@ -231,9 +231,9 @@
  @param eDir （排布方向）RTMPC_V_T_DIR_HOR：水平排布 RTMPC_V_T_DIR_VER：垂直排布
  @param nPadhor 水平的间距（左右间距：最左边或者最后边的视频离边框的距离）
  @param nPadver 垂直的间距（上下间距：最上面或者最下面离边框的距离）
+ @param nLineWidth 小窗口的边框的宽度（边框为白色）
  */
-- (void)setVideoTemplate:(RTMPCVideoTempHor)eHor temVer:(RTMPCVideoTempVer)eVer temDir:(RTMPCVideoTempDir)eDir padhor:(int)nPadhor padver:(int)nPadver;
-
+- (void)setVideoTemplate:(RTMPCVideoTempHor)eHor temVer:(RTMPCVideoTempVer)eVer temDir:(RTMPCVideoTempDir)eDir padhor:(int)nPadhor padver:(int)nPadver lineWidth:(int)nLineWidth;
 
 @end
 
