@@ -156,6 +156,8 @@
     //拉流地址（录像地址）
     self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@",PullRtmpServer, self.liveInfo.anyrtcId];
     self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@/playlist.m3u8",HlsServer,self.liveInfo.anyrtcId];
+    //设置录像地址（前提在服务上已经开通录像服务）
+    [self.mHosterKit setRtmpRecordUrl:self.rtmpUrl];
     //设置推流地址
     [self.mHosterKit startPushRtmpStream:self.rtmpUrl];
     self.mHosterKit.rtc_delegate = self;
