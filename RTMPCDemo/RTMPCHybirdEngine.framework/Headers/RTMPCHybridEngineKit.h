@@ -9,7 +9,7 @@
 #ifndef RTMPCHybridEngineKit_h
 #define RTMPCHybridEngineKit_h
 #import <UIKit/UIKit.h>
-#include "RTMPCCommon.h"
+#include "RTCCommon.h"
 
 @interface RTMPCHybridEngineKit : NSObject {
     

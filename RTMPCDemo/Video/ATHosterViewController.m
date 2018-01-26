@@ -151,13 +151,13 @@
     //设置本地视频采集窗口
     [self.mHosterKit setLocalVideoCapturer:self.hostView];
     
-    //推流地址
-    self.rtmpUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@",PushRtmpServer, self.liveInfo.anyrtcId];
+    //推流地址（注意：根据自己的服务器要求，组装自己的地址）
+    self.rtmpUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PushRtmpServer, self.liveInfo.anyrtcId];
     //拉流地址（录像地址）
-    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@",PullRtmpServer, self.liveInfo.anyrtcId];
-    self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcFJRFGvPs5Bp6_%@/playlist.m3u8",HlsServer,self.liveInfo.anyrtcId];
-    //设置录像地址（前提在服务上已经开通录像服务）
-    [self.mHosterKit setRtmpRecordUrl:self.rtmpUrl];
+    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PullRtmpServer, self.liveInfo.anyrtcId];
+    self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@/index.m3u8",HlsServer,self.liveInfo.anyrtcId];
+    //设置录像地址（前提在服务上已经开通录像服务），录像地址为拉流地址
+    [self.mHosterKit setRtmpRecordUrl:self.rtmpPullUrl];
     //设置推流地址
     [self.mHosterKit startPushRtmpStream:self.rtmpUrl];
     self.mHosterKit.rtc_delegate = self;

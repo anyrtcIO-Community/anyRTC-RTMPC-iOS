@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "RTMPCHosterDelegate.h"
-#import "RTMPCCommon.h"
+#import "RTCCommon.h"
 
 @interface RTMPCHosterAudioKit : NSObject
 /**
@@ -121,4 +121,6 @@
  说明：主播端如果调用此方法，将会关闭RTC服务，若开启了直播在线功能（可在www.anyrtc.io 应用管理中心开通），游客端会收到主播已离开(onRTCLineLeave)的回调。
  */
 - (void)closeRTCLine;
+
+
 @end

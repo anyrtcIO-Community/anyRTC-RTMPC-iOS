@@ -10,9 +10,8 @@
 #define RTMPCGuestKit_h
 #import <UIKit/UIKit.h>
 #import "RTMPCGuestDelegate.h"
-#include "RTMPCCommon.h"
+#import "RTCCommon.h"
 #import "RTMPCGuestOption.h"
-
 
 @interface RTMPCGuestKit : NSObject {
     

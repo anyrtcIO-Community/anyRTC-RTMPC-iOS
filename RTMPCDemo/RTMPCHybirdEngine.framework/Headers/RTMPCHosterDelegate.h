@@ -180,7 +180,6 @@
  */
 -(void)onRTCMemberListNotify:(NSString*)strServerId withRoomId:(NSString*)strRoomId withAllMember:(int) nTotalMember;
 
-
 @end
 
 #endif /* RTMPCHosterDelegate_h */

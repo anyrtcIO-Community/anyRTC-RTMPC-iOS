@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "RTMPCGuestDelegate.h"
-#include "RTMPCCommon.h"
+#import "RTCCommon.h"
 
 @interface RTMPCGuestAudioKit : NSObject
 /**
@@ -104,6 +104,5 @@
  说明：用于关闭RTC服务，将无法进行聊天互动，人员上下线等。
  */
 - (void)leaveRTCLine;
-
 
 @end

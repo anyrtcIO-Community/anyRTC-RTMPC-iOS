@@ -235,6 +235,6 @@
  */
 - (void)setVideoTemplate:(RTMPCVideoTempHor)eHor temVer:(RTMPCVideoTempVer)eVer temDir:(RTMPCVideoTempDir)eDir padhor:(int)nPadhor padver:(int)nPadver lineWidth:(int)nLineWidth;
 
-@end
 
+@end
 #endif /* RTMPCHosterKit_h */

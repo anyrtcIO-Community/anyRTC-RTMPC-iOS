@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RTMPCCommon.h"
+#include "RTCCommon.h"
 
 typedef NS_ENUM(NSInteger,RTMPCCameraType) {
     RTMPCCameraTypeNomal = 0,      // 正常的相机模式,系统自带的（效率高）
