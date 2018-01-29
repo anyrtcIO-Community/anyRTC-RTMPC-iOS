@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ATMainViewController.h"
 
-#error 配置相关信息
+#warning config developer info
 //开发者信息（前往www.anyrtc.io申请）
 static NSString *developerID = @"XXX";
 static NSString *token = @"XXX";
