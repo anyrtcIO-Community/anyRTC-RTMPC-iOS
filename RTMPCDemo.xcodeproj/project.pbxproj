@@ -50,7 +50,6 @@
 		633160DE1F7CA26300892C3F /* FBWaterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DC1F7CA26300892C3F /* FBWaterHeadView.m */; };
 		6347266D1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */; };
 		636E9C5E1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */; };
-		636E9C5F1FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */; };
 		636E9C601FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 636E9C5D1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		639E91961F6FB22D0037D9B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91951F6FB22D0037D9B9 /* main.m */; };
 		639E91991F6FB22D0037D9B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91981F6FB22D0037D9B9 /* AppDelegate.m */; };
@@ -207,7 +206,6 @@
 			files = (
 				E28042CDCE751D4F73E085FB /* libPods-RTMPCDemo.a in Frameworks */,
 				636E9C5E1FF34C6500BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */,
-				636E9C5F1FF34C7200BA5F1E /* RTMPCHybirdEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +540,7 @@
 		639E91891F6FB22D0037D9B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = jh;
 				TargetAttributes = {
 					639E91901F6FB22D0037D9B9 = {

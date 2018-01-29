@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ATMainViewController.h"
 
-
-
+#error 配置相关信息
+//开发者信息（前往www.anyrtc.io申请）
 static NSString *developerID = @"XXX";
 static NSString *token = @"XXX";
 static NSString *key = @"XXX";
 static NSString *appID = @"XXX";
-
+//推流拉流以及hls地址（根据自己vdn策略规则）
 #define PushRtmpServer @"XXX"
 #define PullRtmpServer @"XXX"
 #define HlsServer @"XXX"
