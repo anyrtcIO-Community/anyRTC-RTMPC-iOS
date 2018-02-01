@@ -137,6 +137,18 @@
  说明：只有设置了音频模式（setAudioModel）才会有回调
  */
 - (void)onRTCAudioActive:(NSString *)strLivePeerId withUserId:(NSString *)strUserId withShowTime:(int)nTime;
+
+/**
+ 其他与会者视频窗口的对音视频的操作
+ 
+ @param strRTCPeerId  RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
+ @param bAudio yes为打开音频，no为关闭音频
+ @param bVideo yes为打开视频，no为关闭视频
+ 说明：比如对方关闭了音频，对方关闭了视频
+ */
+-(void)onRTCAVStatus:(NSString*) strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo;
+
+
 /**
  视频窗口大小改变
  

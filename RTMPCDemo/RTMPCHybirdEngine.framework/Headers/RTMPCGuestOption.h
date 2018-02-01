@@ -15,6 +15,11 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
     VideoShowModeCenter
 };
 
+typedef NS_ENUM(NSInteger,LinkMediaMode){
+    LinkMediaModeVideo, //默认视频连麦模式
+    LinkMediaModeAudio  //音频连麦模式
+};
+
 @interface RTMPCGuestOption : NSObject
 /**
  使用默认配置生成一个 RTMPCGuestOption 对象
@@ -28,6 +33,11 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  说明：默认前置摄像头
  */
 @property (nonatomic, assign) BOOL isFont;
+
+/**
+ 连麦模式（默认为LinkMediaModeVideo）
+ */
+@property (nonatomic, assign) LinkMediaMode linkMediaModel;
 
 /**
  视频方向：默认：RTMPCScreenPortraitType竖屏
