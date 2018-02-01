@@ -66,10 +66,10 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 
 ## 商用授权
 程序发布需商用授权，业务咨询请联系
-QQ:984630262 </br>
-QQ交流群:580477436</br>
-联系电话:021-65650071</br>
-Email:zhangjianqiang@dync.cc</br>
+QQ:580477436 </br>
+QQ交流群:554714720</br>
+联系电话:021-65650071-839</br>
+Email:hi@dync.cc</br>
 ## 关于直播
 本公司有一整套直播解决方案，特别针对移动端。本公司开发者平台[www.anyrtc.io](http://www.anyrtc.io)。除了基于RTMP协议的直播系统外，我公司还有基于WebRTC的时时交互直播系统、P2P呼叫系统、会议系统等。快捷集成SDK，便可让你的应用拥有时时通话功能。欢迎您的来电~
 ## License
