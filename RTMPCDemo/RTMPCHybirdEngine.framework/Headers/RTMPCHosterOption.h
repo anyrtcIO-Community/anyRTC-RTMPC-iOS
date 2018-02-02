@@ -21,6 +21,11 @@ typedef NS_ENUM(NSInteger,RTMPCScreenOrientationType) {
     RTMPCScreenLandscapeRightType = 2 // 横屏（右边）
 };
 
+typedef NS_ENUM(NSInteger,LivingMediaMode){
+    LivingMediaModeVideo, //默认视频直播模式
+    LivingMediaModeAudio  //音频直播模式
+};
+
 
 @interface RTMPCHosterOption : NSObject
 /**
@@ -29,6 +34,17 @@ typedef NS_ENUM(NSInteger,RTMPCScreenOrientationType) {
  @return 生成的 RTMPCHosterOption 对象
  */
 + (nonnull RTMPCHosterOption *)defaultOption;
+
+/**
+ 直播模式：默认LivingMediaModeVideo视频直播模式
+ 注意：当为LivingMediaModeAudio的时候，对视频的配置信息将无用
+ */
+@property (nonatomic, assign) LivingMediaMode livingMediaMode;
+
+/**
+ 是否打开音频检测（只有模式为LivingMediaModeAudio的时候，设置才有用）
+ */
+@property (nonatomic, assign) BOOL isAudioDetect;
 
 /**
  是否是前置摄像头

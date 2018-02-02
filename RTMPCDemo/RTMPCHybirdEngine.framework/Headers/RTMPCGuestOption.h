@@ -39,6 +39,12 @@ typedef NS_ENUM(NSInteger,LinkMediaMode){
  */
 @property (nonatomic, assign) LinkMediaMode linkMediaModel;
 
+
+/**
+ 是否打开音频检测（只有模式为LinkMediaModeAudio的时候，设置才有用）
+ */
+@property (nonatomic, assign) BOOL isAudioDetect;
+
 /**
  视频方向：默认：RTMPCScreenPortraitType竖屏
  说明：请跟主播端保持一致
