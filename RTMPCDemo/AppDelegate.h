@@ -20,6 +20,7 @@ static NSString *appID = @"XXX";
 #define PullRtmpServer @"XXX"
 #define HlsServer @"XXX"
 
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

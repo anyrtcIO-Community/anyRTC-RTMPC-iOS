@@ -212,6 +212,14 @@
  */
 - (void)closeRTCLine;
 
+
+/**
+ 设置副视频、连麦用户关闭视频后显示填充图（vip专用接口，预想使用，请联系商务）
+ 
+ @param bgFilePath 图片的地址（jpg,jpeg格式的图片）
+ */
+- (void)setVideoSubBackground:(NSString *)bgFilePath;
+
 /**
  设置合成视频显示模板
  
@@ -234,7 +242,6 @@
  @param nLineWidth 小窗口的边框的宽度（边框为白色）
  */
 - (void)setVideoTemplate:(RTMPCVideoTempHor)eHor temVer:(RTMPCVideoTempVer)eVer temDir:(RTMPCVideoTempDir)eDir padhor:(int)nPadhor padver:(int)nPadver lineWidth:(int)nLineWidth;
-
 
 @end
 #endif /* RTMPCHosterKit_h */

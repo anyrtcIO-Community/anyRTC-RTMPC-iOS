@@ -22,7 +22,7 @@
     //配置SDK
     [RTMPCHybridEngineKit initEngineWithAnyRTCInfo:developerID andAppId:appID andKey:key andToke:token];
     //配置私有云：用户默认都是公有云服务１９９.２１９
-   // [RTMPCHybridEngineKit configServerForPriCloud:@"192.168.199.219" andPort:9060];
+    //[RTMPCHybridEngineKit configServerForPriCloud:@"" andPort:9060];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.mainVc = [[ATMainViewController alloc]init];

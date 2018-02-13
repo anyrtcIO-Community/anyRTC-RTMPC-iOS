@@ -144,7 +144,12 @@
     self.mHosterKit.rtc_delegate = self;
    
     [self.view sendSubviewToBack:self.hostView];
-    
+   
+    // 设置副主播关闭视频后副主播位置占位图片
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"WechatIMG200" ofType:@"jpeg"];
+//    if (path) {
+//        [self.mHosterKit setVideoSubBackground:path];
+//    }
     //开启美颜
     [self.mHosterKit setBeautyEnable:YES];
     
@@ -732,6 +737,9 @@
     self.listVc.serverId = strServerId;
     self.listVc.roomId = strRoomId;
     self.listVc.anyrtcId = self.liveInfo.anyrtcId;
+}
+-(void)onRTCAVStatus:(NSString*) strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo {
+    NSLog(@"onRTCAVStatus:%@ withAudio:%d withVideo:%d",strRTCPeerId,bAudio,bVideo);
 }
 
 #pragma mark - other

@@ -139,7 +139,7 @@
 - (void)onRTCAudioActive:(NSString *)strLivePeerId withUserId:(NSString *)strUserId withShowTime:(int)nTime;
 
 /**
- 其他与会者视频窗口的对音视频的操作
+ 其他连麦者或主播视频窗口的对音视频的操作
  
  @param strRTCPeerId  RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
  @param bAudio yes为打开音频，no为关闭音频

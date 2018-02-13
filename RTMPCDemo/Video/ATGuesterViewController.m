@@ -255,6 +255,9 @@
     self.listVc.anyrtcId = self.liveItem.anyrtcId;
 }
 
+-(void)onRTCAVStatus:(NSString*) strRTCPeerId withAudio:(BOOL)bAudio withVideo:(BOOL)bVideo {
+    NSLog(@"onRTCAVStatus:%@ withAudio:%d withVideo:%d",strRTCPeerId,bAudio,bVideo);
+}
 
 #pragma mark - 监听键盘
 - (void)keyboardWasShown:(NSNotification*)notification {
