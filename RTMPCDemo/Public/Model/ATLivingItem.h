@@ -62,6 +62,12 @@
 //直播质量
 @property (nonatomic ,copy)NSString *videoMode;
 
+@property (nonatomic ,copy)NSString *push_url;
+
+@property (nonatomic ,copy)NSString *pull_url;
+
+@property (nonatomic ,copy)NSString *hls_url;
+
 @end
 
 @interface GuestInfo: NSObject //用户平台信息

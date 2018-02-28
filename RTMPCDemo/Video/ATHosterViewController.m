@@ -156,15 +156,15 @@
     //设置本地视频采集窗口
     [self.mHosterKit setLocalVideoCapturer:self.hostView];
     
-    //推流地址（注意：根据自己的服务器要求，组装自己的地址）
-    self.rtmpUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PushRtmpServer, self.liveInfo.anyrtcId];
-    //拉流地址（录像地址）
-    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PullRtmpServer, self.liveInfo.anyrtcId];
-    self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@/index.m3u8",HlsServer,self.liveInfo.anyrtcId];
+//    //推流地址（注意：根据自己的服务器要求，组装自己的地址）
+//    self.rtmpUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PushRtmpServer, self.liveInfo.anyrtcId];
+//    //拉流地址（录像地址）
+//    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PullRtmpServer, self.liveInfo.anyrtcId];
+//    self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@/index.m3u8",HlsServer,self.liveInfo.anyrtcId];
     //设置录像地址（前提在服务上已经开通录像服务），录像地址为拉流地址
-    [self.mHosterKit setRtmpRecordUrl:self.rtmpPullUrl];
+    [self.mHosterKit setRtmpRecordUrl:self.liveInfo.hls_url];
     //设置推流地址
-    [self.mHosterKit startPushRtmpStream:self.rtmpUrl];
+    [self.mHosterKit startPushRtmpStream:self.liveInfo.push_url];
     self.mHosterKit.rtc_delegate = self;
     
     // 用户信息
@@ -181,13 +181,13 @@
      *  加载相关数据(大厅列表解析数据对应即可)
      */
     NSDictionary *liveDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                          self.rtmpPullUrl,@"rtmpUrl",
-                          self.hlsUrl,@"hlsUrl",
-                          self.liveInfo.anyrtcId,@"anyrtcId",
-                          self.liveInfo.liveTopic,@"liveTopic",
-                          [NSNumber numberWithInt:self.liveInfo.isLiveLandscape],@"isLiveLandscape",
-                          [NSNumber numberWithInt:self.liveInfo.isAudioLive],@"isAudioLive",self.liveInfo.userName,@"hosterName",
-                          nil];
+                              self.liveInfo.pull_url,@"rtmpUrl",
+                              self.liveInfo.hls_url,@"hlsUrl",
+                              self.liveInfo.anyrtcId,@"anyrtcId",
+                              self.liveInfo.liveTopic,@"liveTopic",
+                              [NSNumber numberWithInt:self.liveInfo.isLiveLandscape],@"isLiveLandscape",
+                              [NSNumber numberWithInt:self.liveInfo.isAudioLive],@"isAudioLive",self.liveInfo.userName,@"hosterName",
+                              nil];
    NSString *jsonLiveStr = [ATCommon fromDicToJSONStr:liveDict];
     
     //创建RTC连麦
