@@ -57,16 +57,17 @@
 
 //获取大厅数据
 - (void)getHallData{
+    WEAKSELF;
     [[RTMPCHttpKit shead]getLivingList:^(NSDictionary *responseDict, NSError *error, int code) {
         if (code == 200) {
-            [self.hallArr removeAllObjects];
-            [self.onLineArr removeAllObjects];
+            [weakSelf.hallArr removeAllObjects];
+            [weakSelf.onLineArr removeAllObjects];
             ATLivingItem *item = [ATLivingItem mj_objectWithKeyValues:responseDict];
-            [self.hallArr addObjectsFromArray:item.LiveList];
-            [self.onLineArr addObjectsFromArray:[responseDict objectForKey:@"LiveMembers"]];
-            [self.hallTableView reloadData];
+            [weakSelf.hallArr addObjectsFromArray:item.LiveList];
+            [weakSelf.onLineArr addObjectsFromArray:[responseDict objectForKey:@"LiveMembers"]];
+            [weakSelf.hallTableView reloadData];
         }
-        [self.hallTableView.mj_header endRefreshing];
+        [weakSelf.hallTableView.mj_header endRefreshing];
     }];
 }
 
@@ -90,23 +91,48 @@
     self.gestInfo.userName = self.nameLabel.text;
     self.gestInfo.userId = [ATCommon randomString:6];
     self.gestInfo.headUrl = @"http://f.rtmpc.cn/p/g/jmaRia";
+    [self getAppVdnUrl:item];
+}
+
+//获取推拉流地址
+- (void)getAppVdnUrl:(LiveList *)liveItem{
+    
+    NSTimeInterval time =[[NSDate date] timeIntervalSince1970] * 1000;
+    long long timestamp = [[NSNumber numberWithDouble:time] longLongValue];
+    
+    NSString *randomStr = [ATCommon randomAnyRTCString:6];
+    NSString *signatureStr = [NSString stringWithFormat:@"%@%llu%@%@",appID,timestamp,appvtoken,randomStr];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:appID,@"appid",liveItem.anyrtcId,@"stream",randomStr,@"random",[ATCommon md5OfString:signatureStr],@"signature",[NSNumber numberWithLongLong:timestamp],@"timestamp",@"com.dync.rtmpc.anyrtc",@"appBundleIdPkgName",nil];
     WEAKSELF;
-    if (item.isAudioLive) {
-        //音频
-        ATAudioGuesterViewController *gestVc = [[ATAudioGuesterViewController alloc]init];
-        gestVc.liveItem = item;
-        gestVc.gestInfo = self.gestInfo;
-        [self presentViewController:gestVc animated:YES completion:nil];
-    } else {
-        //视频
-        ATGuesterViewController *gestVc = [[ATGuesterViewController alloc]init];
-        gestVc.refreshBlock = ^{
-            [weakSelf getHallData];
-        };
-        gestVc.liveItem = item;
-        gestVc.gestInfo = self.gestInfo;
-        [self presentViewController:gestVc animated:YES completion:nil];
-    }
+    [[NetWorkTools shareInstance] postWithURLString:App_VdnUrl parameters:dict success:^(NSDictionary *dictionary) {
+        if ([[dictionary objectForKey:@"code"] intValue] == 200) {
+            liveItem.rtmpUrl = [dictionary objectForKey:@"pull_url"];
+            liveItem.hlsUrl = [dictionary objectForKey:@"hls_url"];
+            
+            if (liveItem.isAudioLive) {
+                //音频
+                ATAudioGuesterViewController *gestVc = [[ATAudioGuesterViewController alloc]init];
+                gestVc.liveItem = liveItem;
+                gestVc.gestInfo = self.gestInfo;
+                [weakSelf presentViewController:gestVc animated:YES completion:nil];
+            } else {
+                //视频
+                ATGuesterViewController *gestVc = [[ATGuesterViewController alloc]init];
+                gestVc.refreshBlock = ^{
+                    [weakSelf getHallData];
+                };
+                gestVc.liveItem = liveItem;
+                gestVc.gestInfo = self.gestInfo;
+                [weakSelf presentViewController:gestVc animated:YES completion:nil];
+            }
+            
+        } else {
+            [XHToast showCenterWithText:@"开发者信息异常"];
+        }
+    } failure:^(NSError *error) {
+        [XHToast showCenterWithText:@"网络异常"];
+    }];
 }
 
 - (IBAction)doSomethingEvents:(id)sender {
@@ -149,3 +175,4 @@
 }
 
 @end
+

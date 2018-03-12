@@ -121,12 +121,11 @@
     self.mHosterAudioKit = [[RTMPCHosterAudioKit alloc] initWithDelegate:self withAudioDetect:YES];
     self.mHosterAudioKit.rtc_delegate = self;
     
-    
-    self.rtmpUrl = [NSString stringWithFormat:@"%@/%@",PushRtmpServer, self.liveInfo.anyrtcId];
-    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/%@",PullRtmpServer, self.liveInfo.anyrtcId];
-    self.hlsUrl = [NSString stringWithFormat:@"%@/%@.m3u8",HlsServer,self.liveInfo.anyrtcId];
+    //    self.rtmpUrl = [NSString stringWithFormat:@"%@/%@",PushRtmpServer, self.liveInfo.anyrtcId];
+    //    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/%@",PullRtmpServer, self.liveInfo.anyrtcId];
+    //    self.hlsUrl = [NSString stringWithFormat:@"%@/%@.m3u8",HlsServer,self.liveInfo.anyrtcId];
     //设置推流地址
-    [self.mHosterAudioKit startPushRtmpStream:self.rtmpUrl];
+    [self.mHosterAudioKit startPushRtmpStream:self.liveInfo.push_url];
     self.mHosterAudioKit.rtc_delegate = self;
     
     // 用户信息
@@ -144,8 +143,8 @@
      *  加载相关数据(大厅列表解析数据对应即可)
      */
     NSDictionary *liveDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                              self.rtmpPullUrl,@"rtmpUrl",
-                              self.hlsUrl,@"hlsUrl",
+                              self.liveInfo.pull_url,@"rtmpUrl",
+                              self.liveInfo.hls_url,@"hlsUrl",
                               self.liveInfo.anyrtcId,@"anyrtcId",
                               self.liveInfo.liveTopic,@"liveTopic",
                               [NSNumber numberWithInt:self.liveInfo.isLiveLandscape],@"isLiveLandscape",

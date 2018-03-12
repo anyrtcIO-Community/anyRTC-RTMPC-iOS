@@ -43,6 +43,9 @@
 //传入 秒  得到  xx分钟xx秒
 + (NSString *)getMMSSFromSS:(NSString *)totalTime;
 
+//md5加密
++ (NSString *)md5OfString:(NSString *)aOriginal;
+
 //字符串包含
 + (BOOL)isStringContains:(NSString *)str string:(NSString *)smallStr;
 

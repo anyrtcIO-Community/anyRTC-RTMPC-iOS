@@ -80,7 +80,7 @@
         default:
             break;
     }
-
+    
 }
 
 
@@ -120,30 +120,8 @@
             [self.pickerView reloadAllComponents];
             break;
         case 103:
-        {
-            self.liveInfo.userName = self.nameLabel.text;
-            self.liveInfo.liveTopic = self.topicTextField.text;
-            if ([self.directionButton.titleLabel.text isEqualToString:@"横屏直播"]) {
-                self.liveInfo.isLiveLandscape = 1;
-            } else {
-                self.liveInfo.isLiveLandscape = 0;
-            }
-            self.liveInfo.videoMode = self.modeButton.titleLabel.text;
-            self.index = 0;
-            if ([self.typeButton.titleLabel.text isEqualToString:@"视频直播"]) {
-                self.liveInfo.isAudioLive = 0;
-                //视频直播
-                ATHosterViewController *hostVc = [[ATHosterViewController alloc]init];
-                hostVc.liveInfo = self.liveInfo;
-                [self.navigationController pushViewController:hostVc animated:YES];
-            } else {
-                self.liveInfo.isAudioLive = 1;
-                //音频直播
-                ATAudioHosterViewController *hostVc = [[ATAudioHosterViewController alloc]init];
-                hostVc.liveInfo = self.liveInfo;
-                [self.navigationController pushViewController:hostVc animated:YES];
-            }
-        }
+            self.bottomY.constant = -200;
+            [self getAppVdnUrl];
             break;
         case 104:
             //返回
@@ -158,6 +136,56 @@
         if ([sender.titleLabel.text isEqualToString:self.pickArr[i]]) {
             [self.pickerView selectRow:i inComponent:0 animated:YES];
         }
+    }
+}
+
+//获取推拉流地址
+- (void)getAppVdnUrl{
+    
+    NSTimeInterval time =[[NSDate date] timeIntervalSince1970] * 1000;
+    long long timestamp = [[NSNumber numberWithDouble:time] longLongValue];
+    
+    NSString *randomStr = [ATCommon randomAnyRTCString:6];
+    NSString *signatureStr = [NSString stringWithFormat:@"%@%llu%@%@",appID,timestamp,appvtoken,randomStr];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:appID,@"appid",self.liveInfo.anyrtcId,@"stream",randomStr,@"random",[ATCommon md5OfString:signatureStr],@"signature",[NSNumber numberWithLongLong:timestamp],@"timestamp",@"com.dync.rtmpc.anyrtc",@"appBundleIdPkgName",nil];
+    WEAKSELF;
+    [[NetWorkTools shareInstance] postWithURLString:App_VdnUrl parameters:dict success:^(NSDictionary *dictionary) {
+        if ([[dictionary objectForKey:@"code"] intValue] == 200) {
+            weakSelf.liveInfo.push_url = [dictionary objectForKey:@"push_url"];
+            weakSelf.liveInfo.pull_url = [dictionary objectForKey:@"pull_url"];
+            weakSelf.liveInfo.hls_url = [dictionary objectForKey:@"hls_url"];
+            [weakSelf startLiving];
+        } else {
+            [XHToast showCenterWithText:@"服务异常"];
+        }
+    } failure:^(NSError *error) {
+        [XHToast showCenterWithText:@"网络异常"];
+    }];
+}
+
+- (void) startLiving{
+    self.liveInfo.userName = self.nameLabel.text;
+    self.liveInfo.liveTopic = self.topicTextField.text;
+    if ([self.directionButton.titleLabel.text isEqualToString:@"横屏直播"]) {
+        self.liveInfo.isLiveLandscape = 1;
+    } else {
+        self.liveInfo.isLiveLandscape = 0;
+    }
+    self.liveInfo.videoMode = self.modeButton.titleLabel.text;
+    self.index = 0;
+    if ([self.typeButton.titleLabel.text isEqualToString:@"视频直播"]) {
+        self.liveInfo.isAudioLive = 0;
+        //视频直播
+        ATHosterViewController *hostVc = [[ATHosterViewController alloc]init];
+        hostVc.liveInfo = self.liveInfo;
+        [self.navigationController pushViewController:hostVc animated:YES];
+    } else {
+        self.liveInfo.isAudioLive = 1;
+        //音频直播
+        ATAudioHosterViewController *hostVc = [[ATAudioHosterViewController alloc]init];
+        hostVc.liveInfo = self.liveInfo;
+        [self.navigationController pushViewController:hostVc animated:YES];
     }
 }
 
@@ -185,3 +213,4 @@
 }
 
 @end
+
