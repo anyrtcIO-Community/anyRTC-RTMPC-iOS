@@ -74,6 +74,27 @@ typedef enum {
 	RTCRtcp_NOT_START = 800,     // 会议未开始
 }RTCRtcpErrorCode;
 
+//Talk
+typedef enum {
+	RTCTalk_OK = 0,      // 正常
+	RTCTalk_APPLY_SVR_ERR = 800,    // 申请麦但是服务器异常 (没有MCU服务器,暂停申请)
+	RTCTalk_APPLY_BUSY = 801,		// 当前你正在忙
+	RTCTalk_APPLY_NO_PRIO = 802,	// 当前麦被占用 (有人正在说话切你的权限不够)
+	RTCTalk_APPLY_INITING = 803,	// 正在初始化中 (自身的通道没有发布成功,不能申请)
+	RTCTalk_APPLY_ING = 804,		// 等待上麦
+	RTCTalk_ROBBED = 810,			// 麦被抢掉了
+	RTCTalk_BREAKED = 811,			// 麦被释放了
+	RTCTalk_RELEASED_BY_P2P = 812,	// 麦被释放了，因为要对讲
+	RTCTalk_P2P_OFFLINE = 820,		// 强插时，对方可能不在线了或异常离线
+	RTCTalk_P2P_BUSY = 821,			// 强插时，对方正忙
+	RTCTalk_P2P_NOT_TALK = 822,		// 强插时，对方不在麦上
+	RTCTalk_V_MON_OFFLINE = 830,	// 视频监看时，对方不在线，或下线了
+	RTCTalk_V_MON_GRABED = 831,		// 视频监看被抢占了
+	RTCTalk_CALL_OFFLINE = 840,		// 对方不在线或掉线了
+	RTCTalk_CALL_NO_PRIO = 841,		// 发起呼叫时自己有其他业务再进行(资源被占用)
+	RTCTalk_CALL_NOT_FOUND = 842,	// 会话不存在
+}RTCTalkErrorCode;
+
 typedef enum {
     RTC_V_1X3 = 0 ,       // Default - One big screen and 3 subscreens
     RTC_V_3X3_auto,       // All screens as same size & auto layout
