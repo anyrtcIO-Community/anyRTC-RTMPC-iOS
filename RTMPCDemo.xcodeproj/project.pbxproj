@@ -48,7 +48,6 @@
 		633160D71F7CA1E200892C3F /* ATVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633160D11F7CA1E200892C3F /* ATVideoView.xib */; };
 		633160DD1F7CA26300892C3F /* ATExtendMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DA1F7CA26300892C3F /* ATExtendMenuButton.m */; };
 		633160DE1F7CA26300892C3F /* FBWaterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160DC1F7CA26300892C3F /* FBWaterHeadView.m */; };
-		6337C87320467BD1000C6621 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6337C87220467BD1000C6621 /* RTMPCHybirdEngine.framework */; };
 		6337C87420467BDC000C6621 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6337C87220467BD1000C6621 /* RTMPCHybirdEngine.framework */; };
 		6337C87520467BDC000C6621 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6337C87220467BD1000C6621 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6347266D1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */; };
@@ -209,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28042CDCE751D4F73E085FB /* libPods-RTMPCDemo.a in Frameworks */,
-				6337C87320467BD1000C6621 /* RTMPCHybirdEngine.framework in Frameworks */,
 				6337C87420467BDC000C6621 /* RTMPCHybirdEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

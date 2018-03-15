@@ -13,7 +13,6 @@
 #import "RTCCommon.h"
 #import "RTMPCGuestOption.h"
 
-
 @interface RTMPCGuestKit : NSObject {
     
 }
@@ -180,7 +179,6 @@
  说明：用于关闭RTC服务，将无法进行聊天互动，人员上下线等。
  */
 - (void)leaveRTCLine;
-
 
 @end
 

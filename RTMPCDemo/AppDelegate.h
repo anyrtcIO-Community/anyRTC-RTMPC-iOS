@@ -11,16 +11,18 @@
 
 #warning config developer info
 //开发者信息（前往www.anyrtc.io申请）
-static NSString *developerID = @"XXX";
-static NSString *token = @"XXX";
-static NSString *key = @"XXX";
-static NSString *appID = @"XXX";
-static NSString *appvtoken = @"XXX";
+static NSString *developerID = @"xxx";
+static NSString *token = @"xxx";
+static NSString *key = @"xxx";
+static NSString *appID = @"xxx";
+
+//该参数如果不用我们的cdn,不用
+static NSString *appvtoken = @"xxx";
 
 //推流拉流以及hls地址（根据自己vdn策略规则）
-//#define PushRtmpServer @"rtmp://push.ws.anyrtc.io/live"
-//#define PullRtmpServer @"rtmp://pull.ws.anyrtc.io/live"
-//#define HlsServer @"http://hls.ws.anyrtc.io/live"
+#define PushRtmpServer @"xxx"
+#define PullRtmpServer @"xxx"
+#define HlsServer @"xxx"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
