@@ -16,13 +16,9 @@ static NSString *token = @"xxx";
 static NSString *key = @"xxx";
 static NSString *appID = @"xxx";
 
-//该参数如果不用我们的cdn,不用
+//该参数是使用我们的cdn
 static NSString *appvtoken = @"xxx";
 
-//推流拉流以及hls地址（根据自己vdn策略规则）
-#define PushRtmpServer @"xxx"
-#define PullRtmpServer @"xxx"
-#define HlsServer @"xxx"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

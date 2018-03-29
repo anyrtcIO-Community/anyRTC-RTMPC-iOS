@@ -41,32 +41,6 @@
  */
 + (NSString*)getSdkVersion;
 
-
-///**
-// 设置相机类型
-//
-// @param cameraType 相机模式
-// 说明：根据自己的需求，选择相应的相机类型
-// */
-//+ (void)setCameraType:(RTMPCCameraType) cameraType;
-//
-///**
-// 设置视频竖屏
-//
-// @param bTop YES:上朝向
-// 　　　　　　　　NO:下朝向
-// 说明：默认竖屏
-// */
-//+ (void)setScreenToPortrait:(BOOL)bTop;
-///**
-// 设置视频横屏
-//
-// @param bLeft YES:左朝向;
-//      　       NO:右朝向
-// 说明：如果为横屏横屏，必须设置，如果不设置，录像以及连麦合成流会出错
-// */
-//+ (void)setScreenToLandscape:(BOOL)bLeft;
-
 @end
 
 #endif /* RTMPCHybirdEngineKit_h */

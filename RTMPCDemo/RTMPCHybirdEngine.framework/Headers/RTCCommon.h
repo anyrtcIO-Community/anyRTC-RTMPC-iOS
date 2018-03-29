@@ -17,6 +17,7 @@ typedef enum {
     AnyRTC_NET_ERR = 100,			// 网络错误
 	AnyRTC_NET_DISSCONNECT = 101,	// 网络断开
     AnyRTC_LIVE_ERR	= 102,			// 直播出错
+	AnyRTC_EXP_ERR = 103,			// 异常错误
 
     AnyRTC_BAD_REQ = 201,		// 服务不支持的错误请求
     AnyRTC_AUTH_FAIL = 202,		// 认证失败
@@ -47,6 +48,7 @@ typedef enum {
 typedef enum {
 	RTCMeet_OK = 0,      // 正常
 	RTCMeet_NOT_START = 700,  // 会议未开始
+	RTCMeet_IS_FULL = 701,	  // 会议室已满
 }RTCMeetErrorCode;
 
 //P2PCall
@@ -63,10 +65,12 @@ typedef enum {
 
 //Meet
 typedef enum {
-    RTCMeet_Videos_HD = 0,    //* 1280*720 - 1024kbps
+    RTCMeet_Videos_HHD = 0,    //* 1920*1080 - 2048kbps
+    RTCMeet_Videos_HD,        //* 1280*720 - 1024kbps
     RTCMeet_Videos_QHD,       //* 960*540 - 768kbps
-    RTCMeet_Videos_SD,        //* 640*480 - 512kbps
-    RTCMeet_Videos_Low        //* 352*288 - 384kbps
+    RTCMeet_Videos_SD,        //* 640*480 - 384kbps
+    RTCMeet_Videos_Low,       //* 352*288 - 256kbps
+    RTCMeet_Videos_Flow       //* 320*240 - 128kbps
 }RTCMeetVideosMode;
 //RTCP
 typedef enum {

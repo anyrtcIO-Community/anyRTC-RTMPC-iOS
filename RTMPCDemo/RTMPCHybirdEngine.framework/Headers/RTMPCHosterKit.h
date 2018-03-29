@@ -143,6 +143,15 @@
  */
 - (void)setFontCameraMirrorEnable:(BOOL)bEnable;
 
+/**
+ 设置视频水印
+
+ @param lgFilePath 图片的地址（jpg,jpeg格式的图片）
+ @param rightX 距离右边边距
+ @param topY 距离的顶部边距
+ */
+- (void)setVideoRightTopLogo:(NSString *)lgFilePath andOriginX:(int)rightX andOriginY:(int)topY;
+
 #pragma mark RTC function for line
 /**
  创建RTC链接

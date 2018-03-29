@@ -142,13 +142,13 @@
     //实例化主播对象
     self.mHosterKit = [[RTMPCHosterKit alloc] initWithDelegate:self andOption:self.option];
     self.mHosterKit.rtc_delegate = self;
-   
+    [self.mHosterKit setMixVideoModel:RTMPC_LINE_V_1big_3small];
     [self.view sendSubviewToBack:self.hostView];
    
-    // 设置副主播关闭视频后副主播位置占位图片
+    // 设置水印
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"WechatIMG200" ofType:@"jpeg"];
 //    if (path) {
-//        [self.mHosterKit setVideoSubBackground:path];
+//        [self.mHosterKit setVideoLogo:path andOriginX:30 andOriginY:30];
 //    }
     //开启美颜
     [self.mHosterKit setBeautyEnable:YES];
@@ -156,13 +156,8 @@
     //设置本地视频采集窗口
     [self.mHosterKit setLocalVideoCapturer:self.hostView];
     
-//    //推流地址（注意：根据自己的服务器要求，组装自己的地址）
-//    self.rtmpUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PushRtmpServer, self.liveInfo.anyrtcId];
-//    //拉流地址（录像地址）
-//    self.rtmpPullUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@",PullRtmpServer, self.liveInfo.anyrtcId];
-//    self.hlsUrl = [NSString stringWithFormat:@"%@/anyrtcBK9AJmOrYjbK_%@/index.m3u8",HlsServer,self.liveInfo.anyrtcId];
     //设置录像地址（前提在服务上已经开通录像服务），录像地址为拉流地址
-    [self.mHosterKit setRtmpRecordUrl:self.liveInfo.hls_url];
+    [self.mHosterKit setRtmpRecordUrl:self.liveInfo.pull_url];
     //设置推流地址
     [self.mHosterKit startPushRtmpStream:self.liveInfo.push_url];
     self.mHosterKit.rtc_delegate = self;
