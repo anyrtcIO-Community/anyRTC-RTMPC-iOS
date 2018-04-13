@@ -10,9 +10,9 @@
 #import "RTMPCHosterOption.h"
 
 typedef NS_ENUM(NSInteger,VideoShowMode){
-    VideoShowModeScaleAspectFit,
-    VideoShowModeScaleAspectFill,  // default by height scale (高度填充整个屏幕)
-    VideoShowModeCenter
+    VideoShowModeWidthFill,// 默认宽度填充，高度自适应
+    VideoShowModeHightFill,// 高度填充，宽度自适应
+    VideoShowModeScaleFit// 视频在当显示窗口宽高自适应
 };
 
 typedef NS_ENUM(NSInteger,LinkMediaMode){

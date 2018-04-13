@@ -540,6 +540,8 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         appDelegate.allowRotation = YES;
         [self toOrientation:UIInterfaceOrientationLandscapeRight];
+    }else{
+        [self layoutVideoView];
     }
 }
 

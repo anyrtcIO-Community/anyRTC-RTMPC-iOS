@@ -146,9 +146,9 @@
     [self.view sendSubviewToBack:self.hostView];
    
     // 设置水印
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"WechatIMG200" ofType:@"jpeg"];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"jpg"];
 //    if (path) {
-//        [self.mHosterKit setVideoLogo:path andOriginX:30 andOriginY:30];
+//        [self.mHosterKit setVideoRightTopLogo:path andOriginX:30 andOriginY:30];
 //    }
     //开启美颜
     [self.mHosterKit setBeautyEnable:YES];
