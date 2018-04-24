@@ -12,12 +12,26 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 **文字互动、弹幕消息**</br>
 **人员上下线**</br>
 **多达4人同时在线连麦视频互动**</br>
-## 项目展示
-![RTMPC](RTMPC.gif)
-## 扫描二维码下载demo
+
+## 导入SDK
+1. Cocoapods导入
+```
+pod 'RTMPCHybirdEngine', '~> 1.0.4'
+
+```
+2. 手动导入
+>  下载Demo
+![RTMPCHybirdEngine](RTMPCHybirdEngine.png)
+
+>  在Xcode中选择“Add files to 'Your project name'...”，将RTMPCHybirdEngine.framework添加到你的工程目录中</br>
+
+>  打开General->Embedded Binaries中添加RTMPCHybirdEngine.framework</br>
+
+## 扫码体验
 ![scan](scan.png)
+
 ### 演示注意事项
-1：演示需要两部以及两部以上的手机，装上该demo.</br>
+1：演示需要两部以及两部以上的手机</br>
 2：一部手机创建直播间，另外两部手机在主页，下拉刷新当前直播列表，点击列表进入直播间。</br>
 3：游客端点击链接按钮，进行连麦。</br>
 
@@ -47,21 +61,21 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 [网宿](http://www.wangsucloud.com/)、[UCloud](https://www.ucloud.cn/)及其他标准RTMP协议云服务器
 
 # 项目特点
-**1，商业级开源代码，高效稳定**</br>
-**2，超小内存占有率，移动直播针对性极致优化，代码冗余率极低**</br>
-**3，iOS全平台适配，硬件编解码可保证99%的可用性**</br>
-**4，接口极简，推流：2个   拉流：2个**</br>
-**5，底层库C++核心库代码风格采用：Google code style**</br>
-**6，极简内核，无需再去深扒复杂的FFMpeg代码**</br>
-**7，实用主义，那些什么坑什么优化等概念请搜索相关文章**</br>
-**8，OpenH264软件编码，FFMpeg软件解码，FAAC/FAAD软件编解码，适配不同系统的硬件编解码统统包含**</br>
-**9，支持SRS、Nginx-RTMP等标准RTMP服务；同时支持各大CDN厂商的接入**</br>
+**1.  商业级开源代码，高效稳定**</br>
+**2.  超小内存占有率，移动直播针对性极致优化，代码冗余率极低**</br>
+**3.  iOS全平台适配，硬件编解码可保证99%的可用性**</br>
+**4.  接口极简，推流：2个   拉流：2个**</br>
+**5.  底层库C++核心库代码风格采用：Google code style**</br>
+**6.  极简内核，无需再去深扒复杂的FFMpeg代码**</br>
+**7.  实用主义，那些什么坑什么优化等概念请搜索相关文章**</br>
+**8.  OpenH264软件编码，FFMpeg软件解码，FAAC/FAAD软件编解码，适配不同系统的硬件编解码统统包含**</br>
+**9.  支持SRS、Nginx-RTMP等标准RTMP服务；同时支持各大CDN厂商的接入**</br>
 
 ## ipv6
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
-## Android版连麦互动Demo
+## Android版连麦互动
 [anyRTMPC-HybridEngine-Android](https://github.com/AnyRTC/anyRTMPC-HybridEngine-Android)
-## 网页版连麦互动Demo
+## Web版连麦互动
 [anyRTMPC-HybridEngine-web](https://www.anyrtc.io/demo/lianmai)
 
 ## 商用授权

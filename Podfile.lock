@@ -1,44 +1,58 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - BarrageRenderer (2.1.0)
   - Bugly (2.5.0)
-  - Masonry (1.0.2)
+  - Masonry (1.1.0)
   - MJExtension (3.0.13)
-  - MJRefresh (3.1.12)
-  - PPBadgeView (1.1.1)
+  - MJRefresh (3.1.15.3)
+  - RTMPCHybirdEngine (1.0.4)
   - XHToast (1.4.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - BarrageRenderer (~> 2.1.0)
   - Bugly
   - Masonry
   - MJExtension
   - MJRefresh
-  - PPBadgeView
+  - RTMPCHybirdEngine (~> 1.0.4)
   - XHToast (~> 1.4.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - BarrageRenderer
+    - Bugly
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - RTMPCHybirdEngine
+    - XHToast
+
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  BarrageRenderer: 00e5f8081d81f29c1fc12712ddf2f875bd9c6f77
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  PPBadgeView: a24287e9b4c85708fc1a9b3b4dfa69ec03b05c32
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  RTMPCHybirdEngine: 5c6b3972f29d88bc6e423221b5d62f47a8450458
   XHToast: 3b354766d56d9df8fef8e64387bbd25c90d71a86
 
-PODFILE CHECKSUM: 21737f6e938c9e3ddc528e078621a145b7355ab6
+PODFILE CHECKSUM: cd58fee5c77de33bf88a01a5371126a6b2224124
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.0
