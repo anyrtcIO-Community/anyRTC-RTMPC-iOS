@@ -14,31 +14,35 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 **多达4人同时在线连麦视频互动**</br>
 
 ## 导入SDK
-1. Cocoapods导入
+
+### Cocoapods导入
 ```
 pod 'RTMPCHybirdEngine', '~> 1.0.4'
 
 ```
-2. 手动导入
->  下载Demo
-![RTMPCHybirdEngine](RTMPCHybirdEngine.png)
+### 手动导入
 
->  在Xcode中选择“Add files to 'Your project name'...”，将RTMPCHybirdEngine.framework添加到你的工程目录中</br>
+1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io/resoure)下载SDK
+![RTMPCHybirdEngine](/image/RTMPCHybirdEngine.png)
 
->  打开General->Embedded Binaries中添加RTMPCHybirdEngine.framework</br>
+2. 在Xcode中选择“Add files to 'Your project name'...”，将RTMPCHybirdEngine.framework添加到你的工程目录中</br>
+
+3.  打开General->Embedded Binaries中添加RTMPCHybirdEngine.framework</br>
 
 ## 扫码体验
-![scan](scan.png)
+![scan](/image/scan.png)
 
-### 演示注意事项
-1：演示需要两部以及两部以上的手机</br>
-2：一部手机创建直播间，另外两部手机在主页，下拉刷新当前直播列表，点击列表进入直播间。</br>
-3：游客端点击链接按钮，进行连麦。</br>
+### 注意事项：
+安装后提示"未受信任的企业开发者"--> 前往设置-->通用-->描述文件与设备管理-->选择企业级应用-->信任
+
+### 操作步骤：
+1.  一部手机作为主播端创建直播，另外一部手机通过观众列表进入直播间；</br>
+2.  同时可以通过[Web连麦互动](https://www.anyrtc.io/demo/lianmai/guest)进行连麦等操作，建议使用Google浏览器。
 
 ### 资源中心
 [更多详细方法使用，请查看API文档](https://www.anyrtc.io/resoure)
 
-#SDK包含
+## SDK包含
 RTC 连麦互动</br>
 RTMP 推流器</br>
 RTMP 播放器</br>
@@ -73,6 +77,8 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 
 ## ipv6
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
+## Swift连麦互动Demo
+[anyRTMPC-HybridEngine-Swift](https://github.com/AnyRTC/anyRTC-RTMPC-Swift)
 ## Android版连麦互动
 [anyRTMPC-HybridEngine-Android](https://github.com/AnyRTC/anyRTMPC-HybridEngine-Android)
 ## Web版连麦互动
