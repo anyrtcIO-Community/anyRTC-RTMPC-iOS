@@ -18,12 +18,11 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 ### Cocoapods导入
 ```
 pod 'RTMPCHybirdEngine', '~> 1.0.4'
-
 ```
 ### 手动导入
 
 1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io/resoure)下载SDK
-![RTMPCHybirdEngine](/image/RTMPCHybirdEngine.png)
+![list_directory](/image/list_directory.png)
 
 2. 在Xcode中选择“Add files to 'Your project name'...”，将RTMPCHybirdEngine.framework添加到你的工程目录中</br>
 
