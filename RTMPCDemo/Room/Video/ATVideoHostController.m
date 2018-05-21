@@ -157,7 +157,11 @@
             break;
         case 105:
             //美颜
-            [self.mHosterKit setBeautyEnable:sender.selected];
+            if (sender.selected) {
+                [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Beautiful];
+            }else{
+                [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Original];
+            }
             break;
         case 106:
             //翻转摄像头

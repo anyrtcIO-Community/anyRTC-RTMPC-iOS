@@ -37,7 +37,12 @@
             break;
         case 101:
             //美颜
-            [self.mHosterKit setBeautyEnable:sender.selected];
+            if (sender.selected) {
+                 [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Beautiful];
+            }else{
+               [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Original];
+            }
+           
             break;
         case 102:
             //视频
