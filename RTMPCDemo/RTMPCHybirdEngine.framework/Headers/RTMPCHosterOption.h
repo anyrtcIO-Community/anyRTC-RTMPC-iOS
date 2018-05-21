@@ -59,13 +59,19 @@ typedef NS_ENUM(NSInteger,LivingMediaMode){
 @property (nonatomic, nonatomic) RTMPCCameraType cameraType;
 /**
  设置推流视频质量
- RTMPC_Video_1080P:1920*1080,码率:2048
- RTMPC_Video_Low、RTMPC_Video_SD、RTMPC_Video_QHD:640*480,码率:384,512,768
- RTMPC_Video_HD:960*540,码率:1024
+ AnyRTCVideoQuality_Low1 = 0,      // 320*240 - 128kbps
+ AnyRTCVideoQuality_Low2,          // 352*288 - 256kbps
+ AnyRTCVideoQuality_Low3,          // 352*288 - 384kbps
+ AnyRTCVideoQuality_Medium1,       // 640*480 - 384kbps
+ AnyRTCVideoQuality_Medium2,       // 640*480 - 512kbps
+ AnyRTCVideoQuality_Medium3,       // 640*480 - 768kbps
+ AnyRTCVideoQuality_Height1,       // 960*540 - 768kbps
+ AnyRTCVideoQuality_Height2,       // 1280*720 - 1024kbps
+ AnyRTCVideoQuality_Height3,       // 1920*1080 - 2048kbps
  
- 说明:　默认：RTMPC_Video_SD
+ 说明:　默认：AnyRTCVideoQuality_Medium2
  */
-@property (nonatomic, assign) RTMPCVideoMode videoMode;
+@property (nonatomic, assign) AnyRTCVideoQualityModel videoMode;
 
 /**
  视频方向：默认：RTMPCScreenPortraitType竖屏

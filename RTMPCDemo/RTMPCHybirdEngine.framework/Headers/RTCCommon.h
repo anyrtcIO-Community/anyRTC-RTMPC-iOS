@@ -49,6 +49,7 @@ typedef enum {
 	RTCMeet_OK = 0,      // 正常
 	RTCMeet_NOT_START = 700,  // 会议未开始
 	RTCMeet_IS_FULL = 701,	  // 会议室已满
+	RTCMeet_NOT_COMPARE = 702,// 会议类型不匹配
 }RTCMeetErrorCode;
 
 //P2PCall
@@ -77,6 +78,14 @@ typedef enum {
 	RTCRtcp_OK = 0,      // 正常
 	RTCRtcp_NOT_START = 800,     // 会议未开始
 }RTCRtcpErrorCode;
+
+typedef enum RTCPVideoMode
+{
+	RTCP_Video_HD = 0,	//* 1280*720 - 1024kbps
+	RTCP_Video_QHD,		//* 960*540 - 768kbps
+	RTCP_Video_SD,		//* 640*480 - 512kbps
+	RTCP_Video_Low		//* 352*288 - 384kbps
+}RTCPVideoMode;
 
 //Talk
 typedef enum {
@@ -130,12 +139,16 @@ typedef enum {
 }RTMPCVideoMode;
 
 typedef enum {
-    RTMPC_SCRN_Portrait = 0,
-    RTMPC_SCRN_LandscapeRight,
-    RTMPC_SCRN_PortraitUpsideDown,
-    RTMPC_SCRN_LandscapeLeft,
-    RTMPC_SCRN_Auto
-}RTMPCScreenOrientation;
+    AnyRTCVideoQuality_Low1 = 0,      // 320*240 - 128kbps
+    AnyRTCVideoQuality_Low2,          // 352*288 - 256kbps
+    AnyRTCVideoQuality_Low3,          // 352*288 - 384kbps
+    AnyRTCVideoQuality_Medium1,       // 640*480 - 384kbps
+    AnyRTCVideoQuality_Medium2,       // 640*480 - 512kbps
+    AnyRTCVideoQuality_Medium3,       // 640*480 - 768kbps
+    AnyRTCVideoQuality_Height1,       // 960*540 - 1024kbps
+    AnyRTCVideoQuality_Height2,       // 1280*720 - 1280kbps
+    AnyRTCVideoQuality_Height3,       // 1920*1080 - 2048kbps
+}AnyRTCVideoQualityModel;
 
 typedef enum {
     RTC_SCRN_Portrait = 0,
@@ -181,4 +194,16 @@ typedef enum {
     RTMPC_Nomal_Message_Type = 0,//普通文本消息
     RTMPC_Barrage_Message_Type = 1   //弹幕消息
 }RTMPCMessageType;
+//滤镜常量
+typedef enum : char {
+    //美颜滤镜
+    AnyCameraDeviceFilter_Beautiful=0,
+    //原始
+    AnyCameraDeviceFilter_Original=1,
+    //高斯模糊
+    AnyCameraDeviceFilter_GaussianBlur=2
+    
+} AnyCameraDeviceFilter;
+
+
 #endif	// __RTC_COMMON_H__

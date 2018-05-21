@@ -151,7 +151,7 @@
 //        [self.mHosterKit setVideoRightTopLogo:path andOriginX:30 andOriginY:30];
 //    }
     //开启美颜
-    [self.mHosterKit setBeautyEnable:YES];
+    [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Beautiful];
     
     //设置本地视频采集窗口
     [self.mHosterKit setLocalVideoCapturer:self.hostView];
@@ -327,7 +327,11 @@
         case 101:
             //美颜
             senderButton.selected = !senderButton.selected;
-            [self.mHosterKit setBeautyEnable:senderButton.selected];
+            if (senderButton.selected) {
+                [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Beautiful];
+            }else{
+                 [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Original];
+            }
             break;
         case 102:
             //音频
@@ -437,7 +441,11 @@
                     case ExtendMenuTypeBeautyCamera:
                     {
                         if (weakSelf.mHosterKit) {
-                            [weakSelf.mHosterKit setBeautyEnable:isSelected];
+                            if (isSelected) {
+                                 [weakSelf.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Beautiful];
+                            }else{
+                                [weakSelf.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Original];
+                            }
                         }
                     }
                         break;

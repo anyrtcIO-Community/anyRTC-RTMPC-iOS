@@ -96,11 +96,11 @@
 - (void)switchCamera;
 
 /**
- 开启美颜:使用系统美颜，默认是打开的
+ 设置滤镜（使用美颜相机模式，默认开启美颜）
 
- @param bEnable YES/NO:美颜/不美颜
+ @param eFilter 滤镜模式
  */
-- (void)setBeautyEnable:(BOOL) bEnable;
+- (void)setCameraFilter:(AnyCameraDeviceFilter)eFilter;
 /**
  打开手机闪光灯
 
@@ -139,18 +139,16 @@
  设置前置摄像头镜像是否打开
  
  @param bEnable YES为打开，NO为关闭
- 说明：默认关闭
+ 说明：默认打开
  */
 - (void)setFontCameraMirrorEnable:(BOOL)bEnable;
 
 /**
- 设置视频水印
+ 设置水印
 
- @param lgFilePath 图片的地址（jpg,jpeg格式的图片）
- @param rightX 距离右边边距
- @param topY 距离的顶部边距
+ @param logoView 水印视图（只有美颜相机才有用）
  */
-- (void)setVideoRightTopLogo:(NSString *)lgFilePath andOriginX:(int)rightX andOriginY:(int)topY;
+- (void)setLogoView:(UIView*)logoView;
 
 #pragma mark RTC function for line
 /**
