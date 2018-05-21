@@ -12,22 +12,16 @@
 
 //头像
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
-
 //随机姓名
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
 //直播名
 @property (weak, nonatomic) IBOutlet UITextField *topicTextField;
-
 //返回
 @property (weak, nonatomic) IBOutlet UIButton *goBackButton;
-
 //直播类型（音频、视频）
 @property (weak, nonatomic) IBOutlet UIButton *typeButton;
-
 //直播质量
 @property (weak, nonatomic) IBOutlet UIButton *modeButton;
-
 //直播方向（横屏、竖屏）
 @property (weak, nonatomic) IBOutlet UIButton *directionButton;
 

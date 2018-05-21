@@ -24,6 +24,8 @@
 
 #import <XHToast.h>
 
+#import <BarrageRenderer.h>
+
 #pragma mark - 自定义
 //公共方法
 #import "ATCommon.h"
@@ -32,12 +34,34 @@
 
 #import "ATVideoView.h"
 
-#import "ATAudioHosterViewController.h"
+#import "ATAudioView.h"
+
+#import "ATVideoHostController.h"
+
+#import "ATVideoAudienceController.h"
+
+#import "ATAudioHostController.h"
+
+#import "ATAudioAudienceController.h"
+
+#import "ATLivingEndController.h"
+
+#import "ATBarragesView.h"
 
 //按钮 + 文字
 #import "UIButton+ImageTitleSpacing.h"
 
-#import "ATLivingItem.h"
+#import "UIViewController+Common.h"
+
+#import "ATHallModel.h"
+
+#import "ATRealTimeMicController.h"
+#import "ATRealMicCell.h"
+#import "ATRealMicModel.h"
+
+#import "ATAudioButton.h"
+
+#import "ATMenuViewController.h"
 
 //实时在线人员列表
 #import "ATListViewController.h"

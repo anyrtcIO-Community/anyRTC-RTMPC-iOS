@@ -1,24 +1,29 @@
 //
 //  ATHallViewController.h
-//  RTMPDemo
+//  RTMPCDemo
 //
-//  Created by jh on 2017/9/14.
-//  Copyright © 2017年 jh. All rights reserved.
-//直播大厅列表
+//  Created by jh on 2018/4/11.
+//  Copyright © 2018年 jh. All rights reserved.
+//
 
-@interface ATHallViewController : UIViewController
+#import <UIKit/UIKit.h>
 
-@property (weak, nonatomic) IBOutlet UITableView *hallTableView;
+@interface ATHallCell : UITableViewCell
 
-//头像
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *audioImageView;
+//房间名
+@property (weak, nonatomic) IBOutlet UILabel *topicLabel;
+//主播昵称
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+//房间id
+@property (weak, nonatomic) IBOutlet UILabel *roomIdLabel;
+//在线人数
+@property (weak, nonatomic) IBOutlet UILabel *onlineLabel;
 
-//游客名
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+- (void)updateCell:(ATHallModel *)hallModel withOnLine:(NSString *)online;
 
-//游客信息
-@property (nonatomic, strong) GuestInfo *gestInfo;
+@end
 
-
+@interface ATHallViewController : UITableViewController
 
 @end
