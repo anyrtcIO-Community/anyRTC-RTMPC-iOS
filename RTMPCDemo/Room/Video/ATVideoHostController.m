@@ -86,9 +86,9 @@
     (self.liveInfo.isLiveLandscape == 1) ? (option.videoScreenOrientation = RTMPCScreenLandscapeRightType) : 0;
     
     if ([self.liveInfo.videoMode isEqualToString:@"顺畅"]) {
-        option.videoMode = RTMPC_Video_Low;
+        option.videoMode = AnyRTCVideoQuality_Medium1;
     } else if ([self.liveInfo.videoMode isEqualToString:@"高清"]) {
-        option.videoMode = RTMPC_Video_720P;
+        option.videoMode = AnyRTCVideoQuality_Height1;
     }
     
     //实例化主播对象
