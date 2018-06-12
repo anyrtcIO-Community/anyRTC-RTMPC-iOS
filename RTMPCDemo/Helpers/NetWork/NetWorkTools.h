@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define App_VdnUrl @"https://vdn.anyrtc.cc/oauth/anyapi/v1/vdnUrlSign/getAppVdnUrl"
+#define App_VdnUrl @"http://vdn.anyrtc.cc/oauth/anyapi/v1/vdnUrlSign/getAppVdnUrl"
 
 @interface NetWorkTools : NSObject
 

@@ -183,10 +183,10 @@
 			children = (
 				63642AF5207DB4FE00E17DD4 /* ATMainViewController.h */,
 				63642AF6207DB4FE00E17DD4 /* ATMainViewController.m */,
-				6371860E207DBB7900415647 /* ATHallViewController.h */,
-				6371860F207DBB7900415647 /* ATHallViewController.m */,
 				633160621F7C9C1000892C3F /* ATStartViewController.h */,
 				633160631F7C9C1000892C3F /* ATStartViewController.m */,
+				6371860E207DBB7900415647 /* ATHallViewController.h */,
+				6371860F207DBB7900415647 /* ATHallViewController.m */,
 				635EF11C2080A025007C307E /* ATHallModel.h */,
 				635EF11D2080A025007C307E /* ATHallModel.m */,
 			);
