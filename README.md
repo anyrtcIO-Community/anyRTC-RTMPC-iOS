@@ -17,7 +17,7 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 
 ### Cocoapods导入
 ```
-pod 'RTMPCHybirdEngine', '~> 1.0.4'
+pod 'RTMPCHybirdEngine', '~> 2.0.0'
 ```
 ### 手动导入
 
