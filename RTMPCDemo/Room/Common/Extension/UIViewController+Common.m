@@ -141,59 +141,6 @@
     }];
 }
 
-// 根据分辨率显示，防止拉伸压缩
-- (void)makeResolution:(NSMutableArray *)videoArr itemWidth:(CGFloat)itemWidth itemHeight:(CGFloat)itemHeight{
-    
-    [videoArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[ATVideoView class]]) {
-            ATVideoView *video = (ATVideoView *)obj;
-            
-            CGFloat sizeW = video.videoSize.width;
-            CGFloat sizeH = video.videoSize.height;
-            
-            CGFloat value0 = 0;
-            CGFloat value1 = 0;
-            
-            if (sizeW != 0 && sizeH != 0) {
-                
-                //固定高填充宽
-                if (itemHeight * sizeW/sizeH > itemWidth) {
-                    value0 = (itemHeight * sizeW/sizeH) * itemHeight;
-                }
-                
-                //固定宽填充高
-                if (itemWidth * sizeH/sizeW > itemHeight) {
-                    value1 = (itemWidth * sizeH/sizeW) * itemWidth;
-                }
-                
-                [video addSubview:video.localView];
-                
-                //取面积小的进行扩充
-                if ((value0 > value1 && value1 != 0) || value0 == 0){
-                    //固定宽填充高
-                    [video.localView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                        make.width.equalTo(video);
-                        make.height.equalTo(video.mas_width).multipliedBy(sizeH/sizeW);
-                        make.center.equalTo(video);
-                    }];
-                } else {
-                    //固定高填充宽
-                    [video.localView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                        make.height.equalTo(video);
-                        make.width.equalTo(video.mas_height).multipliedBy(sizeW/sizeH);
-                        make.center.equalTo(video);
-                    }];
-                }
-                video.clipsToBounds = YES;
-            }
-        }
-        if ([obj isKindOfClass: [UIView class]]) {
-            UIView *video = (UIView *)obj;
-            video.clipsToBounds = YES;
-        }
-    }];
-}
-
 //确保不遮挡其它子视图（如无可不调用）
 - (void)makeAllControlTop:(UIView *)video {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

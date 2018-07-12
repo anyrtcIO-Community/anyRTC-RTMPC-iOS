@@ -222,7 +222,7 @@
         ATVideoView *video = [ATVideoView loadVideoWithName:self.userName peerId:Video_MySelf pubId:Video_MySelf size:CGSizeMake(4, 3) display:true];
         video.delegate = self;
         [self.videoArr addObject:video];
-        [self.guestKit setLocalVideoCapturer:video.localView];
+        [self.guestKit setLocalVideoCapturer:video];
         
         [self layoutVideoView:self.localView containerView:self.containerView landscape:self.hallModel.isLiveLandscape];
     } else {
@@ -267,7 +267,7 @@
     video.delegate = self;
     [self.videoArr addObject:video];
     
-    [self.guestKit setRTCVideoRender:strRTCPubId andRender:video.localView];
+    [self.guestKit setRTCVideoRender:strRTCPubId andRender:video];
 }
 
 - (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId {

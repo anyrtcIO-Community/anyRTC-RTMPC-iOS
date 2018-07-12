@@ -17,7 +17,7 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 
 ### Cocoapods导入
 ```
-pod 'RTMPCHybirdEngine', '~> 2.0.0'
+pod 'RTMPCHybirdEngine', '~> 2.0.5'
 ```
 ### 手动导入
 
@@ -88,6 +88,11 @@ anyRTC官方网址：https://www.anyrtc.io </br>
 QQ技术交流群：554714720 </br>
 联系电话:021-65650071-816 </br>
 Email:hi@dync.cc </br>
+
+## 更新介绍
+
+* 2018-07-12 ：游客端播放器显示模式变更(videoContentMode); 融合RTCMeetEngine.framework
+
 ## 关于直播
 本公司有一整套直播解决方案，特别针对移动端。本公司开发者平台[www.anyrtc.io](http://www.anyrtc.io)。除了基于RTMP协议的直播系统外，我公司还有基于WebRTC的时时交互直播系统、P2P呼叫系统、会议系统等。快捷集成SDK，便可让你的应用拥有时时通话功能。欢迎您的来电~
 ## License

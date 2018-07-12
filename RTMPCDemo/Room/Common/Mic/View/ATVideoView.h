@@ -21,8 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *hangUpButton;
 
-@property (weak, nonatomic) IBOutlet UIView *localView;   //视图渲染
-
 @property (nonatomic, assign) CGSize videoSize;     // 视图的分辨率大小
 
 @property (nonatomic, copy) NSString *strPeerId;    // 标识Id

@@ -125,6 +125,15 @@
  */
 - (BOOL)startRtmpPlay:(NSString*)strUrl andRender:(UIView*)render;
 /**
+ 设置播放器显示模式
+ 
+ @param eVideoRenderMode 显示模式
+ 说明：默认：AnyRTCVideoRenderScaleAspectFill，等比例填充视图模式
+ */
+- (void)updatePlayerRenderModel:(AnyRTCVideoRenderMode)eVideoRenderMode;
+
+
+/**
  停止RTMP播放
 
  @return 成功或失败

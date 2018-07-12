@@ -25,6 +25,11 @@
 
 #import <RTMPCHybirdEngine/AnyRTCUserShareBlockDelegate.h>
 
-
+#import <RTMPCHybirdEngine/AnyRTCMeetEngine.h>
+#import <RTMPCHybirdEngine/RTMeetKit.h>
+#import <RTMPCHybirdEngine/RTMeetKitDelegate.h>
+#import <RTMPCHybirdEngine/RTMeetOption.h>
+#import <RTMPCHybirdEngine/RTMeetAudioKit.h>
+#import <RTMPCHybirdEngine/RTMeetAudioKitDelegate.h>
 
 #endif /* RTMPCHybrid_h */

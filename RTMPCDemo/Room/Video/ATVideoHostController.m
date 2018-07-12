@@ -313,7 +313,7 @@
     videoView.delegate = self;
     [self.videoArr addObject:videoView];
     [self layoutVideoView:self.localView containerView:self.containerView landscape:self.liveInfo.isLiveLandscape];
-    [self.mHosterKit setRTCVideoRender:strRTCPubId andRender:videoView.localView];
+    [self.mHosterKit setRTCVideoRender:strRTCPubId andRender:videoView];
 }
 
 - (void)onRTCCloseVideoRender:(NSString*)strLivePeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString *)strUserId{

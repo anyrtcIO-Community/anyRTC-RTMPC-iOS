@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import <Bugly/Bugly.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //配置SDK
     [RTMPCHybridEngineKit initEngineWithAnyRTCInfo:developerID andAppId:appID andKey:key andToke:token];
+    [Bugly startWithAppId:@"a492cc0b8d"];
     return YES;
 }
 

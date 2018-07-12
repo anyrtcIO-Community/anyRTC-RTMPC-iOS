@@ -77,5 +77,9 @@ typedef NS_ENUM(NSInteger,LivingMediaMode){
  视频方向：默认：RTMPCScreenPortraitType竖屏
  */
 @property (nonatomic, assign) RTMPCScreenOrientationType videoScreenOrientation;
+/**
+ 自动旋转(这里只支持 left 变 right  portrait 变 portraitUpsideDown)
+ */
+@property (nonatomic, assign) BOOL autorotate;
 
 @end
