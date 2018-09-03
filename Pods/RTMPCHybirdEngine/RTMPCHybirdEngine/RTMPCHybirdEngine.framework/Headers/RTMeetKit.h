@@ -91,7 +91,6 @@ typedef NSView VIEW_CLASS;
  设置本地视频采集窗口
  
  @param render 视频显示对象
- @param bFront 是否用前置摄像头
  说明：该方法用于本地视频采集。
  */
 
@@ -105,14 +104,18 @@ typedef NSView VIEW_CLASS;
  */
 - (void)updateLocalVideoRenderModel:(AnyRTCVideoRenderMode)eVideoRenderMode;
 
-
 /**
- 设置前置摄像头镜像是否打开
+ 重置音频录音和播放
+ 说明:使用AVplayer播放后调用该方法
+ */
+- (void)doRestartAudioRecord;
+/**
+ 设置本地前置摄像头镜像是否打开
  
  @param bEnable YES为打开，NO为关闭
- 说明：默认打开(目前只支持美颜相机)
+ @return 镜像成功与否
  */
-- (void)setFontCameraMirrorEnable:(BOOL)bEnable;
+- (BOOL)setFontCameraMirrorEnable:(BOOL)bEnable;
 
 /**
  设置滤镜（默认开启美颜）
@@ -129,7 +132,7 @@ typedef NSView VIEW_CLASS;
  @param strAnyRTCId strAnyRTCId 会议号（可以在AnyRTC 平台获得，也可以根据自己平台，分配唯一的一个ID号）
  @param isHoster 是否是主持人
  @param strUserId 播在开发者自己平台的id，可选
- @param strUserData 播在开发者自己平台的相关信息（昵称，头像等），可选。(限制512字节)
+ @param strUserData 播在开发者自己平台的相关信息（昵称，头像等）还可以加入字段来限制会议人数：MaxJoiner，可选。(限制512字节)
  @return 加入会议成功或者失败
  */
 - (BOOL)joinRTC:(NSString*)strAnyRTCId andIsHoster:(BOOL)isHoster andUserId:(NSString*)strUserId andUserData:(NSString*)strUserData;
@@ -205,6 +208,13 @@ typedef NSView VIEW_CLASS;
  @return 获取网络视频状态
  */
 - (BOOL)networkStatusEnabled;
+
+/**
+ 网络检测、服务链接状态(加入房间成功后才能调用)
+ 说明：如果本地网络状态发生变化，开发者调用该接口：然后等待服务返回当前链接状态：onRTCCheckConnectionRealtime
+ @return 返回check成功与失败
+ */
+- (BOOL)doCheckConnection;
 
 #pragma mark - 白板功能模块
 

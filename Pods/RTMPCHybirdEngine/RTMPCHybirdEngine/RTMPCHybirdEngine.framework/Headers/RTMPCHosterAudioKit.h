@@ -35,8 +35,8 @@
  设置录像地址
  
  @param strRecordUrl 需要录像流的地址；
- 说明：设置Rtmp录制地址，需放在开始开始推流方法前（开启录像服务
- 需现在www.anyrtc.io官网开通录像服务）
+ 说明：设置Rtmp录制地址，需放在开始推流方法前（开启录像服务
+ 需前往www.anyrtc.io官网开通录像服务）
  */
 - (void)setRtmpRecordUrl:(NSString*)strRecordUrl;
 
@@ -114,7 +114,7 @@
  说明：默认普通消息。以上参数均会出现在游客/主播消息回调方法中，如果创建RTC连接（createRTCLine）没有设置strUserid，发送失败。
  */
 
-- (int)sendUserMessage:(int)nType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
+- (BOOL)sendUserMessage:(RTCMessageType)nType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
 
 /**
  关闭RTC链接

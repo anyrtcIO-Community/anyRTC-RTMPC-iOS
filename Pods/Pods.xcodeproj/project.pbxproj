@@ -11,12 +11,14 @@
 		01417648297353ACB643BD9A3FB13872 /* NSObject+MJProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = B725F5CDCEAB306E745E10A188A5B13B /* NSObject+MJProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		047212A0948EE82EA03987E12FBDA274 /* MJPropertyType.h in Headers */ = {isa = PBXBuildFile; fileRef = 539266A4A0B07A8FAF0DBF4FA49D0159 /* MJPropertyType.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		05B9C94F5ED08079BF35FE9D68FE0793 /* XHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA48DAFC06250493C834F43D6B9C022 /* XHToast.m */; };
-		05FBC43206FA4F2C53E163CAB5D6D2BD /* BarrageDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5897E05454A0772D316C86C6BD215F /* BarrageDescriptor.m */; };
+		068E6FE3D5B08F6E7F7AAB32107D0ADE /* BarrageSpriteQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 373C70F5A8F9BFB4DCD0F5FCFC4D30EC /* BarrageSpriteQueue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0A8B8ECA62D336CC9BA7C216DAC77934 /* BarrageWalkTextSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D0D8D87A23D46894A85522E28F29F0C /* BarrageWalkTextSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0D7C559751636E65AF6487BF1B8C32CF /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FAEEA613B58E938A2999CA8BE81B1D /* AFURLRequestSerialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0DAE61EE8CFDFB7FB297590A54105F92 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D7D0B80924C9B31ABA2E84C625779 /* MJPropertyType.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0E072404FCDB7E63014F6227268E54F1 /* BarrageViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB26AD79D088AA3D030CDAA6D4C81FE /* BarrageViewPool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		100DCBFE39E91CF7A296FABFAB4D7CC6 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FDA1F29F88B81DA64E163626A7CC1B4 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		10D424C4D27AFFBC8874723D49E6A35D /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 2582A430441F36860B06AE5F32231CD9 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		13A903C3B0A543C8538BEEA95EBCBC1C /* BarrageWalkSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DD4572A37B899B38C2C891E18886AE /* BarrageWalkSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1444B9A3E45480C05941E8D3D712FF24 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = C52C26345CDF0CAD7EE25ECF8DAEC836 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		149D550F015A3EB8B64D76087596B843 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F578765E200AFCBA2EF317D9D7C732 /* AFHTTPSessionManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		14A9E7B0BE7392524FC07D93C47D7A7F /* MJExtensionConst.h in Headers */ = {isa = PBXBuildFile; fileRef = F1480573757EC3F5DB045AA2F07497F7 /* MJExtensionConst.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -24,18 +26,15 @@
 		150F2A7F3538263CBCE14137580AA09F /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B594B428F64C6424571A0A4339585901 /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		161B3785F561102FEFC4411D7F83DD50 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A4663169E5F8C9755BE4697EC0B35951 /* MJRefreshStateHeader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		18CD9CC439C9D6F9E81D96A7867C976C /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1611371390D3E4C5A0BD0A185330E6DA /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		197B846EB37332D325EDB01792073A17 /* BarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA07DB92969001BF1F56AB9CEF4134B /* BarrageWalkTextSprite.m */; };
 		1AF513D8D71B663D5422760106B13723 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D307F24774328259756E25F945AE87D /* MASConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1C40921B181E23E0D5FEB1235B1CA8D3 /* BarrageSpriteQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 373C70F5A8F9BFB4DCD0F5FCFC4D30EC /* BarrageSpriteQueue.m */; };
 		1D3EFCB42FB97DA7882CAEC8AD8F916E /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 776C0E8D60DDE29A02F1852C2525C0B8 /* AFNetworking-dummy.m */; };
 		20EB55C7F6500666DA055783E6803BCE /* MJExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D3183528916C7F75E3E2C385F52D38 /* MJExtension-dummy.m */; };
 		214DF0B6664033C87D6B846599FB477A /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC46024D61B1E7E2840783481D50EE4 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		234E79261AC257C75B8644DA099FF1C2 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C67CF6FEC86699D504FC08AB103C0789 /* MJRefreshFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		236524396AB978EB013E1EDB702DB0D4 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C757BFBB6726357B6891EF9B84658BB5 /* MJRefreshBackNormalFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		238A923A0F39A9AF0B50DA4B9B656A0B /* BarrageWalkImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25B58384D02CF9BD683E19848D6BD6 /* BarrageWalkImageSprite.m */; };
 		24D62FF5048CF5339C87189530FFE3D4 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC03C943F262DC126C5D6A88D4051893 /* MJRefreshBackStateFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2556CB688FF44EB1B697EDDD462A4AA0 /* UILabel+BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 913E49E2ED02FE619A961B26334C1AFB /* UILabel+BarrageView.m */; };
 		2A0F21F3F0905E69CE66468D85ABB0BB /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B89856AC6BC636AF5514AC6425E9ED72 /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2B80AD4F46E9F77AFD979B9BF1200F4E /* BarrageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AF13C65F06885C9B3E0FCC55897998 /* BarrageLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2B83541D4E65BA7076A9A01F552AE0C9 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5389E4760A6F916637582F10E569D4 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2BBA849E5EB72CBA147F28B57B733A18 /* BarrageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 774477A0778C90D51BDE9B8AA309ABF4 /* BarrageHeader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2F4B7C1A09BA30D02CD20B179F1B7C59 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EB5B938802F986D305D37865A72F7F /* Security.framework */; };
@@ -52,11 +51,9 @@
 		466869E41EB306F74C8A6E87CC1539BF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 856615F12FB49574A7B412F2A1D1495A /* ViewController+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		46AEACA04A37588BC25653626ACE755A /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5613D4EF22E68D1BE165B0D12F0AAF90 /* MJRefresh.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		47A87ACE3FA128F240288531B979BECA /* BarrageSpriteQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A30B87140A3463723DD11BDF751E07C /* BarrageSpriteQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4A50F93F5AF1926FFABEA500555E7251 /* BarrageFloatSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA12F0A1F4BCDD6B34CFA6E847EBC5 /* BarrageFloatSprite.m */; };
 		4A658AACD7DC9B7012BFA2A1E21A524E /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B6471D11BDDB1804473FA959E89A13 /* MJExtensionConst.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4AB9E273E01CD1F8F16482D09B1FB44C /* BarrageWalkSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = A407395DCD07344DA4F89C6B440C87B8 /* BarrageWalkSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4E446AF686191153D62EAC9C3ABEF7A0 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1751CE5E712D1E9493FAAA9C61A2666B /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		503E952B1D99C999176AF38FE4A54BBE /* BarrageSpriteUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1AA99C0019BA1419622A5DFA7FAEAB /* BarrageSpriteUtility.m */; };
 		514663D13BAD254F684191EA8897EDA8 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 285EEBB63729B81A3FA799CBDD26D210 /* MJRefreshBackFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		523F69012549DCADB26D11EFB6593B5B /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CD712884170D8D3C6DC961A2A1661EB /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		52E28A0A333684B80D6CD7FFD42865E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0339164673A5C75C5E4018F798CE5EEE /* Foundation.framework */; };
@@ -65,7 +62,9 @@
 		548BBD5B63FA097F419829C3EE8EA068 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547247B8AAD3DE9A5CE70C4F6DB3253E /* View+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		553287D4AA043EFB3585DD432BE1DEF7 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A19EDA10AF85DD18715D9867C227EF /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		567D688D21EA9B72C61FA757CDDF87B1 /* UIView+BarrageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EA746DC927A30C0054A6E67E6F1AF8 /* UIView+BarrageView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		58D7899B5A3B9D639C6BE9E6AA72653E /* UIView+BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC35C5E3E1043B01C29E630182BB7E7 /* UIView+BarrageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5A0F8D6786E46949D8CA255F369FBD29 /* MJPropertyKey.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A3FE874E982CFF1281A272B4FE91DD /* MJPropertyKey.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5B130DBE65AC82718694477E70C11579 /* BarrageSpriteUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1AA99C0019BA1419622A5DFA7FAEAB /* BarrageSpriteUtility.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5B46C39A3F939EDB676981756CC24007 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6ABE239BDB810E99BF34E8ED4128F1 /* Masonry-dummy.m */; };
 		5C36FCEFB9ADA73A8EDFDAA1557F9B62 /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CB8DBC27C7175ADC65C9EB3597EABBA /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5EBFADB0ACACA114B98082EBD8FDA650 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C53792B18D489B5E29057904D4F3F289 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -75,21 +74,19 @@
 		622D4FE0EAB8273458EBBDB902929B37 /* BarrageFloatTextSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = EE5DE9A6AF6BFC590FD37008D6ECFCE1 /* BarrageFloatTextSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		627B8656D435FF535E04971E846DA3A3 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D58D140B1E199E17BA06E7512A0555 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		647C0D0CE88A21BEB0702FC3EB80F029 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F07EDE8295CC027F42230FD5CC2BA78 /* AFURLResponseSerialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		68A7D8C82C50F3EB2F9285C1F7BF12AD /* BarrageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6739EB1EA334C6E287FDAB6144600DE5 /* BarrageSprite.m */; };
+		66E389F542D11D35E2FE06CCF72AEE79 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = F4155EC505CF5C7D9CD83C1DA9CCF0FD /* BarrageClock.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		68AACE5658A5E7D246D4D46818BC10E8 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 40BDC6CDB4822933396AF041CC3EE7BF /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		692D9B2A72797DC53B135757CB338303 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041F55AE36E26F3BDCC4B40490B54E30 /* CoreGraphics.framework */; };
 		6BA2C092EFD2251080167E65072EAD0C /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EDB5089E331F8F83D51F652357AEC63 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6CA5641617C855A7102C7787BB154D89 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3BB322DD84F1810B532013C5CB719B /* MJRefreshAutoStateFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6F49C376226E2396F7F8A86A47E0F071 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ACBDAE5CD14FEBA95770F4A041163F4 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6F9264B34447A97BC7EE1E213847CE16 /* BarrageViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB26AD79D088AA3D030CDAA6D4C81FE /* BarrageViewPool.m */; };
 		6FBEF9BEF976F73220F5EA0246FA6674 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B566CF3A1C65C7C3E70CD2652F939BC /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		729B628E992E517000943F0B724DEDCB /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A5EE234648890D48BAD278687C50C /* UIView+MJExtension.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		77146F35940964989D0301C0DA599242 /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = A24E6877F4C9EDA72257B83C253D69ED /* MJRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7774EF3796C702D6E47BA61CDF6DBEF7 /* UIImageView+BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC9282EFA4F246D2F48533B96A05F /* UIImageView+BarrageView.m */; };
 		7825D3CBAD29528A8A865F8281248736 /* UIImageView+BarrageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7030EEF6521DB210DE84BBD246A80924 /* UIImageView+BarrageView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		788D9E9D831E24BF2F64660E88BE968B /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B8966DEBEC6C23690A3D1F3FD71F0 /* BarrageCanvas.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7A323F7415D6821718000F8E9BFD47AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0339164673A5C75C5E4018F798CE5EEE /* Foundation.framework */; };
 		7AC0D0965486ED43C064F1BC177ACBC9 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 78FD637A585977C5496D6CC201487C7E /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7B6607CDE7ACCA788B1429CD9D9F1FB1 /* BarrageFloatImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7852EDE29181DA1560C335D4CEBF2F /* BarrageFloatImageSprite.m */; };
 		7C448DA1FDF35C302540C6AA2B402BDD /* BarrageWalkImageSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = C009F30B2931D22D6ABBF9599CDC8136 /* BarrageWalkImageSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7CAD56DBBE5E37944E26ABE258CBA41C /* BarrageFloatSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D5B0CDB06C290570E6AFA2F0FEA0EB /* BarrageFloatSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7D103275EF760B23CA6410B280FE235D /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43C95AE34656EB5C916953BEAEBB3DA7 /* MJRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -100,10 +97,8 @@
 		8280FDEEA2D11C4397D3D703F0E83997 /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = AA87E6F8CCFFF9DA4C1137FEFEFFD010 /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		82CCDC9426AA23AD6A99CFD91D132E7F /* BarrageDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6C64C752D8EF5195CC674D0B03BC9A /* BarrageDescriptor.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		833028FE237EDF8A662DDB0DE9DCFF19 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 782A0B880D05AA9AE0B1C0895C4E2FA2 /* UIActivityIndicatorView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8568BE9AFBE04D7C1530A1F1E0D34B2F /* BarrageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD84266C86FC085DE58394ECFEE3D55 /* BarrageRenderer.m */; };
 		86B2DF4CC6E598AAA73D0CC6EEBA0E96 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 646868B3FA60CBB92641F6DE78CAE46A /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		86D6EED752501BDDF6C92ED8A9BA9065 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A3DDF5EDE39D6639E8A36EE653EEA5 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		87BC4BBB6E770B43983D770003E3AB58 /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AFEE93FBEB5492D6F6E3F31EA37335 /* BarrageFloatTextSprite.m */; };
 		8A3F4E9BC1AB99F58ED7315BEA211A85 /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C70BE8E80049A0EDD073D8CB843F77 /* MJRefreshFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8B3A9D07C4F622FDB95D4CE6CC3C73B9 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8BA3B2D9CED3C0C06B6DB3D0AAC822 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8BE30B72D3E9BFF954B9208B3F7D656F /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D7375DB9508A4D02835E8C6E75A935D9 /* UIScrollView+MJExtension.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -112,26 +107,27 @@
 		8E7BC04EF0E086E356FF20FB72CFCF02 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 23821B12E3353B9F1BCEE2876A4F8A3D /* MJProperty.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		92711327ED7920702A69A828271279AE /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F622CF5C2742D43F3F03F0AB1C2E42EF /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		92F410F29B5CB5BD06FA69AEE291BEC4 /* XHToast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F985D6C043442AB30D766575F8CAE8DA /* XHToast-dummy.m */; };
-		9314E16604C33F5F82440FA2CADADE67 /* UIView+BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC35C5E3E1043B01C29E630182BB7E7 /* UIView+BarrageView.m */; };
 		93FD8A9A6AB5DEFE8A2DF3B75D2ECB41 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC0044D992C7C6979216A1086F89D9 /* UIProgressView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		956B198769D86897A24368A5D7DD4F6E /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E0546E5FE644DD679C0244546997F3B8 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		95B1BAFCC11863EBCA52A524DA6AC254 /* BarrageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AF13C65F06885C9B3E0FCC55897998 /* BarrageLoader.m */; };
 		961E3517CA814009214D5D368E487F9C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CD82546FDAF927005E3B019A5203FB /* AFSecurityPolicy.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		97CA04C5B77CB7773C7F0871D0E1C581 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC78689F084C0F7A55D36C458C64195 /* MJRefreshAutoFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		97D0D31CB884FC74E5605624CE2482FD /* BarrageFloatImageSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC563A70E8358EE8758611E5BB459E8 /* BarrageFloatImageSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		99E00D593F76D7E6C96300345E211282 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0163E7DC56C630CDB0FAB9FFDC0F4E /* MASConstraintMaker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9AB27A7F752AB644728D50B0228A070E /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B340F200153E3BED608A225BC11A0384 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9B61051B6E891E54FF105C676148DE18 /* BarrageWalkImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25B58384D02CF9BD683E19848D6BD6 /* BarrageWalkImageSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9B82592971127A07C0DBEE79A0355DAA /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2920C9A1ADCB82D0060D80AE9F1337 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9BFAE06AC2F3B426C64EEDBF8C99A69E /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DADB7514110D4D5ADB8C66D665ABF050 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9BFF262B8940B436325B66C26A8D9FA9 /* BarrageSpriteFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6A10E414F1F4D41FB9C324DCA10542 /* BarrageSpriteFactory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9CF81DFE3C676DB44DF09675306FCC84 /* BarrageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A092C3AF6B70235F5206FD8B1498A5C5 /* BarrageDispatcher.m */; };
+		9C9C37BC6082FF6893C2EFB11742563A /* UIImageView+BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC9282EFA4F246D2F48533B96A05F /* UIImageView+BarrageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9EBB877F2917EE0D6B385DC79142CE10 /* BarrageRenderer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE35D0B9C8AE2402976A3D47113E24 /* BarrageRenderer-dummy.m */; };
 		9F39FCC5EFE5F66AFA01AB0F2E9065FA /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCDB00CB5D0748166E47AA0CFDDD181 /* MJPropertyKey.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A1CF07CDCC2FC36546EA72BB8F254431 /* BarrageCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD4487EA8E05F2CB8BE6723BA8B774A /* BarrageCanvas.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A2DD24E500CF3C156FB7230A03C58C25 /* BarrageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6739EB1EA334C6E287FDAB6144600DE5 /* BarrageSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A40E6878F46AFB41936054789BEC19DD /* BarrageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A092C3AF6B70235F5206FD8B1498A5C5 /* BarrageDispatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A49342C70E684FEC485E89E139969B6B /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 470F4530D03955840F575043F2EA6BB4 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A5CC736BE68ABCDF971C27B076E538AB /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7079164C6BB807B53AF65D7710E61C16 /* MJRefreshAutoGifFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A974DE47B402E6956FB9B85EAEBE8426 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C426F76627D07F9CD90862A579C08B6A /* MJRefreshGifHeader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B0C13321D8E8246F0213C8EF755503E3 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A11D15845748A4044342223BCECD40E4 /* MJRefreshComponent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B3F75917B2E96875B673A314631AA41C /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B8966DEBEC6C23690A3D1F3FD71F0 /* BarrageCanvas.m */; };
 		B5D16C89DC03BFA0A8210B01B24F4EA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0339164673A5C75C5E4018F798CE5EEE /* Foundation.framework */; };
 		B5EC5518E18B05A5334C49ABBF4C78F7 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C695926960989DB9924F7AB525910A /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B8126E162BA6DBFBDC4DA9FC3DCB7E46 /* UILabel+BarrageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5228BB8687DD4FBCA6145F2E881710BD /* UILabel+BarrageView.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -148,14 +144,16 @@
 		C2A146293ACCC7A3C103F3327687C3C2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF435BBF67523FB6D2633A16438FDB4B /* MobileCoreServices.framework */; };
 		C6BC3F18F088F23E537EFECD2F22A5E6 /* BarrageSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7708532AF1789DD04323D0243340EF25 /* BarrageSprite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C6E83C10646E2DF6C83A578CE6AF0E5A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C41A06568F1DCC5F483A3F386E0FD95E /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C7ADA07D29BFF8B56BB536DBD4A27C27 /* BarrageSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D5D0EB5F10A11824326A53255351CD /* BarrageSpriteFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C9F6937BC265DA8CDB70746F57C570AE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE849ACF7AD92C15D707B7F16F2008 /* UIScrollView+MJRefresh.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CB76D57C3129C83042163917E1900C41 /* BarrageRenderer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE35D0B9C8AE2402976A3D47113E24 /* BarrageRenderer-dummy.m */; };
+		CA151555C37B429726833379EFD65401 /* BarrageFloatSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA12F0A1F4BCDD6B34CFA6E847EBC5 /* BarrageFloatSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CEF7E139022FFA4F5C99D4DC5DE67990 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C228B0C50F9D6F93B97E8254BDDACF2 /* MASViewAttribute.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D110C2E8EA794C3647A8E35ABC45300E /* BarrageSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D5D0EB5F10A11824326A53255351CD /* BarrageSpriteFactory.m */; };
-		D1705547F9D6A0BB3693063C6EFB6195 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = F4155EC505CF5C7D9CD83C1DA9CCF0FD /* BarrageClock.m */; };
 		D25F522D6E4ACBBE23DFE69BE83DFAF0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA0E2EA588188E815D28ECCBACC2BB2 /* UIRefreshControl+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D54AF7B5E0E337D9117BE563D3ECA8D8 /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 903F17164D8660B4A2E9690B47BD538C /* MJRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D5F11F36A7F025E24903A482804A4C21 /* BarrageSpriteUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6DB2BE4F6B6E49C5403A2FA2904FB2 /* BarrageSpriteUtility.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D654AE105408C30567E2F778E94486CE /* BarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA07DB92969001BF1F56AB9CEF4134B /* BarrageWalkTextSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D6663D0C924854ED6B3A3E33A089ADDC /* BarrageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD84266C86FC085DE58394ECFEE3D55 /* BarrageRenderer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D6BE28E791078C7DD683A3ED51B47734 /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AFEE93FBEB5492D6F6E3F31EA37335 /* BarrageFloatTextSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D7E3456BAE61FD8AA19FDD7E1D206126 /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = D2864D8CC125BA8DFD9669CBAD8A2F32 /* MJRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D8C57235BA506BC6B1EC0789FDE00762 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C164ED99CEBBF2C3D2EB4D3791C40948 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D8D72BEC4364E9F77BCC6B8AB4E30DF3 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E44882B163BDE7C3AA24D4198D42 /* MASViewConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -170,15 +168,16 @@
 		E0230ACA19F579E09AFFA354F385FEC1 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB798F79DA1F7D8BDB1796071F990F9 /* AFNetworkReachabilityManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E12EB9344F257F2F1152586E3B661045 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C70C5F1587AD071E4928042B5E8EF77F /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E2AE6FBDC0CB49F725DD8D597ED93800 /* BarrageDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE6D4334697AB70F907A29840DA65A0 /* BarrageDispatcher.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E68ED782F0371F3C24C6B412CAE0549D /* BarrageWalkSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DD4572A37B899B38C2C891E18886AE /* BarrageWalkSprite.m */; };
 		E816378F2C8547616AEA6020844825A6 /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0170EF478EC9EA6C67F185CE1158C822 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E9AB6D99C466793B4C79812F4DF01386 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5892B0307B52C8C8BE31FCD1D12656 /* AFAutoPurgingImageCache.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EAEEC5EDA062152C206B868F228B2D08 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382A8D3C262E305A58E2299429D1062 /* NSObject+MJCoding.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EBA632EA41470F059E86A82C018FCC6E /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 443BA9748247B152D3A3364C026B7BDD /* MJRefreshAutoNormalFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F0A828EC72CD7FB7ABFDD5B5736EF7F8 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D74F4D6A65A33241AC4902E9611B76 /* MJFoundation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F0B56A7D38A399A2F67F9920C9526A66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0339164673A5C75C5E4018F798CE5EEE /* Foundation.framework */; };
+		F1567D0C6B8E10433DFA4F87EEECE946 /* BarrageFloatImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7852EDE29181DA1560C335D4CEBF2F /* BarrageFloatImageSprite.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F390D582745DF3516ADD4D910A2ACFFA /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D174603EF7CB7CCA58F9BA51FF38430 /* MASCompositeConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F438AD9DB279982EBEA023675426AC98 /* Pods-RTMPCDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C196B2C93C1BAA9EAF057533032F44 /* Pods-RTMPCDemo-dummy.m */; };
+		F4C1D927298E0BA2879ACA68FA02695B /* BarrageDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5897E05454A0772D316C86C6BD215F /* BarrageDescriptor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F56F1AD0D978F250A30E1980549A7EB6 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F68289B28E5680FC95152948CD554B3A /* MJRefresh-dummy.m */; };
 		F71530448B7A282746853F4718DCA267 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0339164673A5C75C5E4018F798CE5EEE /* Foundation.framework */; };
 		F80C4A9CA363B54396C43C11FF678779 /* MJFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = A6F0095A28DCA9D7C84A315203BFD94E /* MJFoundation.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -189,6 +188,7 @@
 		FB415F79751F1A1F2203183C3CEE0723 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B55B8CD66DD19D97109112AAA71030 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FBFE53983A247600ECF47853C2F01D4D /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C588D2D3AC0480ABFF07C1AC9B982D4 /* MJRefreshConst.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FCC266EA2215838AF65C5B0AA555394D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0339164673A5C75C5E4018F798CE5EEE /* Foundation.framework */; };
+		FDC85D2A316D90BBB929E79C2CC22F6E /* UILabel+BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 913E49E2ED02FE619A961B26334C1AFB /* UILabel+BarrageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,7 +283,7 @@
 		3D25B58384D02CF9BD683E19848D6BD6 /* BarrageWalkImageSprite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BarrageWalkImageSprite.m; path = BarrageRenderer/BarrageSprite/BarrageWalkImageSprite.m; sourceTree = "<group>"; };
 		3E034F3F7FD3C055AB2D057C44FB855B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		3FDA1F29F88B81DA64E163626A7CC1B4 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		40270EABF1EB97C99C334E6C85C0ACFA /* libXHToast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libXHToast.a; path = libXHToast.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40270EABF1EB97C99C334E6C85C0ACFA /* libXHToast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXHToast.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BDC6CDB4822933396AF041CC3EE7BF /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		43C95AE34656EB5C916953BEAEBB3DA7 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
 		443BA9748247B152D3A3364C026B7BDD /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
@@ -321,14 +321,14 @@
 		6E7852EDE29181DA1560C335D4CEBF2F /* BarrageFloatImageSprite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BarrageFloatImageSprite.m; path = BarrageRenderer/BarrageSprite/BarrageFloatImageSprite.m; sourceTree = "<group>"; };
 		7030EEF6521DB210DE84BBD246A80924 /* UIImageView+BarrageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+BarrageView.h"; path = "BarrageRenderer/BarrageSprite/UIImageView+BarrageView.h"; sourceTree = "<group>"; };
 		7079164C6BB807B53AF65D7710E61C16 /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
-		70957E3C9082BB16C208FC8FB65B8496 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		70957E3C9082BB16C208FC8FB65B8496 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		73279F7ACFAF291E11401B1A0225429F /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJKeyValue.m"; path = "MJExtension/NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		76D7A39D9F31852F698D31817959F3AE /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
 		7708532AF1789DD04323D0243340EF25 /* BarrageSprite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageSprite.h; path = BarrageRenderer/BarrageSprite/BarrageSprite.h; sourceTree = "<group>"; };
 		774477A0778C90D51BDE9B8AA309ABF4 /* BarrageHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageHeader.h; path = BarrageRenderer/BarrageHeader.h; sourceTree = "<group>"; };
 		776C0E8D60DDE29A02F1852C2525C0B8 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		77B92107A5DA4ABADE5C0047E84BBA4B /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
-		77C9D7C05BDA56757C3E58B4493EEB84 /* libPods-RTMPCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RTMPCDemo.a"; path = "libPods-RTMPCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C9D7C05BDA56757C3E58B4493EEB84 /* libPods-RTMPCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTMPCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		782A0B880D05AA9AE0B1C0895C4E2FA2 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
 		78FD637A585977C5496D6CC201487C7E /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		799AA9E7FE2CCCE2479AB37F0F82C61C /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
@@ -338,13 +338,13 @@
 		7D256151D87F6BC6537277CF6DEC4D04 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
 		7E6DB2BE4F6B6E49C5403A2FA2904FB2 /* BarrageSpriteUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageSpriteUtility.h; path = BarrageRenderer/BarrageSprite/BarrageSpriteUtility.h; sourceTree = "<group>"; };
 		7F48338CC6E115CBBB574F89909331CD /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
-		7FD80CFAAFF265CC8FCCBC6A088F83CA /* libBarrageRenderer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBarrageRenderer.a; path = libBarrageRenderer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD80CFAAFF265CC8FCCBC6A088F83CA /* libBarrageRenderer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBarrageRenderer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015893F63BEB1F8122E22896A503148 /* XHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XHToast.h; path = XHToast/XHToast.h; sourceTree = "<group>"; };
 		80AD26C7DE81472A4D7BB7DD3A042AAB /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		84C6E44882B163BDE7C3AA24D4198D42 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		856615F12FB49574A7B412F2A1D1495A /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		864150DB2EC450B30E48C2938BB12C6C /* NSObject+MJProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJProperty.m"; path = "MJExtension/NSObject+MJProperty.m"; sourceTree = "<group>"; };
-		8673A167C3BAAE5E22C9AAC57CC7D6B4 /* libMJExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMJExtension.a; path = libMJExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8673A167C3BAAE5E22C9AAC57CC7D6B4 /* libMJExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A3DDF5EDE39D6639E8A36EE653EEA5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		8A30B87140A3463723DD11BDF751E07C /* BarrageSpriteQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageSpriteQueue.h; path = BarrageRenderer/BarrageEngine/BarrageSpriteQueue.h; sourceTree = "<group>"; };
 		8A43C3322327A0F0DEED9B8887CF8B80 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 		916DB44201D2290E440D02BC5B7B628C /* BarrageClock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageClock.h; path = BarrageRenderer/BarrageEngine/BarrageClock.h; sourceTree = "<group>"; };
 		92AF5D0618EDC77E35505649FBA50AE7 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
 		9382A8D3C262E305A58E2299429D1062 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJCoding.m"; path = "MJExtension/NSObject+MJCoding.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93D5B0CDB06C290570E6AFA2F0FEA0EB /* BarrageFloatSprite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageFloatSprite.h; path = BarrageRenderer/BarrageSprite/BarrageFloatSprite.h; sourceTree = "<group>"; };
 		94E1984EF47607DB1A7E1ED564B4A8AF /* BarrageSpriteProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BarrageSpriteProtocol.h; path = BarrageRenderer/BarrageSprite/BarrageSpriteProtocol.h; sourceTree = "<group>"; };
 		99D74F4D6A65A33241AC4902E9611B76 /* MJFoundation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJFoundation.m; path = MJExtension/MJFoundation.m; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		A67D7D0B80924C9B31ABA2E84C625779 /* MJPropertyType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJPropertyType.m; path = MJExtension/MJPropertyType.m; sourceTree = "<group>"; };
 		A69DF45835BD27AD86D207B48A283104 /* RTMeetKitDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTMeetKitDelegate.h; path = RTMPCHybirdEngine/RTMPCHybirdEngine.framework/Headers/RTMeetKitDelegate.h; sourceTree = "<group>"; };
 		A6F0095A28DCA9D7C84A315203BFD94E /* MJFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJFoundation.h; path = MJExtension/MJFoundation.h; sourceTree = "<group>"; };
-		A75004AC53B09168CC7042EA4A2EAA44 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMJRefresh.a; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75004AC53B09168CC7042EA4A2EAA44 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA87E6F8CCFFF9DA4C1137FEFEFFD010 /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
 		AB9496167E4640275315075B43725493 /* RTMPCGuestKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTMPCGuestKit.h; path = RTMPCHybirdEngine/RTMPCHybirdEngine.framework/Headers/RTMPCGuestKit.h; sourceTree = "<group>"; };
 		ABAC0044D992C7C6979216A1086F89D9 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -428,7 +428,7 @@
 		D0A0BB26FA27FEFE775F998952926499 /* RTMPCHosterAudioKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTMPCHosterAudioKit.h; path = RTMPCHybirdEngine/RTMPCHybirdEngine.framework/Headers/RTMPCHosterAudioKit.h; sourceTree = "<group>"; };
 		D0EAAFE6C53E01E9E0B243FBC6B354C2 /* MJProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJProperty.h; path = MJExtension/MJProperty.h; sourceTree = "<group>"; };
 		D1BAC3B32A4C982D8DEC297880F4CDEC /* RTMeetOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTMeetOption.h; path = RTMPCHybirdEngine/RTMPCHybirdEngine.framework/Headers/RTMeetOption.h; sourceTree = "<group>"; };
-		D1F7F54C17BD027556026C230440A7C2 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1F7F54C17BD027556026C230440A7C2 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2864D8CC125BA8DFD9669CBAD8A2F32 /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoStateFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
 		D4B6471D11BDDB1804473FA959E89A13 /* MJExtensionConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJExtensionConst.m; path = MJExtension/MJExtensionConst.m; sourceTree = "<group>"; };
 		D6D5D0EB5F10A11824326A53255351CD /* BarrageSpriteFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BarrageSpriteFactory.m; path = BarrageRenderer/BarrageEngine/BarrageSpriteFactory.m; sourceTree = "<group>"; };
@@ -580,7 +580,6 @@
 				2F58D8ECBF5A49EFFE5B1F97DDBC8C75 /* RTMPCHybridEngineKit.h */,
 				F57EF28BE2312B4104282AB8B5DD5C20 /* Frameworks */,
 			);
-			name = RTMPCHybirdEngine;
 			path = RTMPCHybirdEngine;
 			sourceTree = "<group>";
 		};
@@ -629,7 +628,6 @@
 				1BE50CD894F7C9F05B2EE16CFC52D6ED /* Resources */,
 				90F3A4BF225D1105EDADA0D1E300627E /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -717,7 +715,6 @@
 				856615F12FB49574A7B412F2A1D1495A /* ViewController+MASAdditions.m */,
 				07D4075894845DDA1BC3D15A3FFCB3D5 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -784,7 +781,6 @@
 				1BA48DAFC06250493C834F43D6B9C022 /* XHToast.m */,
 				666BE6CFFF637113C595CDFD4DD4D07B /* Support Files */,
 			);
-			name = XHToast;
 			path = XHToast;
 			sourceTree = "<group>";
 		};
@@ -878,7 +874,6 @@
 				A47DA4500814E67B32DE606D345B9181 /* NSString+MJExtension.m */,
 				41A1D417B7379EA01A058FFF1A21740E /* Support Files */,
 			);
-			name = MJExtension;
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
@@ -893,7 +888,6 @@
 				5724A42E88682EC7D5D46D6DC43E93A6 /* Support Files */,
 				8968773FF9946FBE110EDD490C857197 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -963,7 +957,6 @@
 				0BC35C5E3E1043B01C29E630182BB7E7 /* UIView+BarrageView.m */,
 				AECF8431D7462C381DEF8AFD3CAB4669 /* Support Files */,
 			);
-			name = BarrageRenderer;
 			path = BarrageRenderer;
 			sourceTree = "<group>";
 		};
@@ -972,7 +965,6 @@
 			children = (
 				C14B3CCE3C90F0011499FDBE05659313 /* Frameworks */,
 			);
-			name = Bugly;
 			path = Bugly;
 			sourceTree = "<group>";
 		};
@@ -1154,7 +1146,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DBAB20C0859B3D91456C6A507FBC215 /* Build configuration list for PBXNativeTarget "BarrageRenderer" */;
 			buildPhases = (
-				CBB415911CB8F4E8562640F192E392A9 /* Sources */,
+				01CD5DC2F685FF3B1F983E9CEFDE09E8 /* Sources */,
 				36CF50B73522BE932D2C512659D9E7EB /* Frameworks */,
 				A17F5C2351E4B0568C2E66E751DC7117 /* Headers */,
 			);
@@ -1264,7 +1256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1290,6 +1282,34 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		01CD5DC2F685FF3B1F983E9CEFDE09E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788D9E9D831E24BF2F64660E88BE968B /* BarrageCanvas.m in Sources */,
+				66E389F542D11D35E2FE06CCF72AEE79 /* BarrageClock.m in Sources */,
+				F4C1D927298E0BA2879ACA68FA02695B /* BarrageDescriptor.m in Sources */,
+				A40E6878F46AFB41936054789BEC19DD /* BarrageDispatcher.m in Sources */,
+				F1567D0C6B8E10433DFA4F87EEECE946 /* BarrageFloatImageSprite.m in Sources */,
+				CA151555C37B429726833379EFD65401 /* BarrageFloatSprite.m in Sources */,
+				D6BE28E791078C7DD683A3ED51B47734 /* BarrageFloatTextSprite.m in Sources */,
+				2B80AD4F46E9F77AFD979B9BF1200F4E /* BarrageLoader.m in Sources */,
+				9EBB877F2917EE0D6B385DC79142CE10 /* BarrageRenderer-dummy.m in Sources */,
+				D6663D0C924854ED6B3A3E33A089ADDC /* BarrageRenderer.m in Sources */,
+				A2DD24E500CF3C156FB7230A03C58C25 /* BarrageSprite.m in Sources */,
+				C7ADA07D29BFF8B56BB536DBD4A27C27 /* BarrageSpriteFactory.m in Sources */,
+				068E6FE3D5B08F6E7F7AAB32107D0ADE /* BarrageSpriteQueue.m in Sources */,
+				5B130DBE65AC82718694477E70C11579 /* BarrageSpriteUtility.m in Sources */,
+				0E072404FCDB7E63014F6227268E54F1 /* BarrageViewPool.m in Sources */,
+				9B61051B6E891E54FF105C676148DE18 /* BarrageWalkImageSprite.m in Sources */,
+				13A903C3B0A543C8538BEEA95EBCBC1C /* BarrageWalkSprite.m in Sources */,
+				D654AE105408C30567E2F778E94486CE /* BarrageWalkTextSprite.m in Sources */,
+				9C9C37BC6082FF6893C2EFB11742563A /* UIImageView+BarrageView.m in Sources */,
+				FDC85D2A316D90BBB929E79C2CC22F6E /* UILabel+BarrageView.m in Sources */,
+				58D7899B5A3B9D639C6BE9E6AA72653E /* UIView+BarrageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27E8E3A06AAFF112FF7BC4F0117165D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1340,34 +1360,6 @@
 			files = (
 				92F410F29B5CB5BD06FA69AEE291BEC4 /* XHToast-dummy.m in Sources */,
 				05B9C94F5ED08079BF35FE9D68FE0793 /* XHToast.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBB415911CB8F4E8562640F192E392A9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3F75917B2E96875B673A314631AA41C /* BarrageCanvas.m in Sources */,
-				D1705547F9D6A0BB3693063C6EFB6195 /* BarrageClock.m in Sources */,
-				05FBC43206FA4F2C53E163CAB5D6D2BD /* BarrageDescriptor.m in Sources */,
-				9CF81DFE3C676DB44DF09675306FCC84 /* BarrageDispatcher.m in Sources */,
-				7B6607CDE7ACCA788B1429CD9D9F1FB1 /* BarrageFloatImageSprite.m in Sources */,
-				4A50F93F5AF1926FFABEA500555E7251 /* BarrageFloatSprite.m in Sources */,
-				87BC4BBB6E770B43983D770003E3AB58 /* BarrageFloatTextSprite.m in Sources */,
-				95B1BAFCC11863EBCA52A524DA6AC254 /* BarrageLoader.m in Sources */,
-				CB76D57C3129C83042163917E1900C41 /* BarrageRenderer-dummy.m in Sources */,
-				8568BE9AFBE04D7C1530A1F1E0D34B2F /* BarrageRenderer.m in Sources */,
-				68A7D8C82C50F3EB2F9285C1F7BF12AD /* BarrageSprite.m in Sources */,
-				D110C2E8EA794C3647A8E35ABC45300E /* BarrageSpriteFactory.m in Sources */,
-				1C40921B181E23E0D5FEB1235B1CA8D3 /* BarrageSpriteQueue.m in Sources */,
-				503E952B1D99C999176AF38FE4A54BBE /* BarrageSpriteUtility.m in Sources */,
-				6F9264B34447A97BC7EE1E213847CE16 /* BarrageViewPool.m in Sources */,
-				238A923A0F39A9AF0B50DA4B9B656A0B /* BarrageWalkImageSprite.m in Sources */,
-				E68ED782F0371F3C24C6B412CAE0549D /* BarrageWalkSprite.m in Sources */,
-				197B846EB37332D325EDB01792073A17 /* BarrageWalkTextSprite.m in Sources */,
-				7774EF3796C702D6E47BA61CDF6DBEF7 /* UIImageView+BarrageView.m in Sources */,
-				2556CB688FF44EB1B697EDDD462A4AA0 /* UILabel+BarrageView.m in Sources */,
-				9314E16604C33F5F82440FA2CADADE67 /* UIView+BarrageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1535,7 +1527,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MJExtension/MJExtension-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1559,7 +1551,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1582,7 +1574,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/XHToast/XHToast-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1606,7 +1598,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1630,7 +1622,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1654,7 +1646,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1678,7 +1670,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/BarrageRenderer/BarrageRenderer-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1701,7 +1693,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/BarrageRenderer/BarrageRenderer-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1725,7 +1717,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1791,7 +1783,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/XHToast/XHToast-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1814,7 +1806,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MJExtension/MJExtension-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1895,7 +1887,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";

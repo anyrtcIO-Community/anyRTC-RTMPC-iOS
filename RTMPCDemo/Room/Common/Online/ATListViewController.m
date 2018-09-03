@@ -52,7 +52,8 @@
 - (void)getListData{
     WEAKSELF;
     [[RTMPCHttpKit shead] getLiveMemberList:self.serverId withRoomId:self.roomId withAnyRTCId:self.anyrtcId withPage:_page withResultBlock:^(NSDictionary *responseDict, NSError *error, int code) {
-        (_page == 0) ? ([self.listArr removeAllObjects]) : nil;
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        (strongSelf->_page == 0) ? ([weakSelf.listArr removeAllObjects]) : nil;
         
         ATListModel *model = [ATListModel mj_objectWithKeyValues:responseDict];
         [weakSelf.listArr addObjectsFromArray:model.UserData];
@@ -61,7 +62,7 @@
         
         if (model.Total > self.listArr.count) {
             weakSelf.listTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-                _page++;
+                strongSelf->_page++;
                 [weakSelf getListData];
             }];
         }

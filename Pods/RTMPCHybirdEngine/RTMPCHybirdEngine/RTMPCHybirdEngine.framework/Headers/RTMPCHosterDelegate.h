@@ -9,7 +9,7 @@
 #ifndef RTMPCHosterDelegate_h
 #define RTMPCHosterDelegate_h
 #import <AVFoundation/AVFoundation.h>
-
+#import "RTCCommon.h"
 /**
  推流　RTMP 回调
  */
@@ -163,7 +163,7 @@
  @param strLivePeerId RTC服务生成的连麦者标识Id（用于标识连麦用户，每次连麦随机生成）
  @param strUserId  连麦者在自己平台的用户Id
  @param nTime 音频检测在nTime毫秒内不会再回调该方法（单位：毫秒）；
- 说明：只有设置了音频模式（setAudioModel）才会有回调
+ 说明：在LivingMediaModeAudio模式下并设置isAudioDetect为YES才有该回掉
  */
 - (void)onRTCAudioActive:(NSString *)strLivePeerId withUserId:(NSString *)strUserId withShowTime:(int)nTime;
 
@@ -179,7 +179,7 @@
  @param strContent 消息内容
  说明：该参数来源均为发送消息时所带参数。
  */
-- (void)onRTCUserMessage:(int)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent;
+- (void)onRTCUserMessage:(RTCMessageType)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent;
 
 
 /**

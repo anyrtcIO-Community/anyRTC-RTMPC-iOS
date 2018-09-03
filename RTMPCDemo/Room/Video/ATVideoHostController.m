@@ -362,7 +362,7 @@
     //RTC音频检测
 }
 
-- (void)onRTCUserMessage:(int)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
+- (void)onRTCUserMessage:(RTCMessageType)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
     // 收到消息回调
     self.liveInfo.isLiveLandscape ? ([self.renderer receive:[self produceTextBarrage:BarrageWalkDirectionL2R message:strContent]]) : ([self.infoView addMessage:[self produceTextInfo:strUserName content:strContent userId:strUserId]]);
 }

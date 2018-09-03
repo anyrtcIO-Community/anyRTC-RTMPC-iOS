@@ -153,9 +153,6 @@
             break;
     }
     
-    //根据分辨率显示,无压缩填充
-    //[self makeResolution:self.videoArr itemWidth:itemWidth itemHeight:itemHeight];
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [localView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj isKindOfClass:[UIView class]]) {

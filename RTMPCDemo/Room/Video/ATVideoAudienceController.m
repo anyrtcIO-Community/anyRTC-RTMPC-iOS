@@ -303,10 +303,6 @@
 
 - (void)onRTCViewChanged:(UIView*)videoView didChangeVideoSize:(CGSize)size{
     //视频窗口大小改变
-    if (self.localView == videoView) {//暂时不处理，可能会出现压缩
-        self.hoster_Size = size;
-    }
-    
     [self.videoArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[ATVideoView class]]) {
             ATVideoView * video = (ATVideoView *)obj;
@@ -320,7 +316,7 @@
     [self layoutVideoView:self.localView containerView:self.containerView landscape:self.hallModel.isLiveLandscape];
 }
 
-- (void)onRTCUserMessage:(int)ntype withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
+- (void)onRTCUserMessage:(RTCMessageType)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent{
     //收到消息
     self.hallModel.isLiveLandscape ? ([self.renderer receive:[self produceTextBarrage:BarrageWalkDirectionL2R message:strContent]]) : ([self.infoView addMessage:[self produceTextInfo:strUserName content:strContent userId:strUserId]]);
 }

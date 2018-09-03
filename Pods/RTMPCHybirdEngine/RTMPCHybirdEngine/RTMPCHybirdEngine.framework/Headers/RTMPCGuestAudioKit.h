@@ -98,7 +98,7 @@
  说明：默认普通消息，以上参数均会出现在游客/主播消息回调方法中, 如果加入RTC连麦（joinRTCLine）没有设置strUserId，发送失败。
  */
 
-- (BOOL)sendUserMessage:(int)nType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
+- (BOOL)sendUserMessage:(RTCMessageType)nType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
 
 /**
  关闭RTC连接

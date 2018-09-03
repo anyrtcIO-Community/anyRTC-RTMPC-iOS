@@ -8,7 +8,7 @@
 
 #ifndef RTMPCGuestDelegate_h
 #define RTMPCGuestDelegate_h
-
+#import "RTCCommon.h"
 /**
  播放rtmp流的相关回调
  - (BOOL)startRtmpPlay:(NSString*)strUrl andRender:(UIView*)render;
@@ -169,7 +169,7 @@
  @param strContent 消息内容
  说明：该参数来源均为发送消息时所带参数。
  */
-- (void)onRTCUserMessage:(int)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent;
+- (void)onRTCUserMessage:(RTCMessageType)nType withUserId:(NSString*)strUserId withUserName:(NSString*)strUserName withUserHeader:(NSString*)strUserHeaderUrl withContent:(NSString*)strContent;
 
 /**
  直播间实时在线人数变化通知

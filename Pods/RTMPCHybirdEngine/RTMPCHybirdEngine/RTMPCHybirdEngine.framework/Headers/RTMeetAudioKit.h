@@ -44,6 +44,13 @@
  说明：默认打开
  */
 - (void)setAudioActiveCheck:(bool)bOn;
+
+/**
+ 重置音频录音和播放
+ 说明:使用AVplayer播放后调用该方法
+ */
+- (void)doRestartAudioRecord;
+
 #pragma mark RTC function for line
 
 /**
@@ -52,7 +59,7 @@
  @param strAnyRTCId strAnyRTCId 会议号（可以在AnyRTC 平台获得，也可以根据自己平台，分配唯一的一个ID号）
  @param isHoster 是否是主持人
  @param strUserId 播在开发者自己平台的id，可选
- @param strUserData 播在开发者自己平台的相关信息（昵称，头像等），可选。(限制512字节)
+ @param strUserData 播在开发者自己平台的相关信息（昵称，头像等）;还可以加入字段来限制会议人数：MaxJoiner，可选。(限制512字节)
  @return 加入会议成功或者失败
  */
 - (BOOL)joinRTC:(NSString*)strAnyRTCId andIsHoster:(BOOL)isHoster andUserId:(NSString*)strUserId andUserData:(NSString*)strUserData;
@@ -63,8 +70,27 @@
  */
 - (void)leaveRTC;
 #pragma mark - 视频流信息监测
+/**
+ 设置视频网络状态是否打开
+ 
+ @param bEnable YES:打开;NO:关闭
+ 说明:默认关闭
+ */
 - (void)setNetworkStatus:(BOOL)bEnable;
+
+/**
+ 获取当前视频网络状态是否打开
+ 
+ @return 获取网络视频状态
+ */
 - (BOOL)networkStatusEnabled;
+
+/**
+ 网络检测、服务链接状态(加入房间成功后才能调用)
+ 说明：如果本地网络状态发生变化，开发者调用该接口：然后等待服务返回当前链接状态：onRTCCheckConnectionRealtime
+ @return 返回check成功与失败
+ */
+- (BOOL)doCheckConnection;
 
 #pragma mark - 消息
 /**

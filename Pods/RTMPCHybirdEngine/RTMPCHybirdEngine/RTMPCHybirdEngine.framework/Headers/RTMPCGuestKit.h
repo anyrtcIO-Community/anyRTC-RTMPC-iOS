@@ -107,13 +107,16 @@
  返回值：相机当前焦距
  */
 - (CGFloat)getCameraZoom;
-/**
- 设置前置摄像头镜像是否打开
+
+ /**
+ 设置本地前置摄像头镜像是否打开
  
  @param bEnable YES为打开，NO为关闭
- 说明：默认关闭
+ @return 镜像成功与否
+ 说明：默认打开
  */
-- (void)setFontCameraMirrorEnable:(BOOL)bEnable;
+- (BOOL)setFontCameraMirrorEnable:(BOOL)bEnable;
+
 
 #pragma mark Rtmp function for pull rtmp stream
 /**
@@ -147,8 +150,8 @@
 /**
  加入RTC连接
 
- @param strAnyRTCId 主播对应的strAnyRTCId；
- @param strUserId 游客业务平台的业务Id，可选，如果不设置strUserId，发消息接口不能使用；
+ @param strAnyRTCID 主播对应的strAnyRTCID；
+ @param strUserID 游客业务平台的业务Id，可选，如果不设置strUserID，发消息接口不能使用；
  @param strUserData 游客业务平台的相关信息（昵称，头像等），可选；(限制512字节)
  @return 打开RTC成功与否，成功后可以进行连麦等操作；
  说明：
@@ -156,7 +159,7 @@
  strUserData,将会出现在游客连麦回调中，若不设置，人员上下线接口将无用，建议设置，此方法需在startRtmpPlay之后调用。
 
  */
-- (BOOL)joinRTCLine:(NSString*)strAnyRTCId andUserID:(NSString*)strUserId andUserData:(NSString*)strUserData;
+- (BOOL)joinRTCLine:(NSString*)strAnyRTCID andUserID:(NSString*)strUserID andUserData:(NSString*)strUserData;
 
 /**
  申请连麦
@@ -175,7 +178,7 @@
 /**
  发送消息
  
- @param eType 消息类型:RTMPC_Nomal_Message_Type:普通消息;RTMPC_Barrage_Message_Type:弹幕消息
+ @param eType 消息类型:RTC_Nomal_Message_Type:普通消息;RTC_Barrage_Message_Type:弹幕消息
  @param strUserName 用户昵称(最大256字节)，不能为空，否则发送失败；
  @param strUserHeaderUrl 用户头像，可选；
  @param strContent 消息内容(最大1024字节)，不能为空，否则发送失败；
@@ -183,7 +186,7 @@
  说明：默认普通消息，以上参数均会出现在游客/主播消息回调方法中, 如果加入RTC连麦（joinRTCLine）没有设置strUserId，发送失败。
  */
 
-- (BOOL)sendUserMessage:(RTMPCMessageType)eType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
+- (BOOL)sendUserMessage:(RTCMessageType)eType withUserName:(NSString*)strUserName andUserHeader:(NSString*)strUserHeaderUrl andContent:(NSString*)strContent;
 
 /**
  关闭RTC连接

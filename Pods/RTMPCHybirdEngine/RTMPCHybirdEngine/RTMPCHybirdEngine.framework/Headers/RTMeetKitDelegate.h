@@ -150,6 +150,13 @@
  */
 - (void)onRtcTalkOnlyOff:(NSString*)strRTCPeerId;
 
+/**
+ 检测服务链接与否
+
+ @param bOk YES/NO 成功／失败
+ */
+- (void)onRTCCheckConnectionRealtime:(BOOL)bOk;
+
 @end
 
 #endif /* RTMeetKitDelegate_h */

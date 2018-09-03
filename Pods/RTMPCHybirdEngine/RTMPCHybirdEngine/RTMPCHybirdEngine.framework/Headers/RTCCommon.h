@@ -18,6 +18,7 @@ typedef enum {
 	AnyRTC_NET_DISSCONNECT = 101,	// 网络断开
     AnyRTC_LIVE_ERR	= 102,			// 直播出错
 	AnyRTC_EXP_ERR = 103,			// 异常错误
+	AnyRTC_EXP_Unauthorized = 104,	// 服务未授权(仅可能出现在私有云项目)
 
     AnyRTC_BAD_REQ = 201,		// 服务不支持的错误请求
     AnyRTC_AUTH_FAIL = 202,		// 认证失败
@@ -192,9 +193,9 @@ typedef enum {
 }RTMPCVideoTempDir;
 
 typedef enum {
-    RTMPC_Nomal_Message_Type = 0,//普通文本消息
-    RTMPC_Barrage_Message_Type = 1   //弹幕消息
-}RTMPCMessageType;
+    RTC_Nomal_Message_Type = 0,//普通文本消息
+    RTC_Barrage_Message_Type = 1   //弹幕消息
+}RTCMessageType;
 
 // 相机类型
 typedef enum {
@@ -222,6 +223,5 @@ typedef enum {
     AnyRTCVideoRenderScaleAspectFit
     
 }AnyRTCVideoRenderMode;
-
 
 #endif	// __RTC_COMMON_H__

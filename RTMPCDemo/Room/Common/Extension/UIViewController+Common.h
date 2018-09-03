@@ -38,14 +38,6 @@
  */
 - (void)makeVideoViews:(NSMutableArray *)views containerView:(UIView *)containerView itemWidth:(CGFloat)itemWidth itemHeight:(CGFloat)itemHeight warpCount:(NSInteger)warpCount;
 
-/**
- 根据分辨率显示，防止拉伸压缩
- @param  videoArr 视图数组
- @param itemWidth   子视图的宽
- @param itemHeight  子视图的高
- */
-- (void)makeResolution:(NSMutableArray *)videoArr itemWidth:(CGFloat)itemWidth itemHeight:(CGFloat)itemHeight;
-
 //自定义Bar
 - (void)customNavigationBar:(NSString *)title;
 

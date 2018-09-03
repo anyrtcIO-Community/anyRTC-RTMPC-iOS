@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JE5-Rr-3b7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JE5-Rr-3b7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,7 +56,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="oFt-9n-cBx" kind="push" id="xhz-WA-BL5"/>
+                                    <segue destination="oFt-9n-cBx" kind="show" id="xhz-WA-BL5"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anyRTCLOGO" translatesAutoresizingMaskIntoConstraints="NO" id="abw-E3-PrQ">
@@ -87,7 +87,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="omR-lv-1sj" kind="push" id="3vF-nM-UJ7"/>
+                                    <segue destination="omR-lv-1sj" kind="show" id="3vF-nM-UJ7"/>
                                 </connections>
                             </button>
                         </subviews>

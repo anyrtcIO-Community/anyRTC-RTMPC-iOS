@@ -71,13 +71,14 @@
 - (void)getHallData{
     WEAKSELF;
     [[RTMPCHttpKit shead]getLivingList:^(NSDictionary *responseDict, NSError *error, int code) {
-        if (code == 200) {
-            [_hallArr removeAllObjects];
-            [_onLineArr removeAllObjects];
+        if (code == 200 && weakSelf) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf->_hallArr removeAllObjects];
+            [strongSelf->_onLineArr removeAllObjects];
             
             NSArray *arr = [ATHallModel mj_objectArrayWithKeyValuesArray:[responseDict objectForKey:@"LiveList"]];
-            [_hallArr addObjectsFromArray:arr];
-            [_onLineArr addObjectsFromArray:[responseDict objectForKey:@"LiveMembers"]];
+            [strongSelf->_hallArr addObjectsFromArray:arr];
+            [strongSelf->_onLineArr addObjectsFromArray:[responseDict objectForKey:@"LiveMembers"]];
             [weakSelf.tableView reloadData];
         }
         [weakSelf.tableView.mj_header endRefreshing];
