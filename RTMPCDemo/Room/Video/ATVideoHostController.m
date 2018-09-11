@@ -159,7 +159,7 @@
             //美颜
             if (sender.selected) {
                 [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Beautiful];
-            }else{
+            } else {
                 [self.mHosterKit setCameraFilter:AnyCameraDeviceFilter_Original];
             }
             break;
@@ -267,10 +267,10 @@
     self.rtmpLabel.text = @"RTMP服务关闭";
 }
 
-- (void)cameraSourceDidGetPixelBuffer:(CMSampleBufferRef)sampleBuffer{
-    //获取视频原始采集数据（必须在RTMPCHybirdEngineKit　中调用useThreeCameraFilterSdk方法，该回调才有用）
+- (CVPixelBufferRef)cameraSourceDidGetPixelBuffer:(CMSampleBufferRef)sampleBuffer{
+    //获取视频原始采集数据（必须在配置类中cameraType设置为RTMPCCameraTypeThreeFilter,该回调才有用）
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    [self.mHosterKit capturePixelBuffer:pixelBuffer];
+    return pixelBuffer;
 }
 
 #pragma mark - RTMPCHosterRtcDelegate

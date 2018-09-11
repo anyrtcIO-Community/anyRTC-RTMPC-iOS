@@ -218,10 +218,6 @@
     self.rtmpLabel.text = @"RTMP服务关闭";
 }
 
-- (void)cameraSourceDidGetPixelBuffer:(CMSampleBufferRef)sampleBuffer{
-    //获取视频原始采集数据（必须在RTMPCHybirdEngineKit　中调用useThreeCameraFilterSdk方法，该回调才有用）
-}
-
 #pragma mark -RTMPCHosterRtcDelegate
 - (void)onRTCAudioActive:(NSString *)strLivePeerId withUserId:(NSString *)strUserId withShowTime:(int)nTime{
     //RTC音频检测（自己没有回调）

@@ -18,8 +18,10 @@ typedef NS_ENUM(NSInteger,AnyMeetingType) {
     AnyMeetingTypeNomal = 0, //一般模式：大家进入会议互相观看
     AnyMeetingTypeHoster = 1 //主持模式：主持人进入，可以看到所有人，其他人员只看到主持人
 };
+
 @interface RTMeetOption : NSObject
-/**
+
+  /**
  使用默认配置生成一个 RTMeetOption 对象
  
  @return 生成的 RTMeetOption 对象

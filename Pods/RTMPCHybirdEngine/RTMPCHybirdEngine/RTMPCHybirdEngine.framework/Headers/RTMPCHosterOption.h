@@ -12,7 +12,7 @@
 typedef NS_ENUM(NSInteger,RTMPCCameraType) {
     RTMPCCameraTypeNomal = 0,      // 正常的相机模式,系统自带的（效率高）
     RTMPCCameraTypeBeauty,         // 美颜相机模式
-    RTMPCCameraTypeThreeFilter     // 第三方滤镜模式 eg:图图，FaceU等等;
+    RTMPCCameraTypeThreeFilter     // 第三方滤镜模式 eg:图图、Face++、商汤等等;
 };
 
 typedef NS_ENUM(NSInteger,RTMPCScreenOrientationType) {

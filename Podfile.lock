@@ -19,7 +19,7 @@ PODS:
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
-  - RTMPCHybirdEngine (2.0.9)
+  - RTMPCHybirdEngine (2.1.1)
   - XHToast (1.4.0)
 
 DEPENDENCIES:
@@ -29,7 +29,7 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh
-  - RTMPCHybirdEngine (~> 2.0.9)
+  - RTMPCHybirdEngine (~> 2.1.1)
   - XHToast (~> 1.4.0)
 
 SPEC REPOS:
@@ -50,9 +50,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  RTMPCHybirdEngine: 817bda706047bf4a88f7e0a3e07de0ae171c3882
+  RTMPCHybirdEngine: 6bd685f07ab655d813fcfb3f4165e4837c118493
   XHToast: 3b354766d56d9df8fef8e64387bbd25c90d71a86
 
-PODFILE CHECKSUM: b5a83ba031c51df7a631b456181460a8842a3edf
+PODFILE CHECKSUM: 3821cdd4409851eff86b90213661e67d8bc45f8b
 
 COCOAPODS: 1.5.0

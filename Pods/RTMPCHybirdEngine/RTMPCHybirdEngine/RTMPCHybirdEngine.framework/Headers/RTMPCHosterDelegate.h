@@ -55,9 +55,10 @@
  获取视频的原始采集数据
 
  @param sampleBuffer 视频数据
+ @return 视频对象（处理过或者没做处理）
  说明：必须在RTMPCHybirdEngineKit　中调用useThreeCameraFilterSdk方法，该回调才有用。
  */
-- (void)cameraSourceDidGetPixelBuffer:(CMSampleBufferRef)sampleBuffer;
+- (CVPixelBufferRef)cameraSourceDidGetPixelBuffer:(CMSampleBufferRef)sampleBuffer;
 
 @end
 

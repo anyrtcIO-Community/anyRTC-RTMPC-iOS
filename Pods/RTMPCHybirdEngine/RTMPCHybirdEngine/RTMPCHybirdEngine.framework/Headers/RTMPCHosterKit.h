@@ -35,13 +35,6 @@
  */
 - (void)clear;
 
-/**
- 视频数据外部视频流
- 
- @param pixelBuffer 视频流（可能是原始的，也可能是处理过的）
- */
-- (void)capturePixelBuffer:(CVPixelBufferRef)pixelBuffer;
-
 #pragma mark Common function
 /**
  设置本地视频采集窗口
