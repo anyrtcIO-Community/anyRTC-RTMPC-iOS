@@ -12,11 +12,22 @@
 
 @implementation NetWorkTools
 
+static AFHTTPSessionManager *manager = NULL;
+
 + (instancetype)shareInstance{
     static dispatch_once_t onceToken;
     static NetWorkTools *tools = nil;
     dispatch_once(&onceToken, ^{
         tools = [[NetWorkTools alloc]init];
+        manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        
+        //设置网络请求为忽略本地缓存  直接请求服务器
+        manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+        [manager.requestSerializer setTimeoutInterval:TIMEOUT];
+        manager.operationQueue.maxConcurrentOperationCount = 5;
+        manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        // manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", @"text/html", @"application/json", nil];
         [self toMonitoringNetwork];
     });
     return tools;
@@ -51,29 +62,12 @@
     }];
 }
 
-static AFHTTPSessionManager *manager = NULL;
--(AFHTTPSessionManager *)baseHtppRequest{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    //设置网络请求为忽略本地缓存  直接请求服务器
-    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    [manager.requestSerializer setTimeoutInterval:TIMEOUT];
-    manager.operationQueue.maxConcurrentOperationCount = 5;
-    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-   // manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", @"text/html", @"application/json", nil];
-    return manager;
-}
-
 - (void)postWithURLString:(NSString *)URLString
                parameters:(id)parameters
                   success:(void (^)(NSDictionary * dictionary))success
                   failure:(void (^)(NSError *error))failure{
-    
-    AFHTTPSessionManager *manager = [self baseHtppRequest];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.securityPolicy.validatesDomainName = NO;
-    
     [manager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
         if (success) {
@@ -88,7 +82,6 @@ static AFHTTPSessionManager *manager = NULL;
 
 // 取消所有的请求
 - (void)cancelAllRequest {
-    AFHTTPSessionManager *manager = [self baseHtppRequest];
     [manager.operationQueue cancelAllOperations];
 }
 

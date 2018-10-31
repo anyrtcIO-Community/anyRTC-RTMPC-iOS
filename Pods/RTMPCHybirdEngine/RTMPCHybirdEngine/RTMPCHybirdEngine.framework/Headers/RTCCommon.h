@@ -203,8 +203,13 @@ typedef enum {
     AnyRTCCameraTypeBeauty = 1
 }AnyRTCCameraType;
 
+typedef enum{
+    AnyRTCMeetingTypeNomal = 0, //一般模式：大家进入会议互相观看
+    AnyRTCMeetingTypeHoster = 1 //主持模式：主持人进入，可以看到所有人，其他人员只看到主持人
+}AnyRTCMeetingType;
+
 //滤镜常量
-typedef enum : char {
+typedef enum {
     //美颜滤镜
     AnyCameraDeviceFilter_Beautiful=0,
     //原始
@@ -223,5 +228,7 @@ typedef enum {
     AnyRTCVideoRenderScaleAspectFit
     
 }AnyRTCVideoRenderMode;
+
+
 
 #endif	// __RTC_COMMON_H__

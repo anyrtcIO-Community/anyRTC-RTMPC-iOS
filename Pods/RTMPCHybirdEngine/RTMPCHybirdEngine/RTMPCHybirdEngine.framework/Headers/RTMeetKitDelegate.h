@@ -41,6 +41,8 @@
  */
 -(void)onRTCLeaveMeet:(int) nCode;
 
+-(void)onRTCUnPublic:(NSString*)strRTCPeerId withReason:(NSString*)strReason;
+
 /**
  其他与会者加入（音视频）
 
@@ -63,6 +65,27 @@
 -(void)onRTCCloseVideoRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId;
 
 /**
+ 用户开启桌面共享
+
+ @param strRTCPeerId RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
+ @param strRTCPubId RTC服务生成流的ID (用于标识与会者发布的流)；
+ @param strUserId 开发者自己平台的Id；
+ @param strUserData 开发者自己平台的相关信息（昵称，头像等)；
+ 说明：开发者需调用设置其他与会者视频窗口（setRTCVideoRender）方法
+ */
+-(void)onRTCOpenScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId withUserData:(NSString*)strUserData;
+
+/**
+ 用户退出桌面共享
+
+ @param strRTCPeerId RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
+ @param strRTCPubId RTC服务生成流的ID (用于标识与会者发布的流)；
+ @param strUserId 开发者自己平台的Id；
+ 说明：其他与会者离开将会回调此方法；需本地移除屏幕共享窗口。
+ */
+-(void)onRTCCloseScreenRender:(NSString*)strRTCPeerId withRTCPubId:(NSString *)strRTCPubId withUserId:(NSString*)strUserId;
+
+/**
  其他与会者视频窗口的对音视频的操作
 
  @param strRTCPeerId  RTC服务生成的标识Id (用于标识与会者，每次加入会议随机生成)；
@@ -77,7 +100,7 @@
  
  @param strRTCPeerId RTC服务生成的与会者标识Id（用于标识与会者用户，每次随机生成）
  @param strUserId 连麦者在自己平台的用户Id；
- @param nLevel 音频检测音量；
+ @param nLevel 音频检测音量；（0~100）
  @param nTime 音频检测在nTime毫秒内不会再回调该方法（单位：毫秒）；
  说明：对方关闭音频后（setLocalAudioEnable为NO）,该回调将不再回调；对方关闭音频检测后（setAudioActiveCheck为NO）,该回调也将不再回调。
  */

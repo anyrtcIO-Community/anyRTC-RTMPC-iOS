@@ -39,6 +39,7 @@
  */
 -(void)onRTCLeaveMeet:(int) nCode;
 
+-(void)onRTCUnPublic:(NSString*)strRTCPeerId withReason:(NSString*)strReason;
 /**
  其他与会者加入（音频）
  
@@ -71,7 +72,7 @@
  
  @param strRTCPeerId RTC服务生成的与会者标识Id（用于标识与会者用户，每次随机生成）
  @param strUserId 连麦者在自己平台的用户Id；
- @param nLevel 音频检测音量；
+ @param nLevel 音频检测音量；（0~100）
  @param nTime 音频检测在nTime毫秒内不会再回调该方法（单位：毫秒）；
  说明：对方关闭音频后（setLocalAudioEnable为NO）,该回调将不再回调；对方关闭音频检测后（setAudioActiveCheck为NO）,该回调也将不再回调。
  */
