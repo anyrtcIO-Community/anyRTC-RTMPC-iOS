@@ -48,6 +48,8 @@
             NSURL *url = [NSURL URLWithString:urlStr];
             if([[UIApplication sharedApplication] canOpenURL:url]){
                 [[UIApplication sharedApplication] openURL:url];
+            } else {
+                [XHToast showCenterWithText:@"您还没有安装QQ，请先安装"];
             }
         }
             break;

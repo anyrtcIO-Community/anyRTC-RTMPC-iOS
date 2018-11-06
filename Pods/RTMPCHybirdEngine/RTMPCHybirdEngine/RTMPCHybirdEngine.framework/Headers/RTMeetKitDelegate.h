@@ -41,8 +41,6 @@
  */
 -(void)onRTCLeaveMeet:(int) nCode;
 
--(void)onRTCUnPublic:(NSString*)strRTCPeerId withReason:(NSString*)strReason;
-
 /**
  其他与会者加入（音视频）
 
