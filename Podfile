@@ -1,11 +1,9 @@
 platform :ios,'8.0'
 target ‘RTMPCDemo’ do
-    pod 'RTMPCHybirdEngine', '~> 2.1.5'
-    pod 'MJRefresh’, :inhibit_warnings => true
-    pod 'MJExtension', :inhibit_warnings => true
-    pod 'Masonry', :inhibit_warnings => true
-    pod 'AFNetworking', :inhibit_warnings => true
-    pod 'Bugly'
-    pod 'XHToast', '~> 1.4.0'
-    pod 'BarrageRenderer', :inhibit_warnings => true
+pod 'RTMPCHybirdEngine', '~> 3.0.0'
+pod 'Masonry', :inhibit_warnings => true
+pod 'Bugly', :inhibit_warnings => true
+pod 'MJExtension', :inhibit_warnings => true
+pod 'AFNetworking', :inhibit_warnings => true
+pod 'SVProgressHUD', '~> 2.2.5'
 end

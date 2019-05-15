@@ -3,65 +3,57 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		633160671F7C9C1000892C3F /* ATStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 633160631F7C9C1000892C3F /* ATStartViewController.m */; };
-		6347266D1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */; };
-		635D23812080A86500FF4BD1 /* ATAudioHostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635D23802080A86500FF4BD1 /* ATAudioHostController.m */; };
-		635D23842080A87600FF4BD1 /* ATAudioAudienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635D23832080A87600FF4BD1 /* ATAudioAudienceController.m */; };
-		635EF11B20807DA1007C307E /* ATMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635EF11A20807DA1007C307E /* ATMenuViewController.m */; };
-		635EF11E2080A025007C307E /* ATHallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 635EF11D2080A025007C307E /* ATHallModel.m */; };
-		63642AF4207DAEA700E17DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63642AF3207DAEA700E17DD4 /* Main.storyboard */; };
-		63642AF7207DB4FE00E17DD4 /* ATMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63642AF6207DB4FE00E17DD4 /* ATMainViewController.m */; };
-		637022602086EDFE00BE9E10 /* ATBarragesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370225F2086EDFE00BE9E10 /* ATBarragesView.m */; };
-		63718610207DBB7900415647 /* ATHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6371860F207DBB7900415647 /* ATHallViewController.m */; };
-		63718621207DEAD400415647 /* ATBarrageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63718620207DEAD400415647 /* ATBarrageViewController.m */; };
-		63718627207DEB3D00415647 /* ATVideoHostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63718626207DEB3D00415647 /* ATVideoHostController.m */; };
-		6371862B207DFE4D00415647 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6371862A207DFE4D00415647 /* UIViewController+Common.m */; };
-		6371862F207E129000415647 /* ATVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6371862E207E129000415647 /* ATVideoView.m */; };
-		63718633207E12A800415647 /* ATVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63718632207E12A800415647 /* ATVideoView.xib */; };
-		63718639207E145800415647 /* ATVideoAudienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63718638207E145800415647 /* ATVideoAudienceController.m */; };
-		6371863C207E16BE00415647 /* ATAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6371863B207E16BE00415647 /* ATAudioView.m */; };
-		6371863E207E16C700415647 /* ATAudioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6371863D207E16C700415647 /* ATAudioView.xib */; };
-		6377286A2046409D008A12B7 /* NetWorkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 637728682046409D008A12B7 /* NetWorkTools.m */; };
-		6377D0E7207EF7BC00E5DD37 /* ATRealTimeMicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377D0E6207EF7BC00E5DD37 /* ATRealTimeMicController.m */; };
-		6377D0EA207EF81A00E5DD37 /* ATRealMicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377D0E9207EF81A00E5DD37 /* ATRealMicModel.m */; };
-		6377D0ED207EF84000E5DD37 /* ATRealMicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377D0EC207EF84000E5DD37 /* ATRealMicCell.m */; };
-		639E91961F6FB22D0037D9B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91951F6FB22D0037D9B9 /* main.m */; };
-		639E91991F6FB22D0037D9B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91981F6FB22D0037D9B9 /* AppDelegate.m */; };
-		639E91A11F6FB22D0037D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E91A01F6FB22D0037D9B9 /* Assets.xcassets */; };
-		639E91AF1F6FB22E0037D9B9 /* RTMPCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91AE1F6FB22E0037D9B9 /* RTMPCDemoTests.m */; };
-		639E91BA1F6FB22E0037D9B9 /* RTMPCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E91B91F6FB22E0037D9B9 /* RTMPCDemoUITests.m */; };
-		63A43FB6208453C500DF7447 /* ATAudioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A43FB5208453C500DF7447 /* ATAudioButton.m */; };
-		63A43FBC2084B0F300DF7447 /* ATLivingEndController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A43FBB2084B0F300DF7447 /* ATLivingEndController.m */; };
-		63BF3D9E1F7E1F1600E6ADD0 /* ATListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BF3D9C1F7E1F1600E6ADD0 /* ATListViewController.m */; };
-		63BF3DA21F7E250D00E6ADD0 /* ATListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BF3DA11F7E250D00E6ADD0 /* ATListModel.m */; };
-		63BF3DA41F7E579D00E6ADD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BF3DA31F7E579D00E6ADD0 /* Images.xcassets */; };
-		63E5F0F31F729B0600F6701B /* ATCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E5F0F01F729B0600F6701B /* ATCommon.m */; };
-		E28042CDCE751D4F73E085FB /* libPods-RTMPCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F0AA93797C4A9577D1C1E /* libPods-RTMPCDemo.a */; };
+		630CD4EE2265CA89008A13BE /* ArRealMicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 630CD4ED2265CA89008A13BE /* ArRealMicModel.m */; };
+		630CD4F12265D6E3008A13BE /* ArRealTimeMicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630CD4F02265D6E3008A13BE /* ArRealTimeMicController.m */; };
+		630E0B1022699DA200F3081C /* UIImageView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E0B0F22699DA200F3081C /* UIImageView+Animation.m */; };
+		630E4563225F230B0095D54F /* ArMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E4562225F230B0095D54F /* ArMainModel.m */; };
+		630E4567225F4B0E0095D54F /* ArNetWorkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E4566225F4B0E0095D54F /* ArNetWorkTools.m */; };
+		630E456A225F52020095D54F /* ArCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E4569225F52020095D54F /* ArCommon.m */; };
+		630E5FD5226433A100819C05 /* ArBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E5FD4226433A100819C05 /* ArBaseViewController.m */; };
+		630E5FD82264701E00819C05 /* ArMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E5FD72264701E00819C05 /* ArMessageView.m */; };
+		630E5FDD22647E1700819C05 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E5FDB22647E1700819C05 /* UIAlertController+Blocks.m */; };
+		630FC21E226585F300146913 /* ArVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630FC21D226585F300146913 /* ArVideoView.m */; };
+		6318F63722606F22007EF67E /* ArUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318F63622606F22007EF67E /* ArUserManager.m */; };
+		637C7F7122898342001D7361 /* ArLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637C7F6F22898342001D7361 /* ArLogView.m */; };
+		63A467322266CFC1006AA045 /* ArRealMicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A467312266CFC1006AA045 /* ArRealMicCell.m */; };
+		63A4673B22673857006AA045 /* ArAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4673A22673857006AA045 /* ArAudioView.m */; };
+		63C1730C225DDBA7001E72E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C1730B225DDBA7001E72E7 /* AppDelegate.m */; };
+		63C17312225DDBA7001E72E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C17310225DDBA7001E72E7 /* Main.storyboard */; };
+		63C17314225DDBA8001E72E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C17313225DDBA8001E72E7 /* Assets.xcassets */; };
+		63C1731A225DDBA8001E72E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C17319225DDBA8001E72E7 /* main.m */; };
+		63C17324225DDBA8001E72E7 /* RTMPCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C17323225DDBA8001E72E7 /* RTMPCDemoTests.m */; };
+		63C1732F225DDBA8001E72E7 /* RTMPCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C1732E225DDBA8001E72E7 /* RTMPCDemoUITests.m */; };
+		63C17349225DE339001E72E7 /* ArVideoHostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C17348225DE339001E72E7 /* ArVideoHostController.m */; };
+		63C1734C225DE34B001E72E7 /* ArVideoAudienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C1734B225DE34B001E72E7 /* ArVideoAudienceController.m */; };
+		63C1734F225DE365001E72E7 /* ArAudioHostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C1734E225DE365001E72E7 /* ArAudioHostController.m */; };
+		63C17352225DE378001E72E7 /* ArAudioAudienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C17351225DE378001E72E7 /* ArAudioAudienceController.m */; };
+		63C17355225DE3A7001E72E7 /* ArMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C17354225DE3A7001E72E7 /* ArMainViewController.m */; };
+		B057C727A3F9F81AD06FEC25 /* libPods-RTMPCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A5464D3482E66B39C240E /* libPods-RTMPCDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		639E91AB1F6FB22E0037D9B9 /* PBXContainerItemProxy */ = {
+		63C17320225DDBA8001E72E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 639E91891F6FB22D0037D9B9 /* Project object */;
+			containerPortal = 63C172FF225DDBA7001E72E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 639E91901F6FB22D0037D9B9;
+			remoteGlobalIDString = 63C17306225DDBA7001E72E7;
 			remoteInfo = RTMPCDemo;
 		};
-		639E91B61F6FB22E0037D9B9 /* PBXContainerItemProxy */ = {
+		63C1732B225DDBA8001E72E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 639E91891F6FB22D0037D9B9 /* Project object */;
+			containerPortal = 63C172FF225DDBA7001E72E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 639E91901F6FB22D0037D9B9;
+			remoteGlobalIDString = 63C17306225DDBA7001E72E7;
 			remoteInfo = RTMPCDemo;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		639E91D21F6FB2B90037D9B9 /* Embed Frameworks */ = {
+		63C17340225DDCE3001E72E7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -74,93 +66,80 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D9FAFEB8A199990D14B5FC2 /* Pods-RTMPCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTMPCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo.release.xcconfig"; sourceTree = "<group>"; };
-		633160621F7C9C1000892C3F /* ATStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATStartViewController.h; sourceTree = "<group>"; };
-		633160631F7C9C1000892C3F /* ATStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATStartViewController.m; sourceTree = "<group>"; };
-		6347266B1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
-		6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
-		635D237F2080A86500FF4BD1 /* ATAudioHostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATAudioHostController.h; sourceTree = "<group>"; };
-		635D23802080A86500FF4BD1 /* ATAudioHostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATAudioHostController.m; sourceTree = "<group>"; };
-		635D23822080A87600FF4BD1 /* ATAudioAudienceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATAudioAudienceController.h; sourceTree = "<group>"; };
-		635D23832080A87600FF4BD1 /* ATAudioAudienceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATAudioAudienceController.m; sourceTree = "<group>"; };
-		635EF11920807DA1007C307E /* ATMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATMenuViewController.h; sourceTree = "<group>"; };
-		635EF11A20807DA1007C307E /* ATMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATMenuViewController.m; sourceTree = "<group>"; };
-		635EF11C2080A025007C307E /* ATHallModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATHallModel.h; sourceTree = "<group>"; };
-		635EF11D2080A025007C307E /* ATHallModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATHallModel.m; sourceTree = "<group>"; };
-		63642AF3207DAEA700E17DD4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		63642AF5207DB4FE00E17DD4 /* ATMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATMainViewController.h; sourceTree = "<group>"; };
-		63642AF6207DB4FE00E17DD4 /* ATMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATMainViewController.m; sourceTree = "<group>"; };
-		6370225E2086EDFE00BE9E10 /* ATBarragesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATBarragesView.h; sourceTree = "<group>"; };
-		6370225F2086EDFE00BE9E10 /* ATBarragesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATBarragesView.m; sourceTree = "<group>"; };
-		6371860E207DBB7900415647 /* ATHallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATHallViewController.h; sourceTree = "<group>"; };
-		6371860F207DBB7900415647 /* ATHallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATHallViewController.m; sourceTree = "<group>"; };
-		6371861F207DEAD400415647 /* ATBarrageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATBarrageViewController.h; sourceTree = "<group>"; };
-		63718620207DEAD400415647 /* ATBarrageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATBarrageViewController.m; sourceTree = "<group>"; };
-		63718625207DEB3D00415647 /* ATVideoHostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVideoHostController.h; sourceTree = "<group>"; };
-		63718626207DEB3D00415647 /* ATVideoHostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVideoHostController.m; sourceTree = "<group>"; };
-		63718629207DFE4D00415647 /* UIViewController+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
-		6371862A207DFE4D00415647 /* UIViewController+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
-		6371862D207E129000415647 /* ATVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVideoView.h; sourceTree = "<group>"; };
-		6371862E207E129000415647 /* ATVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVideoView.m; sourceTree = "<group>"; };
-		63718632207E12A800415647 /* ATVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATVideoView.xib; sourceTree = "<group>"; };
-		63718637207E145800415647 /* ATVideoAudienceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATVideoAudienceController.h; sourceTree = "<group>"; };
-		63718638207E145800415647 /* ATVideoAudienceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATVideoAudienceController.m; sourceTree = "<group>"; };
-		6371863A207E16BE00415647 /* ATAudioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATAudioView.h; sourceTree = "<group>"; };
-		6371863B207E16BE00415647 /* ATAudioView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATAudioView.m; sourceTree = "<group>"; };
-		6371863D207E16C700415647 /* ATAudioView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATAudioView.xib; sourceTree = "<group>"; };
-		637728682046409D008A12B7 /* NetWorkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkTools.m; sourceTree = "<group>"; };
-		637728692046409D008A12B7 /* NetWorkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkTools.h; sourceTree = "<group>"; };
-		6377D0E5207EF7BC00E5DD37 /* ATRealTimeMicController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRealTimeMicController.h; sourceTree = "<group>"; };
-		6377D0E6207EF7BC00E5DD37 /* ATRealTimeMicController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRealTimeMicController.m; sourceTree = "<group>"; };
-		6377D0E8207EF81A00E5DD37 /* ATRealMicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRealMicModel.h; sourceTree = "<group>"; };
-		6377D0E9207EF81A00E5DD37 /* ATRealMicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRealMicModel.m; sourceTree = "<group>"; };
-		6377D0EB207EF84000E5DD37 /* ATRealMicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRealMicCell.h; sourceTree = "<group>"; };
-		6377D0EC207EF84000E5DD37 /* ATRealMicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRealMicCell.m; sourceTree = "<group>"; };
-		639E91911F6FB22D0037D9B9 /* RTMPCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		639E91951F6FB22D0037D9B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		639E91971F6FB22D0037D9B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		639E91981F6FB22D0037D9B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		639E91A01F6FB22D0037D9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		639E91A51F6FB22D0037D9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		639E91AA1F6FB22E0037D9B9 /* RTMPCDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTMPCDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		639E91AE1F6FB22E0037D9B9 /* RTMPCDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPCDemoTests.m; sourceTree = "<group>"; };
-		639E91B01F6FB22E0037D9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		639E91B51F6FB22E0037D9B9 /* RTMPCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTMPCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		639E91B91F6FB22E0037D9B9 /* RTMPCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPCDemoUITests.m; sourceTree = "<group>"; };
-		639E91BB1F6FB22E0037D9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63A43FB4208453C500DF7447 /* ATAudioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATAudioButton.h; sourceTree = "<group>"; };
-		63A43FB5208453C500DF7447 /* ATAudioButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATAudioButton.m; sourceTree = "<group>"; };
-		63A43FBA2084B0F300DF7447 /* ATLivingEndController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATLivingEndController.h; sourceTree = "<group>"; };
-		63A43FBB2084B0F300DF7447 /* ATLivingEndController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATLivingEndController.m; sourceTree = "<group>"; };
-		63BF3D9B1F7E1F1600E6ADD0 /* ATListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATListViewController.h; sourceTree = "<group>"; };
-		63BF3D9C1F7E1F1600E6ADD0 /* ATListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATListViewController.m; sourceTree = "<group>"; };
-		63BF3DA01F7E250D00E6ADD0 /* ATListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATListModel.h; sourceTree = "<group>"; };
-		63BF3DA11F7E250D00E6ADD0 /* ATListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATListModel.m; sourceTree = "<group>"; };
-		63BF3DA31F7E579D00E6ADD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		63E5F0ED1F72983100F6701B /* RTMPCDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTMPCDemo.pch; sourceTree = "<group>"; };
-		63E5F0EF1F729B0600F6701B /* ATCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATCommon.h; sourceTree = "<group>"; };
-		63E5F0F01F729B0600F6701B /* ATCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATCommon.m; sourceTree = "<group>"; };
-		937F0AA93797C4A9577D1C1E /* libPods-RTMPCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTMPCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5A8E239CBD25F15ACB745BC /* Pods-RTMPCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTMPCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		630CD4EC2265CA89008A13BE /* ArRealMicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArRealMicModel.h; sourceTree = "<group>"; };
+		630CD4ED2265CA89008A13BE /* ArRealMicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArRealMicModel.m; sourceTree = "<group>"; };
+		630CD4EF2265D6E3008A13BE /* ArRealTimeMicController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArRealTimeMicController.h; sourceTree = "<group>"; };
+		630CD4F02265D6E3008A13BE /* ArRealTimeMicController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArRealTimeMicController.m; sourceTree = "<group>"; };
+		630E0B0E22699DA200F3081C /* UIImageView+Animation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Animation.h"; sourceTree = "<group>"; };
+		630E0B0F22699DA200F3081C /* UIImageView+Animation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Animation.m"; sourceTree = "<group>"; };
+		630E4561225F230B0095D54F /* ArMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArMainModel.h; sourceTree = "<group>"; };
+		630E4562225F230B0095D54F /* ArMainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArMainModel.m; sourceTree = "<group>"; };
+		630E4565225F4B0E0095D54F /* ArNetWorkTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArNetWorkTools.h; sourceTree = "<group>"; };
+		630E4566225F4B0E0095D54F /* ArNetWorkTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArNetWorkTools.m; sourceTree = "<group>"; };
+		630E4568225F52020095D54F /* ArCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArCommon.h; sourceTree = "<group>"; };
+		630E4569225F52020095D54F /* ArCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArCommon.m; sourceTree = "<group>"; };
+		630E5FD3226433A100819C05 /* ArBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArBaseViewController.h; sourceTree = "<group>"; };
+		630E5FD4226433A100819C05 /* ArBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArBaseViewController.m; sourceTree = "<group>"; };
+		630E5FD62264701E00819C05 /* ArMessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArMessageView.h; sourceTree = "<group>"; };
+		630E5FD72264701E00819C05 /* ArMessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArMessageView.m; sourceTree = "<group>"; };
+		630E5FDB22647E1700819C05 /* UIAlertController+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Blocks.m"; sourceTree = "<group>"; };
+		630E5FDC22647E1700819C05 /* UIAlertController+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Blocks.h"; sourceTree = "<group>"; };
+		630FC21C226585F300146913 /* ArVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArVideoView.h; sourceTree = "<group>"; };
+		630FC21D226585F300146913 /* ArVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArVideoView.m; sourceTree = "<group>"; };
+		6318F63522606F22007EF67E /* ArUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArUserManager.h; sourceTree = "<group>"; };
+		6318F63622606F22007EF67E /* ArUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArUserManager.m; sourceTree = "<group>"; };
+		637C7F6F22898342001D7361 /* ArLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArLogView.m; sourceTree = "<group>"; };
+		637C7F7022898342001D7361 /* ArLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArLogView.h; sourceTree = "<group>"; };
+		63A467302266CFC1006AA045 /* ArRealMicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArRealMicCell.h; sourceTree = "<group>"; };
+		63A467312266CFC1006AA045 /* ArRealMicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArRealMicCell.m; sourceTree = "<group>"; };
+		63A4673922673857006AA045 /* ArAudioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArAudioView.h; sourceTree = "<group>"; };
+		63A4673A22673857006AA045 /* ArAudioView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArAudioView.m; sourceTree = "<group>"; };
+		63C17307225DDBA7001E72E7 /* RTMPCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C1730A225DDBA7001E72E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		63C1730B225DDBA7001E72E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		63C17311225DDBA7001E72E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63C17313225DDBA8001E72E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63C17318225DDBA8001E72E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C17319225DDBA8001E72E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63C1731F225DDBA8001E72E7 /* RTMPCDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTMPCDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C17323225DDBA8001E72E7 /* RTMPCDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPCDemoTests.m; sourceTree = "<group>"; };
+		63C17325225DDBA8001E72E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C1732A225DDBA8001E72E7 /* RTMPCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTMPCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C1732E225DDBA8001E72E7 /* RTMPCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPCDemoUITests.m; sourceTree = "<group>"; };
+		63C17330225DDBA8001E72E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C17341225DDD02001E72E7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		63C17347225DE339001E72E7 /* ArVideoHostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArVideoHostController.h; sourceTree = "<group>"; };
+		63C17348225DE339001E72E7 /* ArVideoHostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArVideoHostController.m; sourceTree = "<group>"; };
+		63C1734A225DE34B001E72E7 /* ArVideoAudienceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArVideoAudienceController.h; sourceTree = "<group>"; };
+		63C1734B225DE34B001E72E7 /* ArVideoAudienceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArVideoAudienceController.m; sourceTree = "<group>"; };
+		63C1734D225DE365001E72E7 /* ArAudioHostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArAudioHostController.h; sourceTree = "<group>"; };
+		63C1734E225DE365001E72E7 /* ArAudioHostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArAudioHostController.m; sourceTree = "<group>"; };
+		63C17350225DE378001E72E7 /* ArAudioAudienceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArAudioAudienceController.h; sourceTree = "<group>"; };
+		63C17351225DE378001E72E7 /* ArAudioAudienceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArAudioAudienceController.m; sourceTree = "<group>"; };
+		63C17353225DE3A7001E72E7 /* ArMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArMainViewController.h; sourceTree = "<group>"; };
+		63C17354225DE3A7001E72E7 /* ArMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArMainViewController.m; sourceTree = "<group>"; };
+		835094172ED3A02B98EDA91C /* Pods-RTMPCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTMPCDemo.debug.xcconfig"; path = "Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B252A9C9391A5E7A3B0BD454 /* Pods-RTMPCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTMPCDemo.release.xcconfig"; path = "Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C73A5464D3482E66B39C240E /* libPods-RTMPCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTMPCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		639E918E1F6FB22D0037D9B9 /* Frameworks */ = {
+		63C17304225DDBA7001E72E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E28042CDCE751D4F73E085FB /* libPods-RTMPCDemo.a in Frameworks */,
+				B057C727A3F9F81AD06FEC25 /* libPods-RTMPCDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		639E91A71F6FB22E0037D9B9 /* Frameworks */ = {
+		63C1731C225DDBA8001E72E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		639E91B21F6FB22E0037D9B9 /* Frameworks */ = {
+		63C17327225DDBA8001E72E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -170,294 +149,209 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		052589D48EFC8CEC10211D0B /* Frameworks */ = {
+		630CD4EB2265CA68008A13BE /* RealMic */ = {
 			isa = PBXGroup;
 			children = (
-				937F0AA93797C4A9577D1C1E /* libPods-RTMPCDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6331605C1F7C9A5C00892C3F /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				63642AF5207DB4FE00E17DD4 /* ATMainViewController.h */,
-				63642AF6207DB4FE00E17DD4 /* ATMainViewController.m */,
-				633160621F7C9C1000892C3F /* ATStartViewController.h */,
-				633160631F7C9C1000892C3F /* ATStartViewController.m */,
-				6371860E207DBB7900415647 /* ATHallViewController.h */,
-				6371860F207DBB7900415647 /* ATHallViewController.m */,
-				635EF11C2080A025007C307E /* ATHallModel.h */,
-				635EF11D2080A025007C307E /* ATHallModel.m */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		6331605D1F7C9A9700892C3F /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				63718625207DEB3D00415647 /* ATVideoHostController.h */,
-				63718626207DEB3D00415647 /* ATVideoHostController.m */,
-				63718637207E145800415647 /* ATVideoAudienceController.h */,
-				63718638207E145800415647 /* ATVideoAudienceController.m */,
-			);
-			path = Video;
-			sourceTree = "<group>";
-		};
-		6331605E1F7C9A9A00892C3F /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				635D237F2080A86500FF4BD1 /* ATAudioHostController.h */,
-				635D23802080A86500FF4BD1 /* ATAudioHostController.m */,
-				635D23822080A87600FF4BD1 /* ATAudioAudienceController.h */,
-				635D23832080A87600FF4BD1 /* ATAudioAudienceController.m */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
-		6347266A1F7640D500E1F9C8 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				6347266B1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.h */,
-				6347266C1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		63718615207DE5AC00415647 /* Room */ = {
-			isa = PBXGroup;
-			children = (
-				6331605D1F7C9A9700892C3F /* Video */,
-				6331605E1F7C9A9A00892C3F /* Audio */,
-				63718617207DE66900415647 /* Common */,
-			);
-			path = Room;
-			sourceTree = "<group>";
-		};
-		63718616207DE5D700415647 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				639E91971F6FB22D0037D9B9 /* AppDelegate.h */,
-				639E91981F6FB22D0037D9B9 /* AppDelegate.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		63718617207DE66900415647 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				6371861B207DE69700415647 /* Message */,
-				6371861A207DE69400415647 /* Menu */,
-				63718619207DE69000415647 /* Mic */,
-				63718618207DE68D00415647 /* Online */,
-				63A43FB920849DBC00DF7447 /* End */,
-				63718628207DFE1700415647 /* Extension */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		63718618207DE68D00415647 /* Online */ = {
-			isa = PBXGroup;
-			children = (
-				63BF3D9B1F7E1F1600E6ADD0 /* ATListViewController.h */,
-				63BF3D9C1F7E1F1600E6ADD0 /* ATListViewController.m */,
-				63BF3DA01F7E250D00E6ADD0 /* ATListModel.h */,
-				63BF3DA11F7E250D00E6ADD0 /* ATListModel.m */,
-			);
-			path = Online;
-			sourceTree = "<group>";
-		};
-		63718619207DE69000415647 /* Mic */ = {
-			isa = PBXGroup;
-			children = (
-				63A43FB32084539A00DF7447 /* Waves */,
-				6377D0E4207EF73200E5DD37 /* RealMic */,
-				6371862C207E11F700415647 /* View */,
-			);
-			path = Mic;
-			sourceTree = "<group>";
-		};
-		6371861A207DE69400415647 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				635EF11920807DA1007C307E /* ATMenuViewController.h */,
-				635EF11A20807DA1007C307E /* ATMenuViewController.m */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
-		6371861B207DE69700415647 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				6371861F207DEAD400415647 /* ATBarrageViewController.h */,
-				63718620207DEAD400415647 /* ATBarrageViewController.m */,
-				6370225E2086EDFE00BE9E10 /* ATBarragesView.h */,
-				6370225F2086EDFE00BE9E10 /* ATBarragesView.m */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
-		63718628207DFE1700415647 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				63718629207DFE4D00415647 /* UIViewController+Common.h */,
-				6371862A207DFE4D00415647 /* UIViewController+Common.m */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		6371862C207E11F700415647 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6371862D207E129000415647 /* ATVideoView.h */,
-				6371862E207E129000415647 /* ATVideoView.m */,
-				63718632207E12A800415647 /* ATVideoView.xib */,
-				6371863A207E16BE00415647 /* ATAudioView.h */,
-				6371863B207E16BE00415647 /* ATAudioView.m */,
-				6371863D207E16C700415647 /* ATAudioView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6377D0E4207EF73200E5DD37 /* RealMic */ = {
-			isa = PBXGroup;
-			children = (
-				6377D0E5207EF7BC00E5DD37 /* ATRealTimeMicController.h */,
-				6377D0E6207EF7BC00E5DD37 /* ATRealTimeMicController.m */,
-				6377D0E8207EF81A00E5DD37 /* ATRealMicModel.h */,
-				6377D0E9207EF81A00E5DD37 /* ATRealMicModel.m */,
-				6377D0EB207EF84000E5DD37 /* ATRealMicCell.h */,
-				6377D0EC207EF84000E5DD37 /* ATRealMicCell.m */,
+				63A467302266CFC1006AA045 /* ArRealMicCell.h */,
+				63A467312266CFC1006AA045 /* ArRealMicCell.m */,
+				630CD4EC2265CA89008A13BE /* ArRealMicModel.h */,
+				630CD4ED2265CA89008A13BE /* ArRealMicModel.m */,
+				630CD4EF2265D6E3008A13BE /* ArRealTimeMicController.h */,
+				630CD4F02265D6E3008A13BE /* ArRealTimeMicController.m */,
 			);
 			path = RealMic;
 			sourceTree = "<group>";
 		};
-		639E91881F6FB22D0037D9B9 = {
+		630E0B112269A16400F3081C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				639E91931F6FB22D0037D9B9 /* RTMPCDemo */,
-				639E91AD1F6FB22E0037D9B9 /* RTMPCDemoTests */,
-				639E91B81F6FB22E0037D9B9 /* RTMPCDemoUITests */,
-				639E91921F6FB22D0037D9B9 /* Products */,
-				052589D48EFC8CEC10211D0B /* Frameworks */,
-				C5709B1D689DB8900D204E5B /* Pods */,
+				630E5FD62264701E00819C05 /* ArMessageView.h */,
+				630E5FD72264701E00819C05 /* ArMessageView.m */,
+				630FC21C226585F300146913 /* ArVideoView.h */,
+				630FC21D226585F300146913 /* ArVideoView.m */,
+				63A4673922673857006AA045 /* ArAudioView.h */,
+				63A4673A22673857006AA045 /* ArAudioView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		630E4564225F4AF60095D54F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				630E4568225F52020095D54F /* ArCommon.h */,
+				630E4569225F52020095D54F /* ArCommon.m */,
+				630E4565225F4B0E0095D54F /* ArNetWorkTools.h */,
+				630E4566225F4B0E0095D54F /* ArNetWorkTools.m */,
+				6318F63522606F22007EF67E /* ArUserManager.h */,
+				6318F63622606F22007EF67E /* ArUserManager.m */,
+				630E5FDA22647E1700819C05 /* Category */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		630E5FD92264706C00819C05 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				630E5FD3226433A100819C05 /* ArBaseViewController.h */,
+				630E5FD4226433A100819C05 /* ArBaseViewController.m */,
+				630E0B0E22699DA200F3081C /* UIImageView+Animation.h */,
+				630E0B0F22699DA200F3081C /* UIImageView+Animation.m */,
+				637C7F7022898342001D7361 /* ArLogView.h */,
+				637C7F6F22898342001D7361 /* ArLogView.m */,
+				630E0B112269A16400F3081C /* View */,
+				630CD4EB2265CA68008A13BE /* RealMic */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		630E5FDA22647E1700819C05 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				630E5FDB22647E1700819C05 /* UIAlertController+Blocks.m */,
+				630E5FDC22647E1700819C05 /* UIAlertController+Blocks.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		63C172FE225DDBA7001E72E7 = {
+			isa = PBXGroup;
+			children = (
+				63C17309225DDBA7001E72E7 /* RTMPCDemo */,
+				63C17322225DDBA8001E72E7 /* RTMPCDemoTests */,
+				63C1732D225DDBA8001E72E7 /* RTMPCDemoUITests */,
+				63C17308225DDBA7001E72E7 /* Products */,
+				74F012FE4557B9E194777DC2 /* Pods */,
+				6B7388C2BF584A5B58132C2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		639E91921F6FB22D0037D9B9 /* Products */ = {
+		63C17308225DDBA7001E72E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				639E91911F6FB22D0037D9B9 /* RTMPCDemo.app */,
-				639E91AA1F6FB22E0037D9B9 /* RTMPCDemoTests.xctest */,
-				639E91B51F6FB22E0037D9B9 /* RTMPCDemoUITests.xctest */,
+				63C17307225DDBA7001E72E7 /* RTMPCDemo.app */,
+				63C1731F225DDBA8001E72E7 /* RTMPCDemoTests.xctest */,
+				63C1732A225DDBA8001E72E7 /* RTMPCDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		639E91931F6FB22D0037D9B9 /* RTMPCDemo */ = {
+		63C17309225DDBA7001E72E7 /* RTMPCDemo */ = {
 			isa = PBXGroup;
 			children = (
-				63E5F0EE1F729AC900F6701B /* Helpers */,
-				63718615207DE5AC00415647 /* Room */,
-				6331605C1F7C9A5C00892C3F /* Main */,
-				63718616207DE5D700415647 /* Base */,
-				63642AF3207DAEA700E17DD4 /* Main.storyboard */,
-				639E91A01F6FB22D0037D9B9 /* Assets.xcassets */,
-				639E91A51F6FB22D0037D9B9 /* Info.plist */,
-				639E91941F6FB22D0037D9B9 /* Supporting Files */,
-				63E5F0ED1F72983100F6701B /* RTMPCDemo.pch */,
-				63BF3DA31F7E579D00E6ADD0 /* Images.xcassets */,
+				630E4564225F4AF60095D54F /* Helper */,
+				63C17343225DDDF9001E72E7 /* Main */,
+				63C17344225DE21B001E72E7 /* Room */,
+				63C17342225DDDF3001E72E7 /* Base */,
+				63C17310225DDBA7001E72E7 /* Main.storyboard */,
+				63C17313225DDBA8001E72E7 /* Assets.xcassets */,
+				63C17318225DDBA8001E72E7 /* Info.plist */,
+				63C17319225DDBA8001E72E7 /* main.m */,
+				63C17341225DDD02001E72E7 /* PrefixHeader.pch */,
 			);
 			path = RTMPCDemo;
 			sourceTree = "<group>";
 		};
-		639E91941F6FB22D0037D9B9 /* Supporting Files */ = {
+		63C17322225DDBA8001E72E7 /* RTMPCDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				639E91951F6FB22D0037D9B9 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		639E91AD1F6FB22E0037D9B9 /* RTMPCDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				639E91AE1F6FB22E0037D9B9 /* RTMPCDemoTests.m */,
-				639E91B01F6FB22E0037D9B9 /* Info.plist */,
+				63C17323225DDBA8001E72E7 /* RTMPCDemoTests.m */,
+				63C17325225DDBA8001E72E7 /* Info.plist */,
 			);
 			path = RTMPCDemoTests;
 			sourceTree = "<group>";
 		};
-		639E91B81F6FB22E0037D9B9 /* RTMPCDemoUITests */ = {
+		63C1732D225DDBA8001E72E7 /* RTMPCDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				639E91B91F6FB22E0037D9B9 /* RTMPCDemoUITests.m */,
-				639E91BB1F6FB22E0037D9B9 /* Info.plist */,
+				63C1732E225DDBA8001E72E7 /* RTMPCDemoUITests.m */,
+				63C17330225DDBA8001E72E7 /* Info.plist */,
 			);
 			path = RTMPCDemoUITests;
 			sourceTree = "<group>";
 		};
-		63A43FB32084539A00DF7447 /* Waves */ = {
+		63C17342225DDDF3001E72E7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				63A43FB4208453C500DF7447 /* ATAudioButton.h */,
-				63A43FB5208453C500DF7447 /* ATAudioButton.m */,
+				63C1730A225DDBA7001E72E7 /* AppDelegate.h */,
+				63C1730B225DDBA7001E72E7 /* AppDelegate.m */,
 			);
-			path = Waves;
+			path = Base;
 			sourceTree = "<group>";
 		};
-		63A43FB920849DBC00DF7447 /* End */ = {
+		63C17343225DDDF9001E72E7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				63A43FBA2084B0F300DF7447 /* ATLivingEndController.h */,
-				63A43FBB2084B0F300DF7447 /* ATLivingEndController.m */,
+				63C17353225DE3A7001E72E7 /* ArMainViewController.h */,
+				63C17354225DE3A7001E72E7 /* ArMainViewController.m */,
+				630E4561225F230B0095D54F /* ArMainModel.h */,
+				630E4562225F230B0095D54F /* ArMainModel.m */,
 			);
-			path = End;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		63A43FBD2084B81600DF7447 /* NetWork */ = {
+		63C17344225DE21B001E72E7 /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				637728692046409D008A12B7 /* NetWorkTools.h */,
-				637728682046409D008A12B7 /* NetWorkTools.m */,
+				63C17345225DE22C001E72E7 /* Video */,
+				63C17346225DE237001E72E7 /* Audio */,
+				630E5FD92264706C00819C05 /* Common */,
 			);
-			path = NetWork;
+			path = Room;
 			sourceTree = "<group>";
 		};
-		63E5F0EE1F729AC900F6701B /* Helpers */ = {
+		63C17345225DE22C001E72E7 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				63E5F0EF1F729B0600F6701B /* ATCommon.h */,
-				63E5F0F01F729B0600F6701B /* ATCommon.m */,
-				63A43FBD2084B81600DF7447 /* NetWork */,
-				6347266A1F7640D500E1F9C8 /* Extension */,
+				63C17347225DE339001E72E7 /* ArVideoHostController.h */,
+				63C17348225DE339001E72E7 /* ArVideoHostController.m */,
+				63C1734A225DE34B001E72E7 /* ArVideoAudienceController.h */,
+				63C1734B225DE34B001E72E7 /* ArVideoAudienceController.m */,
 			);
-			path = Helpers;
+			path = Video;
 			sourceTree = "<group>";
 		};
-		C5709B1D689DB8900D204E5B /* Pods */ = {
+		63C17346225DE237001E72E7 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				B5A8E239CBD25F15ACB745BC /* Pods-RTMPCDemo.debug.xcconfig */,
-				2D9FAFEB8A199990D14B5FC2 /* Pods-RTMPCDemo.release.xcconfig */,
+				63C1734D225DE365001E72E7 /* ArAudioHostController.h */,
+				63C1734E225DE365001E72E7 /* ArAudioHostController.m */,
+				63C17350225DE378001E72E7 /* ArAudioAudienceController.h */,
+				63C17351225DE378001E72E7 /* ArAudioAudienceController.m */,
 			);
-			name = Pods;
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		6B7388C2BF584A5B58132C2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C73A5464D3482E66B39C240E /* libPods-RTMPCDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74F012FE4557B9E194777DC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				835094172ED3A02B98EDA91C /* Pods-RTMPCDemo.debug.xcconfig */,
+				B252A9C9391A5E7A3B0BD454 /* Pods-RTMPCDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		639E91901F6FB22D0037D9B9 /* RTMPCDemo */ = {
+		63C17306225DDBA7001E72E7 /* RTMPCDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 639E91BE1F6FB22E0037D9B9 /* Build configuration list for PBXNativeTarget "RTMPCDemo" */;
+			buildConfigurationList = 63C17333225DDBA8001E72E7 /* Build configuration list for PBXNativeTarget "RTMPCDemo" */;
 			buildPhases = (
-				9F380D511D63841E45F10867 /* [CP] Check Pods Manifest.lock */,
-				639E918D1F6FB22D0037D9B9 /* Sources */,
-				639E918E1F6FB22D0037D9B9 /* Frameworks */,
-				639E918F1F6FB22D0037D9B9 /* Resources */,
-				639E91D21F6FB2B90037D9B9 /* Embed Frameworks */,
-				40A010100E6AED5A0ABBB62F /* [CP] Copy Pods Resources */,
-				88211183D2E2F2BA656FDCDD /* [CP] Embed Pods Frameworks */,
+				7E61C95BDAF94B85B80603D0 /* [CP] Check Pods Manifest.lock */,
+				63C17303225DDBA7001E72E7 /* Sources */,
+				63C17304225DDBA7001E72E7 /* Frameworks */,
+				63C17305225DDBA7001E72E7 /* Resources */,
+				63C17340225DDCE3001E72E7 /* Embed Frameworks */,
+				0C520A395B06359C01933080 /* [CP] Copy Pods Resources */,
+				A009F4BA29035DD7C2514083 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,119 +359,110 @@
 			);
 			name = RTMPCDemo;
 			productName = RTMPCDemo;
-			productReference = 639E91911F6FB22D0037D9B9 /* RTMPCDemo.app */;
+			productReference = 63C17307225DDBA7001E72E7 /* RTMPCDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		639E91A91F6FB22E0037D9B9 /* RTMPCDemoTests */ = {
+		63C1731E225DDBA8001E72E7 /* RTMPCDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 639E91C11F6FB22E0037D9B9 /* Build configuration list for PBXNativeTarget "RTMPCDemoTests" */;
+			buildConfigurationList = 63C17336225DDBA8001E72E7 /* Build configuration list for PBXNativeTarget "RTMPCDemoTests" */;
 			buildPhases = (
-				639E91A61F6FB22E0037D9B9 /* Sources */,
-				639E91A71F6FB22E0037D9B9 /* Frameworks */,
-				639E91A81F6FB22E0037D9B9 /* Resources */,
+				63C1731B225DDBA8001E72E7 /* Sources */,
+				63C1731C225DDBA8001E72E7 /* Frameworks */,
+				63C1731D225DDBA8001E72E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				639E91AC1F6FB22E0037D9B9 /* PBXTargetDependency */,
+				63C17321225DDBA8001E72E7 /* PBXTargetDependency */,
 			);
 			name = RTMPCDemoTests;
 			productName = RTMPCDemoTests;
-			productReference = 639E91AA1F6FB22E0037D9B9 /* RTMPCDemoTests.xctest */;
+			productReference = 63C1731F225DDBA8001E72E7 /* RTMPCDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		639E91B41F6FB22E0037D9B9 /* RTMPCDemoUITests */ = {
+		63C17329225DDBA8001E72E7 /* RTMPCDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 639E91C41F6FB22E0037D9B9 /* Build configuration list for PBXNativeTarget "RTMPCDemoUITests" */;
+			buildConfigurationList = 63C17339225DDBA8001E72E7 /* Build configuration list for PBXNativeTarget "RTMPCDemoUITests" */;
 			buildPhases = (
-				639E91B11F6FB22E0037D9B9 /* Sources */,
-				639E91B21F6FB22E0037D9B9 /* Frameworks */,
-				639E91B31F6FB22E0037D9B9 /* Resources */,
+				63C17326225DDBA8001E72E7 /* Sources */,
+				63C17327225DDBA8001E72E7 /* Frameworks */,
+				63C17328225DDBA8001E72E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				639E91B71F6FB22E0037D9B9 /* PBXTargetDependency */,
+				63C1732C225DDBA8001E72E7 /* PBXTargetDependency */,
 			);
 			name = RTMPCDemoUITests;
 			productName = RTMPCDemoUITests;
-			productReference = 639E91B51F6FB22E0037D9B9 /* RTMPCDemoUITests.xctest */;
+			productReference = 63C1732A225DDBA8001E72E7 /* RTMPCDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		639E91891F6FB22D0037D9B9 /* Project object */ = {
+		63C172FF225DDBA7001E72E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = jh;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = anyRTC;
 				TargetAttributes = {
-					639E91901F6FB22D0037D9B9 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5543CP4MRT;
-						ProvisioningStyle = Automatic;
+					63C17306225DDBA7001E72E7 = {
+						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 						};
 					};
-					639E91A91F6FB22E0037D9B9 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5543CP4MRT;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 639E91901F6FB22D0037D9B9;
+					63C1731E225DDBA8001E72E7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 63C17306225DDBA7001E72E7;
 					};
-					639E91B41F6FB22E0037D9B9 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5543CP4MRT;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 639E91901F6FB22D0037D9B9;
+					63C17329225DDBA8001E72E7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 63C17306225DDBA7001E72E7;
 					};
 				};
 			};
-			buildConfigurationList = 639E918C1F6FB22D0037D9B9 /* Build configuration list for PBXProject "RTMPCDemo" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 63C17302225DDBA7001E72E7 /* Build configuration list for PBXProject "RTMPCDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 639E91881F6FB22D0037D9B9;
-			productRefGroup = 639E91921F6FB22D0037D9B9 /* Products */;
+			mainGroup = 63C172FE225DDBA7001E72E7;
+			productRefGroup = 63C17308225DDBA7001E72E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				639E91901F6FB22D0037D9B9 /* RTMPCDemo */,
-				639E91A91F6FB22E0037D9B9 /* RTMPCDemoTests */,
-				639E91B41F6FB22E0037D9B9 /* RTMPCDemoUITests */,
+				63C17306225DDBA7001E72E7 /* RTMPCDemo */,
+				63C1731E225DDBA8001E72E7 /* RTMPCDemoTests */,
+				63C17329225DDBA8001E72E7 /* RTMPCDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		639E918F1F6FB22D0037D9B9 /* Resources */ = {
+		63C17305225DDBA7001E72E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63BF3DA41F7E579D00E6ADD0 /* Images.xcassets in Resources */,
-				639E91A11F6FB22D0037D9B9 /* Assets.xcassets in Resources */,
-				63642AF4207DAEA700E17DD4 /* Main.storyboard in Resources */,
-				63718633207E12A800415647 /* ATVideoView.xib in Resources */,
-				6371863E207E16C700415647 /* ATAudioView.xib in Resources */,
+				63C17314225DDBA8001E72E7 /* Assets.xcassets in Resources */,
+				63C17312225DDBA7001E72E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		639E91A81F6FB22E0037D9B9 /* Resources */ = {
+		63C1731D225DDBA8001E72E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		639E91B31F6FB22E0037D9B9 /* Resources */ = {
+		63C17328225DDBA8001E72E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -587,52 +472,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		40A010100E6AED5A0ABBB62F /* [CP] Copy Pods Resources */ = {
+		0C520A395B06359C01933080 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88211183D2E2F2BA656FDCDD /* [CP] Embed Pods Frameworks */ = {
+		7E61C95BDAF94B85B80603D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-frameworks.sh",
-				"${PODS_ROOT}/RTMPCHybirdEngine/RTMPCHybirdEngine/RTMPCHybirdEngine.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTMPCHybirdEngine.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F380D511D63841E45F10867 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RTMPCDemo-checkManifestLockResult.txt",
 			);
@@ -641,84 +516,113 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A009F4BA29035DD7C2514083 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-frameworks.sh",
+				"${PODS_ROOT}/RTMPCHybirdEngine/RTMPCHybirdEngine/RTMPCHybirdEngine.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTMPCHybirdEngine.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RTMPCDemo/Pods-RTMPCDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		639E918D1F6FB22D0037D9B9 /* Sources */ = {
+		63C17303225DDBA7001E72E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63642AF7207DB4FE00E17DD4 /* ATMainViewController.m in Sources */,
-				6377D0E7207EF7BC00E5DD37 /* ATRealTimeMicController.m in Sources */,
-				6377D0ED207EF84000E5DD37 /* ATRealMicCell.m in Sources */,
-				6377D0EA207EF81A00E5DD37 /* ATRealMicModel.m in Sources */,
-				63BF3DA21F7E250D00E6ADD0 /* ATListModel.m in Sources */,
-				63A43FBC2084B0F300DF7447 /* ATLivingEndController.m in Sources */,
-				63718621207DEAD400415647 /* ATBarrageViewController.m in Sources */,
-				63718639207E145800415647 /* ATVideoAudienceController.m in Sources */,
-				6377286A2046409D008A12B7 /* NetWorkTools.m in Sources */,
-				635EF11B20807DA1007C307E /* ATMenuViewController.m in Sources */,
-				6371862F207E129000415647 /* ATVideoView.m in Sources */,
-				639E91991F6FB22D0037D9B9 /* AppDelegate.m in Sources */,
-				639E91961F6FB22D0037D9B9 /* main.m in Sources */,
-				63E5F0F31F729B0600F6701B /* ATCommon.m in Sources */,
-				6371862B207DFE4D00415647 /* UIViewController+Common.m in Sources */,
-				6371863C207E16BE00415647 /* ATAudioView.m in Sources */,
-				637022602086EDFE00BE9E10 /* ATBarragesView.m in Sources */,
-				63718610207DBB7900415647 /* ATHallViewController.m in Sources */,
-				63A43FB6208453C500DF7447 /* ATAudioButton.m in Sources */,
-				635D23812080A86500FF4BD1 /* ATAudioHostController.m in Sources */,
-				635D23842080A87600FF4BD1 /* ATAudioAudienceController.m in Sources */,
-				6347266D1F7640D500E1F9C8 /* UIButton+ImageTitleSpacing.m in Sources */,
-				63BF3D9E1F7E1F1600E6ADD0 /* ATListViewController.m in Sources */,
-				633160671F7C9C1000892C3F /* ATStartViewController.m in Sources */,
-				63718627207DEB3D00415647 /* ATVideoHostController.m in Sources */,
-				635EF11E2080A025007C307E /* ATHallModel.m in Sources */,
+				630E5FDD22647E1700819C05 /* UIAlertController+Blocks.m in Sources */,
+				630E5FD82264701E00819C05 /* ArMessageView.m in Sources */,
+				630E4567225F4B0E0095D54F /* ArNetWorkTools.m in Sources */,
+				630E4563225F230B0095D54F /* ArMainModel.m in Sources */,
+				63A467322266CFC1006AA045 /* ArRealMicCell.m in Sources */,
+				63C17355225DE3A7001E72E7 /* ArMainViewController.m in Sources */,
+				63C1731A225DDBA8001E72E7 /* main.m in Sources */,
+				6318F63722606F22007EF67E /* ArUserManager.m in Sources */,
+				63C1734C225DE34B001E72E7 /* ArVideoAudienceController.m in Sources */,
+				630E5FD5226433A100819C05 /* ArBaseViewController.m in Sources */,
+				63C17352225DE378001E72E7 /* ArAudioAudienceController.m in Sources */,
+				63A4673B22673857006AA045 /* ArAudioView.m in Sources */,
+				63C17349225DE339001E72E7 /* ArVideoHostController.m in Sources */,
+				630E456A225F52020095D54F /* ArCommon.m in Sources */,
+				630CD4EE2265CA89008A13BE /* ArRealMicModel.m in Sources */,
+				637C7F7122898342001D7361 /* ArLogView.m in Sources */,
+				63C1730C225DDBA7001E72E7 /* AppDelegate.m in Sources */,
+				630CD4F12265D6E3008A13BE /* ArRealTimeMicController.m in Sources */,
+				630E0B1022699DA200F3081C /* UIImageView+Animation.m in Sources */,
+				63C1734F225DE365001E72E7 /* ArAudioHostController.m in Sources */,
+				630FC21E226585F300146913 /* ArVideoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		639E91A61F6FB22E0037D9B9 /* Sources */ = {
+		63C1731B225DDBA8001E72E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639E91AF1F6FB22E0037D9B9 /* RTMPCDemoTests.m in Sources */,
+				63C17324225DDBA8001E72E7 /* RTMPCDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		639E91B11F6FB22E0037D9B9 /* Sources */ = {
+		63C17326225DDBA8001E72E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639E91BA1F6FB22E0037D9B9 /* RTMPCDemoUITests.m in Sources */,
+				63C1732F225DDBA8001E72E7 /* RTMPCDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		639E91AC1F6FB22E0037D9B9 /* PBXTargetDependency */ = {
+		63C17321225DDBA8001E72E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 639E91901F6FB22D0037D9B9 /* RTMPCDemo */;
-			targetProxy = 639E91AB1F6FB22E0037D9B9 /* PBXContainerItemProxy */;
+			target = 63C17306225DDBA7001E72E7 /* RTMPCDemo */;
+			targetProxy = 63C17320225DDBA8001E72E7 /* PBXContainerItemProxy */;
 		};
-		639E91B71F6FB22E0037D9B9 /* PBXTargetDependency */ = {
+		63C1732C225DDBA8001E72E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 639E91901F6FB22D0037D9B9 /* RTMPCDemo */;
-			targetProxy = 639E91B61F6FB22E0037D9B9 /* PBXContainerItemProxy */;
+			target = 63C17306225DDBA7001E72E7 /* RTMPCDemo */;
+			targetProxy = 63C1732B225DDBA8001E72E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		63C17310225DDBA7001E72E7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C17311225DDBA7001E72E7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		639E91BC1F6FB22E0037D9B9 /* Debug */ = {
+		63C17331225DDBA8001E72E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -737,14 +641,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -758,23 +663,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		639E91BD1F6FB22E0037D9B9 /* Release */ = {
+		63C17332225DDBA8001E72E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -793,14 +700,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -808,117 +716,138 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		639E91BF1F6FB22E0037D9B9 /* Debug */ = {
+		63C17334225DDBA8001E72E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5A8E239CBD25F15ACB745BC /* Pods-RTMPCDemo.debug.xcconfig */;
+			baseConfigurationReference = 835094172ED3A02B98EDA91C /* Pods-RTMPCDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RTMPCDemo",
-					"$(PROJECT_DIR)/RTMPCDemo_Swift/RTMPCDemo_Swift",
 				);
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/RTMPCDemo.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = RTMPCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ar.RTMPCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		639E91C01F6FB22E0037D9B9 /* Release */ = {
+		63C17335225DDBA8001E72E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D9FAFEB8A199990D14B5FC2 /* Pods-RTMPCDemo.release.xcconfig */;
+			baseConfigurationReference = B252A9C9391A5E7A3B0BD454 /* Pods-RTMPCDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RTMPCDemo",
-					"$(PROJECT_DIR)/RTMPCDemo_Swift/RTMPCDemo_Swift",
 				);
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/RTMPCDemo.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = RTMPCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ar.RTMPCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		639E91C21F6FB22E0037D9B9 /* Debug */ = {
+		63C17337225DDBA8001E72E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				INFOPLIST_FILE = RTMPCDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RTMPCDemoTests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ar.RTMPCDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTMPCDemo.app/RTMPCDemo";
 			};
 			name = Debug;
 		};
-		639E91C31F6FB22E0037D9B9 /* Release */ = {
+		63C17338225DDBA8001E72E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				INFOPLIST_FILE = RTMPCDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RTMPCDemoTests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ar.RTMPCDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTMPCDemo.app/RTMPCDemo";
 			};
 			name = Release;
 		};
-		639E91C51F6FB22E0037D9B9 /* Debug */ = {
+		63C1733A225DDBA8001E72E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				INFOPLIST_FILE = RTMPCDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RTMPCDemoUITests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ar.RTMPCDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RTMPCDemo;
 			};
 			name = Debug;
 		};
-		639E91C61F6FB22E0037D9B9 /* Release */ = {
+		63C1733B225DDBA8001E72E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				INFOPLIST_FILE = RTMPCDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dync.RTMPCDemoUITests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ar.RTMPCDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RTMPCDemo;
 			};
 			name = Release;
@@ -926,43 +855,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		639E918C1F6FB22D0037D9B9 /* Build configuration list for PBXProject "RTMPCDemo" */ = {
+		63C17302225DDBA7001E72E7 /* Build configuration list for PBXProject "RTMPCDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				639E91BC1F6FB22E0037D9B9 /* Debug */,
-				639E91BD1F6FB22E0037D9B9 /* Release */,
+				63C17331225DDBA8001E72E7 /* Debug */,
+				63C17332225DDBA8001E72E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		639E91BE1F6FB22E0037D9B9 /* Build configuration list for PBXNativeTarget "RTMPCDemo" */ = {
+		63C17333225DDBA8001E72E7 /* Build configuration list for PBXNativeTarget "RTMPCDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				639E91BF1F6FB22E0037D9B9 /* Debug */,
-				639E91C01F6FB22E0037D9B9 /* Release */,
+				63C17334225DDBA8001E72E7 /* Debug */,
+				63C17335225DDBA8001E72E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		639E91C11F6FB22E0037D9B9 /* Build configuration list for PBXNativeTarget "RTMPCDemoTests" */ = {
+		63C17336225DDBA8001E72E7 /* Build configuration list for PBXNativeTarget "RTMPCDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				639E91C21F6FB22E0037D9B9 /* Debug */,
-				639E91C31F6FB22E0037D9B9 /* Release */,
+				63C17337225DDBA8001E72E7 /* Debug */,
+				63C17338225DDBA8001E72E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		639E91C41F6FB22E0037D9B9 /* Build configuration list for PBXNativeTarget "RTMPCDemoUITests" */ = {
+		63C17339225DDBA8001E72E7 /* Build configuration list for PBXNativeTarget "RTMPCDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				639E91C51F6FB22E0037D9B9 /* Debug */,
-				639E91C61F6FB22E0037D9B9 /* Release */,
+				63C1733A225DDBA8001E72E7 /* Debug */,
+				63C1733B225DDBA8001E72E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 639E91891F6FB22D0037D9B9 /* Project object */;
+	rootObject = 63C172FF225DDBA7001E72E7 /* Project object */;
 }

@@ -13,24 +13,23 @@
 
 @implementation MJPropertyType
 
-static NSMutableDictionary *types_;
-+ (void)initialize
-{
-    types_ = [NSMutableDictionary dictionary];
-}
-
 + (instancetype)cachedTypeWithCode:(NSString *)code
 {
     MJExtensionAssertParamNotNil2(code, nil);
-    @synchronized (self) {
-        MJPropertyType *type = types_[code];
-        if (type == nil) {
-            type = [[self alloc] init];
-            type.code = code;
-            types_[code] = type;
-        }
-        return type;
+    
+    static NSMutableDictionary *types;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        types = [NSMutableDictionary dictionary];
+    });
+    
+    MJPropertyType *type = types[code];
+    if (type == nil) {
+        type = [[self alloc] init];
+        type.code = code;
+        types[code] = type;
     }
+    return type;
 }
 
 #pragma mark - 公共方法

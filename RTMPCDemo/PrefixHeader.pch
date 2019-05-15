@@ -1,0 +1,60 @@
+//
+//  PrefixHeader.pch
+//  RTMPCDemo
+//
+//  Created by 余生丶 on 2019/4/10.
+//  Copyright © 2019 anyRTC. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+
+#error - 请前往www.anyrtc.io申请开发者信息
+//MARK: - 配置开发者信息
+static NSString *developerID = @"XXXXXX";
+static NSString *token = @"XXXXXX";
+static NSString *key = @"XXXXXX";
+static NSString *appID = @"XXXXXX";
+
+//该参数是使用我们的cdn
+static NSString *appvtoken = @"XXXXXX";
+
+#define App_VdnUrl @"http://vdn.anyrtc.cc/oauth/anyapi/v1/vdnUrlSign/getAppVdnUrl"
+
+//MARK: - ARRtmpSDK && lib
+#import <RTMPCHybirdEngine/ARRtmpSDK.h>
+#import <Masonry.h>
+#import <MJExtension.h>
+#import <Bugly/Bugly.h>
+#import <AFNetworking.h>
+#import <SVProgressHUD.h>
+
+#import "ArCommon.h"
+#import "ArMainModel.h"
+#import "ArUserManager.h"
+#import "ArMessageView.h"
+#import "ArVideoView.h"
+#import "ArLogView.h"
+#import "UIAlertController+Blocks.h"
+#import "UIImageView+Animation.h"
+
+//MARK: - 宏
+//弱指针
+#define WEAKSELF __weak typeof(self)weakSelf = self
+//标识自己的连麦窗口
+#define Video_MySelf @"Video_MySelf"
+//RGB
+#define RGBA(r, g, b, a)    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r, g, b)     RGBA(r, g, b, 1.0f)
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//日志
+#define ArMethodText(name) [[self mutableArrayValueForKey:@"logArr"] addObject:[NSString stringWithFormat:@"方法：%@",name]]
+#define ArCallbackLog [[self mutableArrayValueForKey:@"logArr"] addObject:[NSString stringWithFormat:@"回调：%s",__func__]]
+
+#endif /* PrefixHeader_pch */

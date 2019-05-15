@@ -2,8 +2,8 @@
 //  main.m
 //  RTMPCDemo
 //
-//  Created by jh on 2017/9/18.
-//  Copyright © 2017年 jh. All rights reserved.
+//  Created by 余生丶 on 2019/4/10.
+//  Copyright © 2019 anyRTC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

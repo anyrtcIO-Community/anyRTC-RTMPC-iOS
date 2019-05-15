@@ -14,45 +14,37 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - BarrageRenderer (2.1.0)
   - Bugly (2.5.0)
   - Masonry (1.1.0)
-  - MJExtension (3.0.13)
-  - MJRefresh (3.1.15.3)
-  - RTMPCHybirdEngine (2.1.5)
-  - XHToast (1.4.0)
+  - MJExtension (3.0.16)
+  - RTMPCHybirdEngine (3.0.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
-  - BarrageRenderer
   - Bugly
   - Masonry
   - MJExtension
-  - MJRefresh
-  - RTMPCHybirdEngine (~> 2.1.5)
-  - XHToast (~> 1.4.0)
+  - RTMPCHybirdEngine (~> 3.0.0)
+  - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - BarrageRenderer
     - Bugly
     - Masonry
     - MJExtension
-    - MJRefresh
     - RTMPCHybirdEngine
-    - XHToast
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  BarrageRenderer: 00e5f8081d81f29c1fc12712ddf2f875bd9c6f77
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  RTMPCHybirdEngine: 5f50dec6a19bf8cc8476fae798af218bf1bdfb7a
-  XHToast: 3b354766d56d9df8fef8e64387bbd25c90d71a86
+  MJExtension: 54dbbf6ee728f1a88e9aad904353d007831c7847
+  RTMPCHybirdEngine: c4fbc603224bc35699f52764ed90d737261d5425
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: c4548044bc0a7b54cf32bf1b92adda6a2f348843
+PODFILE CHECKSUM: 6485b77402d3f947aa8418efd34b6795c61b7fa9
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.1

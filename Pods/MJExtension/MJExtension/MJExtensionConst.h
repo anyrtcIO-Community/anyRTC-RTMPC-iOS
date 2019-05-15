@@ -4,6 +4,25 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef MJ_LOCK
+#define MJ_LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+#endif
+
+#ifndef MJ_UNLOCK
+#define MJ_UNLOCK(lock) dispatch_semaphore_signal(lock);
+#endif
+
+// 信号量
+#define MJExtensionSemaphoreCreate \
+static dispatch_semaphore_t signalSemaphore; \
+static dispatch_once_t onceTokenSemaphore; \
+dispatch_once(&onceTokenSemaphore, ^{ \
+    signalSemaphore = dispatch_semaphore_create(1); \
+});
+
+#define MJExtensionSemaphoreWait MJ_LOCK(signalSemaphore)
+#define MJExtensionSemaphoreSignal MJ_UNLOCK(signalSemaphore)
+
 // 过期
 #define MJExtensionDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
@@ -67,22 +86,22 @@ MJExtensionAssert2((param) != nil, returnValue)
 /**
  *  类型（属性类型）
  */
-extern NSString *const MJPropertyTypeInt;
-extern NSString *const MJPropertyTypeShort;
-extern NSString *const MJPropertyTypeFloat;
-extern NSString *const MJPropertyTypeDouble;
-extern NSString *const MJPropertyTypeLong;
-extern NSString *const MJPropertyTypeLongLong;
-extern NSString *const MJPropertyTypeChar;
-extern NSString *const MJPropertyTypeBOOL1;
-extern NSString *const MJPropertyTypeBOOL2;
-extern NSString *const MJPropertyTypePointer;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeInt;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeShort;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeFloat;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeDouble;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeLong;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeLongLong;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeChar;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeBOOL1;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeBOOL2;
+FOUNDATION_EXPORT NSString *const MJPropertyTypePointer;
 
-extern NSString *const MJPropertyTypeIvar;
-extern NSString *const MJPropertyTypeMethod;
-extern NSString *const MJPropertyTypeBlock;
-extern NSString *const MJPropertyTypeClass;
-extern NSString *const MJPropertyTypeSEL;
-extern NSString *const MJPropertyTypeId;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeIvar;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeMethod;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeBlock;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeClass;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeSEL;
+FOUNDATION_EXPORT NSString *const MJPropertyTypeId;
 
 #endif
