@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)initEngine:(NSString *)appId token:(NSString *)token;
 
-+ (void)initEngine:(NSString *)appId token:(NSString *)token key:(NSString*)key developerId:(NSString*)developerId;
 /**
  配置私有云
  

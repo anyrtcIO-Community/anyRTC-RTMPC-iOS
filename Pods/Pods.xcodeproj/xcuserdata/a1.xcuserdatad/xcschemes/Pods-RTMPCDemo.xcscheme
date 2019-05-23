@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "592F66974A87C260AFBC89B74FF38ACF"
+               BlueprintIdentifier = "0F6D0533CB7F7401A196D49250100076"
                BuildableName = "libPods-RTMPCDemo.a"
                BlueprintName = "Pods-RTMPCDemo"
                ReferencedContainer = "container:Pods.xcodeproj">

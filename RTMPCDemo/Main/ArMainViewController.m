@@ -44,6 +44,7 @@
     // Do any additional setup after loading the view.
     self.listArr = [NSMutableArray arrayWithCapacity:5];
     self.onlineArr = [NSMutableArray arrayWithCapacity:5];
+    self.backView.hidden = NO;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);

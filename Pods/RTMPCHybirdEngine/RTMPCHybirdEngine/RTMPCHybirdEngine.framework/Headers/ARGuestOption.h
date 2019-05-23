@@ -48,6 +48,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL autorotate;
 
+
+/**
+ 是否需要camera数据：默认为NO;
+ 说明：设置YES:将会有onRTCCaptureVideoPixelBuffer回调
+ */
+@property (nonatomic, assign) BOOL needCarmeraData;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

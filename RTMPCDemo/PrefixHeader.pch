@@ -15,9 +15,7 @@
 
 #error - 请前往www.anyrtc.io申请开发者信息
 //MARK: - 配置开发者信息
-static NSString *developerID = @"XXXXXX";
 static NSString *token = @"XXXXXX";
-static NSString *key = @"XXXXXX";
 static NSString *appID = @"XXXXXX";
 
 //该参数是使用我们的cdn

@@ -196,7 +196,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param headerUrl 用户头像，可选(最大512字节)
  @param content 消息内容不能为空，否则发送失败(最大1024字节)
  @return YES发送成功，NO发送失败
- 说明：默认普通消息，以上参数均会出现在游客/主播消息回调方法中，如果创建RTC连接（createRTCLine）没有设置userId，发送失败。
+ 说明：默认普通消息，以上参数均会出现在游客/主播消息回调方法中，如果创建RTC连接（createRTCLineByToken）没有设置userId，发送失败。
  */
 
 - (BOOL)sendUserMessage:(ARMessageType)type userName:(NSString *)userName userHeader:(NSString *)headerUrl content:(NSString *)content;

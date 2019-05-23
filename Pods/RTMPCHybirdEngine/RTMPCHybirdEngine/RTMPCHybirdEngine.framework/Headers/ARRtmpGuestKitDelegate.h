@@ -9,6 +9,7 @@
 #ifndef ARRtmpGuestKitDelegate_h
 #define ARRtmpGuestKitDelegate_h
 
+#import <AVFoundation/AVFoundation.h>
 #import "ARRtmpEnum.h"
 
 @protocol ARGuestRtmpDelegate <NSObject>
@@ -248,6 +249,17 @@
  直播结束
  */
 - (void)onRTCLiveStop;
+
+
+#pragma mark -  video data
+/**
+ 获取视频的原始采集数据
+ 
+ @param sampleBuffer 视频数据
+ @return 视频对象（处理过或者没做处理）
+ */
+- (CVPixelBufferRef)onRTCCaptureVideoPixelBuffer:(CMSampleBufferRef)sampleBuffer;
+
 
 @end
 

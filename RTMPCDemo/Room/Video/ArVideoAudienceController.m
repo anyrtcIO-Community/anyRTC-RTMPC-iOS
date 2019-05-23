@@ -283,4 +283,11 @@
     ArCallbackLog;
 }
 
+- (CVPixelBufferRef)cameraSourceDidGetPixelBuffer:(CMSampleBufferRef)sampleBuffer {
+    //获取视频的原始采集数据
+    ArCallbackLog;
+    CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    return pixelBuffer;
+}
+
 @end

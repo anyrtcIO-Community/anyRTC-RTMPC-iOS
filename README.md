@@ -20,7 +20,7 @@ anyRTMPC-HybridEngine-iOS是为移动端应用量身打造的基于RTMP和RTC混
 
 ### Cocoapods导入
 ```
-pod 'RTMPCHybirdEngine', '~> 3.0.0'
+pod 'RTMPCHybirdEngine', '~> 3.0.1'
 ```
 
 ### 手动导入
@@ -88,6 +88,16 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 [anyRTMPC-HybridEngine-web](https://www.anyrtc.io/demo/lianmai)
 
 ## 更新日志
+
+* 2019年05月23日：</br>
+
+（1）游客端添加"获取视频的原始采集数据"的回调</br>
+
+```
+//获取视频的原始采集数据
+- (CVPixelBufferRef)onRTCCaptureVideoPixelBuffer:(CMSampleBufferRef)sampleBuffer;
+```
+（2）修复音频模式下不操作会锁屏的问题。
 
 * 2019年05月15日：</br>
 

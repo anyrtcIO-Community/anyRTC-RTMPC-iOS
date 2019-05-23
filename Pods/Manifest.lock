@@ -16,8 +16,8 @@ PODS:
     - AFNetworking/NSURLSession
   - Bugly (2.5.0)
   - Masonry (1.1.0)
-  - MJExtension (3.0.16)
-  - RTMPCHybirdEngine (3.0.0)
+  - MJExtension (3.0.17)
+  - RTMPCHybirdEngine (3.0.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -25,7 +25,7 @@ DEPENDENCIES:
   - Bugly
   - Masonry
   - MJExtension
-  - RTMPCHybirdEngine (~> 3.0.0)
+  - RTMPCHybirdEngine (~> 3.0.1)
   - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
@@ -41,10 +41,10 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 54dbbf6ee728f1a88e9aad904353d007831c7847
-  RTMPCHybirdEngine: c4fbc603224bc35699f52764ed90d737261d5425
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  RTMPCHybirdEngine: a69f8c5cf3283c0b6335c831e866acde4ab2d38c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 6485b77402d3f947aa8418efd34b6795c61b7fa9
+PODFILE CHECKSUM: 556d2a8a70e74d82607726c604a0c0cafc3655bc
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0
