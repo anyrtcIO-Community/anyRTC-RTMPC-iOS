@@ -28,8 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (ArMessageModel *)produceTextInfo:(NSString *)name content:(NSString *)content userId:(NSString *)userid audio:(BOOL)isAudio;
 //连麦模型
 - (ArRealMicModel *)produceRealModel:(NSString *)peerId userId:(NSString *)userId userData:(NSString *)userData;
-//显示日志
+//日志
 - (void)openLogView;
+- (void)removeLogView;
 
 @end
 

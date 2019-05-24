@@ -158,6 +158,17 @@
     [window addSubview:logView];
 }
 
+- (void)removeLogView {
+    for (UIView *subView in UIApplication.sharedApplication.keyWindow.subviews) {
+        if ([subView isKindOfClass:[ArLogView class]]) {
+            ArLogView *logView = (ArLogView *)subView;
+            [logView removeFromSuperview];
+            logView = nil;
+            break;
+        }
+    }
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"logArr"]) {
         for (UIView *subView in UIApplication.sharedApplication.keyWindow.subviews) {

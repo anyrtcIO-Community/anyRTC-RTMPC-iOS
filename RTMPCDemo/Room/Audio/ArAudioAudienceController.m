@@ -159,11 +159,11 @@
         [self.applyButton setTitle:@"挂断连麦" forState:UIControlStateSelected];
         [self.containerStackView addArrangedSubview:self.audioStackView];
         
-        ArAudioView *audioView = [[ArAudioView alloc] initWithPeerId:Video_MySelf display:NO];
+        ArAudioView *audioView = [[ArAudioView alloc] initWithPeerId:Video_MySelf name:ArUserManager.getUserInfo.nickname display:NO];
         [self.audioStackView addArrangedSubview:audioView];
         [audioView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@(100));
-            make.height.equalTo(@(150));
+            make.height.equalTo(@(170));
         }];
     } else {
         [ArCommon showAlertsStatus:@"主播拒绝了你的连麦请求"];
@@ -182,6 +182,7 @@
 - (void)onRTCLineLeave:(ARRtmpCode)code {
     //断开RTC服务连接
     if (code == ARRtmp_OK) {
+        [self removeLogView];
         [ArCommon showAlertsStatus:@"直播已结束"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.guestKit clear];
@@ -196,11 +197,12 @@
 
 - (void)onRTCOpenRemoteVideoRender:(NSString *)peerId pubId:(NSString *)pubId userId:(NSString *)userId userData:(NSString *)userData {
     //其他游客视频连麦接通
-    ArAudioView *audioView = [[ArAudioView alloc] initWithPeerId:peerId display:NO];
+    NSDictionary *customDic = [ArCommon fromJsonStr:userData];
+    ArAudioView *audioView = [[ArAudioView alloc] initWithPeerId:peerId name:[customDic objectForKey:@"nickName"] display:NO];
     [self.audioStackView addArrangedSubview:audioView];
     [audioView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(100));
-        make.height.equalTo(@(150));
+        make.height.equalTo(@(170));
     }];
     ArCallbackLog;
 }

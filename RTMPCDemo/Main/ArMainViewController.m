@@ -71,7 +71,6 @@
             weakSelf.backView.hidden = weakSelf.listArr.count;
             weakSelf.updateButton.hidden = !weakSelf.listArr.count;
             [weakSelf.listCollectionView reloadData];
-            
         }
     }];
 }

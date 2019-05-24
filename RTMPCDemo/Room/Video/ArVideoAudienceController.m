@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *localView;
 @property (weak, nonatomic) IBOutlet UIButton *applyButton;
+@property (weak, nonatomic) IBOutlet UIButton *switchButton;
 
 @property(nonatomic ,strong) ARRtmpGuestKit *guestKit;
 
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.applyButton.hidden = YES;
+    self.switchButton.hidden = YES;
     NSMutableString *roomText = [[NSMutableString alloc] initWithString:self.mainModel.anyrtcId];
     [roomText insertString:@" " atIndex:4];
     self.roomIdLabel.text = [NSString stringWithFormat:@"房间名称：%@",roomText];
@@ -74,6 +76,10 @@
             [self dismissViewControllerAnimated:YES completion:nil];
             break;
         case 53:
+            [self.guestKit switchCamera];
+            ArMethodText(@"switchCamera");
+            break;
+        case 54:
             //日志
             [self openLogView];
             break;
@@ -83,6 +89,7 @@
 }
 
 - (void)hangupLine {
+    self.switchButton.hidden = YES;
     self.applyButton.selected = NO;
     [self.applyButton setTitle:@"申请连麦" forState:UIControlStateNormal];
     [self.videoStackView removeFromSuperview];
@@ -154,6 +161,7 @@
     //游客申请连麦结果回调
     self.applyButton.selected = !code;
     if (code == ARRtmp_OK) {
+        self.switchButton.hidden = NO;
         [self.applyButton setTitle:@"挂断连麦" forState:UIControlStateSelected];
         ArVideoView *videoView = [[ArVideoView alloc] initWithPeerId:Video_MySelf pubId:Video_MySelf display:NO];
         [self.videoStackView addArrangedSubview:videoView];
@@ -180,6 +188,7 @@
 - (void)onRTCLineLeave:(ARRtmpCode)code {
     //断开RTC服务连接
     if (code == ARRtmp_OK) {
+        [self removeLogView];
         [ArCommon showAlertsStatus:@"直播已结束"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.guestKit clear];
@@ -194,7 +203,7 @@
 
 - (void)onRTCOpenRemoteVideoRender:(NSString *)peerId pubId:(NSString *)pubId userId:(NSString *)userId userData:(NSString *)userData {
     //其他游客视频连麦接通
-    ArVideoView *videoView = [[ArVideoView alloc] initWithPeerId:peerId pubId:pubId display:YES];
+    ArVideoView *videoView = [[ArVideoView alloc] initWithPeerId:peerId pubId:pubId display:NO];
     [self.videoStackView addArrangedSubview:videoView];
     [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.videoStackView.mas_width);

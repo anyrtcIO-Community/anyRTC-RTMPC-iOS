@@ -205,7 +205,8 @@
     if (!self.audioStackView.superview) {
         [self.containerStackView addArrangedSubview:self.audioStackView];
     }
-    ArAudioView *audioView = [[ArAudioView alloc] initWithPeerId:peerId display:YES];
+    NSDictionary *customDic = [ArCommon fromJsonStr:userData];
+    ArAudioView *audioView = [[ArAudioView alloc] initWithPeerId:peerId name:[customDic objectForKey:@"nickName"] display:YES];
     audioView.delegate = self;
     [self.audioStackView addArrangedSubview:audioView];
     [audioView mas_makeConstraints:^(MASConstraintMaker *make) {

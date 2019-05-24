@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) id <HangUpDelegate> delegate;
 
-- (instancetype)initWithPeerId:(NSString *)peerId display:(BOOL)isDisplay;
+- (instancetype)initWithPeerId:(NSString *)peerId name:(NSString *)name display:(BOOL)isDisplay;
 
 @end
 

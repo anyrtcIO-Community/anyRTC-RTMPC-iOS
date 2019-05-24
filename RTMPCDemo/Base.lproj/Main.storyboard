@@ -499,7 +499,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-2t-Xl5">
-                                <rect key="frame" x="330" y="40" width="35" height="85"/>
+                                <rect key="frame" x="330" y="40" width="35" height="135"/>
                                 <subviews>
                                     <button opaque="NO" tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-rh-ZXe">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -512,8 +512,19 @@
                                             <action selector="handleSomethingEvent:" destination="I4Z-Rb-SOI" eventType="touchUpInside" id="Koi-wY-v3C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XH0-Py-amG">
+                                    <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUq-iT-EHL">
                                         <rect key="frame" x="0.0" y="50" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="fsi-Ye-9Vy"/>
+                                            <constraint firstAttribute="height" constant="35" id="kDA-zS-FAg"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="img_switch"/>
+                                        <connections>
+                                            <action selector="handleSomethingEvent:" destination="I4Z-Rb-SOI" eventType="touchUpInside" id="5N3-Kd-OhR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XH0-Py-amG">
+                                        <rect key="frame" x="0.0" y="100" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="176-q6-pAw"/>
                                             <constraint firstAttribute="width" constant="35" id="YLf-LQ-ihx"/>
@@ -580,6 +591,7 @@
                     <connections>
                         <outlet property="applyButton" destination="XEQ-6i-R4G" id="PTO-Tj-rmY"/>
                         <outlet property="localView" destination="yDC-7p-8GX" id="syf-Xb-Fam"/>
+                        <outlet property="switchButton" destination="pUq-iT-EHL" id="xHn-zr-z8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4T-4K-oFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
