@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *listCollectionView;
 @property (weak, nonatomic) IBOutlet UIView *backView;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *refreshButton;
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 /** 大厅列表 */
@@ -45,6 +46,7 @@
     self.listArr = [NSMutableArray arrayWithCapacity:5];
     self.onlineArr = [NSMutableArray arrayWithCapacity:5];
     self.backView.hidden = NO;
+    self.versionLabel.text = [NSString stringWithFormat:@"V %@\n 技术支持：hi@dync.cc",Version];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);

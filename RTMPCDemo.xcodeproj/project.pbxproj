@@ -19,6 +19,7 @@
 		630FC21E226585F300146913 /* ArVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630FC21D226585F300146913 /* ArVideoView.m */; };
 		6318F63722606F22007EF67E /* ArUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318F63622606F22007EF67E /* ArUserManager.m */; };
 		637C7F7122898342001D7361 /* ArLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637C7F6F22898342001D7361 /* ArLogView.m */; };
+		63820E0F23975CC00088D38F /* UIViewController+PresentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63820E0E23975CC00088D38F /* UIViewController+PresentModel.m */; };
 		63A467322266CFC1006AA045 /* ArRealMicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A467312266CFC1006AA045 /* ArRealMicCell.m */; };
 		63A4673B22673857006AA045 /* ArAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4673A22673857006AA045 /* ArAudioView.m */; };
 		63C1730C225DDBA7001E72E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C1730B225DDBA7001E72E7 /* AppDelegate.m */; };
@@ -90,6 +91,8 @@
 		6318F63622606F22007EF67E /* ArUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArUserManager.m; sourceTree = "<group>"; };
 		637C7F6F22898342001D7361 /* ArLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArLogView.m; sourceTree = "<group>"; };
 		637C7F7022898342001D7361 /* ArLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArLogView.h; sourceTree = "<group>"; };
+		63820E0D23975CC00088D38F /* UIViewController+PresentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentModel.h"; sourceTree = "<group>"; };
+		63820E0E23975CC00088D38F /* UIViewController+PresentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentModel.m"; sourceTree = "<group>"; };
 		63A467302266CFC1006AA045 /* ArRealMicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArRealMicCell.h; sourceTree = "<group>"; };
 		63A467312266CFC1006AA045 /* ArRealMicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArRealMicCell.m; sourceTree = "<group>"; };
 		63A4673922673857006AA045 /* ArAudioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArAudioView.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 			children = (
 				630E5FDB22647E1700819C05 /* UIAlertController+Blocks.m */,
 				630E5FDC22647E1700819C05 /* UIAlertController+Blocks.h */,
+				63820E0D23975CC00088D38F /* UIViewController+PresentModel.h */,
+				63820E0E23975CC00088D38F /* UIViewController+PresentModel.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				630CD4F12265D6E3008A13BE /* ArRealTimeMicController.m in Sources */,
 				630E0B1022699DA200F3081C /* UIImageView+Animation.m in Sources */,
 				63C1734F225DE365001E72E7 /* ArAudioHostController.m in Sources */,
+				63820E0F23975CC00088D38F /* UIViewController+PresentModel.m in Sources */,
 				630FC21E226585F300146913 /* ArVideoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,7 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -747,7 +753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				FRAMEWORK_SEARCH_PATHS = (

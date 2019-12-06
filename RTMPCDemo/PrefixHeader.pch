@@ -39,6 +39,7 @@ static NSString *appvtoken = @"XXXXXX";
 #import "ArLogView.h"
 #import "UIAlertController+Blocks.h"
 #import "UIImageView+Animation.h"
+#import "UIViewController+PresentModel.h"
 
 //MARK: - 宏
 //弱指针
@@ -55,4 +56,5 @@ static NSString *appvtoken = @"XXXXXX";
 #define ArMethodText(name) [[self mutableArrayValueForKey:@"logArr"] addObject:[NSString stringWithFormat:@"方法：%@",name]]
 #define ArCallbackLog [[self mutableArrayValueForKey:@"logArr"] addObject:[NSString stringWithFormat:@"回调：%s",__func__]]
 
+#define Version  [(__bridge NSDictionary *)CFBundleGetInfoDictionary(CFBundleGetMainBundle())objectForKey:@"CFBundleShortVersionString"]
 #endif /* PrefixHeader_pch */

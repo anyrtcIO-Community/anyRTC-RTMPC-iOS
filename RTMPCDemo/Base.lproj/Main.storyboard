@@ -41,7 +41,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIu-QA-ejT">
                                 <rect key="frame" x="124" y="623" width="127" height="29"/>
-                                <string key="text">V 3.0.1
+                                <string key="text">V 3.0.0
 技术支持：hi@dync.cc</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -224,6 +224,7 @@
                         <outlet property="listCollectionView" destination="kwd-Pl-v6W" id="eAh-XQ-u7s"/>
                         <outlet property="refreshButton" destination="nQF-aO-mOv" id="GZ9-ST-5Om"/>
                         <outlet property="updateButton" destination="e0f-54-IC0" id="jZ3-nh-BCN"/>
+                        <outlet property="versionLabel" destination="FIu-QA-ejT" id="fgT-aJ-IO4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KF-Tj-iBw" sceneMemberID="firstResponder"/>
