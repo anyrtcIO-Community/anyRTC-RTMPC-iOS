@@ -25,7 +25,7 @@ pod 'RTMPCHybirdEngine', '~> 3.0.1'
 
 ### 手动导入
 
-1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io/resoure)下载SDK</br>
+1. 下载Demo，或者前往[anyRTC官网](https://www.anyrtc.io)下载SDK</br>
 ![list_directory](/image/list_directory.png)
 
 2. 在Xcode中选择“Add files to 'Your project name'...”，将RTMPCHybirdEngine.framework添加到你的工程目录中</br>
@@ -43,7 +43,7 @@ pod 'RTMPCHybirdEngine', '~> 3.0.1'
 2.  同时可以通过[Web连麦互动](https://www.anyrtc.io/demo/lianmai/guest)进行连麦等操作，建议使用Google浏览器。
 
 ### 资源中心
-[更多详细方法使用，请查看API文档](https://www.anyrtc.io/resoure)
+[更多详细方法使用，请查看API文档](https://docs.anyrtc.io/v1/RTMPC/)
 
 ## SDK包含
 RTC 连麦互动</br>
@@ -120,10 +120,10 @@ SDK更新3.0.0版本</br>
 ```
 
 ## 技术支持
-anyRTC官方网址：https://www.anyrtc.io </br>
-QQ技术交流群：554714720 </br>
-联系电话:021-65650071-816 </br>
-Email:hi@dync.cc </br>
+* anyRTC官方网址：https://www.anyrtc.io </br>
+* QQ技术交流群：554714720 </br>
+* 联系电话:021-65650071-816 </br>
+* Email:hi@dync.cc </br>
 
 ## 关于直播
 本公司有一整套直播解决方案，特别针对移动端。本公司开发者平台[www.anyrtc.io](http://www.anyrtc.io)。除了基于RTMP协议的直播系统外，我公司还有基于WebRTC的时时交互直播系统、P2P呼叫系统、会议系统等。快捷集成SDK，便可让你的应用拥有时时通话功能。欢迎您的来电~
