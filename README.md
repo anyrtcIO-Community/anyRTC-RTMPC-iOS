@@ -1,5 +1,5 @@
 # 重要提醒
-anyRTC 对该版本已经不再维护。[前往新版本](https://github.com/anyRTC/ArAndroidSDK).
+anyRTC 对该版本已经不再维护。[前往新版本](https://github.com/anyRTC/AriOSSDK).
 
 **新版本功能如下：**
 - 频道管理
@@ -17,6 +17,9 @@ anyRTC 对该版本已经不再维护。[前往新版本](https://github.com/any
 - 视频自采集自渲染
 - 耳返功能
 - 。。。
+
+更多示列请前往**公司网址： [www.anyrtc.io](https://www.anyrtc.io)**
+
 
 # anyRTMPC-HybridEngine-iOS
 基于RTMP和RTC混合引擎的在线视频连麦互动直播。<br/>
